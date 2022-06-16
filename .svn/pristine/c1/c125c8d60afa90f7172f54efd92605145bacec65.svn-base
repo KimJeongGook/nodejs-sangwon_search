@@ -1,0 +1,148 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+
+<link rel="stylesheet" type="text/css" href="/examples/media/print.css" media="print">
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('#print_start').click(function(){
+		$("#print_start").hide();
+		
+		window.print();
+		
+		$("#print_start").show();
+	});
+});
+
+</script>
+
+<!-- 프린트 할 때 -->
+<style type="text/css" media="print">
+	@page { size: auto; margin-top: 59.5px; margin-right: 18px; margin-left: 18px;}
+</style>
+
+<!-- PC화면으로 볼때 -->
+<style>
+	/* 폰트 굵은거 */
+	@font-face {
+	    font-family: 'NEXON Lv1 Gothic OTF Bold';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	/* 폰트 얇은거 */
+	@font-face {
+	    font-family: 'NEXON Lv2 Gothic';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	.n_tit, .a_tit, .z_tit {font-family: 'NEXON Lv1 Gothic OTF Bold';}
+	.index_box .addr, .index_box .company {font-family: 'NEXON Lv2 Gothic';}
+	
+	body {margin: 0; padding: 0;}
+	div {color: #000000; /* font-family: '굴림',Gulim; */ font-size: 14px;}
+	.btn_wrap {text-align: right;}
+	.index_box {text-align: center; float: left; width: 370px; box-sizing: border-box; color: #000000; overflow: hidden; height: 144px; padding: 10px;} 
+	.index_box .addr {text-align: left; margin-bottom: 7px; height: 33px; font-size: 15px;}
+	.index_box .company {text-align: left; margin-left: 20px; height: 35px;}
+	.index_box .op_box {margin-left: 80px; margin-top: 15px; font-weight: bold;}
+	.index_box .op_box .name{font-size: 17px; margin-top: -10px; font-weight: bold;}
+	.index_box .op_box .addr_code{font-size: 17px; margin-top: -5px;}
+	.index_box .op_box .name .n_tit {margin-right: 0px;}
+	
+	@media print {
+		/* 폰트 굵은거 */
+		@font-face {
+		    font-family: 'NEXON Lv1 Gothic OTF Bold';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		/* 폰트 얇은거 */
+		@font-face {
+		    font-family: 'NEXON Lv2 Gothic';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		#header{display: none;}
+		#footer{display: none;}
+		
+		body * {visibility: visible; -webkit-print-color-adjust: exact !important; background: #fff;}
+		
+		.n_tit {visibility: visible; font-size: 17px; font-weight: bold;}
+		
+		.a_tit {visibility: visible; font-size: 14px; margin-left: 8px;}
+		
+		.z_tit {visibility: visible; font-size: 17px;}
+		
+		.n_tit, .a_tit, .z_tit {font-family: 'NEXON Lv1 Gothic OTF Bold';}
+		.index_box .addr, .index_box .company {font-family: 'NEXON Lv2 Gothic';}
+	}
+</style>
+
+<!-- 컨텐츠 -->
+<div class="btn_wrap">
+	<button id="print_start" name="print_start">출력</button>
+</div>
+
+<div class="index_wrap" style="margin-top: 5px;">
+<% if(destination == "ceo"){ %>
+	<% for(var i = 0; i < db_data_size; i++){ %>
+		<% if(db_data[i].num%2 == "1"){ %>
+			<div class="index_box" >
+				<div class="addr">대구 <%=db_data[i].orgmem_office_addr1 %></div>
+				<div class="company"><%=db_data[i].company_name %></div>
+				<div class="op_box">
+					<div class="name"><span class="n_tit">대표(이사)<!-- &nbsp;&nbsp;&nbsp;<%=db_data[i].orgmem_name %> --> </span><span class="a_tit">귀하</span></div>
+					<div class="addr_code"><span class="z_tit"><%=db_data[i].orgmem_office_addr_zipcode %></span></div>
+				</div>
+			</div>
+		<%}%>
+		
+		<% if(db_data[i].num%2 == "0"){ %>
+			<div class="index_box" style="margin-left: 14px;">
+				<div class="addr">대구 <%=db_data[i].orgmem_office_addr1 %></div>
+				<div class="company"><%=db_data[i].company_name %></div>
+				<div class="op_box">
+					<div class="name"><span class="n_tit">대표(이사)<!-- &nbsp;&nbsp;&nbsp;<%=db_data[i].orgmem_name %> --> </span><span class="a_tit">귀하</span></div>
+					<div class="addr_code"><span class="z_tit"><%=db_data[i].orgmem_office_addr_zipcode %></span></div>
+				</div>
+			</div>
+		<%}%>
+	<%}%>
+<%} else if(destination == "company") {%>
+	<% for(var i = 0; i < db_data_size; i++){ %>
+		<% if(db_data[i].num%2 == "1"){ %>
+			<div class="index_box">
+				<div class="addr" style="margin-bottom: 25px;">대구 <%=db_data[i].orgmem_office_addr1 %></div>
+				<div class="op_box" style="margin-left:40px;">
+					<div class="name" style="font-size: 16px; margin-bottom: 8px;"><%=db_data[i].company_name %> <span style="font-size: 14px; margin-left: 8px;">귀중</span></div>
+					<div class="addr_code"><%=db_data[i].orgmem_office_addr_zipcode %></div>
+				</div>
+			</div>
+		<%}%>
+		
+		<% if(db_data[i].num%2 == "0"){ %>
+			<div class="index_box" style="margin-left: 14px;">
+				<div class="addr" style="margin-bottom: 22px;">대구 <%=db_data[i].orgmem_office_addr1 %></div>
+				<div class="op_box" style="margin-left:40px;">
+					<div class="name" style="font-size: 16px; margin-bottom: 6px;"><%=db_data[i].company_name %> <span style="font-size: 14px; margin-left: 8px;">귀중</span></div>
+					<div class="addr_code"><%=db_data[i].orgmem_office_addr_zipcode %></div>
+				</div>
+			</div>
+		<%}%>
+	<%}%>
+<%}%>
+
+</div>
+
+
+
+
+

@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+    	
+    });
+
+</script>
+	
+    <div class="table_bottom">
+        <img src="/images/capture.png" alt="이미지 미리보기" style="height:100%;"/>
+    </div>
+    

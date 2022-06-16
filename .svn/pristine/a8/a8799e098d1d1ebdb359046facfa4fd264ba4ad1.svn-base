@@ -1,0 +1,247 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+var code = require("../../../function/codeMngt.js");
+
+exports.listener=function(request, response){
+	console.log("****************************** print_list.js Enter ******************************");
+	
+	var search_seqNo = request.param("search_seqNo")==undefined ? "" : request.param("search_seqNo");
+	var search_major = request.param("search_major")==undefined ? "" : request.param("search_major");
+	var search_area = request.param("search_area")==undefined ? "" : request.param("search_area");
+	var search_text = request.param("search_text")==undefined ? "" : request.param("search_text");
+	var app_user_search = request.param("app_user_search") == undefined ? '' : request.param("app_user_search");
+	var connectorNo = session.connectorNo(request);
+	var connectorDivision = session.connectorDivision(request);
+	var search_all = request.param("search_all")==undefined ? "" : request.param("search_all");
+	
+	var index_total = request.param("index_total")==undefined ? "" : request.param("index_total");
+	var index_cnt = request.param("index_cnt")==undefined ? "" : request.param("index_cnt");
+	
+	var label_select = request.param("label_select")==undefined ? "" : request.param("label_select");
+	var destination = request.param("destination")==undefined ? "" : request.param("destination");
+	
+	/***************************************************************************************************/
+	
+	var type_result = request.param("type_result")==undefined ? "" : request.param("type_result");
+	var nowPage = request.param("nowPage")==undefined ? "" : request.param("nowPage");
+	var search_name = request.param("search_name")==undefined ? "" : request.param("search_name");
+	var search_company = request.param("search_company")==undefined ? "" : request.param("search_company");
+	var search_item = request.param("search_item")==undefined ? "" : request.param("search_item");
+	var industry1 = request.param("industry1")==undefined ? "" : request.param("industry1");
+	var industry2 = request.param("industry2")=='2차 선택' ? "" : request.param("industry2");
+	var industry3 = request.param("industry3")=='3차 선택' ? "" : request.param("industry3");
+	
+	var industry1_nm = request.param("industry1_nm")=='1차 선택' ? "" : request.param("industry1_nm");
+	var industry2_nm = request.param("industry2_nm")=='2차 선택' ? "" : request.param("industry2_nm");
+	var industry3_nm = request.param("industry3_nm")=='3차 선택' ? "" : request.param("industry3_nm");
+	
+	var search_area = request.param("search_area")==undefined ? "" : request.param("search_area");
+	var search_employee_num1 = request.param("search_employee_num1")==undefined ? "" : request.param("search_employee_num1");
+	var search_employee_num2 = request.param("search_employee_num2")==undefined ? "" : request.param("search_employee_num2");
+	var search_create_year1 = request.param("search_create_year1")==undefined ? "" : request.param("search_create_year1");
+	var search_create_year2 = request.param("search_create_year2")==undefined ? "" : request.param("search_create_year2");
+	var search_sales1 = request.param("search_sales1")==undefined ? "" : request.param("search_sales1");
+	var search_sales2 = request.param("search_sales2")==undefined ? "" : request.param("search_sales2");
+
+	var classify1 = request.param("classify1")==undefined ? "" : request.param("classify1");
+	var classify2 = request.param("classify2")==undefined ? "" : request.param("classify2");
+	var classify3 = request.param("classify3")==undefined ? "" : request.param("classify3");
+	var classify4 = request.param("classify4")==undefined ? "" : request.param("classify4");
+	var classify5 = request.param("classify5")==undefined ? "" : request.param("classify5");
+	var classify6 = request.param("classify6")==undefined ? "" : request.param("classify6");
+	var classify7 = request.param("classify7")==undefined ? "" : request.param("classify7");
+	var classify8 = request.param("classify8")==undefined ? "" : request.param("classify8");
+	var classify9 = request.param("classify9")==undefined ? "" : request.param("classify9");
+	var classify10 = request.param("classify10")==undefined ? "" : request.param("classify10");
+	
+	/*console.log("index_total ::: " + index_total);
+	console.log("index_cnt ::: " + index_cnt);*/
+	
+	console.log("label_select ::: " + label_select);
+	console.log("destination ::: " + destination);
+	
+	var index_split = index_total.split(',');
+	
+	var sql="";
+
+	sql = "select \n";
+		sql += "@RNUM := @RNUM + 1 as num \n";
+		sql += ", orgmem_no \n";
+		sql += ", company_name \n";
+		sql += ", if(LEFT(company_name, 1) = '(' and SUBSTRING(company_name, 3, 1) = ')', substr(company_name, 4), company_name) AS company_name_result \n";
+		sql += ", orgmem_name \n";
+		sql += ", orgmem_office_addr1 \n";
+		sql += ", orgmem_office_addr_zipcode \n";
+	sql += "from	orgmember a \n";
+	sql += "        , (SELECT @RNUM := 0 ) r \n";
+	sql += "where	1 = 1 AND";
+	
+	for(var i = 0; i < index_cnt; i++){
+		if(i == 0){
+			sql += " orgmem_no = " + index_split[i];
+		} else {
+			sql += " OR orgmem_no = " + index_split[i];
+		}
+	}
+	sql += "\n order by company_name_result asc";
+	
+	console.log();
+	console.log('sql ::::::: ' + sql);
+	console.log();
+
+	if(label_select == "two_six"){
+		console.log("label_select 2X6 :::: " + label_select);
+		
+		fs.readFile("./views/user/print/2X6_print_list.html", "utf-8", function(error, data){
+			db.query(sql, function(error, results){
+				response.send(ejs.render(layout.include("empty", data), {
+					connectorNo : connectorNo,
+					db_data : results,
+					label_select : label_select,
+					destination : destination,
+					db_data_size : index_cnt,
+					
+					type_result : type_result,
+					nowPage : nowPage,
+					index_total : index_total,
+					index_cnt : index_cnt,
+					search_name : search_name,
+					search_company : search_company,
+					search_item : search_item,
+					industry1 : industry1,
+					industry2 : industry2,
+					industry3 : industry3,
+					
+					industry1_nm : industry1_nm,
+					industry2_nm : industry2_nm,
+					industry3_nm : industry3_nm,
+					
+					search_area : search_area,
+					search_employee_num1 : search_employee_num1,
+					search_employee_num2 : search_employee_num2,
+					search_create_year1 : search_create_year1,
+					search_create_year2 : search_create_year2,
+					search_sales1 : search_sales1,
+					search_sales2 : search_sales2,
+					
+					classify1 : classify1,
+					classify2 : classify2,
+					classify3 : classify3,
+					classify4 : classify4,
+					classify5 : classify5,
+					classify6 : classify6,
+					classify7 : classify7,
+					classify8 : classify8,
+					classify9 : classify9,
+					classify10 : classify10
+				}));
+			});
+		});
+		
+	} else if(label_select == "two_seven"){
+		console.log("label_select 2X7 :::: " + label_select);
+		
+		fs.readFile("./views/user/print/2X7_print_list.html", "utf-8", function(error, data){
+			db.query(sql, function(error, results){
+				response.send(ejs.render(layout.include("empty", data), {
+					connectorNo : connectorNo,
+					db_data : results,
+					label_select : label_select,
+					destination : destination,
+					db_data_size : index_cnt,
+					
+					type_result : type_result,
+					nowPage : nowPage,
+					index_total : index_total,
+					index_cnt : index_cnt,
+					search_name : search_name,
+					search_company : search_company,
+					search_item : search_item,
+					industry1 : industry1,
+					industry2 : industry2,
+					industry3 : industry3,
+					
+					industry1_nm : industry1_nm,
+					industry2_nm : industry2_nm,
+					industry3_nm : industry3_nm,
+					
+					search_area : search_area,
+					search_employee_num1 : search_employee_num1,
+					search_employee_num2 : search_employee_num2,
+					search_create_year1 : search_create_year1,
+					search_create_year2 : search_create_year2,
+					search_sales1 : search_sales1,
+					search_sales2 : search_sales2,
+					
+					classify1 : classify1,
+					classify2 : classify2,
+					classify3 : classify3,
+					classify4 : classify4,
+					classify5 : classify5,
+					classify6 : classify6,
+					classify7 : classify7,
+					classify8 : classify8,
+					classify9 : classify9,
+					classify10 : classify10
+				}));
+			});
+		});
+		
+	} else if(label_select == "two_eight"){
+		console.log("label_select 2X8 :::: " + label_select);
+		
+		fs.readFile("./views/user/print/2X8_print_list.html", "utf-8", function(error, data){
+			db.query(sql, function(error, results){
+				response.send(ejs.render(layout.include("empty", data), {
+					connectorNo : connectorNo,
+					db_data : results,
+					label_select : label_select,
+					destination : destination,
+					db_data_size : index_cnt,
+					
+					type_result : type_result,
+					nowPage : nowPage,
+					index_total : index_total,
+					index_cnt : index_cnt,
+					search_name : search_name,
+					search_company : search_company,
+					search_item : search_item,
+					industry1 : industry1,
+					industry2 : industry2,
+					industry3 : industry3,
+					
+					industry1_nm : industry1_nm,
+					industry2_nm : industry2_nm,
+					industry3_nm : industry3_nm,
+					
+					search_area : search_area,
+					search_employee_num1 : search_employee_num1,
+					search_employee_num2 : search_employee_num2,
+					search_create_year1 : search_create_year1,
+					search_create_year2 : search_create_year2,
+					search_sales1 : search_sales1,
+					search_sales2 : search_sales2,
+					
+					classify1 : classify1,
+					classify2 : classify2,
+					classify3 : classify3,
+					classify4 : classify4,
+					classify5 : classify5,
+					classify6 : classify6,
+					classify7 : classify7,
+					classify8 : classify8,
+					classify9 : classify9,
+					classify10 : classify10
+				}));
+			});
+		});
+		
+	}
+	
+};

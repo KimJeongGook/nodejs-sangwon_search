@@ -1,0 +1,48 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+
+exports.listener=function(request, response){
+	console.log("############ main.js Enter ############");
+	
+	var no = request.cookies.no;
+	var phone = request.cookies.phone;
+	//console.log("no:", no);
+	//console.log("phone:", phone);
+
+	var sql = "select a.board_no, \n"
+		+"a.strt_dt, a.board_title, a.end_dt, b.*, c.orgmem_name, c.orgmem_office_nm, \n"
+		+"concat_ws('-',c.orgmem_phone1,c.orgmem_phone2,c.orgmem_phone3) as orgmem_phone, \n"
+		+"concat_ws(' ',c.orgmem_office_addr1,c.orgmem_office_addr2) as orgmem_office_addr, \n"
+		+"c.orgmem_seqNo, \n"
+		+"(select code_name from code where code=c.orgmem_area and code_group='orgmem_area') as orgmem_area_nm,"
+		+"(select code_name from code where code=c.orgmem_major and code_group='orgmem_major') as orgmem_major_nm\n"
+		+"from hongbo_board a LEFT JOIN hongbo_files b ON a.board_no=b.board_no LEFT JOIN orgmember c ON a.orgmem_no=c.orgmem_no \n" 
+		+"where a.board_no = b.board_no \n" 
+		+"and date_format(now(), '%Y-%m-%d') between a.strt_dt and a.end_dt \n" 
+		+"and a.main_event_y = 'Y' \n"
+		+"and b.file_type = 'banner' \n"
+		+"and b.file_dtname is not null \n"
+		/*+"and b.file_type = 'banner' \n"*/
+		+"order by rand()";
+	
+	//console.log("sql ::: " + sql);
+	
+var sql2 = "select * from event_files where file_status = 'Y' and file_type='banner'";
+	fs.readFile("views/user/index.html", "utf-8", function(error, data){
+		db.query(sql, function(error, banner_result){
+			db.query(sql2, function(error, banner_img){
+				response.send(ejs.render(layout.include("index", data), {
+					menuNum:null,
+					banner_data:banner_result,
+					banner_img:banner_img
+				}));
+			});
+		});
+		
+	}); 
+};

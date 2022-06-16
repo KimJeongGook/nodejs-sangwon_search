@@ -1,0 +1,432 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".contImg").click(function() {
+			if( $(this).get(0).tagName=="IMG" ) {
+				var url = "/views/user/chart/img_view.html?imgSRC="+$(this).attr("src");
+				
+				var standalone = window.navigator.standalone,
+			    userAgent = window.navigator.userAgent.toLowerCase(),
+			    safari = /safari/.test( userAgent ),
+			    ios = /iphone|ipod|ipad/.test( userAgent );
+				
+				if( ios ) {
+				    if ( !standalone && safari ) {
+				        //browser
+				    } else if ( standalone && !safari ) {
+				        //standalone
+				    } else if ( !standalone && !safari ) {
+				        //uiwebview
+				        window.location="jscall://"+url;
+				    };
+				} else {
+					// not ios
+					window.location.href = url;
+				};
+				//window.location.href = url;
+				//window.open('/views/user/hongbo_board/img_view.html?imgSRC='+$(this).attr("src")+'', 'hongboView_Pop', 'width=500, height=500');
+			}
+		});
+	});
+</script>
+
+<!-- 탭 -->
+<div class="intro_menu">
+   <ul>
+	<li><a href="chart_mba_list">인사말</a></li>
+	<li><a href="rules">회칙</a></li>
+	<li><a href="club">연혁</a></li>
+	<li><a href="orgchart">조직도</a></li>
+	<li><a href="membership" class="intro_menu_on">동문회비</a></li>
+	<li><a href="place">오시는길</a></li>
+   </ul>
+</div>
+
+<div id="container_intro">
+	<div class="membership_wrap">
+		<div class="membership_tit">
+			<span>동문회비 납부안내</span>
+		</div>
+		<div class="membership_txt">
+			<p><i class="far fa-heart"></i> 동문회비 납부가 바로 <strong>동문회 사랑</strong>입니다.</p>
+			<p>회비 2만원 납부로 동문회 사랑을 실천해 주십시오.</p>
+		</div>
+		<div class="membership_cont">
+			<ul>
+				<li><i class="far fa-circle"></i><span class="tit">개인회비</span><span class="txt">년간 2만원</span></li>
+				<li><i class="far fa-circle"></i><span class="tit">평생회비</span><span class="txt">50만원</span></li>
+			</ul>
+			<p>[대구은행] 018-10-000735<span>대공총동문회</span></p>
+		</div>
+		<p class="tip">※ 평생회비 납부하신 회원은 년간 회비를 안내셔도 됩니다. </p>
+		<table class="membership_table">
+			<colgroup>
+				<col width="12%">
+				<col width="20%">
+				<col width="20%">
+				<col width="*">
+				<col width="20%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>기수</th>
+					<th>동문이름</th>
+					<th>전공</th>
+					<th>납부내역</th>
+					<th>금액</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>66기</td>
+					<td>남용호</td>
+					<td>건축</td>
+					<td>연간회비</td>
+					<td>50,000</td>
+				</tr>
+				<tr>
+					<td>53기</td>
+					<td>박주만</td>
+					<td>방직</td>
+					<td>연간회비</td>
+					<td>50,000</td>
+				</tr>
+				<tr>
+					<td>56기</td>
+					<td>김일하</td>
+					<td>기계</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>52기</td>
+					<td>최주연</td>
+					<td>건축</td>
+					<td>평생회비</td>
+					<td>500,000</td>
+				</tr>
+				<tr>
+					<td>56기</td>
+					<td>정동화</td>
+					<td>기계</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>40기</td>
+					<td>박태원</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>40기</td>
+					<td>김노석</td>
+					<td>전기</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>40기</td>
+					<td>박경영</td>
+					<td>전기</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>40기</td>
+					<td>박무인</td>
+					<td>건축</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>40기</td>
+					<td>박용연</td>
+					<td>건축</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>40기</td>
+					<td>정해송</td>
+					<td>토목</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>40기</td>
+					<td>이동하</td>
+					<td>방직</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>35기</td>
+					<td>김국호</td>
+					<td>기계</td>
+					<td>연간회비</td>
+					<td>10,000</td>
+				</tr>
+				<tr>
+					<td>59기</td>
+					<td>서해수</td>
+					<td>건축</td>
+					<td>평생회비</td>
+					<td>500,000</td>
+				</tr>
+				<tr>
+					<td>52기</td>
+					<td>김종일</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>59기</td>
+					<td>손정호</td>
+					<td>화공</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>52기</td>
+					<td>한승열</td>
+					<td>기계</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>57기</td>
+					<td>전성욱</td>
+					<td>토목</td>
+					<td>평생회비</td>
+					<td>500,000</td>
+				</tr>
+				<tr>
+					<td>55기</td>
+					<td>김성택</td>
+					<td>전기</td>
+					<td>평생회비</td>
+					<td>500,000</td>
+				</tr>
+				<tr>
+					<td>57기</td>
+					<td>남인섭</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>52기</td>
+					<td>박병록</td>
+					<td>방직</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>57기</td>
+					<td>이성현</td>
+					<td>토목</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>49기</td>
+					<td>최원수</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>62기</td>
+					<td>최강일</td>
+					<td>건축</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>55기</td>
+					<td>김재만</td>
+					<td>토목</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>55기</td>
+					<td>곽일영</td>
+					<td>화공</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>오정호</td>
+					<td></td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>55기</td>
+					<td>문종우</td>
+					<td>전기</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>55기</td>
+					<td>전재원</td>
+					<td>화공</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>54기</td>
+					<td>김동욱</td>
+					<td>전기</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>51기</td>
+					<td>홍성훈</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>47기</td>
+					<td>강명호</td>
+					<td>화공</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>50기</td>
+					<td>이병윤</td>
+					<td>방직</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>54기</td>
+					<td>오윤주</td>
+					<td>화공</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>73기</td>
+					<td>백영만</td>
+					<td>화공</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>55기</td>
+					<td>추주식</td>
+					<td>방직</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>56기</td>
+					<td>임송환</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>100,000</td>
+				</tr>
+				<tr>
+					<td>35기</td>
+					<td>김국호</td>
+					<td>기계</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>56기</td>
+					<td>황이룡</td>
+					<td>건축</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>60기</td>
+					<td>배종목</td>
+					<td>기계</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>52기</td>
+					<td>김주한</td>
+					<td>전기</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>37기</td>
+					<td>김성배</td>
+					<td>건축</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>52기</td>
+					<td>이성규</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>49기</td>
+					<td>박세열</td>
+					<td>화공</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>52기</td>
+					<td>이성규</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>40기</td>
+					<td>장일봉</td>
+					<td>자동차</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>47기</td>
+					<td>권혁도</td>
+					<td>방직</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr>
+					<td>51기</td>
+					<td>이수성</td>
+					<td>화공</td>
+					<td>평생회비</td>
+					<td>500,000</td>
+				</tr>
+				<tr>
+					<td>51기</td>
+					<td>서성국</td>
+					<td>기계</td>
+					<td>연간회비</td>
+					<td>20,000</td>
+				</tr>
+				<tr style="font-weight: bold; color: #2E3192; background: #eaeaf4;">
+					<td colspan="4">total</td>
+					<td>3,510,000</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+

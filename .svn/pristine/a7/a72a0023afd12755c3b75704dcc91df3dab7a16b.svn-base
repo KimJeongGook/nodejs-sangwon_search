@@ -1,0 +1,23 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+var code = require("../../../function/codeMngt.js");
+
+exports.listener=function(request, response){
+	console.log("****************************** excel_search.js Enter ******************************");
+	
+	var sql = "select * from orgmember limit 0, 1";
+	
+	fs.readFile("./views/user/web/excel_search.html", "utf-8", function(error, data){
+		db.query(sql, function(error, results){
+			response.send(ejs.render(layout.include("web_admin_popup", data), {
+				data : results
+			}));
+		});
+	});
+};

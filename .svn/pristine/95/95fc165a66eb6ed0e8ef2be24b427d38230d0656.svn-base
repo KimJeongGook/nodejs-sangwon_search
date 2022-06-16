@@ -1,0 +1,215 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	var mode = tag_place("<%=mode%>");
+	var isDeleted = tag_place("<%=isDeleted%>"); // 삭제 쿼리 submit 했는지 구분
+	var domEleArray = [$('#bannerImg').clone()]; // 원본 복사(파일 초기화 관련)
+	
+	//달력
+	$(".datepicker").datepicker({
+	    showButtonPanel: true,		    
+	    closeText:'닫 기',
+		prevText:'이전달',
+		nextText:'다음달',
+		currentText:'오늘',
+	    changeYear: true,
+		monthNames:['1월(JAN)','2월(FEB)','3월(MAR)','4월(APR)','5월(MAY)','6월(JUM)','7월(JUL)','8월(AUG)','9월(SEP)','10월(OCT)','11월(NOV)','12월(DEC)'],
+		dayNamesMin:['일','월','화','수','목','금','토'],
+		dateFormat:'yy-mm-dd'	
+	});
+	
+	var settingDate = new Date();
+	
+	if(mode == "write"){
+		$("#strt_dt").val($.datepicker.formatDate('yy-mm-dd', settingDate));
+		
+		settingDate.setYear(settingDate.getFullYear()+1);
+		$("#end_dt").val($.datepicker.formatDate('yy-mm-dd', settingDate));
+	}
+	
+	$("#btn").click(function() {
+		var brdTitle = $("#brdTitle").val();
+		var brdContent = $("#brdContent").val();
+		var orgmem_no = $("#orgmem_no").val();
+		var strt_dt = $("#strt_dt").val();
+		var end_dt = $("#end_dt").val();
+		
+		if (brdTitle == "") {
+			alert("제목을 입력하세요.");
+			$("#brdTitle").focus();
+			return false;
+		}else if (brdContent == "") {
+			alert("내용을 입력하세요.");
+			$("#brdContent").focus();
+			return false;
+		}else if(orgmem_no == ""){
+			alert("기수/이름을 입력하세요.");
+			$("#org_search").click();
+			return false;
+		}
+		
+		if($("#bannerUseYn").is(":checked")){ // 배너등록 체크 시
+			if(strt_dt == ""){
+				alert("적용시작일자를 입력하세요.");
+				$("#strt_dt").focus();
+				return false;
+			}else if(end_dt == ""){
+				alert("적용종료일자를 입력하세요.");
+				$("#end_dt").focus();
+				return false;
+			}
+		}
+		
+		$("#boardwrite").attr("action","event_save");
+		$("#boardwrite").submit();
+	});
+	
+	if(isDeleted == "N"){ //창을 띄울 때 
+		$("#bannerUseYn").attr("checked", "checked");
+		$(".applyDate").show();
+	}else{ // 삭제 동작이 일어날 때 
+		$("#strt_dt").val("");
+		$("#end_dt").val("");
+	}
+	
+	$("#bannerUseYn").on('click', function(){
+		if($("#bannerUseYn").is(':checked')) { // 배너등록 체크
+			$(".applyDate").show();
+		}else{
+			var no = $(".fileInfo").attr("no");
+			var name = $(".fileInfo").attr("name");
+			
+			domEleArray[1] = domEleArray[0].clone(true); // 쌔거(0번) -> 복사(1번)
+			$('#bannerImg').replaceWith(domEleArray[1]); // file 타입 초기화
+			
+			$(".applyDate").hide();
+			
+			if(no != undefined && name != undefined){ //파일이 이미 등록되어 있을 때
+				file_del(no, name);
+			}else{
+				$("#strt_dt").val("");
+				$("#end_dt").val("");
+			}
+		}
+	});
+});
+
+function file_del(no, name) {
+	if(confirm("실제 파일이 삭제됩니다 \n정말 삭제하시겠습니까?")){
+		$("#strt_dt").val("");
+		$("#end_dt").val("");
+		$('#file_no').val(no);
+		$('#file_name').val(name);
+		$("#boardwrite").attr("action", "event_file_del");
+		$("#boardwrite").submit();
+	}else{
+		$(".applyDate").show();
+	}
+}
+
+</script>
+
+	<h2><span class="float_l">행사</span><img src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" onclick="window.close();"/></h2>
+	<div class="content">
+		<form action="" id="boardwrite" method="post" enctype="multipart/form-data" autocomplete="off">
+			<input type="hidden" name="file_no" value="" id="file_no"/>
+			<input type="hidden" name="file_name" value="" id="file_name"/>
+			<input type="hidden" name="mode" id="mode" />
+			<% if(data.length > 0) {%>
+				<input type="hidden" name="mode" value="modify"/> 
+				<input type="hidden" id="number" name="number" value="<%=data[0].board_no %>"/>
+			<% }else{ %>
+				<input type="hidden" name="mode" value="write"/>
+			<% } %>
+			<table>
+				<colgroup>
+					<col width="18%"/>
+					<col width="32%"/>
+					<col width="18%"/>
+					<col width="32%"/>
+				</colgroup>
+				<tr>
+					<th>제목</th>
+					<% if(data.length > 0) {%>
+						<td colspan="3"><input type="text" id="brdTitle" name="brdTitle" value="<%=data[0].board_title %>" style="ime-mode:active;"/></td>
+					<% }else{ %>
+						<td colspan="3"><input type="text" id="brdTitle" name="brdTitle" style="ime-mode:active;"/></td>
+					<% } %>
+				</tr>
+				<tr>
+					<th>우선순위</th>
+					<% if(data.length > 0) {%>
+						<td colspan="3"><input type="text" id="sort" name="sort" value="<%=data[0].sort %>" style="width:50px;" /></td>
+					<% }else{ %>
+						<td colspan="3"><input type="text" id="sort" name="sort" style="width:50px;" /></td>
+					<% } %>					
+				</tr>				
+				<tr>
+					<th>대표이미지</th>
+					<td colspan="3">
+						<% if(data.length > 0 && data_main_file.length > 0) { %>
+						<%	 for(var i = 0; i < data_main_file.length; i++) { %>
+							<li>
+							<%=data_main_file[i].file_name %>
+							<a href="#" onclick="javascript:file_del('<%=data_main_file[i].file_no %>','<%=data_main_file[i].file_dtname %>');">
+								<img src="../../../images/admin/icon_delete.gif" alt="삭제" />
+							</a>
+							</li>
+						<% 	 } %>						
+						<% }else{%>
+						<input type="file" id="aaa" name="brdFileMainImg[0]" value="" />
+						<% }%>
+					</td>
+				</tr>
+				<tr>
+					<th>배너등록</th>
+					<td colspan="3">
+						<input type="checkbox" id="bannerUseYn" />
+					</td>
+				</tr>	
+				<tr class="applyDate" style="display:none;">
+					<th>배너이미지</th>
+					<td class="aaa" colspan="3">
+						<% if(data.length > 0 && data_banner_file.length > 0) { %>
+						<%	 for(var i = 0; i < data_banner_file.length; i++) { %>
+							<li class="fileInfo" no="<%=data_banner_file[i].file_no %>" name="<%=data_banner_file[i].file_dtname %>">
+							<%=data_banner_file[i].file_name %>
+							<a href="#" onclick="javascript:file_del('<%=data_banner_file[i].file_no %>','<%=data_banner_file[i].file_dtname %>');">
+								<img src="../../../images/admin/icon_delete.gif" alt="삭제" />
+							</a>
+							</li>
+						<% 	 } %>						
+						<% }else{%>
+						<input type="file" id="bannerImg" name="brdFileBannerImg[0]" value="" />
+						<% }%>
+					</td>
+				</tr>
+				<tr class="applyDate" style="display:none;">
+					<th>배너적용기간</th>
+					<td colspan="3">
+					<% if(data.length > 0) {%>
+						<input type="text" id="strt_dt" name="strt_dt" class="datepicker" value="<%=data[0].strt_dt %>" style="width:100px;" readonly /> ~ <input type="text" id="end_dt" name="end_dt" class="datepicker" value="<%=data[0].end_dt %>" style="width:100px;" readonly />
+					<% }else{ %>
+						<input type="text" id="strt_dt" name="strt_dt" class="datepicker" style="width:100px;" readonly /> ~ <input type="text" id="end_dt" name="end_dt" class="datepicker" style="width:100px;" readonly />
+					<% } %>
+					</td>
+				</tr>
+				<tr>
+					<% if(data.length > 0) {%>
+						<td colspan="4" class="align_c"><textarea style="height:150px; ime-mode:active;" id="brdContent" name="brdContent"><%=data[0].board_content %></textarea></td>
+					<% }else{ %>
+						<td colspan="4" class="align_c"><textarea style="height:150px; ime-mode:active;" id="brdContent" name="brdContent"></textarea></td>
+					<% } %>
+				</tr>
+			</table>
+		</form>
+		<p class="btn">
+			<!-- <button class="btn_big_blue hand" id="btn">등록</button>
+			<button class="btn_big_black hand" id="btn_bak" onclick="window.close();">취소</button> -->
+			<button class="ui-button" id="btn" type="button">
+				<span class="ui-icon ui-icon-document"></span>등록
+			</button>
+			<button class="ui-button" onclick="window.close();" type="button">
+				<span class="ui-icon ui-icon-closethick"></span>취소
+			</button>
+		</p>
+	</div>

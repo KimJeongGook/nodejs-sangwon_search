@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+    <head>
+        <title>대구기업체총람 관리자</title>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="../../../css/admin/top_Default.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/admin/top_Layout.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/admin/top_Basic.css"/>
+		
+		<!--<link href="/js/jquery/css/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css"/>-->
+		<link rel="stylesheet" type="text/css" href="/js/jquery/css/jquery-ui.min.css" />
+		<script type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery-ui-1.8.16.custom.min.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery.validate.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery.form.js"></script>
+		
+		<script src="/js/common.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				setTimeout(function(){
+					$('.top_title').prepend(sessionStorage.getItem('userName'));
+				},10)
+				var menu = "<%=menuNum%>";
+				var subMenuNum = "<%=subMenuNum%>";
+				
+				$('#lnb ul li').eq(menu).addClass('on');
+				
+				if($('#Gong').hasClass('on')){
+					$('#TopSubMenuG').show();
+				}else{
+					$('#TopSubMenuG').hide();
+				}
+				
+				if($('#Gall').hasClass('on')){
+					$('#TopSubMenuGa').show();
+				}else{
+					$('#TopSubMenuGa').hide();
+				}
+				
+				if($('#enjoy').hasClass('on')){
+					$('#TopSubMenuEnjoy').show();
+					if(subMenuNum == 0){
+						$('#select_r').addClass('on');
+					} else if(subMenuNum == 1){
+						$('#select_a').addClass('on');
+					} else if(subMenuNum == 2){
+						$('#select_b').addClass('on');
+					} else if(subMenuNum == 3){
+						$('#select_c').addClass('on');
+					} else if(subMenuNum == 4){
+						$('#select_n').addClass('on');
+					}
+				}else{
+					$('#TopSubMenuEnjoy').hide();
+				}
+				
+				if($('#complaint').hasClass('on')){
+					$('#TopSubMenuComplaint').show();
+					if(subMenuNum == 0){
+						$('#select_0').addClass('on');
+					} else if(subMenuNum == 1){
+						$('#select_1').addClass('on');
+					} else if(subMenuNum == 2){
+						$('#select_2').addClass('on');
+					} else if(subMenuNum == 3){
+						$('#select_3').addClass('on');
+					} else if(subMenuNum == 4){
+						$('#select_4').addClass('on');
+					}
+				}else{
+					$('#TopSubMenuComplaint').hide();
+				}
+				
+				if($('#sms').hasClass('on')){
+					$('#TopSubMenuSMS').show();
+					if(subMenuNum == 0){
+						$('#select_00').addClass('on');
+					} else if(subMenuNum == 1){
+						$('#select_01').addClass('on');
+					} else if(subMenuNum == 2){
+						$('#select_02').addClass('on');
+					} else if(subMenuNum == 3){
+						$('#select_03').addClass('on');
+					} else if(subMenuNum == 4){
+						$('#select_04').addClass('on');
+					} else if(subMenuNum == 5){
+						$('#select_05').addClass('on');
+					} else if(subMenuNum == 6){
+						$('#select_06').addClass('on');
+					}
+				}else{
+					$('#TopSubMenuSMS').hide();
+				}
+				
+			});
+			
+			function MM_openBrWindow_company(theURL,winName,features,number,mode) {
+				theURL += '?mode=' + mode + '&number=' + number;
+				window.open(theURL,winName,features);
+			}
+			
+			function MM_openBrWindow_view_company(theURL,winName,features,number,mode,industry1, industry2, industry3) {
+				theURL += '?mode=' + mode + '&number=' + number + '&industry1=' + industry1 + '&industry2=' + industry2 + '&industry3=' + industry3;
+				window.open(theURL,winName,features);
+			}
+			
+			function MM_openBrWindow(theURL,winName,features,number,mode,category) {
+				if(number != '')
+					theURL += '?mode=' + mode + '&number=' + number + '&category=' + category;
+				else
+					theURL += '?mode=' + mode + '&category=' + category;
+				window.open(theURL,winName,features);
+			}
+			
+			function MM_openBrWindow_sms(theURL,winName,features,number,mode) {
+				theURL += '?mode=' + mode + '&number=' + number;
+				window.open(theURL,winName,features);
+			}
+			
+			function MP_openBrWindow(theURL,winName,features) {
+				window.open(theURL,winName,features);
+			}
+			
+			function AN_openBrWindow(theURL,winName,features,number) {
+				theURL += '?orgmem_no=' + number;
+				window.open(theURL,winName,features);
+			}
+			
+			function MT_openBrWindow(theURL,winName,features,number) {
+				theURL += '?orgmem_no=' + number;
+				window.open(theURL,winName,features);
+			}
+			
+			function winOpen(){
+				var win = window.open('/member_list', 'member_list','width=540,height=920,scrollbars=yes');
+				win.focus();
+			}
+			
+	
+		</script>
+		<style>
+		</style>
+	</head>
+	
+	<body>
+		<!--상단-->
+		<div id="head">
+			<p>
+				<span class="float_l h_tit">대구기업체총람 관리자<!-- <img src="/images/admin/h_logo01.png" alt="박수영 국회의원 로고"> --></a></span>
+				<span class="float_r top_title">
+					<span>님 환영합니다.</span>
+					<button class="btn_small_red hand" onclick="window.location.href='/admin/web/logout'">로그아웃</button>
+					<!-- <button class=" hand mobile_app_btn" onclick="winOpen();">모바일 APP</button> -->
+					<!-- <a href="http://박수영.com" target="_blank"><button class="btn_small_red hand">박수영홈페이지</button></a> -->
+				</span>
+			</p>
+		</div>
+	
+		<div id="lnb">
+			<ul>
+				<li><a href="/admin/web/orgm_list">기업관리</a></li>
+				<li><a href="/admin/web/admin_list">계정설정</a></li>
+				
+			</ul>
+			<div class="sub_menu">
+				<div class="sub_wrap">
+				<ul id="TopSubMenuEnjoy">
+					<li id="select_r"><a href="/admin/web/enjoy_list?category=enjoy_select_R">R</a></li>
+					<li id="select_a"><a href="/admin/web/enjoy_list?category=enjoy_select_A">A</a></li>
+					<li id="select_b"><a href="/admin/web/enjoy_list?category=enjoy_select_B">B</a></li>
+					<li id="select_c"><a href="/admin/web/enjoy_list?category=enjoy_select_C">C</a></li>
+					<li id="select_n"><a href="/admin/web/enjoy_list?category=enjoy_select_N">N</a></li>
+				</ul>
+				
+				<ul id="TopSubMenuComplaint">
+					<li id="select_0"><a href="/admin/web/complaint_list?category=complaint_select_0">민원등록</a></li>
+					<li id="select_1"><a href="/admin/web/complaint_list?category=complaint_select_1">민원배정</a></li>
+					<li id="select_2"><a href="/admin/web/complaint_list?category=complaint_select_2">민원사실확인</a></li>
+					<li id="select_3"><a href="/admin/web/complaint_list?category=complaint_select_3">민원처리</a></li>
+					<li id="select_4"><a href="/admin/web/complaint_list?category=complaint_select_4">민원종결</a></li>
+				</ul>
+				
+				<ul id="TopSubMenuSMS">
+					<li id="select_00"><a href="/admin/web/sms_list">박수영 국회의원</a></li>
+					<li id="select_01"><a href="/admin/web/complaint_result">민원처리 결과안내</a></li>
+					<li id="select_02" style="width:108px;"><a href="/admin/web/sms_anniversary?category=sms_select_2">생일</a></li>
+					<li id="select_03" style="width:108px;"><a href="/admin/web/sms_anniversary?category=sms_select_3">기일</a></li>
+					<li id="select_04" style="width:108px;"><a href="/admin/web/sms_anniversary?category=sms_select_4">결혼기념일</a></li>
+					<li id="select_05" style="width:130px;"><a href="/admin/web/sms_schedule_mngt">스케줄링설정</a></li>
+					<li id="select_06" style="width:130px;"><a href="/admin/web/sms_history">문자전송내역</a></li>
+				</ul>
+				</div>
+			</div>
+			
+			<ul id="TopSubMenuG" style="display:none;">
+			<li><a href="/admin/web/board_list?category=notice">공지사항</a></li>
+			<li><a href="/admin/web/board_list?category=sub_media">MOU</a></li>
+			<li><a href="/admin/web/board_list?category=sub_notice">구인구직</a></li>
+			<!-- <li><a href="/admin/web/board_list?category=sub_media">언론관리</a></li> -->
+			</ul>
+			
+			<ul id="TopSubMenuGa" style="display:none;">
+			<li><a href="/admin/web/hongbo_board_list?category=sub_directors">레시피</a></li>
+			<li><a href="/admin/web/hongbo_board_list?category=sub_meeting">매장/제품/서비스 홍보</a></li>
+			<!-- <li><a href="/admin/web/hongbo_board_list?category=sub_mou">MOU</a></li>
+			<li><a href="/admin/web/hongbo_board_list?category=sub_others">기타행사</a></li>  -->
+			</ul>
+		</div>
+		<div id="container">

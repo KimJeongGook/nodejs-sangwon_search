@@ -1,0 +1,1465 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<script src="https://kit.fontawesome.com/7460d40ad7.js" crossorigin="anonymous"></script>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="8.%20대구지역%20상장법인.files/filelist.xml">
+<title>8. 대구지역 상장법인</title>
+<style id="8. 대구지역 상장법인_15895_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.font515895
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;}
+.xl6315895
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6415895
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:"\@";
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6515895
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6615895
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;
+	padding-left:6px;}
+.xl6715895
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6815895
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:"Short Date";
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6915895
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:"\@";
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-char-type:none;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if !excel]>　　<![endif]-->
+<!--다음 내용은 Microsoft Excel의 웹 페이지로 게시 마법사를 사용하여 작성되었습니다.-->
+<!--같은 내용의 항목이 다시 게시되면 DIV 태그 사이에 있는 내용이 변경됩니다.-->
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 시작 -->
+<!----------------------------->
+
+<style type="text/css"> 
+	a:link { text-decoration:none; color:#ffffff;}
+	a:visited { text-decoration:none;color:white;}
+	a:active {text-decoration:none; color:#ccc; }
+	a:hover { text-decoration:none; color:white; }
+	
+	.table_content {margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 2%;}
+	th {border: 1px solid black;}
+	td {border: 1px solid black;}
+	tr {height: 40px;}
+	.td_c {background-color: white;}
+	.td_select {background-color: #fdbaba;}
+</style>
+
+<!-- <p class="float_r data_close" style="text-align:right;">
+	<button style="width: 80px; height: 30px; border-radius: 5px; background-color: #3b64af;">
+		<a href="/index_uw" target="_self" style="font-size: larger;">메인화면</a>
+	</button>
+</p> -->
+
+<div style="margin-top: 30px;">
+	<table class="table_content">
+		<colgroup>
+		    <col width="45%" />
+		    <col width="50%" />
+		</colgroup>
+		
+		<tr>
+			<th colspan="2" class="thead_th" style="height: 62px; background-color: #4f6fc1; color: white; font-weight: 600; font-size: 25px; text-align: left;">
+				<span style="padding-left: 15px;">대구기업체총람 부록자료</span>
+				<span style="padding-left: 40%; font-size: 18;">
+					<a href="/index_uw" target="_self"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i>메인화면</a>
+				</span>
+			</th>
+		</tr>
+		
+		<tbody>
+			<tr>
+                <td class="td_c" onClick="location.href='/file/user_html/1. 제24대 의원 명단(2021.04.01).htm'" style="cursor:pointer;">
+					<span style="color:black; margin: 5px; font-weight: 600;">1. 제24대 의원 명단(2021.04.01)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/7. 대구혁신도시 이전 공공기관 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">7. 대구혁신도시 이전 공공기관 현황</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_c" onClick="location.href='/file/user_html/2. 전국상의 현황 대외협력팀(2021.04.05).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">2. 전국상의 현황 대외협력팀(2021.04.05)</span>
+                </td>
+                <td class="td_select" onClick="location.href='/file/user_html/8. 대구지역 상장법인.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">8. 대구지역 상장법인</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/3. 유관기관.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">3. 유관기관</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/9. 월드클래스300 대구기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">9. 월드클래스300 대구기업</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/4. 경제관련단체.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">4. 경제관련단체</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/10. 대구 3030기업(2007~2020).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">10. 대구 3030기업(2007~2020)</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/5. 대구지역 협동조합.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">5. 대구지역 협동조합</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/11. 스타기업100, Pre-스타기업, 고용친화기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">11. 스타기업100, Pre-스타기업, 고용친화기업</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/6. 대구 산업단지 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">6. 대구 산업단지 현황</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/12. 물산업 클러스터 입주기업 리스트.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">12. 물산업 클러스터 입주기업 리스트</span>
+                </td>
+            </tr>
+		</tbody>
+    </table>
+</div>
+
+<div id="8. 대구지역 상장법인_15895" align=center x:publishsource="Excel">
+
+<table border=1 cellpadding=0 cellspacing=0 width=1117 class=xl6615895
+ style='border-collapse:collapse;table-layout:fixed;width:840pt;margin-bottom:50px;'>
+ <col class=xl6615895 width=60 style='mso-width-source:userset;mso-width-alt:
+ 1920;width:45pt'>
+ <col class=xl6615895 width=98 style='mso-width-source:userset;mso-width-alt:
+ 3136;width:74pt'>
+ <col class=xl6715895 width=204 style='mso-width-source:userset;mso-width-alt:
+ 6528;width:153pt'>
+ <col class=xl6615895 width=113 style='mso-width-source:userset;mso-width-alt:
+ 3616;width:85pt'>
+ <col class=xl6615895 width=354 style='mso-width-source:userset;mso-width-alt:
+ 11328;width:266pt'>
+ <col class=xl6715895 width=78 style='mso-width-source:userset;mso-width-alt:
+ 2496;width:59pt'>
+ <col class=xl6915895 width=64 style='mso-width-source:userset;mso-width-alt:
+ 2048;width:48pt'>
+ <col class=xl6715895 width=38 style='mso-width-source:userset;mso-width-alt:
+ 1216;width:29pt'>
+ <col class=xl6615895 width=108 style='mso-width-source:userset;mso-width-alt:
+ 3456;width:81pt'>
+ <tr class=xl6515895 height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6315895 width=60 style='height:73.5pt;width:45pt'><a
+  name="RANGE!A1:I57">구분</a></td>
+  <td class=xl6315895 width=98 style='border-left:none;width:74pt'>회 사 명</td>
+  <td class=xl6315895 width=204 style='border-left:none;width:153pt'>대 표 자</td>
+  <td class=xl6315895 width=113 style='border-left:none;width:85pt'>홈페이지</td>
+  <td class=xl6315895 width=354 style='border-left:none;width:266pt'>업종 및 주요제품</td>
+  <td class=xl6315895 width=78 style='border-left:none;width:59pt'>상장일</td>
+  <td class=xl6415895 width=64 style='border-left:none;width:48pt'>종목코드</td>
+  <td class=xl6315895 width=38 style='border-left:none;width:29pt'>지역</td>
+  <td class=xl6315895 width=108 style='border-left:none;width:81pt'>(2020. 9.
+  10)</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>DGB금융지주</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김태오</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.dgbfg.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(기타 금융업) 지주회사</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2011-06-07</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>139130</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6515895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>남선알미늄</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>장규한, 이상일</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.namsun.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(1차 비철금속 제조업) 알미늄샷시 제조/환경사업</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1978-05-22</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>008350</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>대구백화점</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>구정모</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.debec.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(종합 소매업) 백화점운영, 임대사업(백화점 코너)</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1988-10-10</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>006370</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>대동공업</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김준식, 원유현</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.daedong.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(특수 목적용 기계 제조업) 경운기, 트랙터, 이앙기, 바인더, 수확기(콤바인), 농업용엔진 및 부품 제조, 판매</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1975-06-27</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>000490</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>대성에너지</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>대표이사 김영훈 대표이사 우중본</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.taegugas.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(연료용 가스 제조 및 배관공급업) 천연가스</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2010-12-24</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>117580</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>대성홀딩스</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>대표이사 김영훈 대표이사 김정주</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.taegugas.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(회사 본부 및 경영 컨설팅 서비스업) 도시가스, 일반가스 공급/가스기기, 차량용 연료 판매/해외자원개발, 부동산
+  임대</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1999-12-22</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>016710</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>대호에이엘</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>노영호, 최병철</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.daeho-al.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(1차 비철금속 제조업) 알루미늄 환절판 제조, 도매, 무역</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2002-11-11</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>069460</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>삼익THK</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>진영환, 전영배</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.samickthk.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(일반 목적용 기계 제조업) 직선운동시스템, 메카트로시스템, 기타정밀 자동화기기 제조, 판매/전자상거래, 인터넷
+  관련 s/w, h/w 개발, 판매, 유지보수</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1989-09-26</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>004380</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>상신브레이크</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김효일, 박세종</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.sangsin.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 자동차 브레이크 슈 어셈블리, 브레이크패드 제조/군납업, 무역/부동산 임대</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2004-10-27</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>041650</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>성안</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>박상태</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.startex.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(직물직조 및 직물제품 제조업) 제직, 염색, 폴리에스터직물, 자수직물봉제 제조, 판매/임대료, 관리비 수입</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1995-11-10</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>011300</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>세원정공</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김문기, 김상현</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.se-won.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 자동차부품(차체류, 램프류) 제조</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1996-07-03</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>021820</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>세하</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이제선, 안재호</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.seha.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(펄프, 종이 및 판지 제조업) 백판지, 마니라판지, 지류, 하수처리 기계 제조/상하수도설비공사,
+  수질오염방지시설공사</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1996-07-03</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>027970</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>에스엘</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이충곤, 이성엽, 김한영</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.slworld.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 자동차부품(자동차램프류, 샤시와조향기기,케스터홀더) 제조</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1988-11-08</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>005850</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>유니온머티리얼</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김진영, 이우선</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>unionmaterials.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(내화, 비내화 요업제품 제조업) 페라이트, 세라믹 제조, 도매</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2009-09-29</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>047400</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>이수페타시스</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>서영준</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.petasys.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(전자부품 제조업) P.C.B(인쇄회로기판), M.L.B 제조</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2003-10-07</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>007660</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>이월드</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>유병천, 이수원</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.eworld.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(유원지 및 기타 오락관련 서비스업) 놀이시설 운영, 입장료, 식음료 소매, 부동산 임대</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2005-07-26</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>084680</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='page-break-before:always;mso-height-source:userset;
+  height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>티에이치엔</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이광연, 채승훈</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.th-net.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(기타 전기장비 제조업) 자동차부품(전기배선장치류) 제조, 도매</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1996-07-31</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>019180</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>평화산업</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김종석, 김동관</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.ph.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 자동차부품(방진고무, 방류고무(COVER류, CUP류, 호스류), 장비시설용 부품
+  제조, 판매</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2006-06-02</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>090080</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>평화홀딩스</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김종석, 김동관</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.phhc.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 지주회사</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1986-03-31</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>010770</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>한국가스공사</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>채희봉</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.kogas.or.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(연료용 가스 제조 및 배관공급업) 액화천연가스 공급, 제조, 도매, 개발</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1999-12-15</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>036460</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>유가증권</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>화성산업</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이홍중, 이종원</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.hwasung.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(건물 건설업) 아파트 건설</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1988-09-29</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>002460</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>KBI메탈</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>박한상</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.kbimetal.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(1차 비철금속 제조업) 모터코어</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1994-12-29</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>024840</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>경창산업</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>손일호, 이동현</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.kc.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 각종 케이블, 개폐랫치, 리저브탱크, 밴드류, 페달류, 오토트랜스미션부품, 시트용 단품</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1994-12-29</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>024910</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>구영테크</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이희화, 김성복</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.guyoungtech.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 엔진 브라켓(Engine Bracket) 등</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2002-02-07</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>053270</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>대동금속</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>권태경</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.daedongmetals.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(금속 주조업) 농기계 주문제품 및 상용차 실린더 헤드, 경승용차 실린더 브록 외</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1993-07-30</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>020400</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>덴티스</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>심기봉</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>　</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(의료용 기기 제조업) 기업 인수합병</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2017-06-26</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>261200</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>맥스로텍</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>정경욱</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.maxrotec.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(특수 목적용 기계 제조업) 갠트리로봇 공장자동화시스템</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2012-11-16</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>141070</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>명성티엔에스</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김준규</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.ms-mc.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(특수 목적용 기계 제조업) 2차전지 분리막 제조설비, 디스플레이용 생산설비</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2018-09-13</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>257370</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>보광산업</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김윤수</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.bokwangindustry.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(기타 비금속 광물제품 제조업) 콘크리트용 부순골재, 아스콘, 레미콘</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2015-12-17</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>225530</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>삼보모터스</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이재하</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.sambomotos.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 증명서 자동발급기</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2001-11-06</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>053700</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>서한</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>조종수</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.seo-han.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(건물 건설업) 건축, 토목</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1994-05-24</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>011370</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>신라섬유</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>박재흥</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>　</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(가전제품 및 정보통신장비 소매업) 부동산</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1994-06-28</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>001000</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>씨아이에스</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김수하</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.cisro.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(특수 목적용 기계 제조업) 2차전지 제조설비</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2015-09-02</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>222080</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='page-break-before:always;mso-height-source:userset;
+  height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>아바코</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김광현</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.avaco.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(특수 목적용 기계 제조업) 평판디스플레이 제조용 장비</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2005-10-11</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>083930</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>아바텍</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>박명섭</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.avatec.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(전자부품 제조업) Glass Slimming &amp; ITO코팅 제품, PDP필터</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2012-11-06</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>149950</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>아세아텍</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김신길</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.asiakor.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(특수 목적용 기계 제조업) 농기계(관리기,SS기, 이앙기) 제조</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2010-01-26</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>050860</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>아이씨케이</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>강수향</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.cardnsoft.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(전자부품 제조업) 신용카드 및 전자화폐 등</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2010-10-19</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>068940</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>아진엑스텍</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김창호</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.ajinextek.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(반도체 제조업) 전자집적회로, 모션제어칩</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2014-07-24</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>059120</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>액트</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김성범, 윤경욱 (각자 대표)</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.actfpc.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(전자부품 제조업) 연성회로기판</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2010-12-27</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>131400</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>에스앤에스텍</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>정수홍</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>　</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(전자부품 제조업) 블랭크마스크</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2009-04-14</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>101490</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>에이비프로바이오</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>양진상, IAN CHAN</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.ugint.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(특수 목적용 기계 제조업) 소형 머시닝센터</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2015-04-13</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>195990</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>엘앤에프</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>허제홍</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.landf.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(일차전지 및 축전지 제조업) TFT-LCD BLU(Back Light Unit)</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2003-01-02</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>066970</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>이노와이즈</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>백승덕</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.hstech.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(특수 목적용 기계 제조업) 자동차용 프레스금형</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2006-11-10</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>086250</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>전진바이오팜</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이태훈</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.jjbio.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(기타 화학제품 제조업) 방충방향제, 유해동물피해감소제, 기생충피해감소제</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2018-12-14</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>110020</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>제넨바이오</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김성주, 정광원</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>gennbio.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(폐기물 처리업) 휴대폰윈도우</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2004-10-29</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>072520</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>제이브이엠</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이용희</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.myjvm.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(일반 목적용 기계 제조업) 전자동 정제, 분류 및 포장시스템</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2006-06-07</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>054950</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>티비씨</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>최진민</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.tbc.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(텔레비전 방송업) 텔레비젼 방송, 문화서비스, 광고/출판, 음반 제작, 도매</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2010-11-29</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>033830</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>티케이케미칼</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이상일</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.tkchemi.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(화학섬유 제조업) 수지, 폴리에스터, 스판덱스</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2011-04-26</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>104480</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>평화정공</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김상태, 이재승 (각자 대표이사)</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.phauto.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(자동차 신품 부품 제조업) 자동차용 도어랫치, 도어힌지</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2001-12-13</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>043370</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>푸드웰</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>성기준, 성민겸</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.foodwell.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(과실, 채소 가공 및 저장 처리업) 깐밤, 통조림류, 딸기시럽류, 음료제품 등</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1993-12-07</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>005670</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='page-break-before:always;mso-height-source:userset;
+  height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>풍국주정</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이한용, 김규호 (각자 대표이사)</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.pungguk.com</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(알코올음료 제조업) 발효주정</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1994-11-23</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>023900</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>한국비엔씨</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>최완규</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.bnckorea.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(기초 의약물질 및 생물학적 제제 제조업) 필러 등 생체재료의료물질 개발</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2016-12-28</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>256840</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>홈센타홀딩스</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>박병윤</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.home-center.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(기타 전문 도매업) 건축자재, 레미콘</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2002-07-11</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>060560</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>화성밸브</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>장원규, 장성필 (각자대표)</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.hsvalve.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(일반 목적용 기계 제조업) 가스밸브, 매몰용접용 볼밸브, 온수분배기</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2000-03-16</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>039610</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코스닥</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>흥구석유</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>김상우</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>hunggu.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(기타 전문 도매업) 휘발유등</td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>1994-12-07</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>024060</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <tr height=98 style='mso-height-source:userset;height:73.5pt'>
+  <td height=98 class=xl6615895 width=60 style='height:73.5pt;border-top:none;
+  width:45pt'>코넥스</td>
+  <td class=xl6615895 width=98 style='border-top:none;border-left:none;
+  width:74pt'>테크엔</td>
+  <td class=xl6715895 width=204 style='border-top:none;border-left:none;
+  width:153pt'>이영섭</td>
+  <td class=xl6615895 width=113 style='border-top:none;border-left:none;
+  width:85pt'>www.techen.co.kr</td>
+  <td class=xl6615895 width=354 style='border-top:none;border-left:none;
+  width:266pt'>(전구 및 조명장치 제조업) LED조명장치<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6815895 width=78 style='border-top:none;border-left:none;
+  width:59pt'>2018-12-21</td>
+  <td class=xl6915895 width=64 style='border-top:none;border-left:none;
+  width:48pt'>308700</td>
+  <td class=xl6715895 width=38 style='border-top:none;border-left:none;
+  width:29pt'>대구</td>
+  <td class=xl6615895 width=108 style='border-top:none;border-left:none;
+  width:81pt'>　</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=60 style='width:45pt'></td>
+  <td width=98 style='width:74pt'></td>
+  <td width=204 style='width:153pt'></td>
+  <td width=113 style='width:85pt'></td>
+  <td width=354 style='width:266pt'></td>
+  <td width=78 style='width:59pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=38 style='width:29pt'></td>
+  <td width=108 style='width:81pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 끝-->
+<!----------------------------->
+</body>
+
+</html>

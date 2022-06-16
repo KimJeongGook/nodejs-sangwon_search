@@ -1,0 +1,727 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<script src="https://kit.fontawesome.com/7460d40ad7.js" crossorigin="anonymous"></script>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="3.%20유관기관.files/filelist.xml">
+<title>3. 유관기관</title>
+<style id="3. 유관기관_30885_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.xl6330885
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6430885
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;
+	padding-left:6px;}
+.xl6530885
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;
+	padding-left:6px;}
+.xl6630885
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6730885
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6830885
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6930885
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl7030885
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-char-type:none;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if !excel]>　　<![endif]-->
+<!--다음 내용은 Microsoft Excel의 웹 페이지로 게시 마법사를 사용하여 작성되었습니다.-->
+<!--같은 내용의 항목이 다시 게시되면 DIV 태그 사이에 있는 내용이 변경됩니다.-->
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 시작 -->
+<!----------------------------->
+
+<style type="text/css"> 
+	a:link { text-decoration:none; color:#ffffff;}
+	a:visited { text-decoration:none;color:white;}
+	a:active {text-decoration:none; color:#ccc; }
+	a:hover { text-decoration:none; color:white; }
+	
+	.table_content {margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 2%;}
+	th {border: 1px solid black;}
+	td {border: 1px solid black;}
+	tr {height: 40px;}
+	.td_c {background-color: white;}
+	.td_select {background-color: #fdbaba;}
+</style>
+
+<!-- <p class="float_r data_close" style="text-align:right;">
+	<button style="width: 80px; height: 30px; border-radius: 5px; background-color: #3b64af;">
+		<a href="/index_uw" target="_self" style="font-size: larger;">메인화면</a>
+	</button>
+</p> -->
+
+<div style="margin-top: 30px;">
+	<table class="table_content">
+		<colgroup>
+		    <col width="45%" />
+		    <col width="50%" />
+		</colgroup>
+		
+		<tr>
+			<th colspan="2" class="thead_th" style="height: 62px; background-color: #4f6fc1; color: white; font-weight: 600; font-size: 25px; text-align: left;">
+				<span style="padding-left: 15px;">대구기업체총람 부록자료</span>
+				<span style="padding-left: 40%; font-size: 18;">
+					<a href="/index_uw" target="_self"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i>메인화면</a>
+				</span>
+			</th>
+		</tr>
+		
+		<tbody>
+			<tr>
+                <td class="td_c" onClick="location.href='/file/user_html/1. 제24대 의원 명단(2021.04.01).htm'" style="cursor:pointer;">
+					<span style="color:black; margin: 5px; font-weight: 600;">1. 제24대 의원 명단(2021.04.01)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/7. 대구혁신도시 이전 공공기관 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">7. 대구혁신도시 이전 공공기관 현황</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_c" onClick="location.href='/file/user_html/2. 전국상의 현황 대외협력팀(2021.04.05).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">2. 전국상의 현황 대외협력팀(2021.04.05)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/8. 대구지역 상장법인.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">8. 대구지역 상장법인</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_select" onClick="location.href='/file/user_html/3. 유관기관.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">3. 유관기관</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/9. 월드클래스300 대구기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">9. 월드클래스300 대구기업</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/4. 경제관련단체.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">4. 경제관련단체</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/10. 대구 3030기업(2007~2020).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">10. 대구 3030기업(2007~2020)</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/5. 대구지역 협동조합.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">5. 대구지역 협동조합</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/11. 스타기업100, Pre-스타기업, 고용친화기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">11. 스타기업100, Pre-스타기업, 고용친화기업</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/6. 대구 산업단지 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">6. 대구 산업단지 현황</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/12. 물산업 클러스터 입주기업 리스트.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">12. 물산업 클러스터 입주기업 리스트</span>
+                </td>
+            </tr>
+		</tbody>
+    </table>
+</div>
+
+<div id="3. 유관기관_30885" align=center x:publishsource="Excel">
+
+<table border=1 cellpadding=0 cellspacing=0 width=641 class=xl6730885
+ style='border-collapse:collapse;table-layout:fixed;width:481pt;margin-bottom:50px;'>
+ <col class=xl6830885 width=235 style='mso-width-source:userset;mso-width-alt:
+ 7520;width:176pt'>
+ <col class=xl6730885 width=305 style='mso-width-source:userset;mso-width-alt:
+ 9760;width:229pt'>
+ <col class=xl6930885 width=101 style='mso-width-source:userset;mso-width-alt:
+ 3232;width:76pt'>
+ <tr class=xl7030885 height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6330885 width=235 style='height:20.25pt;width:176pt'><a
+  name="RANGE!A1:C51">기 관 명</a></td>
+  <td class=xl6330885 width=305 style='border-left:none;width:229pt'>주 소</td>
+  <td class=xl6330885 width=101 style='border-left:none;width:76pt'>전화번호</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구광역시청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>중구 공평로 88</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>803-0114</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구광역시의회</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>중구 공평로 88</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>803-5041</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>경상북도청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>경북 안동시 풍천면 도청대로 455</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>(054)880-2114</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>경상북도의회</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>경북 안동시 풍천면 도청대로 455<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>(054)880-5126</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구광역시교육청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 수성로76길 11</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>231-0000</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>경상북도교육청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>경북 안동시 풍천면 도청대로 511</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>(054)805-3000</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구고등법원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 동대구로 364</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>757-6282</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방법원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 동대구로 364</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>757-6582</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구고등검찰청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 동대구로 366</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>740-3300</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방검찰청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 동대구로 366</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>740-4576</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방경찰청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 무학로 227</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>804-7025</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>경북지방경찰청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>경북 안동시 풍천면 검무로 77</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>(054)824-2224</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방국세청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 화암로 301</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>661-7200</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구경북지방중소벤처기업청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 성서4차첨단로 122-11<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>626-2601</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구본부세관</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 화암로 301</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>230-5114</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방조달청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 이곡공원로 54<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>070-4056-7933</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방환경청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 화암로 301</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>230-6402</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방고용노동청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 동대구로 231<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>667-6200</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방보훈청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 화암로 301 정부대구지방합동청사 2층</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>230-6010</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방식품의약품안전청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 성서로 405<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>592-7133</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>동북지방통계청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>북구 동암로 64<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>609-6500</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>경북지방우정청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 동촌로 1<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>940-1518</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방교정청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 화암로 301 정부대구지방합동청사 1층</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>230-5800</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구경북지방병무청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 동내로 63<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>1588-9090</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구경북경제자유구역청</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 팔공로 227 대구텍스타일콤플렉스 5, 6층</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>550-1500</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>금융감독원 대구경북지원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 달구벌대로 2424, 삼성증권빌딩 7층</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>760-4000</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구지방공정거래사무소</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 화암로 301<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>230-6300</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국은행 대구경북본부</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>중구 동덕로 145<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>429-0301</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>신용보증기금 대구경북영업본부</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>중구 경상감영길 221 신용보증기금빌딩 4층</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>430-8901</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>기술보증기금 대구영업본부</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 달구벌대로 2598 S큐브빌딩 10층</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>251-5600</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국수출입은행 대구지점</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 동대구로 489 대구무역회관 11층</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>260-4100</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구경북연구원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>남구 봉덕로 61. KT봉덕빌딩</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>770-5000</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구경북과학기술원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달성군 현풍읍 테크노중앙대로 333<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>785-0114</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구테크노파크</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 동대구로 475, 9층</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>757-4114</td>
+ </tr>
+ <tr height=27 style='page-break-before:always;mso-height-source:userset;
+  height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구경북디자인센터</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 동대구로 461</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>740-0077</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구경북첨단의료산업진흥재단</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 동내로 88</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>790-5114</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구기계부품연구원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달서구 성서공단로11길 32</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>608-2000</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구디지털산업진흥원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>수성구 알파시티1로 170</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>655-5600</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>대구연구개발특구본부</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달성군 현풍읍 테크노공원로 16 대구테크비즈센터 3층<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>592-8350</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>지능형자동차부품진흥원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달성군 구지면 국가산단서로 201</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>670-7800</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국기계연구원 대구융합기술연구센터</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달성군 유가읍 테크노순환로 330</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>670-9001</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국뇌연구원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 첨단로 61<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>980-8114</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국로봇산업진흥원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>북구 노원로 77</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>210-9600</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국생산기술연구원 대경지역본부</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달성군 유가면 테크노순환로 320</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>580-0114</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국섬유기계융합연구원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>경북 경산시 삼풍로 27</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>819-3100<span style='mso-spacerun:yes'>&nbsp;</span></td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>(재)한국안광학산업진흥원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>북구 노원로 169</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>350-7800</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국전력공사 대구본부직할</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>북구 원대로 110</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>350-2252</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국전자통신연구원 대경권연구센터</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>달성군 유가읍 테크노순환로10길 1</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>670-8000</td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국패션산업연구원</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>동구 팔공로45길 26</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>721-7400<span style='mso-spacerun:yes'>&nbsp;</span></td>
+ </tr>
+ <tr height=27 style='mso-height-source:userset;height:20.25pt'>
+  <td height=27 class=xl6430885 width=235 style='height:20.25pt;border-top:
+  none;width:176pt'>한국한의약진흥원 대구센터</td>
+  <td class=xl6530885 width=305 style='border-top:none;border-left:none;
+  width:229pt'>중구 남성로 17</td>
+  <td class=xl6630885 width=101 style='border-top:none;border-left:none;
+  width:76pt'>421-9702</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=235 style='width:176pt'></td>
+  <td width=305 style='width:229pt'></td>
+  <td width=101 style='width:76pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 끝-->
+<!----------------------------->
+</body>
+
+</html>

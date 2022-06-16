@@ -1,0 +1,87 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+var layout = require("../../../../function/layout.js");
+var db = require("../../../DB_config.js").connect;
+var session = require("../../../../function/session.js");
+
+exports.listener=function(request, response){
+
+	console.log("##################################### company_view Enter #####################################");
+	
+	var orgmem_no = request.param("number");
+	var connectorTitle = session.connectorTitle(request);
+	
+	var industry1 =  request.param("industry1") == undefined ? '' : request.param("industry1"); // 업종_대
+	var industry2 =  request.param("industry2") == undefined ? '' : request.param("industry2"); // 업종_중
+	var industry3 =  request.param("industry3") == undefined ? '' : request.param("industry3"); // 업종_소
+	
+	var industry2_mid = industry2.substring(1, 2); //가운데 숫자
+	var industry2_number = "";
+	
+	if(industry2_mid == '0'){
+		industry2_number = industry2.substring(3, 2);
+	} else {
+		industry2_number = industry2.substring(1, 3);
+	}
+	
+	console.log("industry2_number :: " + industry2_number);
+	
+	var sql = "select " +
+			" orgmem_no,	\n" +
+			" company_name,	\n" +
+			" orgmem_name,	\n" +
+			" industry1,	\n" +
+			" industry2,	\n" +
+			" industry3,	\n" +
+			" ifnull((SELECT code_name FROM code WHERE code_group = 'main_category' AND code_mode = 'child' AND code = '" + industry1 + "'), '') AS industry1_nm,	\n" +
+			" ifnull((SELECT code_name FROM code WHERE code_group = 'main" + industry1 + "_m_category' AND code_mode = 'child' AND code = '" + industry2 + "'), '') AS industry2_nm,	\n" +
+			" ifnull((SELECT code_name FROM code WHERE code_group = 'main" + industry1 + "_m" + industry2_number + "_sc_category' AND code_mode = 'child' AND code = '" + industry3 + "'), '') AS industry3_nm,	\n" +
+			" orgmem_office_addr1,	\n" +
+			" orgmem_office_addr_zipcode,	\n" +
+			" sales,	\n" +
+			" employee_num,	\n" +
+			" create_year,	\n" +
+			" handling_item,	\n" +
+			" company_tel1,	\n" +
+			" company_tel2,	\n" +
+			" company_tel3,	\n" +
+			" orgmem_fax1,	\n" +
+			" orgmem_fax2,	\n" +
+			" orgmem_fax3,	\n" +
+			" orgmem_homepage,	\n" +
+			
+			" classify_1,	\n" +
+			" classify_2,	\n" +
+			" classify_3,	\n" +
+			" classify_6,	\n" +
+			" classify_7,	\n" +
+			" classify_8,	\n" +
+			
+			" create_id,	\n" +
+			" create_date,	\n" +
+			" create_host,	\n" +
+			" date_format(create_date, '%Y.%m.%d') as c_date	\n" +
+		" from orgmember where orgmem_no = " + orgmem_no;
+	
+	console.log("sql :::: " + sql);
+			
+	
+	fs.readFile("./views/admin/web/orgmember_mngt/company_viewForm.html", "utf-8", function(error, data){
+		 
+		db.query(sql, function(error, results){
+			
+			if(error){
+				response.send("fail");
+			}else{
+			   response.send(ejs.render(layout.include("web_admin_popup", data), {
+				   db_data : results,
+				   connectorTitle:connectorTitle ,
+				   menuNum: 3,
+				   subMenuNum: 0
+			   }));				 
+			}
+		});
+	});
+};

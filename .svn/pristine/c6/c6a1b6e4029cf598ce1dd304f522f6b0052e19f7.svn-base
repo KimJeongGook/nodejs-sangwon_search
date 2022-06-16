@@ -1,0 +1,22 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var session = require("../../../function/session.js");
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+
+exports.listener=function(request, response){
+	var menuNum = 6;
+	var connectorNo = session.connectorNo(request);
+	var deviceModel = request.cookies.deviceModel;
+	if(deviceModel == 'iPhone') menuNum = deviceModel;
+	
+	fs.readFile("./views/user/calendar/calendarNew.html", "utf-8", function(error, data){
+		response.send(ejs.render(layout.include("app_user", data), {
+			connectorNo : connectorNo,
+			menuNum : menuNum
+		}));
+	}); 
+};

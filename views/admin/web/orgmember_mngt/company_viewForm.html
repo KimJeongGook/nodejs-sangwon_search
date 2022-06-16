@@ -1,0 +1,105 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+	});
+</script>
+	<h2><span class="float_l">회원상세</span><!-- <img onclick="window.close();" src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" /> --></h2>
+ 	<div class="content"> 
+		<table class="mb_10">
+			<tr>
+			</tr>
+		</table>
+
+		<table>
+			<tr>
+				<th>졸업사진</th>
+				<% if(db_data[0].orgmem_grdimg != '' & db_data[0].orgmem_grdimg != null & db_data[0].orgmem_grdimg != 'null'){ %>
+					<td><img src="../../../file/member/<%=db_data[0].orgmem_grdimg %>" alt="사진" width="117px"></td>
+				<% } else { %>
+					<td><img src="../../../images/none.jpg" alt="사진" width="117px"></td>
+				<% } %>
+			</tr>
+			<tr>
+				<th>현재사진</th>
+				<% if(db_data[0].orgmem_nowimg != '' & db_data[0].orgmem_nowimg != null & db_data[0].orgmem_nowimg != 'null'){ %>
+					<td><img src="../../../file/member/<%=db_data[0].orgmem_nowimg%>" alt="사진" width="117px"></td>
+				<% } else { %>
+					<td><img src="../../../images/none.jpg" alt="사진" width="117px"></td>
+				<% } %>
+			</tr>
+			<tr>
+				<th>졸업기수</th>
+				<td><%=db_data[0].orgmem_seqNo %></td>
+			</tr>
+			<tr>
+				<th>졸업반</th>
+				<td><%=db_data[0].orgmem_class %></td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td><%=db_data[0].orgmem_name %></td>
+			</tr>
+			<tr>
+				<th>한자</th>
+				<td><%=db_data[0].orgmem_name_han %></td>
+			</tr>
+			<tr>
+				<th>연락처</th>
+				<td>
+					<%if(db_data[0].orgmem_home_tel1 !=null && db_data[0].orgmem_home_tel1 != 'null' && db_data[0].orgmem_home_tel1 != ''){%>
+						<%=db_data[0].orgmem_home_tel1 %>-<%=db_data[0].orgmem_home_tel2 %>-<%=db_data[0].orgmem_home_tel3 %>
+					<%}%>
+				</td>
+			</tr>
+			<tr>
+				<th>휴대폰</th>
+				<td>
+					<%if(db_data[0].orgmem_phone1 != null && db_data[0].orgmem_phone1 != 'null' && db_data[0].orgmem_phone1 != ''){%>
+						<%=db_data[0].orgmem_phone1 %>-<%=db_data[0].orgmem_phone2 %>-<%=db_data[0].orgmem_phone3 %>
+					<%}%>
+				</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td><%=db_data[0].orgmem_home_addr1 %></td>
+			</tr>	
+			<tr>
+				<th>회사명</th>
+				<td><%=db_data[0].company_name %></td>
+			</tr>
+			<tr>
+				<th>부서</th>
+				<td><%=db_data[0].company_position1 %></td>
+			</tr>	
+			<tr>
+				<th>직위</th>
+				<td><%=db_data[0].company_position2 %></td>
+			</tr>	
+			<tr>
+				<th>회사주소</th>
+				<td><%=db_data[0].orgmem_office_addr1 %></td>
+			</tr>	
+			<tr>
+				<th>회사번호</th>
+				<td>
+					<%if(db_data[0].company_tel1!=null && db_data[0].company_tel2!='null' && db_data[0].company_tel3!=''){%>
+						<%=db_data[0].company_tel1 %>-<%=db_data[0].company_tel2 %>-<%=db_data[0].company_tel3 %>
+					<%}%>
+				</td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td><%=db_data[0].orgmem_email %></td>
+			</tr>
+			<tr>
+				<th>비고</th>
+				<td><%=db_data[0].remrk %></td>
+			</tr>
+			
+		</table>
+
+		<p class="btn">
+			<button class="btn_big_blue hand" onclick="location.href='company_modify?mode=modify&number=<%=db_data[0].orgmem_no %>'">수정</button>
+			<button class="btn_big_black hand" onclick="window.close();">닫기</button>
+		</p>
+	</div>

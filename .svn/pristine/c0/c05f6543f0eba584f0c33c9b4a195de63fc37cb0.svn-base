@@ -1,0 +1,325 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config").connect;
+var page_navi = require("../../../function/person_page_navi.js");
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+
+	console.log("********************* search_data.js enter *********************");
+
+	var nowPage = request.param("nowPage")==null ? 1 : request.param("nowPage");
+	var row_count = 336; //페이지목록 갯수
+	var col_count = 10; //하단 페이지수
+	
+	var type_result = request.param("type_result")==undefined ? "" : request.param("type_result");
+	var search_name = request.param("search_name")==undefined ? "" : request.param("search_name");
+	var search_company = request.param("search_company")==undefined ? "" : request.param("search_company");
+	var search_item = request.param("search_item")==undefined ? "" : request.param("search_item");
+	var industry1 = request.param("industry1")==undefined ? "" : request.param("industry1");
+	var industry2 = request.param("industry2")=='2차 선택' ? "" : request.param("industry2");
+	var industry3 = request.param("industry3")=='3차 선택' ? "" : request.param("industry3");
+	
+	var industry1_nm = request.param("industry1_nm")=='1차 선택' ? "" : request.param("industry1_nm");
+	var industry2_nm = request.param("industry2_nm")=='2차 선택' ? "" : request.param("industry2_nm");
+	var industry3_nm = request.param("industry3_nm")=='3차 선택' ? "" : request.param("industry3_nm");
+	
+	var search_area = request.param("search_area")==undefined ? "" : request.param("search_area");
+	var search_employee_num1 = request.param("search_employee_num1")==undefined ? "" : request.param("search_employee_num1");
+	var search_employee_num2 = request.param("search_employee_num2")==undefined ? "" : request.param("search_employee_num2");
+	var search_create_year1 = request.param("search_create_year1")==undefined ? "" : request.param("search_create_year1");
+	var search_create_year2 = request.param("search_create_year2")==undefined ? "" : request.param("search_create_year2");
+	var search_sales1 = request.param("search_sales1")==undefined ? "" : request.param("search_sales1");
+	var search_sales2 = request.param("search_sales2")==undefined ? "" : request.param("search_sales2");
+
+	var classify1 = request.param("classify1")==undefined ? "" : request.param("classify1");
+	var classify2 = request.param("classify2")==undefined ? "" : request.param("classify2");
+	var classify3 = request.param("classify3")==undefined ? "" : request.param("classify3");
+	var classify4 = request.param("classify4")==undefined ? "" : request.param("classify4");
+	var classify5 = request.param("classify5")==undefined ? "" : request.param("classify5");
+	var classify6 = request.param("classify6")==undefined ? "" : request.param("classify6");
+	var classify7 = request.param("classify7")==undefined ? "" : request.param("classify7");
+	var classify8 = request.param("classify8")==undefined ? "" : request.param("classify8");
+	var classify9 = request.param("classify9")==undefined ? "" : request.param("classify9");
+	var classify10 = request.param("classify10")==undefined ? "" : request.param("classify10");
+	
+	if(search_employee_num1.length > '4'){
+		var employee_split = search_employee_num1.split(',');
+		search_employee_num1 = employee_split[0] + employee_split[1];
+	}
+	
+	if(search_employee_num2.length > '4'){
+		var employee_split = search_employee_num2.split(',');
+		search_employee_num2 = employee_split[0] + employee_split[1];
+	}
+	
+	if(search_sales1.length > '4'){
+		var sales_split = search_sales1.split(',');
+		search_sales1 = sales_split[0] + sales_split[1]; 
+	}
+	
+	if(search_sales2.length > '4'){
+		var sales_split = search_sales2.split(',');
+		search_sales2 = sales_split[0] + sales_split[1];
+	}
+	
+	var sql="";
+	var where_sql="";
+	var count_where_sql="";
+	var cnt_sql="";
+	var count_result_sql="";
+	
+	console.log("type_result :: " + type_result);
+	
+	console.log("industry1 :: " + industry1);
+	console.log("industry2 :: " + industry2);
+	console.log("industry3 :: " + industry3);
+	
+	/* 카운트 S */
+	
+	if(search_company != '') {	// company_name 기업명
+		and_or_check1(type_result);
+		count_where_sql += "(company_name like '%" + search_company + "%') \n";
+	}
+	if(search_name != '') {	// orgmem_name 대표자명
+		and_or_check1(type_result);
+		count_where_sql += "(orgmem_name like '%" + search_name + "%') \n";
+	}
+	if(search_item != '') {	// handling_item 주요취급품목
+		and_or_check1(type_result);
+		count_where_sql += "(handling_item like '%" + search_item + "%') \n";
+	}
+	if(search_area != '') {	// orgmem_area 주소
+		and_or_check1(type_result);
+		count_where_sql += "(orgmem_office_addr1 like '%" + search_area + "%') \n";
+	}
+	if(industry1 != '') {	// industry1 대분류
+		and_or_check1(type_result);
+		count_where_sql += "(industry1 like '%" + industry1 + "%') \n";
+	}
+	if(industry2 != '') {	// industry2 중분류
+		and_or_check1(type_result);
+		count_where_sql += "(industry1 like '%" + industry1 + "%' and industry2 like '%" + industry2 + "%') \n";
+	}
+	if(industry3 != '') {	// industry3 소분류
+		and_or_check1(type_result);
+		count_where_sql += "(industry1 like '%" + industry1 + "%' and industry2 like '%" + industry2 + "%' and industry3 like '%" + industry3 + "%') \n";
+	}
+	
+	if( search_employee_num1 != '' && search_employee_num2 != '') {
+		and_or_check1(type_result);
+		count_where_sql += "((employee_num >=" + search_employee_num1 + ") and (employee_num <=" + search_employee_num2 + ")) \n";
+		
+	} else if(search_employee_num1 != ''){
+		and_or_check1(type_result);
+		count_where_sql += "(employee_num >=" + search_employee_num1 + ") \n";
+		
+	} else if(search_employee_num2 != ''){
+		and_or_check1(type_result);
+		count_where_sql += "(employee_num <=" + search_employee_num2 + ") \n";
+	}
+	
+	if( search_create_year1 != '' && search_create_year2 != '') {
+		and_or_check1(type_result);
+		count_where_sql += "((create_year >=" + search_create_year1 + ") and (create_year <=" + search_create_year2 + ")) \n";
+		
+	} else if(search_create_year1 != ''){
+		and_or_check1(type_result);
+		count_where_sql += "(create_year >=" + search_create_year1 + ") \n";
+	} else if(search_create_year2 != ''){
+		and_or_check1(type_result);
+		count_where_sql += "(create_year <=" + search_create_year2 + ") \n";
+	}
+	
+	if( search_sales1 != '' && search_sales2 != '') {
+		and_or_check1(type_result);
+		count_where_sql += "((sales >=" + search_sales1 + ") and (sales <=" + search_sales2 + ")) \n";
+		
+	} else if(search_sales1 != ''){
+		and_or_check1(type_result);
+		count_where_sql += "(sales >=" + search_sales1 + ") \n";
+	} else if(search_sales2 != ''){
+		and_or_check1(type_result);
+		count_where_sql += "(sales <=" + search_sales2 + ") \n";
+	}
+	
+	if(classify1 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_1 = 'Y') \n";
+	}
+	if(classify2 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_2 = 'Y') \n";
+	}
+	if(classify3 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_3 = 'Y') \n";
+	}
+	if(classify4 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_4 = 'Y') \n";
+	}
+	if(classify5 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_5 = 'Y') \n";
+	}
+	if(classify6 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_6 = 'Y') \n";
+	}
+	if(classify7 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_7 = 'Y') \n";
+	}
+	if(classify8 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_8 = 'Y') \n";
+	}
+	if(classify9 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_9 = 'Y') \n";
+	}
+	if(classify10 == 'Y') {
+		and_or_check1(type_result);
+		count_where_sql += "(classify_10 = 'Y') \n";
+	}
+	
+	/* 카운트 E */
+
+	function and_or_check1(type){
+		if(type == "or_select"){
+			count_where_sql += " or ";
+		} else {
+			count_where_sql += " and ";
+		}
+	}
+	
+	var count_where_sql_sub = count_where_sql.substring(4, count_where_sql.length);
+	
+	if(type_result == "or_select"){
+		count_where_sql = " and " + count_where_sql_sub;
+	}
+	
+	console.log("count_where_sql ::: " + count_where_sql);
+	
+	/* 데이터 S */
+	fs.readFile("./views/user/web/search_data.html", "utf-8", function(error,data){
+		page_navi.action('orgmember', count_where_sql, nowPage, col_count, row_count, function(error, page_txt, page_start, page_end, total_cnt){
+			
+			sql = "select \n";
+			sql += "@RNUM := @RNUM + 1 as num \n";
+			sql += ", orgmem_no \n";
+			sql += ", company_name \n";
+			sql += ", if(LEFT(company_name, 1) = '(' and SUBSTRING(company_name, 3, 1) = ')', substr(company_name, 4), company_name) AS company_name_result \n";
+			sql += ", orgmem_name \n";
+			sql += ", orgmem_office_addr1 \n";
+			sql += ", orgmem_office_addr2 \n";
+			sql += ", orgmem_area \n";
+			sql += ", industry1 \n";
+			sql += ", industry2 \n";
+			sql += ", industry3 \n";
+			sql += ", handling_item \n";
+			sql += ", if(employee_num = '0', '', FORMAT(employee_num, 0)) as employee_num \n";
+			sql += ", if(create_year = '0', '', create_year) as create_year \n";
+			sql += ", if(sales = '0', '', FORMAT(sales, 0)) as sales \n";
+			sql += ", orgmem_homepage \n";
+			sql += ", company_tel1 \n";
+			sql += ", company_tel2 \n";
+			sql += ", company_tel3 \n";
+			sql += ", orgmem_fax1 \n";
+			sql += ", orgmem_fax2 \n";
+			sql += ", orgmem_fax3 \n";
+			sql += " from orgmember a \n";
+			sql += " , (SELECT @RNUM := 0 ) r \n";
+			sql += " where 1 = 1";
+
+			sql += count_where_sql;
+			
+			sql += " ORDER BY company_name_result asc";
+			sql += " limit " + page_start + "," +page_end;
+			
+			console.log("sql ::: " + sql);
+			
+			cnt_sql += "select \n"
+			cnt_sql += " count(*) as cnt \n";
+			cnt_sql += " from ( \n";
+			cnt_sql += sql;
+			cnt_sql += " ) a \n";
+			
+			count_result_sql += "select \n"
+			count_result_sql += "count(1) as total_cnt \n"
+			count_result_sql += "from orgmember where 1 = 1 \n"
+			count_result_sql += count_where_sql;
+			
+			db.query(sql, function(error, results){
+				db.query(cnt_sql, function(error, count_result) {
+					db.query(count_result_sql, function(error, cnt_result) {
+						/*console.log("count_result[0].cnt :: "+count_result[0].cnt);
+						console.log("results :: "+results);
+						
+						console.log("results[0] :: " + results[0]);*/
+						
+						var list = [];
+						for(var i = 0; i < count_result[0].cnt; i++){
+							if(i != count_result[0].cnt - 1){
+								list += results[i].orgmem_no + ",";
+							} else {
+								list += results[i].orgmem_no;
+							}
+							
+						}
+						//console.log("list :::: " + list);
+						
+						response.send(ejs.render(layout.include("empty", data), {
+							db_data : results,
+							db_data_length : count_result[0].cnt,
+							db_data_totallist : list,
+							nowPage : nowPage,
+							page_navi :page_txt,
+							total_cnt : total_cnt,
+							page_start : page_start+1,
+							cnt_result : cnt_result[0].total_cnt,
+							
+							type_result : type_result,
+							search_name : search_name,
+							search_company : search_company,
+							search_item : search_item,
+							industry1 : industry1,
+							industry2 : industry2,
+							industry3 : industry3,
+							
+							industry1_nm : industry1_nm,
+							industry2_nm : industry2_nm,
+							industry3_nm : industry3_nm,
+							
+							search_area : search_area,
+							search_employee_num1 : search_employee_num1,
+							search_employee_num2 : search_employee_num2,
+							search_create_year1 : search_create_year1,
+							search_create_year2 : search_create_year2,
+							search_sales1 : search_sales1,
+							search_sales2 : search_sales2,
+							
+							classify1 : classify1,
+							classify2 : classify2,
+							classify3 : classify3,
+							classify4 : classify4,
+							classify5 : classify5,
+							classify6 : classify6,
+							classify7 : classify7,
+							classify8 : classify8,
+							classify9 : classify9,
+							classify10 : classify10
+						
+						}));
+					});
+					
+				});
+			});
+		});
+	});
+};

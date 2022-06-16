@@ -1,0 +1,2963 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<script src="https://kit.fontawesome.com/7460d40ad7.js" crossorigin="anonymous"></script>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="10.%20대구%203030기업(2007~2020).files/filelist.xml">
+<title>10. 대구 3030기업(2007~2020)</title>
+<style id="10. 대구 3030기업(2007~2020)_7758_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.font57758
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;}
+.xl637758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:nowrap;
+	mso-text-control:shrinktofit;}
+.xl647758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:"\@";
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:nowrap;
+	mso-text-control:shrinktofit;}
+.xl657758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	mso-text-control:shrinktofit;}
+.xl667758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	mso-text-control:shrinktofit;}
+.xl677758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	mso-text-control:shrinktofit;}
+.xl687758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:"\@";
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;
+	mso-text-control:shrinktofit;}
+.xl697758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl707758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl717758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;
+	padding-left:6px;}
+.xl727758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:.5pt hairline windowtext;
+	border-right:.5pt hairline windowtext;
+	border-bottom:none;
+	border-left:.5pt hairline windowtext;
+	background:white;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl737758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:.5pt hairline windowtext;
+	border-bottom:none;
+	border-left:.5pt hairline windowtext;
+	background:white;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl747758
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:.5pt hairline windowtext;
+	border-bottom:.5pt hairline windowtext;
+	border-left:.5pt hairline windowtext;
+	background:white;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-char-type:none;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if !excel]>　　<![endif]-->
+<!--다음 내용은 Microsoft Excel의 웹 페이지로 게시 마법사를 사용하여 작성되었습니다.-->
+<!--같은 내용의 항목이 다시 게시되면 DIV 태그 사이에 있는 내용이 변경됩니다.-->
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 시작 -->
+<!----------------------------->
+
+<style type="text/css"> 
+	a:link { text-decoration:none; color:#ffffff;}
+	a:visited { text-decoration:none;color:white;}
+	a:active {text-decoration:none; color:#ccc; }
+	a:hover { text-decoration:none; color:white; }
+	
+	.table_content {margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 2%;}
+	th {border: 1px solid black;}
+	td {border: 1px solid black;}
+	tr {height: 40px;}
+	.td_c {background-color: white;}
+	.td_select {background-color: #fdbaba;}
+</style>
+
+<!-- <p class="float_r data_close" style="text-align:right;">
+	<button style="width: 80px; height: 30px; border-radius: 5px; background-color: #3b64af;">
+		<a href="/index_uw" target="_self" style="font-size: larger;">메인화면</a>
+	</button>
+</p> -->
+
+<div style="margin-top: 30px;">
+	<table class="table_content">
+		<colgroup>
+		    <col width="45%" />
+		    <col width="50%" />
+		</colgroup>
+		
+		<tr>
+			<th colspan="2" class="thead_th" style="height: 62px; background-color: #4f6fc1; color: white; font-weight: 600; font-size: 25px; text-align: left;">
+				<span style="padding-left: 15px;">대구기업체총람 부록자료</span>
+				<span style="padding-left: 40%; font-size: 18;">
+					<a href="/index_uw" target="_self"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i>메인화면</a>
+				</span>
+			</th>
+		</tr>
+		
+		<tbody>
+			<tr>
+                <td class="td_c" onClick="location.href='/file/user_html/1. 제24대 의원 명단(2021.04.01).htm'" style="cursor:pointer;">
+					<span style="color:black; margin: 5px; font-weight: 600;">1. 제24대 의원 명단(2021.04.01)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/7. 대구혁신도시 이전 공공기관 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">7. 대구혁신도시 이전 공공기관 현황</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_c" onClick="location.href='/file/user_html/2. 전국상의 현황 대외협력팀(2021.04.05).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">2. 전국상의 현황 대외협력팀(2021.04.05)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/8. 대구지역 상장법인.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">8. 대구지역 상장법인</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/3. 유관기관.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">3. 유관기관</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/9. 월드클래스300 대구기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">9. 월드클래스300 대구기업</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/4. 경제관련단체.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">4. 경제관련단체</span>
+                </td>
+                <td class="td_select" onClick="location.href='/file/user_html/10. 대구 3030기업(2007~2020).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">10. 대구 3030기업(2007~2020)</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/5. 대구지역 협동조합.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">5. 대구지역 협동조합</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/11. 스타기업100, Pre-스타기업, 고용친화기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">11. 스타기업100, Pre-스타기업, 고용친화기업</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/6. 대구 산업단지 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">6. 대구 산업단지 현황</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/12. 물산업 클러스터 입주기업 리스트.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">12. 물산업 클러스터 입주기업 리스트</span>
+                </td>
+            </tr>
+		</tbody>
+    </table>
+</div>
+
+<div id="10. 대구 3030기업(2007~2020)_7758" align=center x:publishsource="Excel">
+
+<table border=1 cellpadding=0 cellspacing=0 width=825 class=xl677758
+ style='border-collapse:collapse;table-layout:fixed;width:620pt;margin-bottom:50px;'>
+ <col class=xl667758 width=30 style='mso-width-source:userset;mso-width-alt:
+ 960;width:23pt'>
+ <col class=xl717758 width=151 style='mso-width-source:userset;mso-width-alt:
+ 4832;width:113pt'>
+ <col class=xl697758 width=51 style='mso-width-source:userset;mso-width-alt:
+ 1632;width:38pt'>
+ <col class=xl717758 width=281 style='mso-width-source:userset;mso-width-alt:
+ 8992;width:211pt'>
+ <col class=xl717758 width=130 style='mso-width-source:userset;mso-width-alt:
+ 4160;width:98pt'>
+ <col class=xl697758 width=60 style='mso-width-source:userset;mso-width-alt:
+ 1920;width:45pt'>
+ <col class=xl687758 width=64 style='mso-width-source:userset;mso-width-alt:
+ 2048;width:48pt'>
+ <col class=xl667758 width=58 style='mso-width-source:userset;mso-width-alt:
+ 1856;width:44pt'>
+ <tr class=xl657758 height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl637758 width=30 style='height:36.75pt;width:23pt'>No</td>
+  <td class=xl707758 width=151 style='border-left:none;width:113pt'>회 사 명</td>
+  <td class=xl707758 width=51 style='border-left:none;width:38pt'>대표자</td>
+  <td class=xl707758 width=281 style='border-left:none;width:211pt'>소 재 지</td>
+  <td class=xl707758 width=130 style='border-left:none;width:98pt'>주 요 품 목</td>
+  <td class=xl707758 width=60 style='border-left:none;width:45pt'>설립일</td>
+  <td class=xl647758 width=64 style='border-left:none;width:48pt'>종사자</td>
+  <td class=xl647758 width=58 style='border-left:none;width:44pt'>비고</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>1</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>경 일 염 직 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이진정</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 2037-33</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>양복, Y셔츠</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.04.19</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>65</td>
+  <td rowspan=68 class=xl727758 width=58 style='border-bottom:.5pt hairline black;
+  border-top:none;width:44pt'>2007<br>
+    (68개사)</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>2</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>일신프라스틱(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>전동근</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 농공읍 본리리 29-25</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>71.03.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>76</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>3</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)신아엠피씨</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이상육</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 966-3</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.01.31</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>60</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>4</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>금용기계주식회사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이경목</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 노원3가 666-1</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>섬유기계</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>56.01.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>215</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>5</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)한성피앤아이</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>최창근</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산동 400-2</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>인쇄물</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>75.07.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>230</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>6</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>형설출판사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>장지익</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 노원3가 303-1</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>대학교재, 수험서</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>71.12.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>70</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>7</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>태광공업사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박창현</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 912-2</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>농기계 부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.11.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>39</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>8</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 동 화 사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이상운</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 동인1가 206-8</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>교재, 참고서</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.11.23</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>136</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>9</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>동 영 염 직 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>조정래</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 2038-28</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>합성섬유</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>73.07.16</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>50</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>10</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>경북크랑크</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>서봉수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 914-10</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차용발전기</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.06.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>83</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>11</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>명일폼테크</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>노성열</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 927-3</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>건축용 자재</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.05.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>12</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>주식회사 한영</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정무조</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 북리 1-81</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>반도체, 석영부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.12.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>52</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>13</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>신 생 공 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김승한</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 701</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>금형소재</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.01.08</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>160</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>14</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)태양어패럴</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>장성덕</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 1-72</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>와이셔츠</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>52.09.04</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>66</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>15</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 옥 산 산 업</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>심재옥</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 587-9</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 내외장 사출성형</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>72.06.14</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>16</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>욱일IDC</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>함정웅</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 3169-4</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>면T/C 원단</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>73.10.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>17</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>주식회사 에이디시</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>함정웅</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 이현동 42-87</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>스포츠웨어</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.12.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>47</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>18</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 철</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>엄상수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월성동 1788-6</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>45.10.22</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>229</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>19</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)한국소방기구 제작소</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정수현</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 중리동 1155</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>소화기</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>61.11.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>107</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>20</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>한국OSG주식회사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정태일</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 358-48</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>절삭공구</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.06.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>291</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>21</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>서 도 산 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>한재권</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>동구 용계동 433</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>손수건, 스카프</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>53.05.08</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>216</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>22</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 현 대 정 밀</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>황대진</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 본리리 29-111</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>경첩, 도어록</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.03.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>30</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>23</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>정 경 유 압 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>전성종</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 358-53</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>차량용 완충장치</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>72.11.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>30</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>24</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대원기계공업(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>장용현</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 북리 580-34</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>섬유기계</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.06.28</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>50</td>
+ </tr>
+ <tr height=49 style='page-break-before:always;mso-height-source:userset;
+  height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>25</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>풍국주정공업(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이한용</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 605-5</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>주정 건조주박</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>54.02.17</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>68</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>26</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>한성섬유</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박광진</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 중리동 1066</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>신사복</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>74.01.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>220</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>27</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 호 산 업</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이현도</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 북리 1-76</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>철도차량외장부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.04.27</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>64</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>28</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼 우 기 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김재열</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 본리리 29-204</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 단열재</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.07.27</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>161</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>29</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>잘 만 정 공 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박동주</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 922-1</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>산업용 특수베어링</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>74.04.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>47</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>30</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼영금속공업(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박철성</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 922-10</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차현가부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>72.03.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>93</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>31</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>천일장갑</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김원수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 중리동 1115</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>면장갑</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.07.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>73</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>32</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼신제침공업사<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>문성근</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 노원3가 662</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>편직 바늘</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>65.03.02</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>31</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>33</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼 성 염 직 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박영희</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 2037-21</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>염색 가공업</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>73.03.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>70</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>34</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 금 성 정 공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김진정</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 파호동 204-8</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>냉장고부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.07.04</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>95</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>35</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대 한 염 직 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김해수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 이현동 530-2</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>염색가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>72.10.03</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>52</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>36</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>고문당인쇄(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>장선윤</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 593-7</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>상업용 인쇄물</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>62.05.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>140</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>37</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>중 앙 포 장 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박병찬</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 25-12</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>골판지 상자</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.05.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>63</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>38</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>남일엔피아이</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이태호</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 737</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.10.31</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>39</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)남선알미늄</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>임선진</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 본리리 29-13</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>알미늄 샷시</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>47.07.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>454</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>40</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 팩 슨</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>고영주</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 587-8</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>산업용 고압가스</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>67.01.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>300</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>41</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>고 려 전 선 (주)<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정재철</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 검단동 711</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>절연전선</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>75.05.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>73</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>42</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>영남주물공업(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>곽동기</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 노원3가 234</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>상수도주철관</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>54.01.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>163</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>43</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>유한염직공업(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>유창민</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산동 3325-10</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>염색 임가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.02.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>53</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>44</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>오대금속주식회사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김창현</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 북리 1-121</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차기어, 에어컨</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>57.04.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>111</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>45</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>영신타올주식회사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김용복</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 100-35</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>타올</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>69.01.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>65</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>46</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 성 안</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박상태</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 검단동 740</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>폴리에스터직물</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.07.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>235</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>47</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>보국전기공업 주식회사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>곽기영</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 구지면 고봉리 225</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>발전기</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>61.08.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>74</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>48</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 비 에 스 지</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>홍종윤</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 노원동3가 20-1</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>투습 방수포</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>64.12.23</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>59</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>49</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>금강파이프(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김경수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 610</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>68.03.05</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>45</td>
+ </tr>
+ <tr height=49 style='page-break-before:always;mso-height-source:userset;
+  height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>50</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>최복호 패션</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>최복호</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 내당동 61-13</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>여성 정장의류</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>75.07.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>45</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>51</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 디 엠 이</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김수학</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 검단동 838-108</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.04.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>33</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>52</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>사회복지법인 미망인모자복지회</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>안목단</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>수성구 파동 133-11</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>사병 전투복</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>72.05.24</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>208</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>53</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대창정공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>조경래</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 918-3</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>프레스 조립제품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.07.16</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>35</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>54</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>화정테크</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>한봉규</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 100-77</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>전자제품 도금</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>75.08.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>44</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>55</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대구특수금속</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이상태</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 100-62</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 계기판</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.11.05</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>101</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>56</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)신광타올</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이영노</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 중리동 1051</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>타올</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>60.09.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>56</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>57</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>오 대 산 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이성웅</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 이현동 44-24</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차미션부품도금</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.06.28</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>34</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>58</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>RICH어패럴</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>최혜정</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 화전동 42</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>여성의류</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>72.03.08</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>30</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>59</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>디 엠 씨 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>최진순</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 중리동 1156</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>CNC선반</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>44.10.16</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>100</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>60</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>세신정밀공업사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이익재</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 파호동 93-15</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>치과 의료용품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.11.28</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>37</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>61</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>국 제 염 직 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이승주</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산동 2041-1</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>화성직물 염색가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.10.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>74</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>62</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 반 도</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이광옥</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 358-66</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>폴리에틸렌 필름</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>74.01.05</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>33</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>63</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)문명에이스</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>문명현</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 929-5</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>공기 조화기</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>69.04.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>83</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>64</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대구탁주합동 제1공장</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>류창현</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>동구 불로동 30-1</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>탁주, 주류</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>74.08.26</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>99</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>65</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)제일제약</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김성자</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 739</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>국소 마취제</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>57.04.29</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>62</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>66</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>태화염공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김태열</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 2038-36</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>폴리직물염색</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>69.08.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>46</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>67</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 서 방</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>서진녕</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>동구 신천동 740-5</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>간판, 광고물제조</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>67.10.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>30</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>68</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 일 광</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김홍도</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 파호동 91-12</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>백열전구</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>62.09</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>41</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>69</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>천일금형사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김현수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 검단동 887-107</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>플라스틱사출</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.07.27</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>33</td>
+  <td rowspan=20 class=xl727758 width=58 style='border-bottom:.5pt hairline black;
+  border-top:none;width:44pt'>2008<br>
+    (20개사)</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>70</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>새한정밀인쇄사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>홍영상</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 동인1가 372-5</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>인쇄물 제작</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.04.26</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>39</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>71</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대 아 정 공 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정국남</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 912-5</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>76.06.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>77</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>72</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼 영 공 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김주형</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 1085-1</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.10.12</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>84</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>73</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)대림프라콘</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김동수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 358-20</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>페트병</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.03.03</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>135</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>74</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 부 성</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이천환</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 2036-31</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>면직물 날염</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.06.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>133</td>
+ </tr>
+ <tr height=49 style='page-break-before:always;mso-height-source:userset;
+  height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>75</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>고 광 산 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>배 홍</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 검단동 777-96</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.01.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>59</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>76</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>중앙정밀주식회사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>서월금</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 1019</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>농수산물건조기</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>75.05.03</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>77</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>동원산자</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이성만</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>논공읍 금포리 951-2</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>타포린직물</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.07.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>99</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>78</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼 일 염 직 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>노희찬</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산동 2009-64</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>교직물 염색</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>73.05.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>106</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>79</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>진일공업사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>황 성</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 파호동 92-17</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.06.05</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>30</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>80</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 경 물 산</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김두철</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 삼덕3가 112-14</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>여성의류</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>74.02.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>81</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼 화 식 품 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>양승재</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동969</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>장류, 식초</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>53.11.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>65</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>82</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대림공업사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이상준</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 922-3</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>농기계 부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.03.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>33</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>83</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 보 국 전 자</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이완수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 625</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>냉난방기구</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>74.10.28</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>60</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>84</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 신 양 정 밀</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>전영두</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 검단동 838-69</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>볼트, 너트</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.08.03</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>35</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>85</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>중앙산업사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이재영</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 장동 333-24</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품 도금</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.05.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>30</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>86</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>디엘아이코리아</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>윤지한</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 1068</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차H/L용 STRIP</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.08.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>87</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대 성 공 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김현준</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 100-32</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>휠체어</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>74.01.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>60</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>88</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>주식회사화랑고무</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>최봉인</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 산격동 14-19</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>지우개, 사무용고무판</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>50.09.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>89</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>세 신 금 속 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김현석</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 358-12</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>볼트, 너트</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>74.07.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>62</td>
+  <td rowspan=10 class=xl727758 width=58 style='border-bottom:.5pt hairline black;
+  border-top:none;width:44pt'>2010 <br>
+    (10개사)</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>90</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)아진피앤피</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정태화</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 현풍면 신기리 92-1</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>골심지 원지</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>79.10.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>110</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>91</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>우 일 염 직 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박 실</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 2041-133</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>나일론 옥스포드</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.10.18</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>66</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>92</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼화직물</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김정자</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 3186</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>닛트, 의류</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>73.01.04</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>87</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>93</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼우공업사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박종기</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 장동 209-11</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>전기빙삭기, 국수제조기</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>71.06.07</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>31</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>94</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 삼 우 무 역</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>주천수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 화원읍 천내리 286</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>교직물(N/C류)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.01.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>31</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>95</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>태 창 공 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>여두용</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 958</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>79.05.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>70</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>96</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>영진화학공업(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>서상동</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 358-90</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>수용성 아크릴수지</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.07.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>97</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대한제침공업사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>송민홍</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 갈산동 358-73</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>섬유기계 바늘</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>79.01.12</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>50</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>98</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)형제인터내셔널</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이해수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 남산동 735-18</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>산업용 장갑</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.07.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>43</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>99</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)성림티앤티</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>주칠석</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 월암동 1-47</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 방진고무</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>82.05.05</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>54</td>
+  <td rowspan=14 class=xl727758 width=58 style='border-bottom:.5pt hairline black;
+  border-top:none;width:44pt'>2012<br>
+    (14개사)</td>
+ </tr>
+ <tr height=49 style='page-break-before:always;mso-height-source:userset;
+  height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>100</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>동양산업</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박태수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 725 동양산업</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>차량도어 스프링</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.06.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>33</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>101</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 정 밸 브</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>장세철</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 호산동 706-5, 706-6</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>유체제어용 밸브</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>82.05.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>102</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>유 진 섬 유 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박태규</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 북리 213-9</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>화섬직물</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>75.05.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>34</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>103</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대 영 염 공 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이응천</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 2009-45</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>원단 염색</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>81.10.27</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>33</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>104</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>신일염공사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김동균</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 비산7동 2006-17</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>염색가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.10.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>44</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>105</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>제일정공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이순호</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 노원로39길 11 (침산동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>기계부품, 금속가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>69.12.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>106</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 야 성</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이현오</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>동구 각산동 300-4</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>가스호스</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.08.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>68</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>107</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 금 강 밸 브</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김지혜</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 장동 209-10</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>볼 밸브</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.08.11</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>47</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>108</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 풍 국 면</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>최익진</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 노원3가 373</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>국수</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>79.07.03</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>34</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>109</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 세 양</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>신정필</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서로 348</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>치과용기기 핸드피스</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>81.04.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>72</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>110</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>미성화학</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정준모</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 달서대로95길 137</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차케이블보호 관</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.11.15</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>30</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>111</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>홍성정공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>홍현보</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 587-5</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 방진고무</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>82.04.30</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>33</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>112</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>창성플라스틱</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박용운</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 대천동 593</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차 플라스틱 부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.04.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>31</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>113</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>경 북 광 유 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박윤경</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 국채보상로 642</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>석유류 도소매</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>49.10.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>61</td>
+  <td rowspan=20 class=xl727758 width=58 style='border-bottom:.5pt hairline black;
+  border-top:none;width:44pt'>2014<br>
+    (20개사)</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>114</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>보문인쇄포장</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>권영문</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단남로19길 20</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>종이상자 제조</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.04.05</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>34</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>115</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>구봉정공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김명석</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 팔달로7길 32</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>도금</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>79.04.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>30</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>116</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>태 창 철 강 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이성진</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단북로 194</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>철강재</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>81.02.17</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>70</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>117</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>신 일 산 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김항규</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 논공로91길 71-18</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>직물 및 원단 염색가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>84.07.05</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>50</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>118</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 태 승 섬 유</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김태훈</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 염색공단중앙로14길 12</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>직물 및 원단 염색가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>84.01.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>76</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>119</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>동남주물공업(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>강태욱</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 와룡로 307</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>강주물 주조</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>82.10.26</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>39</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>120</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 창 보</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김정욱</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단남로10길 12</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>금속주방용기</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>84.02.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>45</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>121</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 일 성 도 금</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>손병기</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단북로 341</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>도금</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.01.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>33</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>122</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>경남섬유</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정재균</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단로21길 100</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>화학섬유 직물 직조</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>82.04.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>34</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>123</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대동공업</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김광회</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 오봉로36길 20</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>금속압형제품<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>84.02.13</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>80</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>124</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)한국이앤씨<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>장영철</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 북비산로 165</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>성분검사 및 분석</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>81.10.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>42</td>
+ </tr>
+ <tr height=49 style='page-break-before:always;mso-height-source:userset;
+  height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>125</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 케 이 비 원</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김정도</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 북성로 38</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>철물 및 수공구 도매</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>70.02.05</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>125</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>126</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 동 진 상 사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>노정자</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 염색공단천로7길 10</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>직물 및 원단 염색가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>79.12.29</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>100</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>127</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 광 성</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>안용기</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서로35길 50</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>천말 및 캔버스 제품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>83.09.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>62</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>128</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 동 원 약 품</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>현수환</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 산격동 1780</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>의약품 도매</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>71.10.04</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>85</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>129</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>신 라 철 강 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>유지수</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단북로 194</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>철강재</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.03.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>85</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>130</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>진 양 택 시 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김정환</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>수성구 청수로26길 30</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>택시운수</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>71.02.18</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>65</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>131</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>화 신 섬 유 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이종식</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 중리동 1035</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>양말</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>82.08.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>132</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 양</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정재한</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 문화로 77</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>선출주물주조</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.07.07</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>133</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>구일정밀</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이해석</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단북로5길 29, 1층 (파호동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품(자동차 조향 및 제동 장치)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>82.03.15.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>36</td>
+  <td rowspan=12 class=xl727758 width=58 style='border-bottom:.5pt hairline black;
+  border-top:none;width:44pt'>2016<br>
+    (12개사)</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>134</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)씨디씨뉴매틱</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김화동</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 다사읍 세천로1길 30</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동화기기부품(유공압밸브)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>83.11.03.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>124</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>135</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 동 서 개 발</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이승현</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 달구벌대로 1929 (대신동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>주택건설<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.04.21.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>36</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>136</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 엠 에 이 텍</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>황재기</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서로 104 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품(힌지, 브라켓)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>84.03.13.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>77</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>137</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>광 림 섬 유 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정창욱</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단로 192 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>섬유직물(나일론, 폴리에스테르)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>83.07.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>138</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>주식회사아세아텍</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김신길</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 유가면 비슬로96길 11</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>각종 농기계(관리기)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.10.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>242</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>139</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)상아뉴매틱</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>임경상</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 다사읍 세천로3길 36</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동화기기부품(휘팅류)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>80.07.20.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>181</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>140</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>현대고주파열처리</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김칠하</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단남로40길 2 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품 고주파열처리</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>85.07.28.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>141</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 현 대 화 섬</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>손상모</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 와룡로 3, 401호 (본동, 현대빌딩)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>섬유직물(아웃도어용 원단)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>86.04.18.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>96</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>142</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>유 승 산 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정해서</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단남로36길 19-9</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>산업용수지(MCNylon)<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.04.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>35</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>143</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 월 성</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이진권</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 달서대로64길 131 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>농기계부품(3점링크)</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>75.10.08.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>46</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>144</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 삼 보</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김윤석</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단남로 127 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>위생용/의료용 섬유</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>79.08.16.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>151</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>145</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 유 성</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김유현</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>수성구 국채보상로 826 (범어동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>종합체육시설</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>87.10.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>45</td>
+  <td rowspan=15 class=xl727758 width=58 style='border-bottom:.5pt hairline black;
+  border-top:none;width:44pt'>2018<br>
+    (15개사)</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>146</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>신성에스앤티(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>최광영</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 다사읍 세천로3길 10</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>산업용기계부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>85.04.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>177</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>147</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>창성정공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>허만우</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단북로 353</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>사출금형</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>87.06.30.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>148</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>경북열처리공업사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>변상교</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단남로 20</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품열처리</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>84.02.25.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>38</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>149</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>화 성 밸 브 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>장원규</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 팔달로2길 29</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>나사식볼밸브</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>87.05.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>125</td>
+ </tr>
+ <tr height=49 style='page-break-before:always;mso-height-source:userset;
+  height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>150</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)대구백화점</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>구정모</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 동성로 30 (동성로2가)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>백화점</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>69.12.26.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>281</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>151</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대 산 금 속 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박춘호</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서로9길 92 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품열처리</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>87.01.20.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>85</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>152</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 로 얄 정 공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박재덕</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단로25길 6 (갈산동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>수처리기기, 밸브</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>86.05.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>78</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>153</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 보 우</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김복용</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 유가읍 테크노중앙대로2길 13 (유곡리)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>휄터</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>88.07.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>36</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>154</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>삼 화 건 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>변화곤</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>수성구 상록로 53</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>설비공사, 소방공사</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>84.07.07.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>46</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>155</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 서 도 염 직</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>한재권</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 염색공단 중앙로 60</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>면가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>85.12.24.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>39</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>156</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 에 스 닷</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박창준</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 국채보상로 628</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>문구용품소매업</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>87.03.28.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>46</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>157</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)영풍열처리</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>권숙철</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서로35길 56</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>금속열처리</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>87.04.28.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>127</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>158</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>영 화 공 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>강영덕</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 논공중앙로51길 37</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>이륜자동차, 자동차부품/시트레일</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>86.01.15.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>72</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>159</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>이화레이스</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박춘헌</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 호산로2길 55</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>레이스제품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>86.09.01.</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>34</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>160</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>신 흥 버 스 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김종철</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단로 93 (갈산동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>직영여객, 운송업</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>55.05.12</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>181</td>
+  <td rowspan=19 class=xl727758 width=58 style='border-bottom:.5pt hairline black;
+  border-top:none;width:44pt'>2020<br>
+    (19개사)</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>161</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 동 정 공</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이덕우</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서4차첨단로 90 (대천동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>기계, 철공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>82.05.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>162</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)우진하이텍</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>신재덕</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서서로 76 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>사출, 금형</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>88.02.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>76</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>163</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 명 E N G</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>최경근</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서로 135 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>평판 디스플레이 제조 설비</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>88.01.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>169</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>164</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 글 로 스 코</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이종활</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 논공로87길 128</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>81.11.21</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>133</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>165</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 유 니 폴 리</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이원재</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서4차첨단로 160-10 (월암동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>86.09.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>40</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>166</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 길</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>채희길</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 논공로 423</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>89.12.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>41</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>167</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 산 찬 섬 유</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>피문찬</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 성서공단로35길 11 (갈산동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>화섬직물</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>90.04.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>48</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>168</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>경북봉투사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박찬력</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 재마루길 10 (남산동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>봉투인쇄제작</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>89.01.20</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>169</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>세하주식회사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이제선</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 유가읍 비슬로96길 97</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>종이제품제조</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>84.07.16</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>208</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>170</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 대 건 산 업</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이상엽</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 염색공단중앙로 105 (비산동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>화섬직물</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>83.09.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>42</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>171</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 동 화 주 택</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김민태</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>중구 국채보상로 729 (동인동4가)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>주택신축</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>88.03.12</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>58</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>172</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>신 성 산 업 (주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>김용환</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달서구 호산동로1길 71 (호림동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>89.01.16</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>60</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>173</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>유성정밀공업(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박만희</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 구지면 달성2차 동3로 18</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>자동차부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>90.01.17</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>93</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>174</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)그랜드관광호텔</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>서윤자</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>수성구 동대구로 305 (범어동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>호텔업</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>90.05.01</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>193</td>
+ </tr>
+ <tr height=49 style='page-break-before:always;mso-height-source:userset;
+  height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>175</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주) 모 간</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>박성훈</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 논공읍 논공중앙로46길 27</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>카본, 세라믹단열제</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>78.07.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>209</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>176</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>(주)세광하이테크</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>이정상</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>북구 검단북로 2-21 (산격동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>배관 자재</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>77.10.24</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>83</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>177</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>대영코어텍(주)</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>정태호</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>달성군 유가읍 테크노 순환로8길 8</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>기계부품</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>89.10.10</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>154</td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:36.75pt'>
+  <td height=49 class=xl667758 style='height:36.75pt;border-top:none'>178</td>
+  <td class=xl717758 width=151 style='border-top:none;border-left:none;
+  width:113pt'>진호염직 주식회사</td>
+  <td class=xl697758 width=51 style='border-top:none;border-left:none;
+  width:38pt'>신현우</td>
+  <td class=xl717758 width=281 style='border-top:none;border-left:none;
+  width:211pt'>서구 염색공단중앙로 70 (비산동)</td>
+  <td class=xl717758 width=130 style='border-top:none;border-left:none;
+  width:98pt'>염색가공</td>
+  <td class=xl697758 width=60 style='border-top:none;border-left:none;
+  width:45pt'>90.01.25</td>
+  <td class=xl687758 style='border-top:none;border-left:none'>52</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=30 style='width:23pt'></td>
+  <td width=151 style='width:113pt'></td>
+  <td width=51 style='width:38pt'></td>
+  <td width=281 style='width:211pt'></td>
+  <td width=130 style='width:98pt'></td>
+  <td width=60 style='width:45pt'></td>
+  <td width=64 style='width:48pt'></td>
+  <td width=58 style='width:44pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 끝-->
+<!----------------------------->
+</body>
+
+</html>

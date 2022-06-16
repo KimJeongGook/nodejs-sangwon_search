@@ -1,0 +1,470 @@
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	/*page_navi*/
+	var page_navi = tag_place("<%=page_navi%>");
+	$('#page_navi').html(page_navi);
+	/*page_navi*/
+	
+    // 체크박스 전체선택
+    $(document).on("click", "#ROW_CHK_ALL", function(e) {
+        if($(this).prop("checked")) {
+        	$("#index_total").val("<%=db_data_totallist %>");
+        	$("#index_cnt").val(<%=db_data.length %>);
+        	$("#cnt_result").text($("#index_cnt").val());
+        	
+            $(".ROW_CHK").prop("checked", true);
+        }else{
+        	$("#index_total").val("");
+        	$("#index_cnt").val(0);
+        	$("#cnt_result").text(0);
+        	
+            $(".ROW_CHK").prop("checked", false);
+        }
+        
+    });
+    
+    // ROW의 체크박스 선택 이벤트
+    $(document).on("click", ".ROW_CHK", function(e) {
+    	var checks = new Array();
+    	var tdArr = new Array();
+    	var count = 0;
+    	
+    	var checkbox = $("input[name=ROW_CHK]:checked");
+    	
+    	checkbox.each(function(i) {
+    		var tr = checkbox.parent().parent().eq(i);
+    		var td = tr.children();
+    		
+    		checks.push(tr.text());
+    		var row_index = $.trim(td.eq(1).text());
+    		
+    		tdArr.push(row_index);
+    		count++;
+    	});
+    	$("#index_total").val(tdArr);
+    	$("#index_cnt").val(count);
+    	$("#cnt_result").text($("#index_cnt").val());
+		
+        var CHK_TOT_CNT = $(".ROW_CHK").length;
+        var CHK_CNT = $('input:checkbox[name="ROW_CHK"]:checked').length;
+        
+        if(CHK_TOT_CNT == CHK_CNT) {
+            $("#ROW_CHK_ALL").prop("checked", true);
+        } else {
+            $("#ROW_CHK_ALL").prop("checked", false);
+        }
+    });
+    
+    $("#btnExport").on('click', function () {
+		var frm = document.writehtm;
+	    var url = "Exceldown";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+    
+ 	// Element 에 style 한번에 오브젝트로 설정하는 함수 추가
+    Element.prototype.setStyle = function(styles) {
+        for (var k in styles) this.style[k] = styles[k];
+        return this;
+    };
+    
+});
+
+function print_preview(){
+	var CHK_CNT = $('input:checkbox[name="ROW_CHK"]:checked').length;
+	
+	if(CHK_CNT == 0){
+		modal_error_open('print_msg_modal');
+		return false;
+	} else {
+		var form = document.writehtm;
+		var url = '/print_list';
+		//window.open('', 'print_list','width=780,height=900,scrollbars=yes');
+		
+		form.action = url;
+		form.target = '_self';
+		form.submit();
+	}
+}
+
+function btnPreview(){
+	var popup_form = document.writehtm;
+	var url = '/btn_preview';
+	window.open('', 'btn_preview','width=700,height=900,scrollbars=yes');
+	
+	popup_form.action = url;
+	popup_form.target = 'btn_preview';
+	popup_form.submit();
+}
+
+function btnUserMethod(){
+	var form = document.writehtm;
+	var url = '/btn_user_method';
+	//window.open('', 'btn_user_method','width=780,height=800,scrollbars=yes');
+	
+	form.action = url;
+	form.target = '_self';
+	form.submit();
+}
+
+function goPage(p_num){
+	var frm = document.writehtm;
+	frm.action = 'search_data';
+	frm.nowPage.value = p_num;
+	frm.type_result.value = $("#type_result").val();
+	frm.submit();
+}
+
+function back_html(){
+	var form = document.writehtm;
+	var url = '/search';
+	
+	form.action = url;
+	form.target = '_self';
+	form.submit();
+}
+
+function btnUserMethod(){
+	// 모달창 띄우기
+	var id = 'userMethod_modal';
+	var zIndex = 5000;
+	var modal = document.getElementById(id);
+	
+	$.ajax({
+		type:"POST",
+		url:"/btn_user_method",
+		datatype:"json",
+		data:{ },
+		success : function(json, value) {
+			if( value == 'success' ) {
+			
+				var bg = document.createElement('div');
+				// 모달 div 뒤에 희끄무레한 레이어
+				bg.setStyle({
+					position: 'fixed',
+					zIndex: zIndex,
+					left: '0px',
+					top: '0px',
+					width: '100%',
+					height: '100%',
+					overflow: 'auto',
+					// 레이어 색갈은 여기서 바꾸면 됨
+					backgroundColor: 'rgba(0,0,0,0.4)'
+				});
+				document.body.append(bg);
+			
+				// 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
+				modal.querySelector('.userMethod_modal_close_btn').addEventListener('click', function() {
+					bg.remove();
+					modal.style.display = 'none';
+					document.getElementById("my_modal").style.display = "block";
+				});
+			
+				modal.setStyle({
+					position: 'fixed',
+					display: 'block',
+					boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+					
+					// 시꺼먼 레이어 보다 한칸 위에 보이기
+					zIndex: zIndex + 1,
+					
+					// div center 정렬
+					top: '50%',
+					left: '50%',
+					transform: 'translate(-50%, -50%)',
+					msTransform: 'translate(-50%, -50%)',
+					webkitTransform: 'translate(-50%, -50%)'
+				});
+	     	}
+		},
+		error : function(xhr, status, error) {
+			alert("error");
+		}
+	});
+}
+
+function modal_error_open(id){
+	// 모달창 띄우기
+   	var zIndex = 2000;
+   	var modal = document.getElementById(id);
+   	var modal_close_class = "";
+   	
+   	if(id == "print_msg_modal"){
+		modal_close_class = '.print_msg_modal_close_btn';
+  	}
+   	
+   	var bg = document.createElement('div');
+	// 모달 div 뒤에 희끄무레한 레이어
+	bg.setStyle({
+		position: 'fixed',
+		zIndex: zIndex,
+		left: '0px',
+		top: '0px',
+		width: '100%',
+		height: '100%',
+		overflow: 'auto',
+		// 레이어 색갈은 여기서 바꾸면 됨
+		backgroundColor: 'rgba(0,0,0,0.4)'
+	});
+	document.body.append(bg);
+
+	// 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
+	modal.querySelector(modal_close_class).addEventListener('click', function() {
+		bg.remove();
+		modal.style.display = 'none';
+		document.getElementById("my_modal").style.display = "block";
+	});
+
+	modal.setStyle({
+		position: 'fixed',
+		display: 'block',
+		boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+		
+		// 시꺼먼 레이어 보다 한칸 위에 보이기
+		zIndex: zIndex + 1,
+		
+		// div center 정렬
+		top: '50%',
+		left: '50%',
+		transform: 'translate(-50%, -50%)',
+		msTransform: 'translate(-50%, -50%)',
+		webkitTransform: 'translate(-50%, -50%)'
+	});
+}
+
+</script>
+<style>
+	.data_title{margin-left:0;font-size: 25px; font-weight: 400; letter-spacing: 1px; margin: 3px 10px; color: #fff;}
+	.th_style{position: sticky; top: -1px; height: 40px; background-color: #ebebec;}
+	td{height: 45px;border: 1px solid #e0e0e0;}
+	th{border: 1px solid #e0e0e0;}
+	
+	#userMethod_modal {
+	    display: none;
+	    width: 900px;
+	    background-color: #fefefe;
+	    border: 1px solid #888;
+	    border-radius: 3px;
+	    height: 700px;
+	}
+	#print_msg_modal {
+	    display: none;
+	    width: 300px;
+	    background-color: #fefefe;
+	    border: 1px solid #888;
+	    border-radius: 3px;
+	    height: 95px;
+	}
+</style>
+<div style="clear: both; margin-bottom: 10px; padding: 7px 10px; background: #3b64af; color: #fff; font-size: 14px; overflow: hidden; box-sizing: border-box; height: 36px; margin-top: 0px;">
+	<span class="float_l data_title">검색 결과</span>
+	<img src="/images/logo05.png" style="width: 147px; height: 30px; margin-top: -4px; margin-bottom: -3px; background: white; float:right;" />
+	<% if(industry1_nm != ""){ %>
+		( <%= industry1_nm %>
+	<% } %>
+	
+	<% if(industry2_nm != ""){ %>
+		-> <%= industry2_nm %>
+	<% } %>
+		
+	<% if(industry3_nm != ""){ %>
+		-> <%= industry3_nm %>
+	<% } %>
+	
+	<% if(industry1_nm != "" || industry2_nm != "" || industry3_nm != "" ){ %>
+		)
+	<% } %>
+    <!-- <img src="../../../images/admin/btn_close.gif" alt="" class=" hand" onclick="self.close();" style="float: right;"/> -->
+</div>
+
+<div class="content" style="overflow-y:scroll; height:690px; border: 1px solid #e4e4e4; margin: 10px;">
+    <table class="mb_10" style="width: 100%;">
+            <colgroup>
+                <col width="1.5%" />
+                <col width="3%" />
+                <col width="10%" />
+                <col width="5%" />
+                <col width="16%" />
+                <col width="10%" />
+                <col width="6%" />
+                <col width="6%" />
+                <col width="5%" />
+                <col width="5%" />
+                <col width="5%" />
+                <col width="10%" />
+            </colgroup>
+            
+                <tr>
+                    <th class="th_style"><label for="ROW_CHK_ALL"><span>선택</span></label><input type="checkbox" name="ROW_CHK_ALL" id="ROW_CHK_ALL" style="margin-top: 5px;"/></th>
+                    <th class="th_style">번호</th>
+                    <th style="display:none;">index</th>
+                    <th class="th_style">회사명</th>
+                    <th class="th_style">대표자</th>
+                    <th class="th_style">주소</th>
+                    <th class="th_style">홈페이지</th>
+                    <th class="th_style">대표전화</th>
+                    <th class="th_style">대표팩스</th>
+                    <th class="th_style">매출액(백만원)</th>
+                    <th class="th_style">종업원수</th>
+                    <th class="th_style">설립연도</th>
+                    <th class="th_style">취급품목</th>
+                </tr>
+                
+            <tbody>
+                <% if(db_data.length > 0) {
+                    for(var i = 0; i < db_data.length; i++){ %>
+                        <tr>
+                            <td style="text-align:center;"><input type="checkbox" name="ROW_CHK" class="ROW_CHK" value="<%=db_data[i].orgmem_no %>" /></td>
+                            <td style="display:none;" id="orgmem_no" name="orgmem_no">
+                            	<%=db_data[i].orgmem_no %>
+                            </td>
+                            <td style="text-align:center;"><%=page_start++%></td>
+                            <td style="padding-left: 5px;">
+                                <%=db_data[i].company_name %>
+                            </td>
+                            <td style="text-align:center;"> 
+                                <%=db_data[i].orgmem_name %>
+                            </td>
+                            <td style="text-overflow: ellipsis; text-align:left; padding-left: 5px;">
+                                <%=db_data[i].orgmem_office_addr1==null ? '' : db_data[i].orgmem_office_addr1 %>
+                                <%=db_data[i].orgmem_office_addr2==null ? '' : db_data[i].orgmem_office_addr2 %>
+                            </td>
+                            <td style="text-align:center;"> 
+                                <%=db_data[i].orgmem_homepage %>
+                            </td>
+                            <td style="text-align:center;"><%=db_data[i].company_tel1 %>-<%=db_data[i].company_tel2 %>-<%=db_data[i].company_tel3 %></td>
+                            <td style="text-align:center;"><%=db_data[i].orgmem_fax1 %>-<%=db_data[i].orgmem_fax2 %>-<%=db_data[i].orgmem_fax3 %></td>
+                            <td style="text-align:center;"><%=db_data[i].sales %></td>
+                            <td style="text-align:center;"><%=db_data[i].employee_num %></td>
+                            <td style="text-align:center;"><%=db_data[i].create_year %></td>
+                            <td style="padding-left: 5px;"><%=db_data[i].handling_item %></td>
+                            
+                        </tr>
+                    <% } } else {%>
+                    <tr>
+                        <td colspan="12" style="text-align:center;">등록된 정보가 없습니다.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+    </table>
+</div>
+<!-- 페이징 -->
+<div class="mt_20" style="padding-left: 20px;">
+	<div class="paging" id="page_navi"></div>
+</div>
+<span style="font-size: 12px; padding-left: 18%;">※ 응답 기업이 제출한 자료를 근거로 작성된 내용이므로 실제와 다르거나 누락될 수 있습니다.</span>
+<div style="font-size: 14px; color: #555; margin-top: 5px; float: right; padding-right: 2.5%;">
+	선택된 개수: <span id="cnt_result" style="color:red;">0</span>&nbsp;&nbsp;&nbsp;&nbsp;현재 개수: <span style="color:red;"> <%= db_data_length%></span>&nbsp;&nbsp;&nbsp;&nbsp;총 개수: <span style="color:red;"> <%=cnt_result%></span>
+</div>
+
+<!-- //페이징 -->
+
+<div class="mt_20">
+    <form id="writehtm" name="writehtm" method="post" onsubmit="return false;" autocomplete="off">
+    	<input type="hidden" id="type_result" name="type_result" value="<%=type_result %>"/>
+    	<input type="hidden" name="nowPage" value="<%=nowPage%>" id="nowPage" />
+    	<input type="hidden" name="index_total" id="index_total" />
+    	<input type="hidden" name="index_cnt" id="index_cnt" />
+    	
+    	<input type="hidden" name="search_name" id="search_name" value="<%=search_name%>" />
+    	<input type="hidden" name="search_company" id="search_company" value="<%=search_company%>" />
+    	<input type="hidden" name="search_item" id="search_item" value="<%=search_item%>" />
+    	<input type="hidden" name="industry1" id="industry1" value="<%=industry1%>" />
+    	<input type="hidden" name="industry2" id="industry2" value="<%=industry2%>" />
+    	<input type="hidden" name="industry3" id="industry3" value="<%=industry3%>" />
+    	<input type="hidden" name="industry1_nm" id="industry1_nm" value="<%=industry1_nm%>" />
+    	<input type="hidden" name="industry2_nm" id="industry2_nm" value="<%=industry2_nm%>" />
+    	<input type="hidden" name="industry3_nm" id="industry3_nm" value="<%=industry3_nm%>" />
+    	<input type="hidden" name="search_area" id="search_area" value="<%=search_area%>" />
+    	<input type="hidden" name="search_employee_num1" id="search_employee_num1" value="<%=search_employee_num1%>" />
+    	<input type="hidden" name="search_employee_num2" id="search_employee_num2" value="<%=search_employee_num2%>" />
+    	<input type="hidden" name="search_create_year1" id="search_create_year1" value="<%=search_create_year1%>" />
+    	<input type="hidden" name="search_create_year2" id="search_create_year2" value="<%=search_create_year2%>" />
+    	<input type="hidden" name="search_sales1" id="search_sales1" value="<%=search_sales1%>" />
+    	<input type="hidden" name="search_sales2" id="search_sales2" value="<%=search_sales2%>" />
+    	
+    	<input type="hidden" name="classify1" id="classify1" value="<%=classify1%>" />
+		<input type="hidden" name="classify2" id="classify2" value="<%=classify2%>" />
+		<input type="hidden" name="classify3" id="classify3" value="<%=classify3%>" />
+		<input type="hidden" name="classify4" id="classify4" value="<%=classify4%>" />
+		<input type="hidden" name="classify5" id="classify5" value="<%=classify5%>" />
+		<input type="hidden" name="classify6" id="classify6" value="<%=classify6%>" />
+		<input type="hidden" name="classify7" id="classify7" value="<%=classify7%>" />
+		<input type="hidden" name="classify8" id="classify8" value="<%=classify8%>" />
+		<input type="hidden" name="classify9" id="classify9" value="<%=classify9%>" />
+		<input type="hidden" name="classify10" id="classify10" value="<%=classify10%>" />
+		
+    	<div class="float_l" style="padding-left:10px; padding-top:10px;">
+    		<div>
+    			<span>라벨선택</span>
+    			<select name="label_select" id="label_select" style="width: 140px;">
+					<option value="two_six">라벨(2X6) 연속용지</option>
+					<option value="two_seven">라벨(2X7) A4용지</option>
+					<option value="two_eight" selected>라벨(2X8) A4용지</option>
+				</select>
+			</div>
+			
+			<div>
+    			<span>수신지정</span>
+    			<select name="destination" id="destination" style="width: 140px;">
+					<option value="ceo">대표이사</option>
+					<option value="company">회사</option>
+				</select>
+			</div>
+    	</div>
+    	
+	    <p class="float_l writehtm_btn">
+	        <!-- <button class="ui-button" type="button" onclick="btnPreview()">견본보기</button> -->
+	        <!-- <button class="ui-button" id="btnUserUnLocked" type="button">용지설정</button> -->
+	        <button class="ui-button" type="button" onclick="btnUserMethod()">사용방법</button>
+	        <button class="ui-button" type="button" onclick="print_preview()">우편라벨인쇄</button>
+	        <!-- <button class="ui-button" id="btnExport" type="button">엑셀저장</button> -->
+	    </p>
+    </form>
+    <p class="float_r data_close" style="text-align:center;">
+        <button class="ui-button" type="button" onclick="back_html()" style="margin-top: -34px;">이전화면</button>
+    </p>
+</div>
+
+<div id="userMethod_modal" style="display:none; margin-bottom:10px">
+	<div style="padding:40px;">
+		<h1><우편라벨용지 출력방법></h1>
+		<div style="padding: 25px;">
+			<h2>1) 각 행의 왼쪽 네모 표시를 클릭하여 출력할 기업들을 체크합니다.</h2>
+				<div style="padding: 10px; margin-left: 10px; padding-top: 15px; padding-bottom: 15px;">-> 왼쪽 상단 체크 박스를 선택하면 해당 페이지의 전체 기업 리스트를 출력합니다.</div>
+			<h2>2) 왼쪽 하단의 '라벨선택' 버튼에서 원하는 옵션을 선택합니다.</h2>
+				<div style="padding-top:10px; padding-bottom:10px;">
+			<div style="padding: 10px; margin-left: 10px;">-> '라벨(2X8) A4용지'를 선택하면 A4용지크기에서 16개의 기업을 출력합니다.</div>
+			<div style="padding: 10px; margin-left: 10px;">-> '라벨(2X7) A4용지'를 선택하면 A4용지크기에서 14개의 기업을 출력합니다.</div>
+			<div style="padding: 10px; margin-left: 10px;">-> '라벨(2X6) A4용지'를 선택하면 A4용지크기에서 12개의 기업을 출력합니다.</div>
+				</div>
+			<h2>3) '수신지정' 버튼에서 원하는 옵션을 선택합니다.</h2>
+				<div style="padding-top:10px; padding-bottom:10px;">
+			<div style="padding: 10px; margin-left: 10px;">-> '대표이사'를 선택하면 회사 대표님에게 전달할 라벨지를 출력합니다.</div>
+			<div style="padding: 10px; margin-left: 10px;">-> '회사'를 선택하면 회사로 전달할 라벨지를 출력합니다.</div>
+			 </div>
+			<h2 style="padding-bottom:10px;">4) 오른쪽 하단의 '우편라벨인쇄' 버튼을 클릭합니다.</h2>
+			<h2 style="padding-top:10px; padding-bottom:10px; line-height: 20px;">5) 인쇄페이지 팝업창을 확인한 후 이상이 없으면 '출력' 버튼을 클릭하여 프린터 하시면 됩니다.</h2>
+			<h3 style="color:red; padding-top: 10px; padding-bottom:10px;">※ '출력' 버튼 클릭 후 인쇄 페이지에서 '설정 더보기' 설정 방법.</h3>
+			<div style="padding: 5px; margin-left: 30px;">-> 용지 크기<span style="margin:26px;"></span>'A4' 선택</div>
+			<div style="padding: 5px; margin-left: 30px;">-> 여백<span style="margin:38px;"></span>'기본' 선택</div>
+			<div style="padding: 5px; margin-left: 30px;">-> 품질<span style="margin:38px;"></span>'600dpi' 선택</div>
+			<div style="padding: 5px; margin-left: 30px;">-> 배율<span style="margin:38px;"></span>'기본값' 선택</div>
+			<div style="padding: 5px; margin-left: 30px;">-> 옵션<span style="margin:38px;"></span>'머리글과 바닥글', 배경 그래픽 선택 해제</div>
+		</div>
+	</div>
+	<p class="float_r data_close" style="text-align:center;">
+	    <button class="ui-button userMethod_modal_close_btn" type="button" style="margin-top: -30px;">닫기</button>
+	</p>
+</div>
+
+<div id="print_msg_modal" style="display:none; margin-bottom:10px">
+	<div style="font-size: 20px; text-align: center; padding-top: 15px;">선택된 회사가 없습니다.</div>
+	<p class="float_r data_close" style="text-align:center;">
+	    <button class="ui-button print_msg_modal_close_btn" type="button" style="margin-top: 12px;">닫기</button>
+	</p>
+</div>

@@ -1,0 +1,139 @@
+<script src="/function/hangul.js" type="text/javascript"></script>
+<script src="/function/keyboard.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var keyboardhidden = document.getElementsByClassName("keybar");
+
+	
+    $(document).ready(function() {
+		var typeSelect = document.querySelector("select[name=type_select]");
+
+		console.log(typeSelect.value);
+		var keyboardzone = document.getElementById("keyboardzone");
+		var input = document.getElementById("search_name");
+
+		var keyboard = new customKeyboard(
+		keyboardzone/*생성위치 태그*/,
+		input/*input을 받을 태그*/, 
+		
+        function()/*클릭 했을때*/ {
+            console.log("click : ", text);
+        },
+        function(e)/*앤터 눌렀을때*/ {
+            console.log("앤터 : ", text);
+				search();
+        }, 
+        null/*키패드를 모양 값*/
+       
+    );
+
+	input.addEventListener("click", function() {
+        // keydiv[nowlang].style.visibility = "visible";
+		keyboardhidden[0].style.visibility = `visible`
+        //input 태그를 자신으로 설정
+        keyboard.setInput(this);
+        //키패드 클릭 이벤트 설정
+        keyboard.setClick(function(text) {
+            console.log("input을 click한 후 : ", text);
+        })
+        //앤터 이벤트 설정
+        keyboard.setEnter(function(e) {
+            console.log("input을 click한 후 앤터 : ", text);
+				search();
+        });
+
+    })
+	$("#search_name").focus();
+	
+	$('#type_select').change(function(){
+		$("#type_result").val($("#type_select").val());
+	});
+	
+	/*$("#search_company").keydown(function(e){
+		console.log("???????????");
+		if(e.keyCode == 13) search();
+	});
+	
+	$("#search_name").keydown(function(e){
+		console.log("???????????")
+		if(e.keyCode == 13) search();
+	});*/
+
+	// Element 에 style 한번에 오브젝트로 설정하는 함수 추가
+	Element.prototype.setStyle = function(styles) {
+		for (var k in styles) this.style[k] = styles[k];
+		return this;
+	};
+});
+
+	function search() {
+		var name = $("#search_name").val().replace(/ /g, '').trim()
+		$("#search_name").val(name);
+
+		var seqNo = $("#type_select option:selected").val();
+		var input = document.getElementById("search_name");
+
+		console.log("seqNO :::", seqNo);
+		console.log("name :::", name);
+
+		//if(name == ''){
+		//	alert("이름 또는 졸업기수를 선택해주세요");
+		//	return false;
+		//}
+		var frm = document.searchForm;
+		frm.target = '_self';
+		frm.action = 'search_data';
+		frm.submit();
+
+		input.value = '';
+		//typeSelect.value = '';
+		keyboardhidden[0].style.visibility = `hidden`
+		$("#type_select").val('');
+
+	}
+
+	// function reset_chk(){
+	// 	document.getElementById('search_name').value = null;
+	// }
+</script>
+
+<div class="search-wrap">
+	<div class="search-main-wrap">
+		<div class="search-comment">
+			<p>친구 또는 동문의 이름을 입력하세요</p>
+		</div>
+		<div class="search_table">
+			<form action="/search_data" id="searchForm" name="searchForm" method="POST" autocomplete="off" target="_self">
+				<input type="hidden" id="type_result" name="type_result" value="and_select"/>
+				<div class="search-bar">
+					<div class="search-text-wrap">
+						<div class="search-select">
+							<select id="type_select" name="type_select">
+								<option data-display="졸업기수">졸업기수</option>
+									<% for(var k=1; k<=datadb[0].orgmem_seqNo; k++){ %>
+										<option value="<%=k%>"> <%=k%>회
+										</option>
+									<% } %>
+							</select>
+						</div>
+						<div class="v-line"></div>
+						<div class="search-text">
+							<input id="search_name" name="search_name" type="text" placeholder="예) 홍길동">
+						</div>
+					</div>
+					<div class="search-btn">
+						<label>
+							<input type="button" value="검 색" onclick="search()">
+							<img src="/images/search_icon.svg" alt="검색">
+							<p>검 색</p>
+						</label>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- <div>
+	<input type="button" value="검색초기화" onclick="reset_chk()" class="btn_big_black" style="background: #0d23bd; float: right; border-radius: 5px;">
+</div> -->
+</div>
+<div id="keyboardzone" style="position: relative; height: 0px; display: flex; justify-content: center;"></div>

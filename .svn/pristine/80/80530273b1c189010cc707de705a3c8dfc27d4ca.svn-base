@@ -1,0 +1,109 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config").connect;
+var layout = require("../../../function/layout.js");
+var code = require("../../../function/codeMngt.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+	console.log("********************* search.js enter *********************");
+	
+	var type_result = request.param("type_result")==undefined ? "" : request.param("type_result");
+	var search_name = request.param("search_name")==undefined ? "" : request.param("search_name");
+	var search_company = request.param("search_company")==undefined ? "" : request.param("search_company");
+	var search_item = request.param("search_item")==undefined ? "" : request.param("search_item");
+	var industry1_code = request.param("industry1")==undefined ? "" : request.param("industry1");
+	var industry2_code = request.param("industry2")=='2차 선택' ? "" : request.param("industry2");
+	var industry3_code = request.param("industry3")=='3차 선택' ? "" : request.param("industry3");
+	
+	var industry1_nm = request.param("industry1_nm")=='1차 선택' ? "" : request.param("industry1_nm");
+	var industry2_nm = request.param("industry2_nm")=='2차 선택' ? "" : request.param("industry2_nm");
+	var industry3_nm = request.param("industry3_nm")=='3차 선택' ? "" : request.param("industry3_nm");
+	
+	var search_area = request.param("search_area")==undefined ? "" : request.param("search_area");
+	var search_employee_num1 = request.param("search_employee_num1")==undefined ? "" : request.param("search_employee_num1");
+	var search_employee_num2 = request.param("search_employee_num2")==undefined ? "" : request.param("search_employee_num2");
+	var search_create_year1 = request.param("search_create_year1")==undefined ? "" : request.param("search_create_year1");
+	var search_create_year2 = request.param("search_create_year2")==undefined ? "" : request.param("search_create_year2");
+	var search_sales1 = request.param("search_sales1")==undefined ? "" : request.param("search_sales1");
+	var search_sales2 = request.param("search_sales2")==undefined ? "" : request.param("search_sales2");
+
+	var classify1 = request.param("classify1")==undefined ? "N" : request.param("classify1");
+	var classify2 = request.param("classify2")==undefined ? "N" : request.param("classify2");
+	var classify3 = request.param("classify3")==undefined ? "N" : request.param("classify3");
+	var classify4 = request.param("classify4")==undefined ? "N" : request.param("classify4");
+	var classify5 = request.param("classify5")==undefined ? "N" : request.param("classify5");
+	var classify6 = request.param("classify6")==undefined ? "N" : request.param("classify6");
+	var classify7 = request.param("classify7")==undefined ? "N" : request.param("classify7");
+	var classify8 = request.param("classify8")==undefined ? "N" : request.param("classify8");
+	var classify9 = request.param("classify9")==undefined ? "N" : request.param("classify9");
+	var classify10 = request.param("classify10")==undefined ? "N" : request.param("classify10");
+	
+	var sql = "";
+	var cnt_sql = "";
+	
+	sql += "SELECT min(create_year) AS min_year, MAX(create_year) AS max_year \n";
+	sql += "FROM orgmember GROUP BY create_year ORDER BY create_year asc \n";
+	
+	cnt_sql += "select \n"
+	cnt_sql += " count(*) as cnt \n";
+	cnt_sql += " from ( \n";
+	cnt_sql += sql;
+	cnt_sql += " ) a \n";
+	
+	db.query(sql, function(error, results){
+		db.query(cnt_sql, function(error, cnt_results){
+			console.log("sql ::: " + sql);
+			console.log("cnt_sql ::: " + cnt_sql);
+			
+			console.log("results[0].min_year ::: " + results[0].min_year);
+			console.log("results[(cnt_results[0].cnt)-1].max_year ::: " + results[(cnt_results[0].cnt)-1].max_year);
+			
+			fs.readFile("./views/user/web/search.html", "utf-8", function(error, data){
+				code.selectBoxList("main_category", "", function (err, industry1) {
+					response.send(ejs.render(layout.include("web_admin", data), {
+						menuNum:2,
+						industry1:industry1,
+						connectorNo : '123',
+						min_year : results[0].min_year,
+						max_year : results[(cnt_results[0].cnt)-1].max_year,
+						
+						type_result : type_result,
+						search_name : search_name,
+						search_company : search_company,
+						search_item : search_item,
+						industry1_code : industry1_code,
+						industry2_code : industry2_code,
+						industry3_code : industry3_code,
+						
+						industry1_nm : industry1_nm,
+						industry2_nm : industry2_nm,
+						industry3_nm : industry3_nm,
+						
+						search_area : search_area,
+						search_employee_num1 : search_employee_num1,
+						search_employee_num2 : search_employee_num2,
+						search_create_year1 : search_create_year1,
+						search_create_year2 : search_create_year2,
+						search_sales1 : search_sales1,
+						search_sales2 : search_sales2,
+						
+						classify1 : classify1,
+						classify2 : classify2,
+						classify3 : classify3,
+						classify4 : classify4,
+						classify5 : classify5,
+						classify6 : classify6,
+						classify7 : classify7,
+						classify8 : classify8,
+						classify9 : classify9,
+						classify10 : classify10
+					}));
+				});
+			});
+		});
+	});
+}

@@ -1,0 +1,741 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<script src="https://kit.fontawesome.com/7460d40ad7.js" crossorigin="anonymous"></script>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="6.%20대구%20산업단지%20현황.files/filelist.xml">
+<title>6. 대구 산업단지 현황</title>
+<style id="6. 대구 산업단지 현황_8694_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.font58694
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;}
+.xl638694
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;
+	padding-left:6px;}
+.xl648694
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:"\#\,\#\#0";
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl658694
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl668694
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl678694
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl688694
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl698694
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#F2F2F2;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl708694
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-char-type:none;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if !excel]>　　<![endif]-->
+<!--다음 내용은 Microsoft Excel의 웹 페이지로 게시 마법사를 사용하여 작성되었습니다.-->
+<!--같은 내용의 항목이 다시 게시되면 DIV 태그 사이에 있는 내용이 변경됩니다.-->
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 시작 -->
+<!----------------------------->
+
+<style type="text/css"> 
+	a:link { text-decoration:none; color:#ffffff;}
+	a:visited { text-decoration:none;color:white;}
+	a:active {text-decoration:none; color:#ccc; }
+	a:hover { text-decoration:none; color:white; }
+	
+	.table_content {margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 2%;}
+	th {border: 1px solid black;}
+	td {border: 1px solid black;}
+	tr {height: 40px;}
+	.td_c {background-color: white;}
+	.td_select {background-color: #fdbaba;}
+</style>
+
+<!-- <p class="float_r data_close" style="text-align:right;">
+	<button style="width: 80px; height: 30px; border-radius: 5px; background-color: #3b64af;">
+		<a href="/index_uw" target="_self" style="font-size: larger;">메인화면</a>
+	</button>
+</p> -->
+
+<div style="margin-top: 30px;">
+	<table class="table_content">
+		<colgroup>
+		    <col width="45%" />
+		    <col width="50%" />
+		</colgroup>
+		
+		<tr>
+			<th colspan="2" class="thead_th" style="height: 62px; background-color: #4f6fc1; color: white; font-weight: 600; font-size: 25px; text-align: left;">
+				<span style="padding-left: 15px;">대구기업체총람 부록자료</span>
+				<span style="padding-left: 40%; font-size: 18;">
+					<a href="/index_uw" target="_self"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i>메인화면</a>
+				</span>
+			</th>
+		</tr>
+		
+		<tbody>
+			<tr>
+                <td class="td_c" onClick="location.href='/file/user_html/1. 제24대 의원 명단(2021.04.01).htm'" style="cursor:pointer;">
+					<span style="color:black; margin: 5px; font-weight: 600;">1. 제24대 의원 명단(2021.04.01)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/7. 대구혁신도시 이전 공공기관 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">7. 대구혁신도시 이전 공공기관 현황</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_c" onClick="location.href='/file/user_html/2. 전국상의 현황 대외협력팀(2021.04.05).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">2. 전국상의 현황 대외협력팀(2021.04.05)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/8. 대구지역 상장법인.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">8. 대구지역 상장법인</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/3. 유관기관.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">3. 유관기관</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/9. 월드클래스300 대구기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">9. 월드클래스300 대구기업</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/4. 경제관련단체.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">4. 경제관련단체</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/10. 대구 3030기업(2007~2020).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">10. 대구 3030기업(2007~2020)</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/5. 대구지역 협동조합.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">5. 대구지역 협동조합</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/11. 스타기업100, Pre-스타기업, 고용친화기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">11. 스타기업100, Pre-스타기업, 고용친화기업</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_select" onClick="location.href='/file/user_html/6. 대구 산업단지 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">6. 대구 산업단지 현황</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/12. 물산업 클러스터 입주기업 리스트.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">12. 물산업 클러스터 입주기업 리스트</span>
+                </td>
+            </tr>
+		</tbody>
+    </table>
+</div>
+
+<div id="6. 대구 산업단지 현황_8694" align=center x:publishsource="Excel">
+
+<table border=1 cellpadding=0 cellspacing=0 width=1114 class=xl658694
+ style='border-collapse:collapse;table-layout:fixed;width:836pt;margin-bottom:50px;'>
+ <col class=xl658694 width=98 span=2 style='width:74pt'>
+ <col class=xl658694 width=95 span=5 style='mso-width-source:userset;
+ mso-width-alt:3040;width:71pt'>
+ <col class=xl658694 width=132 style='mso-width-source:userset;mso-width-alt:
+ 4224;width:99pt'>
+ <col class=xl658694 width=146 style='mso-width-source:userset;mso-width-alt:
+ 4672;width:110pt'>
+ <col class=xl658694 width=165 style='mso-width-source:userset;mso-width-alt:
+ 5280;width:124pt'>
+ <tr class=xl678694 height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl668694 width=98 style='height:36.0pt;width:74pt'><a
+  name="RANGE!A1:J20">단지명</a></td>
+  <td class=xl668694 width=98 style='border-left:none;width:74pt'>　</td>
+  <td class=xl668694 width=95 style='border-left:none;width:71pt'>조성년도</td>
+  <td class=xl668694 width=95 style='border-left:none;width:71pt'>지정면적</td>
+  <td class=xl668694 width=95 style='border-left:none;width:71pt'>산업용지</td>
+  <td class=xl668694 width=95 style='border-left:none;width:71pt'>입주업체</td>
+  <td class=xl668694 width=95 style='border-left:none;width:71pt'>종업원수</td>
+  <td class=xl668694 width=132 style='border-left:none;width:99pt'>’19년 매출액
+  (억원)</td>
+  <td class=xl668694 width=146 style='border-left:none;width:110pt'>통계담당부서 (기관)</td>
+  <td class=xl668694 width=165 style='border-left:none;width:124pt'>(2020. 6월말
+  기준, 천㎡)</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td colspan=2 height=48 class=xl698694 width=196 style='height:36.0pt;
+  width:148pt'>계(22)</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>　</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>44843</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>24195</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>9,369</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>116,950</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>322,126</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>　</td>
+  <td class=xl708694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl688694 width=98 style='height:36.0pt;border-top:none;
+  width:74pt'>국가산단</td>
+  <td class=xl638694 width=98 style='border-top:none;border-left:none;
+  width:74pt'>대구국가</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’09~’21</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>8559</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>4919</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>181</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>3,197</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>10,742</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>한국산업단지공단</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td rowspan=12 height=576 class=xl688694 width=98 style='height:432.0pt;
+  border-top:none;width:74pt'>일반산단 (16)</td>
+  <td class=xl638694 width=98 style='border-top:none;border-left:none;
+  width:74pt'>성서 (1~5차)</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’84~’12</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>12669</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>7430</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>2,707</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>49,514</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>165,072</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>성서관리공단</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>테크노폴리스</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’06~’16</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>7259</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>2930</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>92</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>3,078</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>30,272</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>대구연구개발특구</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>달성1차</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’80~’83</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>4079</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>2537</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>347</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>13,599</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>59,021</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>달성1차관리공단</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>달성2차</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’04~’07</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>2707</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>1378</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>276</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>4,271</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>15,637</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>한국산업단지공단</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>이시아폴리스</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’99~’16</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>1176</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>169</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>59</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>1,360</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>2,753</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>산단진흥과</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>염색</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’78~’88</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>846</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>588</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>127</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>4,727</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>6,813</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>염색관리공단</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>검단</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’74~’75</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>782</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>570</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>563</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>7,744</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>7,123</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>검단관리공단</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>출판</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’10~’12</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>243</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>94</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>87</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>1,084</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>3,095</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>문화콘텐츠과<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>제3</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’67~’68</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>1685</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>1194</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>2,493</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>12,399</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>7,430</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>제3관리공단</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>서대구</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’75~’78</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>2662</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>1314</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>2,366</td>
+  <td class=xl648694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>14,331</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>5,933</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>서대구관리공단</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>대성하이스코</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’15~’21</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>58</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>42</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>-</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>-</td>
+  <td class=xl638694 width=132 style='border-top:none;border-left:none;
+  width:99pt'>-</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>조성중</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>금호 워터폴리스</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’15~’23</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>1184</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>344</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>-</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>-</td>
+  <td class=xl638694 width=132 style='border-top:none;border-left:none;
+  width:99pt'>-</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>조성중</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td rowspan=2 height=96 class=xl688694 width=98 style='height:72.0pt;
+  border-top:none;width:74pt'>도시첨단 (2)</td>
+  <td class=xl638694 width=98 style='border-top:none;border-left:none;
+  width:74pt'>신서</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’14~’15</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>149</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>98</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>-</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>-</td>
+  <td class=xl638694 width=132 style='border-top:none;border-left:none;
+  width:99pt'>-</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>혁신성장정책과</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>율하</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’17~’22</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>167</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>99</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>-</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>-</td>
+  <td class=xl638694 width=132 style='border-top:none;border-left:none;
+  width:99pt'>-</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>조성중</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td rowspan=2 height=96 class=xl688694 width=98 style='height:72.0pt;
+  border-top:none;width:74pt'>농공단지 (2)</td>
+  <td class=xl638694 width=98 style='border-top:none;border-left:none;
+  width:74pt'>옥포</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’88~’90</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>160</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>133</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>44</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>524</td>
+  <td class=xl638694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>968</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>달성군 일자리경제과</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl638694 width=98 style='height:36.0pt;border-top:none;
+  border-left:none;width:74pt'>구지</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’90~’92</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>193</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>160</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>22</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>457</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>2,578</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>달성군 일자리경제과</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <tr height=48 style='mso-height-source:userset;height:36.0pt'>
+  <td height=48 class=xl688694 width=98 style='height:36.0pt;border-top:none;
+  width:74pt'>일반공단</td>
+  <td class=xl638694 width=98 style='border-top:none;border-left:none;
+  width:74pt'>현풍</td>
+  <td class=xl638694 width=95 style='border-top:none;border-left:none;
+  width:71pt'>’78~’82</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>265</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>196</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>5</td>
+  <td class=xl638694 align=right width=95 style='border-top:none;border-left:
+  none;width:71pt'>665</td>
+  <td class=xl648694 align=right width=132 style='border-top:none;border-left:
+  none;width:99pt'>4,689</td>
+  <td class=xl638694 width=146 style='border-top:none;border-left:none;
+  width:110pt'>달성군 일자리경제과</td>
+  <td class=xl658694 width=165 style='border-top:none;border-left:none;
+  width:124pt'>　</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=98 style='width:74pt'></td>
+  <td width=98 style='width:74pt'></td>
+  <td width=95 style='width:71pt'></td>
+  <td width=95 style='width:71pt'></td>
+  <td width=95 style='width:71pt'></td>
+  <td width=95 style='width:71pt'></td>
+  <td width=95 style='width:71pt'></td>
+  <td width=132 style='width:99pt'></td>
+  <td width=146 style='width:110pt'></td>
+  <td width=165 style='width:124pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 끝-->
+<!----------------------------->
+</body>
+
+</html>

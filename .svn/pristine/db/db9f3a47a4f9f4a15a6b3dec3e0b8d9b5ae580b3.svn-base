@@ -1,0 +1,194 @@
+<script type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#print_start').click(function(){
+		$("#print_start").hide();
+		$("#back_url").hide();
+		$("#h_style").css("height", "0px");
+		
+		window.print();
+		
+		$("#print_start").show();
+		$("#back_url").show();
+		$("#h_style").css("height", "40px");
+	});
+	
+	$('#back_url').click(function(){
+		var popup = window.open("", "" , "width=1,height=1");
+		popup.close();
+		
+		var form = document.writehtm;
+		var url = '/search_data';
+		
+		form.action = url;
+		form.target = '_self';
+		form.submit();
+	});
+	
+});
+</script>
+
+<!-- 프린트 할 때 -->
+<style type="text/css" media="print">
+	@page { size: auto; margin-top: 52px; margin-right: 18px; margin-left: 18px;}
+</style>
+
+<!-- PC화면으로 볼때 -->
+<style>
+	/* 폰트 굵은거 */
+	@font-face {
+	    font-family: 'NEXON Lv1 Gothic OTF Bold';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	/* 폰트 얇은거 */
+	@font-face {
+	    font-family: 'NEXON Lv2 Gothic';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	.n_tit, .a_tit, .z_tit {font-family: 'NEXON Lv1 Gothic OTF Bold';}
+	.index_box .addr, .index_box .company {font-family: 'NEXON Lv2 Gothic';}
+	
+	body {margin: 0; padding: 0;}
+	div {color: #000000; /* font-family: '굴림',Gulim; */ font-size: 14px;}
+	.btn_wrap {text-align: right;}
+	.index_box {text-align: center; float: left; width: 370px; box-sizing: border-box; color: #000000; overflow: hidden; height: 127px; padding: 10px;} 
+	.index_box .addr {text-align: left; margin-bottom: 3px; height: 33px;}
+	.index_box .company {text-align: left; margin-left: 20px; height: 35px;}
+	.index_box .op_box {margin-left: 80px; margin-top: 8px; font-weight: bold;}
+	.index_box .op_box .name{font-size: 17px; margin-top: -10px; font-weight: bold;}
+	.index_box .op_box .addr_code{font-size: 17px; margin-top: -5px;}
+	.index_box .op_box .name .n_tit {margin-right: 0px;}
+	
+	@media print {
+		/* 폰트 굵은거 */
+		@font-face {
+		    font-family: 'NEXON Lv1 Gothic OTF Bold';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		/* 폰트 얇은거 */
+		@font-face {
+		    font-family: 'NEXON Lv2 Gothic';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		#header{display: none;}
+		#footer{display: none;}
+		
+		body * {visibility: visible; -webkit-print-color-adjust: exact !important; background: #fff;}
+		
+		.n_tit {visibility: visible; font-size: 17px; font-weight: bold;}
+		
+		.a_tit {visibility: visible; font-size: 14px; margin-left: 8px;}
+		
+		.z_tit {visibility: visible; font-size: 17px;}
+		
+		.n_tit, .a_tit, .z_tit {font-family: 'NEXON Lv1 Gothic OTF Bold';}
+		.index_box .addr, .index_box .company {font-family: 'NEXON Lv2 Gothic';}
+	}
+</style>
+
+<form id="writehtm" name="writehtm" method="post" onsubmit="return false;" autocomplete="off">
+   	<input type="hidden" id="type_result" name="type_result" value="<%=type_result %>"/>
+   	<input type="hidden" name="nowPage" value="<%=nowPage%>" id="nowPage" />
+   	<input type="hidden" name="index_total" id="index_total" value="<%=index_total %>"/>
+   	<input type="hidden" name="index_cnt" id="index_cnt" value="<%=index_cnt %>"/>
+   	
+   	<input type="hidden" name="search_name" id="search_name" value="<%=search_name%>" />
+   	<input type="hidden" name="search_company" id="search_company" value="<%=search_company%>" />
+   	<input type="hidden" name="search_item" id="search_item" value="<%=search_item%>" />
+   	<input type="hidden" name="industry1" id="industry1" value="<%=industry1%>" />
+   	<input type="hidden" name="industry2" id="industry2" value="<%=industry2%>" />
+   	<input type="hidden" name="industry3" id="industry3" value="<%=industry3%>" />
+   	<input type="hidden" name="industry1_nm" id="industry1_nm" value="<%=industry1_nm%>" />
+   	<input type="hidden" name="industry2_nm" id="industry2_nm" value="<%=industry2_nm%>" />
+   	<input type="hidden" name="industry3_nm" id="industry3_nm" value="<%=industry3_nm%>" />
+   	<input type="hidden" name="search_area" id="search_area" value="<%=search_area%>" />
+   	<input type="hidden" name="search_employee_num1" id="search_employee_num1" value="<%=search_employee_num1%>" />
+   	<input type="hidden" name="search_employee_num2" id="search_employee_num2" value="<%=search_employee_num2%>" />
+   	<input type="hidden" name="search_create_year1" id="search_create_year1" value="<%=search_create_year1%>" />
+   	<input type="hidden" name="search_create_year2" id="search_create_year2" value="<%=search_create_year2%>" />
+   	<input type="hidden" name="search_sales1" id="search_sales1" value="<%=search_sales1%>" />
+   	<input type="hidden" name="search_sales2" id="search_sales2" value="<%=search_sales2%>" />
+   	
+   	<input type="hidden" name="classify1" id="classify1" value="<%=classify1%>" />
+	<input type="hidden" name="classify2" id="classify2" value="<%=classify2%>" />
+	<input type="hidden" name="classify3" id="classify3" value="<%=classify3%>" />
+	<input type="hidden" name="classify4" id="classify4" value="<%=classify4%>" />
+	<input type="hidden" name="classify5" id="classify5" value="<%=classify5%>" />
+	<input type="hidden" name="classify6" id="classify6" value="<%=classify6%>" />
+	<input type="hidden" name="classify7" id="classify7" value="<%=classify7%>" />
+	<input type="hidden" name="classify8" id="classify8" value="<%=classify8%>" />
+	<input type="hidden" name="classify9" id="classify9" value="<%=classify9%>" />
+	<input type="hidden" name="classify10" id="classify10" value="<%=classify10%>" />
+</form>
+
+<!-- 컨텐츠 -->
+<p class="float_r data_close" id="h_style" style="height: 40px; margin-left: 240px;">
+	<button id="print_start" name="print_start" class="ui-button" style="background-color: #d07979; margin-top:10px;">출력</button>
+	<button id="back_url" name="back_url" class="ui-button" style="margin-top:10px;">이전화면</button>
+</p>
+
+<div align=center class="index_wrap" style="margin-top: 5px; width:800px;">
+<% if(destination == "ceo"){ %>
+	<% for(var i = 0; i < db_data_size; i++){ %>
+		<% if(db_data[i].num%2 == "1"){ %>
+			<div class="index_box" >
+				<div class="addr">대구 <%=db_data[i].orgmem_office_addr1 %></div>
+				<div class="company"><%=db_data[i].company_name %></div>
+				<div class="op_box">
+					<div class="name"><span class="n_tit">대표(이사)<!-- &nbsp;&nbsp;&nbsp;<%=db_data[i].orgmem_name %> --> </span><span class="a_tit">귀하</span></div>
+					<div class="addr_code"><span class="z_tit"><%=db_data[i].orgmem_office_addr_zipcode %></span></div>
+				</div>
+			</div>
+		<%}%>
+		
+		<% if(db_data[i].num%2 == "0"){ %>
+			<div class="index_box" style="margin-left: 14px;">
+				<div class="addr">대구 <%=db_data[i].orgmem_office_addr1 %></div>
+				<div class="company"><%=db_data[i].company_name %></div>
+				<div class="op_box">
+					<div class="name"><span class="n_tit">대표(이사)<!-- &nbsp;&nbsp;&nbsp;<%=db_data[i].orgmem_name %> --> </span><span class="a_tit">귀하</span></div>
+					<div class="addr_code"><span class="z_tit"><%=db_data[i].orgmem_office_addr_zipcode %></span></div>
+				</div>
+			</div>
+		<%}%>
+	<%}%>
+<%} else if(destination == "company") {%>
+	<% for(var i = 0; i < db_data_size; i++){ %>
+		<% if(db_data[i].num%2 == "1"){ %>
+			<div class="index_box">
+				<div class="addr" style="margin-bottom: 15px;">대구 <%=db_data[i].orgmem_office_addr1 %></div>
+				<div class="op_box" style="margin-left:30px;">
+					<div class="name" style="font-size: 16px; margin-bottom: 5px;"><%=db_data[i].company_name %> <span style="font-size: 14px; margin-left: 8px;">귀중</span></div>
+					<div class="addr_code"><%=db_data[i].orgmem_office_addr_zipcode %></div>
+				</div>
+			</div>
+		<%}%>
+		
+		<% if(db_data[i].num%2 == "0"){ %>
+			<div class="index_box" style="margin-left: 14px;">
+				<div class="addr" style="margin-bottom: 15px;">대구 <%=db_data[i].orgmem_office_addr1 %></div>
+				<div class="op_box" style="margin-left:30px;">
+					<div class="name" style="font-size: 16px; margin-bottom: 5px;"><%=db_data[i].company_name %> <span style="font-size: 14px; margin-left: 8px;">귀중</span></div>
+					<div class="addr_code"><%=db_data[i].orgmem_office_addr_zipcode %></div>
+				</div>
+			</div>
+		<%}%>
+	<%}%>
+<%}%>
+
+</div>
+
+

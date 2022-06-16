@@ -1,0 +1,165 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		var s_orgmem_major = tag_place("<%=s_orgmem_major%>");
+		$('#search_major').html(s_orgmem_major);
+		
+		$("#search_major option").each(function(){
+    		if($('input[name="s_major"]').val()==$(this).val()){
+    			$(this).attr('selected',true);
+    		}
+    	});
+		
+		var page_navi = tag_place("<%=page_navi%>");
+		$('#page_navi').html(page_navi);
+
+		$('#searchAction').click(function(){
+			var frm = document.writehtm;
+			$('#nowPage').val(1);
+			frm.action = '/admin/web/orgm_delList_popup';
+			frm.submit();
+		});
+		
+		$("#search_text").keydown(function(e){
+			if(e.keyCode == 13) $('#searchAction').click();
+		});
+		
+		//사용자 복구
+		$(".org_click").click(function(){
+			var orgmem_no = $(this).attr("orgmem_no");
+			var orgmem_name = $(this).attr("orgmem_name");
+			var org_leader = $(this).attr("org_leader");
+			
+			var confirmHTML = "";
+			confirmHTML = "======= 사용자 정보 ======= \n";
+			confirmHTML += "이름 : "+orgmem_name+" \n";
+			confirmHTML += "기수코드 : "+org_leader+" \n";
+			confirmHTML += "======================= \n\n";
+			confirmHTML += "위 사용자를 복구 하시겠습니까?";
+			
+			if(confirm(confirmHTML)){
+				var frm = document.writehtm;
+				$("#orgmem_no").val(orgmem_no);
+				frm.action = '/admin/web/orgm_restore';
+				frm.submit();
+				window.opener.location.reload();
+			}
+		});
+	});
+	
+	function goPage(p_num){
+		var frm = document.writehtm;
+		frm.action = '/admin/web/orgm_delList_popup';
+		frm.nowPage.value = p_num;
+		frm.submit();
+	}
+	 
+</script>
+	<h2>
+		<span class="float_l">삭제회원 관리</span>
+		<img src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" onclick="self.close();"/>
+	</h2>
+
+	<form action="/admin/web/orgm_list" id="writehtm" name="writehtm" method="post" onsubmit="return false;" autocomplete="off">
+		<input type="hidden" name="nowPage" value="<%=nowPage%>" id="nowPage"/>
+		<input type="hidden" name="orgmem_no" id="orgmem_no" value=""/>
+		<input type="hidden" name="seqNo" id="seqNo" value="<%=orgmem_seqNo%>"/>
+		<input type="hidden" name="s_major" id="s_major" value="<%=search_major%>"/>
+		<input type="hidden" name="s_text" id="s_text" value="<%=search_text%>"/>
+		
+	
+		<div class="board_search">
+			<p class="float_r">
+				<select name="orgmem_seqNo" id="orgSeqList">
+					<option value="" >기수전체</option>
+					<% org_seqList.forEach(function(item, index){ %>
+							<option value="<%=item.org_no%>" <%if(orgmem_seqNo==item.org_no){%>selected="selected"<%}%>>
+							<%if(item.org_seqNo != 0) {%><%=item.org_seqNo%>기<%}%>
+							</option>
+					<%});%>
+					<%if(orgmem_seqNo=='moreData'){%>
+						<option value="moreData" selected="selected">1기~28기</option>
+					<%}else{%>
+						<option value="moreData">1~28기</option>
+					<%}%>
+					<%if(orgmem_seqNo=='52'){%>
+						<option value="52" selected="selected">교수진</option>
+					<%}else{%>
+						<option value="52">교수진</option>
+					<%}%>
+				</select>
+				<select name="search_major" id="search_major"></select>
+				<input type="text" name="search_text" id="search_text" value="<%=search_text%>" style="ime-mode:active;"/>
+				<input type="button" value="검색"  class="btn_small_black" id="searchAction" />
+			</p>
+		</div>
+	
+		<div class="board_list">
+			<table>
+				<colgroup>
+					<col width="5%" />
+					<col width="8%" />
+					<col width="9%" />
+					<col width="8%" />
+					<col />
+					<col width="10%" />
+					<col width="21%" />
+					<col width="21%" />
+				</colgroup>
+	
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>이름</th>
+						<th>기수코드</th>
+						<th>전공</th>
+						<th>휴대폰</th>
+						<th>동문직위</th>
+						<th>근무지</th>
+						<th>거주지</th>
+					</tr>
+				</thead>
+	
+				
+				<tbody>
+				<% if(db_data.length > 0) {
+					for(var i = 0; i < db_data.length; i++){ %>
+						<tr class="hand org_click" orgmem_no="<%=db_data[i].orgmem_no %>" orgmem_name="<%=db_data[i].orgmem_name %>" org_leader="<%=db_data[i].orgmem_leader_code %>">
+							<td>
+								<%=page_start++%>
+							</td>
+						<td class="hand" style="text-align:left;" onclick="MM_openBrWindow('orgm_view','','width=450,height=750,scrollbars=1','<%=db_data[i].orgmem_no%>','')"> 
+							<%=db_data[i].orgmem_name %>
+						</td>
+						<td><%=db_data[i].orgmem_leader_code %></td>
+						<td style="text-align:left;"><%=db_data[i].orgmem_major %></td>
+						<td>
+							<%if(db_data[i].orgmem_phone0 !=null && db_data[i].orgmem_phone0 !=''){%>
+								<%=db_data[i].orgmem_phone0 %>-<%=db_data[i].orgmem_phone2 %>-<%=db_data[i].orgmem_phone3 %>
+							<%}else{%>
+								<%=db_data[i].orgmem_phone1 %>-<%=db_data[i].orgmem_phone2 %>-<%=db_data[i].orgmem_phone3 %>
+							<%}%>
+						</td>
+					    <td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left;">
+					    	<%=db_data[i].orgmem_position_mba%>
+					    </td>
+					    <td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left;">
+					    	<%=db_data[i].orgmem_address_work%>
+					    </td>
+						<td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left;">
+							<%=db_data[i].orgmem_address_home %></td>
+						</tr>
+					<% } } else {%>
+				<tr>
+					<td colspan="8">등록된 회원이 없습니다.</td>
+				</tr>
+				<% } %>
+				</tbody>
+			</table>
+		</div>
+	</form>
+	<!-- 페이징 -->
+	<div class="mt_20">
+		<div class="paging" id="page_navi">
+		</div>
+	</div>
+	<!-- //페이징 -->

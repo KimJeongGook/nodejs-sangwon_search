@@ -1,0 +1,185 @@
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#board_btn").click(function () {
+			location.href = "board_write";
+		});
+
+		/*page_navi*/
+		var page_navi = tag_place("<%=page_navi%>");
+		$('#page_navi').html(page_navi);
+		/*page_navi*/
+
+		$('#brd_search').click(function () {
+			var search_type = $("select[name='search_type']").val();
+			$("#search_type").attr("value", search_type);
+			var frm = document.boardForm;
+			frm.action = '/admin/web/dues_view';
+			frm.submit();
+		});
+
+		$("#search_text").keydown(function (e) {
+			if (e.keyCode == 13) $('#brd_search').click();
+		});
+
+		$(".brd_del").click(function () {
+			if (confirm("삭제하시겠습니까?")) {
+				var PARAM = new Object();
+
+				PARAM.dues_id = $(this).attr('dues_id');
+				PARAM.mode = "delete";
+				$.ajax({
+					url: "/admin/web/dues_save"
+					, data: PARAM
+					, type: "POST"
+					, success: function (result) {
+						alert("삭제완료");
+						window.location.reload();
+					}
+				});
+			}
+		});
+
+		var currentDate = new Date();
+
+		var currentYear = currentDate.getFullYear();
+		var currentMonth = currentDate.getMonth();
+
+		var year = "<%=year%>";
+		var month = "<%=month%>";
+		currentYear = year*1;
+		currentMonth = month*1;
+
+		var search_month_html = "<option value=''>- 월 선택 -</option>";
+		for (var idx = 1; idx < 13; idx++) {
+
+			search_month_html += "<option value=" + lpad(idx, 2, '0');
+			if (idx == currentMonth) {
+				search_month_html += " selected";
+			}
+			search_month_html += ">" + idx + " 월</option>";
+
+			if (idx == 12) {
+				$("#search_month").html(search_month_html);
+			}
+		}
+
+
+
+		var search_year_html = "<option value=''> - 년도 선택 - </option>";
+		for (var idx = 0; idx < 10; idx++) {
+			search_year_html += "<option value='" + (currentYear - idx) + "'";
+			if (idx == 0) {
+				search_year_html += " selected";
+			}
+			search_year_html += ">" + (currentYear - idx) + "</option>";
+
+			if (idx == 9) {
+				$("#search_year").html(search_year_html);
+			}
+		}
+	});
+	function lpad(str, padLen, padStr) {
+		if (padStr.length > padLen) {
+			console.log("오류 : 채우고자 하는 문자열이 요청 길이보다 큽니다");
+			return str;
+		}
+		str += ""; // 문자로
+		padStr += ""; // 문자로
+		while (str.length < padLen)
+			str = padStr + str;
+		str = str.length >= padLen ? str.substring(0, padLen) : str;
+		return str;
+	}
+
+	function brd_del() {
+		var board_no = $("#board_no").val($(this).attr('brd_no'));
+	}
+
+	function goPage(p_num) {
+		var frm = document.boardForm;
+		frm.action = '/admin/web/dues_view';
+		frm.nowPage.value = p_num;
+		frm.submit();
+	}
+
+	function dues_Popup() {
+		var year = $("#search_year").val();
+		var month = $("#search_month").val();
+		var win = window.open('/admin/web/dues_popup?search_year=' + year + '&search_month=' + month, 'member_list', 'width=900,height=900,scrollbars=yes');
+		win.focus();
+	}
+</script>
+
+<form id="boardForm" name="boardForm" method="post" action="" onsubmit="return false;" autocomplete="off">
+	<input type="hidden" name="nowPage" value="<%=nowPage%>" />
+	<input type="hidden" id="number" name="number" value="" />
+	<input type="hidden" id="filename" name="filename" value="" />
+	<input type="hidden" id="board_no" name="board_no" value="" />
+	<div class="board_search">
+		<h3 class="float_l">회비관리</h3>
+		<p class="float_r">
+			<select name="search_year" id="search_year">
+			</select>
+			<select name="search_month" id="search_month"></select>
+			<select name="search_type">
+				<option value="name" <% if(search_type=="name"){ selected="selected" }%>>이름</option>
+				<option value="gisu" <% if(search_type=="gisu"){ selected="selected" }%>>기수</option>
+			</select>
+			<input type="text" name="search_text" id="search_text" value="<%=search_text%>" style="ime-mode:active;" />
+			<input type="button" id="brd_search" value="검색" class="btn_small_black" />
+		</p>
+
+	</div>
+	<div class="board_list">
+		<table>
+			<colgroup>
+				<col width="7%" />
+				<col width="18%" />
+				<col width="25%" />
+				<col width="15%" />
+				<col width="10%" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>이름</th>
+					<th>납부년월</th>
+					<th>납부내역</th>
+					<th>기수</th>
+					<th>비고</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for(var i = 0; i < data.length; i++){ %>
+				<tr>
+					<td><%=data[i].dues_id %></td>
+					<td class="hand" onclick="MM_openBrWindow('/admin/web/dues_modify','','width=550,height=450','<%=data[i].dues_id %>')"><%=data[i].orgmem_name %></td>
+					<td><%=data[i].year  %>/<%=data[i].month  %></td>
+					<td><%=data[i].pay_option  %></td>
+					<td><%=data[i].orgmem_seqNo %></td>
+					<td>
+						<img class="brd_del hand" dues_id="<%=data[i].dues_id %>"
+							src="../../../images/admin/icon_delete.gif" alt="삭제" />
+	</div>
+	</td>
+	</tr>
+	<% } %>
+	<%if(data.length == 0){%>
+	<tr>
+		<td colspan="6">
+			등록된 목록이 없습니다.
+		</td>
+	</tr>
+	<%}%>
+			</tbody>
+		</table>
+	</div>
+</form>
+<div class="mt_20">
+	<div class="paging" id="page_navi">
+	</div>
+	<p class="float_r">
+		<input type="button" value="등록" class="btn_big_blue"
+			onclick="dues_Popup();"  />
+	</p>
+</div>

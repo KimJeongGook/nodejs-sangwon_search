@@ -1,0 +1,778 @@
+<link type='text/css' href='/js/simplemodal-basic/css/demo.css' rel='stylesheet' media='screen' />
+<link type='text/css' href='/js/simplemodal-basic/css/basic.css' rel='stylesheet' media='screen' />
+<script type='text/javascript' src='/js/simplemodal-basic/js/jquery.simplemodal.js'></script>
+<script type="text/javascript" src="/js/jquery/jquery.tablesorter.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//전공 selectbox
+	var s_orgmem_major = tag_place("<%=s_orgmem_major%>");
+	$('#search_major').html(s_orgmem_major);
+	
+	$("#search_major option").each(function(){
+		if($('input[name="s_major"]').val()==$(this).val()){
+			$(this).attr('selected', true);
+		}
+	});
+	
+	//직위 selectbox
+	var s_orgmem_position = tag_place("<%=s_orgmem_position%>");
+	$('#search_position').html(s_orgmem_position);
+	
+	$("#search_position option").each(function(){
+		if($('input[name="s_position"]').val() == $(this).val()){
+			$(this).attr('selected', true);
+		}
+	});
+	
+	$('#searchAction').live('click', function(e){
+		$.ajax({
+			type : "post",
+			url : "/admin/web/ums_list",
+			data : {isSearch : "true", search_text : $("#search_text").val(), search_major : $("#search_major").val(), search_position : $("#search_position").val(), orgmem_seqNo : $("#orgSeqList").val()},
+			dataType : "json",
+			beforeSend : function(){
+				$('.wrap-loading').removeClass('display-none');
+			},
+			success : function(data){
+				var allCheckHTML = "";
+				if(data.length>0) {
+					var noArray = "";
+					var phoneArray = "";
+		    		var flagArray = "";
+		    		var nameArray = "";
+		    		
+		    		$.each(data, function(index) {
+		    			noArray += data[index].orgmem_no + "\r\n";
+		    			phoneArray += data[index].orgmem_phone + "\r\n";
+		    			flagArray += data[index].orgmem_seqNo + "\r\n";
+		    			nameArray += data[index].orgmem_name + "\r\n";
+			   		});
+		    		
+			   		$("#leftZone_tb").html(allCheckHTML);
+		    		$("textarea[name='leftNo_hidden']").val(noArray);
+		    		$("textarea[name='leftPhoneNum_hidden']").val(phoneArray);
+		    		$("textarea[name='leftFlag_hidden']").val(flagArray);
+		    		$("textarea[name='leftName_hidden']").val(nameArray);
+		    		
+		    		addLeftZone();
+				}else{
+					alert("검색된 회원이 없습니다.");
+				}
+			}, complete:function(){
+				$('.wrap-loading').addClass('display-none');
+		    }, error : function(xhr, status, error){
+				alert("[오류] 상세설명\n\nxhr == " + xhr + "\n\nstatus == " + status + "\n\nerror == " + error);
+			}
+		});
+	});
+	
+	$("input[name='allCheck']").live('click', (function(e) {
+		if($(this).is(":checked")) {
+			$("input:checkbox[name='phoneNumChk']").attr("checked", true);
+		} else {
+			$("input:checkbox[name='phoneNumChk']").attr("checked", false);
+		}
+	}));
+	
+	$("input[name='phoneNumChk']").live('click', (function(e) {
+		var phoneNumChk_values = $("input[name='phoneNumChk']:checked").map(function () {
+			return this;
+		}).get();
+		
+		if(!$(this).is(":checked")) {
+			$("input:checkbox[name='allCheck']").attr("checked", false);
+		}else if(phoneNumChk_values.length == $("#leftZone_tb").find("tr").size() - 1){
+			$("input:checkbox[name='allCheck']").attr("checked", true);
+		}
+	}));
+	
+	$("#rightBtn").live('click', function(e){
+		e.preventDefault();
+		
+		$("input:checkbox[name='allCheck']").attr("checked", false);
+		
+		var overlapCnt = 0;
+		
+		var phoneNumChk_values = $("input[name='phoneNumChk']:checked").map(function () {
+			return this.id;
+		}).get();
+		
+		var isOverlap = false;
+		
+		for(var i=0; i<phoneNumChk_values.length; i++){
+			/* 중복제거 */
+			
+			$("#rightZone_tb").find("tr").each(function(){
+    			if(phoneNumChk_values[i] == $(this).attr("id")){
+    				isOverlap = true;
+    			}
+    	   	});
+			
+			/* 체크된 leftZone_tb 값 제거 */
+			$("#leftZone_tb").find("tr").each(function(){
+    			if(phoneNumChk_values[i] == $(this).attr("id")){
+    				$(this).remove();
+    			}
+    	   	});
+		}
+		
+		if(isOverlap == true){
+			overlapCnt++;
+		}else{
+			$.ajax({
+				type : "post",
+				url : "/admin/web/getSendList",
+				dataType : "json",
+				data : {orgmem_no_array : phoneNumChk_values},
+				beforeSend : function(){
+					$('.wrap-loading').removeClass('display-none');
+				}, success : function(data){
+					if(data.length>0) {
+						var noArray = "";
+			    		var phoneArray = "";
+			    		var flagArray = "";
+			    		var nameArray = "";
+			    		
+			    		//data가 배열로 넘어옴
+			    		$(data).each(function(i){
+			    			$(data[i]).each(function(j, data){
+				    			noArray += data.orgmem_no + "\r\n";
+				    			phoneArray += data.orgmem_phone + "\r\n";
+				    			flagArray += data.orgmem_seqNo + "\r\n";
+				    			nameArray += data.orgmem_name + "\r\n";
+				    		});
+			    		});
+			    		
+			    		$("textarea[name='rightNo_hidden']").val(noArray);
+			    		$("textarea[name='rightPhoneNum_hidden']").val(phoneArray);
+			    		$("textarea[name='rightFlag_hidden']").val(flagArray);
+			    		$("textarea[name='rightName_hidden']").val(nameArray);
+			    		
+			    		addRightZone();
+			    	}
+				},complete:function(){
+					$('.wrap-loading').addClass('display-none');
+			        displayPhoneCnt($("#rightZone_tb").find("tr").size());
+
+			        $(".tablesorter").trigger("update");
+			        
+		        	$("#rightZone_table").tablesorter({
+		        		headers : {0 : {sorter:false}, 3 : {sorter:false}}
+		        	});
+			    }, error : function(xhr, status, error) {
+			    	alert("[오류] 상세설명\n\nxhr == " + xhr + "\n\nstatus == " + status + "\n\nerror == " + error);
+		      	}
+			});
+		}
+		
+		if(overlapCnt > 0){
+			alert("중복된 번호가 있습니다.")
+		}
+		
+		if(phoneNumChk_values.length != ""){
+			$("#leftZone_tb").empty();
+		}
+	});
+	
+	$("input[name='allCheck2']").live('click', (function(e) {
+		if($(this).is(":checked")) {
+			$("input:checkbox[name='phoneNumChk2']").attr("checked", true);
+		} else {
+			$("input:checkbox[name='phoneNumChk2']").attr("checked", false);
+		}
+	}));
+	
+	$("input[name='phoneNumChk2']").live('click', (function(e) {
+		var phoneNumChk_values = $("input[name='phoneNumChk2']:checked").map(function () {
+			return this;
+		}).get();
+		
+		if(!$(this).is(":checked")) {
+			$("input:checkbox[name='allCheck2']").attr("checked", false);
+		}else if(phoneNumChk_values.length == $("#rightZone_tb").find("tr").size() - 1){
+			$("input:checkbox[name='allCheck2']").attr("checked", true);
+		}
+	}));
+	
+	$("#leftBtn").live('click', function(e){
+		e.preventDefault();
+		
+		$("input:checkbox[name='allCheck2']").attr("checked", false);
+		
+		var phoneNumChk_values = $("input[name='phoneNumChk2']:checked").map(function () {
+			return this.id;
+		}).get();
+		
+		if(phoneNumChk_values != ""){
+			/* 체크된 rightZone_tb 값 제거 */
+			for(var i=0; i<phoneNumChk_values.length; i++){
+				$("#rightZone_tb").find("tr").each(function(){
+	    			if(phoneNumChk_values[i] == $(this).attr("id")){
+	    				$(this).remove();
+	    			}
+	    	   	});
+			}
+			
+			$.ajax({
+				type : "post",
+				url : "/admin/web/getSendList",
+				dataType : "json",
+				data : {orgmem_no_array : phoneNumChk_values},
+				beforeSend : function(){
+					$('.wrap-loading').removeClass('display-none');
+				}, success : function(data){
+					var allCheckHTML = "";
+					if(data.length>0) {
+						var noArray = "";
+			    		var phoneArray = "";
+			    		var flagArray = "";
+			    		var nameArray = "";
+			    		
+			    		//data가 배열로 넘어옴
+			    		$(data).each(function(i){
+			    			$(data[i]).each(function(j, data){
+				    			noArray += data.orgmem_no + "\r\n";
+				    			phoneArray += data.orgmem_phone + "\r\n";
+				    			flagArray += data.orgmem_seqNo + "\r\n";
+				    			nameArray += data.orgmem_name + "\r\n";
+				    		});
+			    		});
+			    		
+			    		$("textarea[name='leftNo_hidden']").val(noArray);
+			    		$("textarea[name='leftPhoneNum_hidden']").val(phoneArray);
+			    		$("textarea[name='leftFlag_hidden']").val(flagArray);
+			    		$("textarea[name='leftName_hidden']").val(nameArray);
+			    		
+			    		addLeftZone2();
+			    	}
+				},complete:function(){
+					$('.wrap-loading').addClass('display-none');
+					$(".tablesorter").trigger("update");
+			        displayPhoneCnt($("#rightZone_tb").find("tr").size());
+			    }, error : function(xhr, status, error) {
+			    	alert("[오류] 상세설명\n\nxhr == " + xhr + "\n\nstatus == " + status + "\n\nerror == " + error);
+		      	}
+			});
+			
+			displayPhoneCnt($("#rightZone_tb").find("tr").size());
+		}
+	});
+	
+	$.ajax({
+		type : "post",  
+	    url : "getRepre_number",   
+	    dataType : "json",
+	    data : {'repre_mode' : 'select'},
+	    success : function(data){
+	    	if(data[0].repre_number != "" && data[0].repre_number != null){
+		    	$('#repre_numberIDText').text( data[0].repre_number );
+		    	$('#repre_numberID').val( data[0].repre_number );
+	    	}else{
+	    		alert("대표번호가 지정되어 있지 않습니다.\n\n개발사에게 문의를 하세요.");
+	    	}
+	    }, error : function(xhr, status, error) {
+	    	alert("대표번호가 지정되어 있지 않습니다.\n\n개발사에게 문의를 하세요.");
+	    	$("#send_Btn").remove();
+      	}
+	});
+	
+	$("textarea[name='ums_msg']").on('keyup', function() {
+		var msg_length = 0;
+		var msg_val = $(this).val();
+		
+		msg_length = (function(s, b, i, c){
+			for(b=i=0;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
+			return b
+		})(msg_val);
+		
+		if(msg_length > 0) {
+			$("#ums_msg_length").html("").html(msg_length);
+			fnMsg_length(msg_length);
+		}
+	});
+	
+	$("#send_Btn").click(function() {
+		overlapCheck();
+		
+		var title = $("#title").val().replace(/(^\s*)|(\s*$)/g, "");
+		if(title == "제목을 입력하세요.") title = "";
+		if(title !="" ) {
+			$("#title").val(title);
+		} else {
+			alert("제목을 입력하세요.");
+			return false;
+		}
+		
+		var ums_file1 = $('input[name="ums_file1"]').val();
+		if(ums_file1 == "") {
+			var ums_msg = $('textarea[name="ums_msg"]').val().replace(/(^\s*)|(\s*$)/g, "");
+			if(ums_msg == "내용을 입력하세요.") ums_msg = "";
+			if(ums_msg !="" ) {
+				$("#ums_msg").val(title);
+			} else {
+				alert("내용을 입력하세요.");
+				return false;
+			}	
+		}
+		
+		var fromNumber_size = $('#rightZone_tb').find("tr").size();
+		
+		if(fromNumber_size>0) {
+			var rightId = [];
+			var rightValue = [];
+			
+			$("#rightZone_tb").find("tr").each(function(i){
+				rightId[i] = $(this).attr("id");
+				rightValue[i] = $(this).attr("val");
+    	   	});
+			
+			$("#tonumberzone_id").val("").val(rightId);
+			$("#tonumberzone_value").val("").val(rightValue);
+		} else {
+			alert("수신번호가 입력되지 않았거나, 존재하지 않습니다.");
+			$("#tonumberzone_value").val("");
+			return false;
+		}
+		
+		if(confirm("문자를 발송하시겠습니까?")) {
+			var bar = $('.bar');
+			var percent = $('.percent');
+			var status = $('#status');
+			
+			$('#inputMessageForm').ajaxSubmit({
+				dataType : "json",
+			    beforeSend: function() {
+				    // 상태 초기화
+				    status.empty();
+			        var percentVal = '0%';
+			        bar.width(percentVal)
+			        percent.html(percentVal);
+					// 메세지박스 출력
+			        $( "#dialog-message" ).dialog({
+						modal: true,
+						height: 130,
+						open: function(){
+							$(".ui-dialog-titlebar-close").hide();
+							$(".progress").show();
+						}
+					});
+			    }, uploadProgress: function(event, position, total, percentComplete) {
+			        var percentVal = percentComplete + '%';
+			        bar.width(percentVal)
+			        percent.html(percentVal);
+			        if(percentComplete==100) {
+			        	percent.css("left", "5%").html("완료되었습니다. 잠시 후 메세지는 자동종료됩니다.");
+			        }
+			    }, success: function(data) {
+			    	if(!data.result_flag) {
+			    		$("#dialog-message").dialog( "close" );
+				    	alert( data.result_msg );
+			    	} else {
+			    		alert( data.result_msg );
+			    		$("#dialog-message").dialog( "close" );
+			    	}
+			    }, complete: function(xhr) {
+					console.log("form submit complete");
+					console.log(xhr.responseText);
+				}
+			});
+		}
+	});
+	
+	//발송 결과
+	$('#msgResult').on('click', function(){
+	    var url    = "/admin/web/ums_result";
+	    var popName  = "Result";
+	    var status = "width=1000,height=800,scrollbars=yes"; 
+	    window.open(url, popName, status);
+	});
+	
+	//문구활용
+	$('#umqButton').on('click', function(){
+		$.ajax({
+			type : "post",  
+			url : "/admin/web/ums_latest",
+			dataType : "json",
+			async : false,
+			success : function(data){
+				var umsHTML = "";
+				var umsText = "";
+				var umsCnt = "";
+				var ums_send_id = "";
+				var create_date = "";
+				
+				if(data.length>0) {
+	    			$.each(data, function(index) {
+	    				if(data[index].ums_type == "1"){
+		    				umsText = data[index].ums_content;
+		    				umsCnt = data[index].ums_send_cnt;
+		    				ums_send_id = data[index].ums_send_id;
+		    				create_date = data[index].create_date;
+		    				
+		    				umsHTML += "<div class='ums_div' send_id='"+ums_send_id+"'>";
+		    				umsHTML += 		"<span class='ums_date'>문자 발송일</span>";
+		    				if(data[index].create_date.substring(20, 22) == "AM"){
+		    					umsHTML += "<input type='text' class='dateInput' readonly='readonly' value='"+create_date.replace("AM", "오전")+"'>";
+    						}else{
+    							umsHTML += "<input type='text' class='dateInput' readonly='readonly' value='"+create_date.replace("PM", "오후")+"'>";
+    						}
+		    				umsHTML += 		"<textarea class='umq' readonly='readonly' style='width:271px; height:250px;'>"
+		    				umsHTML += 			""+umsText+"";
+		    				umsHTML += 		"</textarea>";
+		    				umsHTML += 		"<span class='umc_text'>수신대상 인원수</span>";
+		    				umsHTML += 		"<input type='text' class='textInput' readonly='readonly' value='"+umsCnt+"'>"
+		    				umsHTML += "</div>"
+		    				
+		    				$("#umsQuick").html(umsHTML);
+	    				}
+	    			});
+	    		}
+			}, error : function(xhr, status, error) {
+			    	alert("[오류] 상세설명\n\nxhr == " + xhr + "\n\nstatus == " + status + "\n\nerror == " + error);
+		      	}
+		});
+			
+		$("#basic-modal-content").modal({
+			containerCss: {
+    			width: '700px',
+    			height: '615px'
+    		},
+		    onShow: function (dlg) {
+		    	$(dlg.wrap).children().children().show(); // onShow 상태 일때만 show
+		        $(dlg.wrap).css('overflow', 'hidden');
+		        $(dlg.wrap).css('text-align', 'center');
+		        
+		        $('.umq').on('click', function(){
+		        	if(confirm("해당 문구를 활용 하시겠습니까?")){
+		        		$("#rightZone_tb").empty();
+			        	
+			    		$('textarea[name=ums_msg]').val('');
+			    		$('textarea[name=ums_msg]').val(($(this).val()));
+			    		
+		    			var msg_length = 0;
+		    			var msg_val = $(this).val();
+		    			
+		    			msg_length = (function(s, b, i, c){
+		    				for(b=i=0;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
+		    				return b
+		    			})(msg_val);
+		    			
+		    			if(msg_length > 0) {
+		    				$("#ums_msg_length").html("").html(msg_length);
+		    				fnMsg_length(msg_length);
+		    			}
+		    			
+		    			var send_id_array = [];
+		    			send_id_array = $(this).parent().attr("send_id").split(",");
+			    		
+	    				$.ajax({
+							type : "post",
+							url : "/admin/web/getSendList",
+							dataType : "json",
+							data : {orgmem_no_array : send_id_array},
+							success : function(data){
+								if(data.length>0) {
+									var noArray = "";
+						    		var phoneArray = "";
+						    		var flagArray = "";
+						    		var nameArray = "";
+						    		
+						    		//data가 배열로 넘어옴
+						    		$(data).each(function(i){
+						    			$(data[i]).each(function(j, data){
+							    			noArray += data.orgmem_no + "\r\n";
+							    			phoneArray += data.orgmem_phone + "\r\n";
+							    			flagArray += data.orgmem_seqNo + "\r\n";
+							    			nameArray += data.orgmem_name + "\r\n";
+							    		});
+						    		});
+						    		
+						    		$("textarea[name='rightNo_hidden']").val(noArray);
+						    		$("textarea[name='rightPhoneNum_hidden']").val(phoneArray);
+						    		$("textarea[name='rightFlag_hidden']").val(flagArray);
+						    		$("textarea[name='rightName_hidden']").val(nameArray);
+						    		
+						    		addRightZone();
+						    	}
+							},complete:function(){
+						        displayPhoneCnt($("#rightZone_tb").find("tr").size());
+						    }, error : function(xhr, status, error) {
+						    	//alert("[오류] 상세설명\n\nxhr == " + xhr + "\n\nstatus == " + status + "\n\nerror == " + error);
+					      	}
+						});
+			    		$.modal.close();
+		        	}
+		    	});
+		    },
+		    onClose: function (dlg) {
+		    	$.modal.close();
+		    }
+		});
+	});
+	
+	//새로작성
+	$("#reWrite").click(function(){
+		$('textarea[name=ums_msg]').val('');
+		$('textarea[name=ums_msg]').empty();
+		$("#ums_msg_length").html("").html('0');
+		fnMsg_length(0);
+	});
+	
+	$("input[name='ums_file1']").change(function() {
+		$("#ums_msg_image").html("").append( "&nbsp;<img src='/images/admin/icon_mms.gif' style='vertical-align: middle;' />" );
+	});
+	
+	$("#ums_file1_clear").click(function() {
+		$("input[name='ums_file1']").val("");
+		
+		var msg_length = 0;
+		var msg_val = $("textarea[name='ums_msg']").val();
+		
+		msg_length = (function(s, b, i, c){
+			for(b=i=0;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
+			return b
+		})(msg_val);
+		
+		$("#ums_msg_length").html("").html(msg_length);
+		fnMsg_length(msg_length);
+	});
+});
+
+function overlapCheck(){ //보내기 전 마지막 중복체크
+	var cnt = 0;
+	var obj = $("#rightZone_tb").find("tr");
+	var temp = [];
+	
+	obj.each(function(i){
+		temp[i] = $(this).attr("val");
+   	});
+	
+	$(temp).each(function(i){
+		var x=0;
+		obj.each(function(){
+			if(temp[i] == $(this).attr("val")){
+				x++;
+				if(x > 1){
+					cnt++;
+					$(this).remove();
+				}
+			}
+		});
+	});
+	
+	if(cnt > 0){
+		alert("중복된 번호가 있어 제거합니다.")
+	}
+	
+	displayPhoneCnt($("#rightZone_tb").find("tr").size());
+}
+
+function fnMsg_length(str_length) {
+	if($("input[name='ums_file1']").val() == "") {
+		if(str_length > 80) {
+			$("#ums_msg_image").html("").append( "&nbsp;<img src='/images/admin/icon_lms.gif' style='vertical-align: middle;' />" );
+		} else {
+			$("#ums_msg_image").html("").append( "&nbsp;<img src='/images/admin/icon_sms.gif' style='vertical-align: middle;' />" );
+		}
+	}	
+}
+
+function orderByName() {
+	$("#byName").click();
+}
+</script>
+
+<style>
+	.wrap-loading{ /*화면 전체를 어둡게 합니다.*/
+	    position: fixed;
+	    left:0;
+	    right:0;
+	    top:0;
+	    bottom:0;
+	    background: rgba(0,0,0,0.2); /*not in ie */
+	    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#20000000', endColorstr='#20000000');    /* ie */
+	}
+	.wrap-loading div{position: fixed; top:50%; left:50%;margin-left: -21px; margin-top: -21px;}
+	.display-none{display:none;}
+	#tonumberzone {display: none; width: 218px; height: 89px; border: 1px solid #c5c5c5;}
+	.ums_div{float:left; width:300px; margin-top:10px;}
+	.umq{margin-bottom:5px; margin-top:5px;}
+	.dateInput{float:right; width:160px; margin-right:11px; text-align:right;}
+	.textInput{float:right; width:40px; margin-right:11px; text-align:right;}
+	.ums_date{margin-left:40px; color:#fff; font-size:15px;}
+	.umc_text{margin-left:120px; color:#fff;font-size:15px;}
+	.progress {position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; display: none; }
+	.bar {width:0%; height:20px; border-radius:3px; background:#6c69c0;}
+	.percent {position:absolute; display:inline-block; top:37%; left:48%;}
+</style>
+
+<form name="inputMessageForm" id="inputMessageForm" method="post" action="ums_send" enctype="multipart/form-data" autocomplete="off">
+	<input type="hidden" name="p_val" id="p_val" />
+	<input type="hidden" name="seqNo" id="seqNo" value="<%=orgmem_seqNo%>"/>
+	<input type="hidden" name="s_text" id="s_text" value="<%=search_text%>"/>
+	<input type="hidden" name="s_major" id="s_major" value="<%=search_major%>"/>
+	<input type="hidden" name="s_position" id="s_position" value="<%=search_position%>"/>
+	<input type="hidden" name="repre_numberID" id="repre_numberID" value=""/>
+
+	
+	<!-- 우측 영역 -->
+	<div class="float_r massege_box">
+		<div class="massege">
+			<h3>문자내용 입력</h3>
+			<p class="title">
+				* 제목 내용은 40byte 초과를 초과하실 수 없습니다.<br/>
+				* 첨부파일 등록시 내용은 생략가능합니다.
+				<input type="text" name="title" id="title" value="[대구기업체총람]" title="sms 전송제목 입력" onfocus="chkTitle()" onkeyup="getCheckByteObject(this,'40')" style="ime-mode:active;"/>
+			</p>
+			<textarea name="ums_msg" style="ime-mode:active;"></textarea>
+			
+			<input type="file" name="ums_file1" class="float_l" style="width: 90%; margin-top:5px;" onclick="javascript:alert('첨부파일은 이미지(jpg)만 허용됩니다.\n\n이미지가 아니면은 첨부가 되지 않습니다.\n\n권장 이미지 용량은 50Kbyte 이하');" />
+			<h2 style="padding-top:15px; cursor:pointer;" id="ums_file1_clear" >&nbsp;<font color="red">X</font></h2>
+			<br/>
+			<p class="mt_10">글자수 : <span id="ums_msg_length">0</span>/80byte<span id="ums_msg_image"></span></p>
+			<p class="align_c mt_20">
+				<input class="bigpadding btn_big_black" type=button id="umqButton" value="문구활용"/>
+				<input class="bigpadding btn_big_red" type=button id="reWrite" value="새로작성"/>
+				<input id="send_Btn"  class="bigpadding btn_big_blue mr_10" type="button" value="보내기" />
+			</p>
+			<p class="massege_number mt_20">발신번호 : <span id="repre_numberIDText"></span></p>
+		</div>
+	</div>
+	
+	<!-- 좌측 영역 -->
+	<div id="tmp" class="mas_enter">
+		<div class="mb_10">
+			<div>
+				<p class="align_c">
+					<select name="orgmem_seqNo" id="orgSeqList">
+						<option value="" >기수선택</option>
+						<% org_seqList.forEach(function(item, index){ %>
+							<option value="<%=item.org_no%>" <%if(orgmem_seqNo==item.org_no){%>selected="selected"<%}%>>
+							<%if(item.org_seqNo != 0) {%><%=item.org_seqNo%>기<%}%>
+							</option>
+						<%});%>
+						<%if(orgmem_seqNo=='moreData'){%>
+							<option value="moreData" selected="selected">1기~28기</option>
+						<%}else{%>
+							<option value="moreData">1~28기</option>
+						<%}%>
+						<%if(orgmem_seqNo=='52'){%>
+							<option value="52" selected="selected">교수진</option>
+						<%}else{%>
+							<option value="52">교수진</option>
+						<%}%>
+					</select>
+					<select name="search_major" id="search_major"></select>
+					<select name="search_position" id="search_position" style="width:113px;"></select>
+					<input type="text" name="search_text" id="search_text" value="<%=search_text%>" style="width:109px; ime-mode:active; padding:3px 3px 2px 3px;">
+					<input type="button" value="검색" class="btn_big_blue" id="searchAction" style="padding:1px 10px 1px 10px !important;"/>
+				</p>
+			</div>
+		</div>
+		
+		<div class="clear position_btn">
+			<div class="tablezone float_l">
+				<table id="numberzone">
+					<colgroup>
+							<col width="7%" />
+							<col width="17%" />
+							<col width="21%" />
+							<col width="29%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th><input type='checkbox' name='allCheck' id='allCheck' value='all' /></th>
+								<th>이름</th>
+								<th>기수</th>
+								<th>전화번호</th>
+							</tr>
+						</thead>
+						<tbody id="leftZone_tb" class="align_c">
+						</tbody>
+				</table>
+			</div>
+			<ul>
+				<li><a href="#" id="rightBtn"><img src="../../../images/admin/right_btn.gif" alt="입력버튼"/></a></li>
+				<li><a href="#" id="leftBtn"><img src="../../../images/admin/left_btn.gif" alt="입력버튼"/></a></li>
+			</ul>
+			<div class="tablezone float_r">
+				<table id="rightZone_table">
+					<colgroup>
+						<col width="8%" />
+						<col width="17%" />
+						<col width="21%" />
+						<col width="29%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th><input type='checkbox' name='allCheck2' id='allCheck2' value='all' style="margin:0;" /></th>
+							<th id="byName">이름</th>
+							<th>기수</th>
+							<th>전화번호</th>
+						</tr>
+					</thead>
+					
+					<tbody id="rightZone_tb" class="align_c tablesorter"></tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div class="btnArea mt_20 float_r" style="width:200px;">
+			<a href="javascript:;" onclick="orderByName(); return false;"><img src="../../../images/admin/icon_array.gif" alt="정렬" /></a>
+			<a href="javascript:;" onclick="delPhoneNumber('s'); return false;"><img src="../../../images/admin/icon_choicedel.gif" alt="선택삭제" /></a>
+            <a href="javacript:;" onclick="delPhoneNumber('a'); return false;"><img src="../../../images/admin/icon_alldel.gif" alt="전체삭제" /></a>
+			<span class="float_r" id="totPhoneCntDiv">총 <strong class="point">0</strong>명</span>
+		</div>
+	</div>
+	
+	<!-- 하단영역 -->
+	<div class="bottom_btn">
+		<input class="bigpadding btn_big_black mr_10" type="button" id="msgResult" value="문자발송 결과조회">
+	</div>
+	
+	<!-- 숨겨진 화면 시작-->
+	
+	<!-- 최종적으로 보내질 번호  -->
+	<div class="receiverSelectBox" id="receiverSelectBox1">
+		<p class="title" style="display:none;"><input type="text" name="tonumberzone_value" id="tonumberzone_value"/></p>
+		<p class="title" style="display:none;"><input type="text" name="tonumberzone_id" id="tonumberzone_id"/></p>
+		<select name="tonumberzone" title="최종 리스트(기수별 선택 등록)" id="tonumberzone" multiple="multiple">
+		</select>
+	</div>
+	
+	<div class="ml_10">
+		<textarea name="inputFlagBearer_hidden" id="inputFlagBearer_hidden" rows="5" style="width :212px; display: none;"></textarea>
+		<textarea name="inputFlagBearer_hidden2" id="inputFlagBearer_hidden2" rows="5" style="width :212px; display: none;"></textarea>
+		
+		<textarea name="leftNo_hidden" id="leftNo_hidden" style="display: none;"></textarea>
+		<textarea name="leftPhoneNum_hidden" id="leftPhoneNum_hidden" style="display: none;"></textarea>
+		<textarea name="leftFlag_hidden" id="leftFlag_hidden" style="display: none;"></textarea>
+		<textarea name="leftName_hidden" id="leftName_hidden" style="display: none;"></textarea>
+		
+		<textarea name="rightNo_hidden" id="rightNo_hidden" style="display: none;"></textarea>
+		<textarea name="rightPhoneNum_hidden" id="rightPhoneNum_hidden" style="display: none;"></textarea>
+		<textarea name="rightFlag_hidden" id="rightFlag_hidden" style="display :none;"></textarea>
+		<textarea name="rightName_hidden" id="rightName_hidden" style="display :none;"></textarea>
+	</div>
+	
+	<!-- 숨겨진 화면 끝 -->
+	
+	<!-- 팝업창 빠른문자 팝업 화면 -->
+	<div id="basic-modal-content">
+		<div style="height:30px;"><p style="color:#fff; font-size:18px;">최근 발송된 장문 문자 중에서 최대 30개 까지 출력됩니다.</p></div>
+		<div id="umsQuick" style="width:650px; height:550px; margin:0 auto; overflow-y:scroll"></div>
+	</div>
+</form>
+
+<!-- 로딩 -->
+<div class="wrap-loading display-none">
+    <div><img src="/images/admin/ajax-loader_big.gif" /></div>
+</div>  
+
+<!-- 프로세스 진행 -->
+<div class="progress" id="dialog-message" title="전송중...">
+	<div class="bar"></div >
+	<div class="percent">0%</div >
+</div>
+<!-- //프로세스 진행 -->

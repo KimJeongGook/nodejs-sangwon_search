@@ -1,0 +1,170 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+var code = require("../../../function/codeMngt.js");
+
+exports.listener=function(request, response){
+	var search_seqNo = request.param("search_seqNo")==undefined ? "" : request.param("search_seqNo");
+	var search_major = request.param("search_major")==undefined ? "" : request.param("search_major");
+	var search_area = request.param("search_area")==undefined ? "" : request.param("search_area");
+	var search_text = request.param("search_text")==undefined ? "" : request.param("search_text");
+	var search_position1 = request.param("search_position1")==undefined ? "" : request.param("search_position1");
+	var app_user_search = request.param("app_user_search") == undefined ? '' : request.param("app_user_search");
+	var connectorNo = session.connectorNo(request);
+	var connectorDivision = session.connectorDivision(request);
+	var search_all = request.param("search_all")==undefined ? "" : request.param("search_all");
+	console.log('search_seqNo : ' + search_seqNo);
+	console.log('search_major : ' + search_major);
+	console.log('search_area : ' + search_area);
+	console.log('search_text : ' + search_text);
+	var sql=""; 
+
+	sql = "select \n";
+		sql += "@RNUM := @RNUM + 1 as num \n";
+		sql += ", orgmem_no \n";
+		sql += ", orgmem_name \n";
+		sql += ", orgmem_birth_year \n";
+		sql += ", orgmem_position \n";
+		sql += ", ifnull(orgmem_phone0, '') as orgmem_phone0 \n";
+		sql += ", ifnull(orgmem_phone1, '') as orgmem_phone1 \n"; 
+		sql += ", ifnull(orgmem_phone2, '') as orgmem_phone2 \n";
+		sql += ", ifnull(orgmem_phone3, '') as orgmem_phone3 \n";
+		sql += ", ifnull(company_tel1, '') as orgmem_tel1 \n";
+		sql += ", ifnull(company_tel2, '') as orgmem_tel2 \n";
+		sql += ", ifnull(company_tel3, '') as orgmem_tel3 \n";
+		sql += ", ifnull(orgmem_fax1, '') as orgmem_fax1 \n";
+		sql += ", ifnull(orgmem_fax2, '') as orgmem_fax2 \n";
+		sql += ", ifnull(orgmem_fax3, '') as orgmem_fax3 \n";
+		sql += ", orgmem_homepage \n";
+		sql += ", orgmem_sns \n";
+		sql += ", link1 \n";
+		sql += ", link2 \n";
+		sql += ", remrk \n";
+		sql += ", business_field \n";
+		sql += ", orgmem_img \n";
+		sql += ", company_img1 \n";
+		sql += ", company_img2 \n";
+		sql += ", company_img3 \n";
+		sql += ", company_img4 \n";
+		sql += ", business_card \n";
+		sql += ", company_intro \n";
+		sql += ", orgmem_email \n";
+		sql += ", orgmem_seqNo \n";
+		sql += ", orgmem_seqNum \n";
+		sql += ", orgmem_keyword \n";
+		sql += ", orgmem_position_mba \n";
+		sql += ", orgmem_major \n";
+		sql += ", orgmem_major_txt \n";
+		sql += ", orgmem_memberYn \n";
+		sql += ", orgmem_lunar \n";
+		sql += ", orgmem_url \n";
+		sql += ", create_id \n";
+		sql += ", create_date \n";
+		sql += ", create_host \n";
+		sql += ", app_install \n";
+		sql += ", orgmem_leader_code \n";
+		sql += ", ifnull(orgmem_work_duty, '') as orgmem_work_duty \n";
+		sql += ", ifnull(orgmem_office_nm, '') as orgmem_office_nm \n";
+		sql += ", ifnull(orgmem_office_addr1, '') as orgmem_office_addr1 \n";
+		sql += ", ifnull(orgmem_office_addr2, '') as orgmem_office_addr2 \n";
+		sql += ", ifnull(orgmem_office_addr_zipcode, '') as orgmem_office_addr_zipcode \n";
+		sql += ", ifnull(getCodeName('orgmem_major', orgmem_major),'') as orgmem_major_nm \n";
+		sql += ", ifnull(getCodeName('orgmem_area',orgmem_area),'') as orgmem_area_nm \n";
+		sql += ", orgmem_disp_yn \n";
+		sql += ", (select x.type from push x where x.orgmem_no = a.orgmem_no order by final_date limit 0,1) as device_os \n";
+		sql += ", , CASE WHEN (SELECT COUNT(*) FROM dues WHERE month = DATE_FORMAT(NOW(),'%m') AND orgmem_no = a.orgmem_no) > 0 THEN 'yes' ELSE 'no' END AS dues \n";
+	sql += "from	orgmember a \n";
+	sql += "        , (SELECT @RNUM := 0 ) r \n";
+	sql += "where	1 = 1";
+	
+	if(search_text!=''){
+		sql += " and (orgmem_name like '%" + search_text + "%' \n";
+		sql += " or orgmem_dept like '%" + search_text + "%' \n";
+		sql += " or orgmem_position like '%" + search_text + "%' \n";
+		sql += " or (select code_name from code where code_group = 'orgmem_orgMba' and code = orgmem_position_mba) like '%" + search_text + "%' \n";
+		sql += " or orgmem_keyword like '%" + search_text + "%' \n";
+		sql += " or orgmem_work_duty like '%" + search_text + "%' \n";
+
+		sql += " or concat(orgmem_phone1, orgmem_phone2, orgmem_phone3)  like  concat('%',replace('" + search_text + "','-',''),'%')) \n";
+	}
+	/*
+	if(orgmem_seqNo == ''){
+		sql += " and orgmem_seqNo != '00' \n";
+	}else if(orgmem_seqNo != ''){
+		if(orgmem_seqNo == 'moreData'){
+			sql += " and cast( getOrgSeqNo(orgmem_seqNo) as signed) between 1 and 28\n"; //28기이전 데이터 조회
+		}else{
+			sql += " and orgmem_seqNo = '" + orgmem_seqNo + "' \n"; //선택기수 조회
+		}
+	}
+	*/
+	if(search_seqNo != ''){
+		sql += " and orgmem_seqNo = '" + search_seqNo + "' \n"; //선택기수 조회
+	}
+	
+	if(search_major != ''){
+		sql += " and orgmem_major = '" + search_major + "' \n";
+	}
+	
+	if(search_position1 != ''){
+		sql += " and orgmem_position1 = '" + search_position1 + "' \n";
+	}
+	
+	//sql += " order by orgMba_sort asc,  org_seqYear asc, orgmem_name asc \n";
+	sql += " order by orgmem_name asc \n";
+	
+	sql = "";
+	sql += "select count(1) as tot_cnt from orgmember";
+	
+	console.log('sql : ' + sql);
+	
+	var sel_sql = "select *,  ";
+	sel_sql += " (select org_seqYear from org_seq where org_no=orgmem_seqNo) as org_seqYear,	\n";
+	sel_sql += " (select org_seqNo from org_seq where org_no=orgmem_seqNo) as org_seqNo ";
+	sel_sql += " from orgmember where orgmem_no=" + connectorNo;
+
+	var org_sql ="select * from org_seq where cast(org_seqNo as signed) > 28 order by org_seqNo desc"; //기수
+	console.log("search_position1" + search_position1);
+	fs.readFile("./views/user/member/member_list.html", "utf-8", function(error, data){
+		db.query(sel_sql, function(error, result){
+			db.query(org_sql, function(error, org_results){
+				db.query(sql, function(error, results){
+					code.userSelectBox("orgmem_major", "search_major", function(err, s_data1){
+						code.userSelectBox("orgmem_area", "search_area", function(err, s_data2){
+							code.userSelectBox("orgmem_position1", "search_position1", function(err, s_data3){
+							response.send(ejs.render(layout.include("app_user", data), {
+								connectorNo : connectorNo,
+								//db_data : results,
+								//db_data_length : results.length,
+								db_data_length : results.tot_cnt,
+								search_text : search_text,
+								org_seqList : org_results,
+								
+								search_seqNo : search_seqNo,
+								
+								search_major_list : s_data1,
+								search_major : search_major,
+								
+								search_area_list : s_data2,
+								search_area : search_major,
+
+								search_position1_list : s_data3,
+								search_position1 : search_position1,
+								app_user_search:app_user_search,
+								connectorDivision : connectorDivision,
+								search_all:search_all,
+								menuNum:2
+							})); 
+						});
+					});
+				});
+			});
+		});
+	});
+}); 
+};

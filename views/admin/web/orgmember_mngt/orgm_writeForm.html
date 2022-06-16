@@ -1,0 +1,985 @@
+<style>
+	.overflow { height: 300px; }
+	.required_disp { color: red; }
+	
+	
+	</style>
+	
+	<!--<script src="https://dmaps.daum.net/map_js_init/postcode.v2.js"></script>--> <!--http 일경우 호출 -->
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script><!--https 일경우 호출 -->
+	<script type="text/javascript">
+	$(document).ready(function(){
+	
+	if($('.chapter_position2').val() == '이사장'){
+		$('#chapter_position2 option:eq(1)').prop("selected", true);
+	}else if($('.chapter_position2').val() == '이사'){
+		$('#chapter_position2 option:eq(2)').prop("selected", true);
+	}else if($('.chapter_position2').val() == '국장'){
+		$('#chapter_position2 option:eq(3)').prop("selected", true);
+	};
+
+	if($('.committee_position1').val() == '개교 100주년기념 사업회'){
+		$('#committee_position1 option:eq(1)').prop("selected", true);
+	}else if($('.committee_position1').val() == '역사관운영 위원회'){
+		$('#committee_position1 option:eq(2)').prop("selected", true);
+	}else if($('.committee_position1').val() == '대공인상선정 위원회'){
+		$('#committee_position1 option:eq(3)').prop("selected", true);
+	};
+
+	if($('.committee_position2').val() == '회장'){
+		$('#committee_position2 option:eq(1)').prop("selected", true);
+	}else if($('.committee_position2').val() == '국장'){
+		$('#committee_position2 option:eq(2)').prop("selected", true);
+	}else if($('.committee_position2').val() == '위원'){
+		$('#committee_position2 option:eq(3)').prop("selected", true);
+	};
+
+	if($('.etc_position').val() == '총동문회 고문'){
+		$('#etc_position option:eq(1)').prop("selected", true);
+	}else if($('.etc_position').val() == '자문위원'){
+		$('#etc_position option:eq(2)').prop("selected", true);
+	}
+
+
+	var orgmem_position1 = tag_place("<%=orgmem_position1%>");
+	$('#orgmem_position1').html(orgmem_position1);
+
+	var org_position = tag_place("<%=org_position%>");
+	$('#orgmem_position2').html(org_position);
+	
+	var org_area_position = tag_place("<%=org_area_position%>");
+	$('#orgmem_position2_2').html(org_area_position);
+
+
+
+	
+
+
+	//회장단
+	if($('#orgmem_position1').val() == '1'){
+	$('#orgmem_position2').css('display', 'inline-block');
+	$('#orgmem_position2').attr('disabled', false);
+	}//고문
+	else if($('#orgmem_position1').val()  == '2'){
+	$('#orgmem_position2_1').css('display', 'inline-block');
+	$('#orgmem_position2_1 option').val("고문");
+	$('#orgmem_position2_1').attr('disabled', false);
+	}//지역동문회
+	else if($('#orgmem_position1').val()  == '3'){
+	$('#orgmem_position2_2').css('display', 'inline-block');
+	$('#orgmem_position2_2').attr('disabled', false);
+	}//장학회
+	else if($('#orgmem_position1').val()  == '4'){
+	$('#orgmem_position2_3').css('display', 'inline-block');
+	$('#orgmem_position2_3 option').val("장학회");
+	$('#orgmem_position2_3').attr('disabled', false);
+	}//지역동문회
+	else if($('#orgmem_position1').val()  == '5'){
+	$('#orgmem_position2_4').css('display', 'inline-block');
+	$('#orgmem_position2_4 option').val("지역동문회");
+	$('#orgmem_position2_4').attr('disabled', false);
+	}//회원
+	else if($('#orgmem_position1').val()  == '6'){
+	$('#orgmem_position2_5').css('display', 'inline-block');
+	$('#orgmem_position2_5 option').val("동문");
+	$('#orgmem_position2_5').attr('disabled', false);
+	}
+		if($("#topcompany2").val() == 'Y'){
+			$("#topcompany").prop("checked", true);
+		}else{
+			$("#topcompany").prop("checked", false);
+		}
+		/* select TAG script*/
+		/* var s_org_orgMba = tag_place("<%=s_org_orgMba%>");
+		$('#orgmem_position_mba').html(s_org_orgMba); */
+		
+		var s_orgmem_major = tag_place("<%=s_orgmem_major%>");
+		$('#orgmem_major').html(s_orgmem_major);
+		
+		var s_orgmem_area = tag_place("<%=s_orgmem_area%>");
+		$('#orgmem_area').html(s_orgmem_area);
+		
+		var orgmem_phone1 = tag_place("<%=orgmem_phone1%>");
+		//$('#orgmem_phone1').html(orgmem_phone1);
+
+
+		/* select TAG script*/
+		$(".dateBox").datepicker({
+					monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+					dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],		    
+					dateFormat: 'yy-mm-dd',
+					showOn: 'both',
+					changeYear: true,
+					//yearRange: 'c-99:c+0',
+					yearRange: '-100:+0',
+					changeMonth: true,
+					buttonImage: '/js/image/calendar.gif', 
+					buttonImageOnly: true,
+					buttonText:"달력",
+					showButtonPanel: true,
+					onSelect: function(dateText, inst) {
+						// 선택되었을때 이벤트
+					}
+		});
+			
+		$('img.ui-datepicker-trigger').css({'cursor':'pointer', 'vertical-align':'middle', 'margin-left':'3px'}); // 달력 아이콘 스타일
+		
+		 $("#orgmem_birth_year").click(function() {
+			$(this).attr("readonly", false);
+		}).focusout(function() {
+			var regex = /[^0-9]/g;
+			if($(this).val().replace(regex, '').length < 4) {
+				$(this).val('');
+			} else {
+				//$(this).val($(this).val().substring(0, 4)+"-"+$(this).val().substring(4, 6)+"-"+$(this).val().substring(6, 8));
+			}
+		});
+		
+		
+		//입학연도 및 기수 선택시 기수코드 자동생성
+		/*
+		$("#orgmem_admyear, #orgSeqList").change(function(){
+			$("#leader_seq_cde").empty();
+			var birth = $.trim($("#orgmem_admyear").val()).substring(2,4);	
+			var org = $("#orgSeqList").val() != "" ? $('option:selected', $("#orgSeqList")).attr('code').substring(2,4) : "";
+			
+			 if(birth != "" && org != ""){
+				$("#orgmem_leader_code").val(birth+""+org);
+				$("#leader_seq_cde").text(birth+""+org);
+			}
+		});
+		*/
+		
+		$("#orgmem_phone0").keyup(function(){
+			if($(this).val().length == 10){
+				$("#orgmem_phone1").focus();
+			}
+		});
+		$("#orgmem_phone2").keyup(function(){
+			if($(this).val().length == 4){
+				$("#orgmem_phone3").focus();
+			}
+		});
+		
+		$( "#orgmem_seqNo" ).selectmenu().selectmenu( "menuWidget" ).addClass( "overflow" );
+		$( "#orgmem_major" ).selectmenu();
+		$( "#orgmem_area" ).selectmenu();
+		
+		$("#orgmem_office_addr_zipcode, #orgmem_office_addr1").click(function() {
+			$("#orgmem_office_addr_zipcode").val("");
+			$("#orgmem_office_addr1").val("");
+			$("#orgmem_office_addr2").val("");
+			kakaoJuso(1);
+		});
+		
+		$("#orgmem_home_addr_zipcode, #orgmem_home_addr1").click(function() {
+			$("#orgmem_home_addr_zipcode").val("");
+			$("#orgmem_home_addr1").val("");
+			$("#orgmem_home_addr2").val("");
+			kakaoJuso(2);
+		});
+		
+		$.each($("#writeForm input"), function(index, elem){
+			$(this).css({"height" : "24px"});
+		});
+	
+		// $("#company_intro").change(function (file){
+		// 	console.log("file object :::::::::"+file);
+		// 	var input = document.createElement("input");
+	
+		// 	var reader = new FileReader();
+		// 	reader.onload = function () {
+		// 		output.innertext = reader.result;
+		// 	};
+	
+		// 	reader.readAsText(file, "euc-kr");
+	
+	
+		// })
+	
+	});
+	
+	
+	function filePreview(file){
+	
+		var file = file.files;
+	
+		// console.log(file[0].name);
+	
+		if((file[0].name.indexOf('pdf')) < 0){
+			alert("PDF파일만 업로드 가능합니다.");
+			$("#company_intro").val("");
+		}
+	}
+	
+	
+	//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+	function kakaoJuso(mode) {
+		new daum.Postcode({
+			oncomplete: function(data) {
+				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	
+				// 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
+				// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
+				var extraRoadAddr = ''; // 도로명 조합형 주소 변수
+	
+				// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+				// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+				if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+					extraRoadAddr += data.bname;
+				}
+				// 건물명이 있고, 공동주택일 경우 추가한다.
+				if(data.buildingName !== '' && data.apartment === 'Y'){
+				   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+				}
+				// 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+				if(extraRoadAddr !== ''){
+					extraRoadAddr = ' (' + extraRoadAddr + ')';
+				}
+				// 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
+				if(fullRoadAddr !== ''){
+					fullRoadAddr += extraRoadAddr;
+				}
+	
+				// 우편번호와 주소 정보를 해당 필드에 넣는다.
+				if(mode == "1") {
+					document.getElementById('orgmem_office_addr_zipcode').value = data.zonecode; //5자리 새우편번호 사용
+					document.getElementById('orgmem_office_addr1').value = fullRoadAddr;
+					document.getElementById('orgmem_office_addr2').readOnly = false;
+					document.getElementById('orgmem_office_addr2').focus();
+					//document.getElementById('orgmem_address_work2').value = data.jibunAddress;
+				} else if(mode == "2") {
+					document.getElementById('orgmem_home_addr_zipcode').value = data.zonecode; //5자리 새우편번호 사용
+					document.getElementById('orgmem_home_addr1').value = fullRoadAddr;
+					document.getElementById('orgmem_home_addr2').readOnly = false;
+					document.getElementById('orgmem_home_addr2').focus();
+					//document.getElementById('orgmem_address_work2').value = data.jibunAddress;
+				}
+				
+	
+				// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+				/*
+				if(data.autoRoadAddress) {
+					//예상되는 도로명 주소에 조합형 주소를 추가한다.
+					var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+					document.getElementById('guide').innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+	
+				} else if(data.autoJibunAddress) {
+					var expJibunAddr = data.autoJibunAddress;
+					document.getElementById('guide').innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+	
+				} else {
+					document.getElementById('guide').innerHTML = '';
+				}
+				*/
+			}
+		}).open();
+	}
+	
+	function phoneNumChkAndSubmit(){
+		var form = document.writeForm;
+		form.action='/admin/web/orgm_save';
+		
+		$.ajax({
+			type : "POST",
+			url : "/admin/web/phoneNumChk",
+			dataType : "json",
+			data : {
+				orgmem_phone0 : $("#orgmem_phone0").val(),
+				orgmem_phone1 : $("#orgmem_phone1").val(),
+				orgmem_phone2 : $("#orgmem_phone2").val(),
+				orgmem_phone3 : $("#orgmem_phone3").val(),
+				orgmem_no : $('input[name="orgmem_no"]').val(),
+				mode : $('input[name="mode"]').val()
+			}, success : function(data) {
+				if(data.result) {
+					if(confirm("저장하시겠습니까?")) {
+						form.submit();
+					}
+				} else {
+					alert("등록에러: " + data.result_msg);
+					return false;
+				}
+			}, error : function(xhr, status, error) {
+				alert("휴대번호 중복 체크과정에서 오류가 발생했습니다.");
+				return false;
+			}
+		});
+	}
+	
+	function ormemSave(){
+		if($('#topcompany').is(":checked") == true){
+			$('#topcompany').val("Y")
+		}else{
+			$('#topcompany').val("N")
+		}
+		if($('#orgmem_name').val()==''){
+			alert('이름을 입력해주세요.');
+			$('#orgmem_name').focus();
+			return false;
+		}else if($('#orgmem_seqNo').val()==''){
+			alert('기수를 선택해주세요.');
+			$('#orgmem_seqNo').focus();
+			return false;
+		}else if($('#orgmem_major').val()=='' && $('#orgmem_seqNo').val()!='-1'){
+			alert('전공을 선택해주세요.');
+			$('#orgmem_major').focus();
+			return false;
+		}/*else if($('#orgmem_area').val()=='' && $('#orgmem_seqNo').val()!='-1'){
+			alert('지역을 선택해주세요.');
+			$('#orgmem_area').focus();
+			return false;
+		}*/else if($('#orgmem_phone1').val()==''){
+			alert('휴대폰 번호를 선택해주세요.');
+			$('#orgmem_phone1').focus();
+			return false;
+		}else if($('#orgmem_phone2').val()==''){
+			alert('휴대폰 번호를 입력해주세요.');
+			$('#orgmem_phone2').focus();
+			return false;
+		}else if($('#orgmem_phone3').val()==''){
+			alert('휴대폰 번호를 입력해주세요.');
+			$('#orgmem_phone3').focus();
+			return false;	
+		}else if($('#orgmem_position1 option:selected').val()==''){
+			alert('동문직책을 선택해주세요');
+			$('#orgmem_position1').focus();
+			return false;
+		}
+		phoneNumChkAndSubmit();
+	}
+	
+	function file_del(no, name,type) {
+		if(confirm("파일을 삭제하시겠습니까?")){
+			$.ajax({
+				type:"POST",
+				url:"/admin/web/orgm_file_del",
+				data:{number : no, file_name : name, type : type},
+				success : function(data) {
+					if(data == 'success'){
+						window.location.reload();	
+					}else{
+						alert("파일삭제가 실패했습니다");
+					}
+				},
+				error : function(xhr, status, error) {
+					alert("파일삭제가 실패했습니다");
+				}
+			  });	
+		}
+	}
+	/* TEXT박스 유효값체크 : 숫자만 가능  onkeyup="CheckOnlyNumber(this);"  */
+	function CheckOnlyNumber(TextBoxControl){ 
+		inputValue = TextBoxControl.value.replace(/ /g, "") ;
+		if(inputValue.replace(/\d/g,"").length!=0){
+			alert("숫자만 입력해주세요.");
+			TextBoxControl.value = "";
+			TextBoxControl.focus();
+			return false ;
+			}
+		return true ;
+	}
+
+	function selectboxChange(e){
+	 $('.orgmem_selectBox').css('display', 'none');
+	 $('.orgmem_selectBox').val('');
+	$('#orgmem_position2_1 option').val("");
+	$('#orgmem_position2_2 option').val("");
+	$('#orgmem_position2_3 option').val("");
+	$('#orgmem_position2_4 option').val("");
+	$('#orgmem_position2_5 option').val("");
+	$('#orgmem_position2_6 option').val("");
+	//회장단
+	if(e.value == '1'){
+	$('#orgmem_position2').css('display', 'inline-block');
+	$('#orgmem_position2').attr('disabled', false);
+	}//고문
+	else if(e.value == '2'){
+	$('#orgmem_position2_1').css('display', 'inline-block');
+	$('#orgmem_position2_1 option').val("고문");
+	$('#orgmem_position2_1').attr('disabled', false);
+	}//자문위원
+	else if(e.value == '3'){
+	$('#orgmem_position2_2').css('display', 'inline-block');
+	$('#orgmem_position2_2').attr('disabled', false);
+	}//장학회
+	else if(e.value == '4'){
+	$('#orgmem_position2_3').css('display', 'inline-block');
+	$('#orgmem_position2_3 option').val("장학회");
+	$('#orgmem_position2_3').attr('disabled', false);
+	}//지역동문회
+	else if(e.value == '5'){
+	$('#orgmem_position2_4').css('display', 'inline-block');
+	$('#orgmem_position2_4 option').val("지역동문회");
+	$('#orgmem_position2_4').attr('disabled', false);
+	}//회원
+	else if(e.value == '6'){
+	$('#orgmem_position2_5').css('display', 'inline-block');
+	$('#orgmem_position2_5 option').val("동문");
+	$('#orgmem_position2_5').attr('disabled', false);
+	}
+	
+	}
+	</script>
+	
+	
+		<h2>
+			<span class="float_l">회원관리</span>
+			<img src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" onclick="self.close();"/>
+		</h2>
+	
+		<div class="content">
+			<form action="/admin/web/orgm_save" id="writeForm" name="writeForm" method="post" enctype="multipart/form-data" autocomplete="off">
+			<% if(db_data.length > 0) {%>
+				<input type="hidden" name="mode" value="modify"/> 
+				<input type="hidden" name="orgmem_no" value="<%=db_data[0].orgmem_no %>"/>
+			<% }else{ %>
+				<input type="hidden" name="mode" value="insert"/>
+			<% } %>
+			
+			<table class="mb_10">
+				<colgroup>
+					<col width="15%"/>
+					<col width="35%"/>
+					<col width="15%"/>
+					<col width="35%"/>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>회원 사진</th>
+						<td colspan="3">
+							<% if(db_data.length > 0 && db_data[0].orgmem_img != null && db_data[0].orgmem_img != '') {%>
+								<img src="../../../file/member/<%=db_data[0].orgmem_img %>" alt="사진" width="150px"/>&nbsp;
+								<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(<%=db_data[0].orgmem_no %>, '<%=db_data[0].orgmem_img %>')" alt="삭제" />
+								<input type="hidden" id="memberImg" name="memberImg" value= "<%=db_data[0].orgmem_img %>" />
+							<% }else{ %>
+								<input type="file" id="memberImg" name="memberImg" />
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+					<th>회사사진1</th>
+					<% if(db_data.length > 0 && db_data[0].company_img1 !=null && db_data[0].company_img1 != '') {%>
+						<td name="company_img1" colspan="3"><img src="../../../file/member/<%=db_data[0].company_img1 %>" alt="사진" width="150px" />&nbsp;
+							<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(<%=db_data[0].orgmem_no %>, '<%=db_data[0].company_img1 %>','com1')" alt="삭제" />
+							<input type="hidden" id="company_img1" name="company_img1" value="<%=db_data[0].company_img1 %>" />
+						</td>
+					<% }else{ %>
+						<td colspan="3"><input type="file" id="company_img1" name="company_img1" /></td>
+					<% } %>
+				</tr>
+	
+	
+				<tr>
+					<th>회사사진2</th>
+					<% if(db_data.length > 0 && db_data[0].company_img2 !=null && db_data[0].company_img2 != '') {%>
+						<td name="company_img2" colspan="3"><img src="../../../file/member/<%=db_data[0].company_img2 %>" alt="사진" width="150px" />&nbsp;
+							<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(<%=db_data[0].orgmem_no %>, '<%=db_data[0].company_img2 %>','com2')" alt="삭제" />
+							<input type="hidden" id="company_img2" name="company_img2" value="<%=db_data[0].company_img2 %>" />
+						</td>
+					<% }else{ %>
+						<td colspan="3"><input type="file" id="company_img2" name="company_img2" /></td>
+					<% } %>
+				</tr>
+	
+	
+				<tr>
+					<th>회사사진3</th>
+					<% if(db_data.length > 0 && db_data[0].company_img3 !=null && db_data[0].company_img3 != '') {%>
+						<td name="company_img3" colspan="3"><img src="../../../file/member/<%=db_data[0].company_img3 %>" alt="사진" width="150px" />&nbsp;
+							<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(<%=db_data[0].orgmem_no %>, '<%=db_data[0].company_img3 %>','com3')" alt="삭제" />
+							<input type="hidden" id="company_img3" name="company_img3" value="<%=db_data[0].company_img3 %>" />
+						</td>
+					<% }else{ %>
+						<td colspan="3"><input type="file" id="company_img3" name="company_img3" /></td>
+					<% } %>
+				</tr>
+	
+	
+				<tr>
+					<th>회사사진4</th>
+					<% if(db_data.length > 0 && db_data[0].company_img4 !=null && db_data[0].company_img4 != '') {%>
+						<td name="company_img4" colspan="3"><img src="../../../file/member/<%=db_data[0].company_img4 %>" alt="사진" width="150px" />&nbsp;
+							<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(<%=db_data[0].orgmem_no %>, '<%=db_data[0].company_img4 %>','com4')" alt="삭제" />
+							<input type="hidden" id="company_img4" name="company_img4" value="<%=db_data[0].company_img4 %>" />
+						</td>
+					<% }else{ %>
+						<td colspan="3"><input type="file" id="company_img4" name="company_img4" /></td>
+					<% } %>
+				</tr>
+				
+				<tr>
+					<th>명함사진</th>
+					<% if(db_data.length > 0 && db_data[0].business_card !=null && db_data[0].business_card != '') {%>
+						<td name="business_card" colspan="3"><img src="../../../file/member/<%=db_data[0].business_card %>" alt="사진" width="150px" />&nbsp;
+							<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(<%=db_data[0].orgmem_no %>, '<%=db_data[0].business_card %>','card')" alt="삭제" />
+							<input type="hidden" id="business_card" name="business_card" value="<%=db_data[0].business_card %>" />
+						</td>
+					<% }else{ %>
+						<td colspan="3"><input type="file" id="business_card" name="business_card" /></td>
+					<% } %>
+				</tr>
+				<tr>
+					<th>회사소개자료</th>
+					<% if(db_data.length > 0 && db_data[0].company_intro !=null && db_data[0].company_intro != '') {%>
+						<td name="company_intro" colspan="3"><%=db_data[0].company_intro %><img src="../../../images/pdficon.png" alt="파일" width="20px" />&nbsp;
+							<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(<%=db_data[0].orgmem_no %>, '<%=db_data[0].company_intro %>','file')" alt="삭제" />
+							<input type="hidden" id="company_intro" name="company_intro" value="<%=db_data[0].company_intro %>" />
+						</td>
+					<% }else{ %>
+						<td colspan="3"><input type="file" id="company_intro" name="company_intro" accept=".pdf" onchange="filePreview(this);" /></td>
+					<% } %>
+				</tr>
+				<tr>
+					<th>100대 기업</th>
+					<% if(db_data.length > 0 && db_data[0].topcompany !=null && db_data[0].topcompany != '') {%>
+						<td name="topcompany" colspan="3">
+							<input type="checkbox" id="topcompany" name="topcompany" value="" />
+							<input type="hidden" id="topcompany2" name="topcompany2" value="<%=db_data[0].topcompany %>" />
+						</td>
+					<% }else{ %>
+						<td colspan="3"><input type="checkbox" id="topcompany" name="topcompany" /></td>
+					<% } %>
+				</tr>
+					<!-- <tr>
+						<th>DM_CODE1</th>
+						<td>
+							<% if(db_data.length > 0) {%>
+								<input type="text" id="code1" name="code1" value="<%=db_data[0].code1==null ? '' : db_data[0].code1 %>" style="ime-mode:active;width:50px;text-align: center;"/>
+							<% }else{ %>
+								<input type="text" id="code1" name="code1" style="ime-mode:active;width:50px;text-align: center;"/>
+							<% } %>
+						</td>
+						<th>DM_CODE2</th>
+						<td>
+							<% if(db_data.length > 0) {%>
+								<input type="text" id="code2" name="code2" value="<%=db_data[0].code2==null ? '' : db_data[0].code2 %>" style="ime-mode:active;width:50px;text-align: center;"/>
+							<% }else{ %>
+								<input type="text" id="code2" name="code2" style="ime-mode:active;width:50px;text-align: center;"/>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>DM_CODE3</th>
+						<td>
+							<% if(db_data.length > 0) {%>
+								<input type="text" id="code3" name="code3" value="<%=db_data[0].code3==null ? '' : db_data[0].code3 %>" style="ime-mode:active;width:50px;text-align: center;"/>
+							<% }else{ %>
+								<input type="text" id="code3" name="code3" style="ime-mode:active;width:50px;text-align: center;"/>
+							<% } %>
+						</td>
+						<th>DM_CODE4</th>
+						<td>
+							<% if(db_data.length > 0) {%>
+								<input type="text" id="code4" name="code4" value="<%=db_data[0].code4==null ? '' : db_data[0].code4 %>" style="ime-mode:active;width:50px;text-align: center;"/>
+							<% }else{ %>
+								<input type="text" id="code4" name="code4" style="ime-mode:active;width:50px;text-align: center;"/>
+							<% } %>
+						</td>
+					</tr> -->
+					<tr>
+						<th class="required_disp">이름(한글)</th>
+						<td colspan="3">
+							<% if(db_data.length > 0) {%>
+								<input type="text" id="orgmem_name" name="orgmem_name" value="<%=db_data[0].orgmem_name==null ? '' : db_data[0].orgmem_name %>" style="ime-mode:active;width:100px;text-align: center;"/>
+							<% }else{ %>
+								<input type="text" id="orgmem_name" name="orgmem_name" style="ime-mode:active;width:100px;text-align: center;"/>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>이름(한문)</th>
+						<td colspan="3">
+							<% if(db_data.length > 0) {%>
+								<input type="text" id="orgmem_name_chi" name="orgmem_name_chi" value="<%=db_data[0].orgmem_name_chi==null ? '' : db_data[0].orgmem_name_chi %>" style="ime-mode:active;width:100px;text-align: center;"/>
+							<% }else{ %>
+								<input type="text" id="orgmem_name_chi" name="orgmem_name_chi" style="ime-mode:active;width:100px;text-align: center;"/>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th class="required_disp">기수</th>
+						<td colspan="3">
+							<% if(db_data.length > 0) {%>
+								<select name="orgmem_seqNo" id="orgmem_seqNo">
+									<option value="">선택하세요.</option>		
+									<% for(var k=87; k>=1; k--){ %>								
+										<option value="<%=k%>" <%if( db_data[0].orgmem_seqNo == k ){%> selected="selected" <%}%>><%=k%>회</option>
+									<% } %>
+									<option value="0000" <%if( db_data[0].orgmem_seqNo == '0000' ){%> selected="selected" <%}%>>재일동문</option>
+									<option value="-1" <%if( db_data[0].orgmem_seqNo == '-1' ){%> selected="selected" <%}%>>개발자</option>
+								</select>
+							<% }else{ %>
+								<select name="orgmem_seqNo" id="orgmem_seqNo">
+									<option value="">선택하세요.</option>
+									<% for(var k=87; k>=1; k--){ %>
+										<option value="<%=k%>"><%=k%>회</option>
+									<% } %>
+									<option value="0000">재일동문</option>
+									<option value="-1">개발자</option>
+								</select>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>지역</th>
+						<td colspan="3"><select name="orgmem_area" id="orgmem_area"></select></td>
+					</tr>
+					<tr>
+						<th class="required_disp">전공</th>
+						<td colspan="3"><select name="orgmem_major" id="orgmem_major"></select></td>
+					</tr>
+					<tr>
+						<th class="required_disp">동문회 직책</th>				
+						<td colspan="3">
+							<select name="orgmem_position1" id="orgmem_position1" style="width:150px;" onchange="selectboxChange(this)"></select>
+							<select name="orgmem_position2" class="orgmem_selectBox" id="orgmem_position2" style="width:150px; display:none;" disabled></select>
+							<select name="orgmem_position2_1" class="orgmem_selectBox" id="orgmem_position2_1" style="width:150px; display:none;"disabled>
+							<option>고문</option>
+							</select>
+							<select name="orgmem_position2_2" class="orgmem_selectBox" id="orgmem_position2_2" style="width:150px; display:none;"disabled>
+							</select>
+							<select name="orgmem_position2_3" class="orgmem_selectBox" id="orgmem_position2_3" style="width:150px; display:none;"disabled>
+							<option>장학회</option>
+							</select>
+							<select name="orgmem_position2_4" class="orgmem_selectBox" id="orgmem_position2_4" style="width:150px; display:none;"disabled>
+							<option>지역동문회</option>
+							</select>
+							<select name="orgmem_position2_5" class="orgmem_selectBox" id="orgmem_position2_5" style="width:150px; display:none;"disabled>
+							<option>동문</option>
+							</select>
+							<% if(db_data.length > 0) {%>
+								<input type="text" name="orgmem_position3" id="orgmem_position3" value="<%=db_data[0].orgmem_position3 %>" style="width:150px"/>
+							<% }else{ %>
+								<input type="text" name="orgmem_position3" id="orgmem_position3" style="width:150px"/>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>고문 / 자문</th>				
+						<td colspan="3">
+							<select name="etc_position" id="etc_position" style="width:180px;">
+								<option value="">선택해주세요.</option>
+								<option value="총동문회 고문">총동문회 고문</option>
+								<option value="자문위원">자문위원</option>
+							</select>
+							<% if(db_data.length > 0) {%>
+							<input type="hidden" value="<%=db_data[0].etc_position%>" class="etc_position">
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>장학회 직책</th>				
+						<td colspan="3">
+							<% if(db_data.length > 0 && db_data[0].chapter_position1 !=null && db_data[0].chapter_position1 != '') {%>
+							<select name="chapter_position1" id="chapter_position1" style="width:180px;">
+								<option value="">선택해주세요.</option>
+								<option value="(재)대구공고 동문 장학회" selected>(재)대구공고 동문 장학회</option>
+							</select>
+							<% }else{ %>
+							<select name="chapter_position1" id="chapter_position1" style="width:180px;">
+								<option value="">선택해주세요.</option>
+								<option value="(재)대구공고 동문 장학회">(재)대구공고 동문 장학회</option>
+							</select>		
+							<% } %>
+							<select name="chapter_position2" id="chapter_position2" style="width:150px;">
+								<option value="">선택해주세요.</option>
+								<option value="이사장">이사장</option>
+								<option value="이사">이사</option>
+								<option value="국장">국장</option>
+							</select>
+							
+							<% if(db_data.length > 0) {%>
+								<input type="text" name="chapter_position3" id="orgmem_position3" value="<%=db_data[0].chapter_position3 %>" style="width:150px"/>
+								<input type="hidden" value="<%=db_data[0].chapter_position2%>" class="chapter_position2">
+							<% }else{ %>
+								<input type="text" name="chapter_position3" id="orgmem_position3" style="width:150px"/>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>위원회 직책</th>				
+						<td colspan="3">
+							<select name="committee_position1" id="committee_position1" style="width:180px;">
+								<option value="">선택해주세요.</option>
+								<option value="개교 100주년기념 사업회">개교 100주년기념 사업회</option>
+								<option value="역사관운영 위원회">역사관운영 위원회</option>
+								<option value="대공인상선정 위원회">대공인상선정 위원회</option>
+							</select>
+							<select name="committee_position2" id="committee_position2" style="width:150px;">
+								<option  value="">선택해주세요.</option>
+								<option value="회장">회장</option>
+								<option value="국장">국장</option>
+								<option value="위원">위원</option>
+							</select>
+							
+							<% if(db_data.length > 0) {%>
+								<input type="text" name="committee_position3" id="committee_position3" value="<%=db_data[0].committee_position3 %>" style="width:150px"/>
+								<input type="hidden" value="<%=db_data[0].committee_position1%>" class="committee_position1">
+								<input type="hidden" value="<%=db_data[0].committee_position2%>" class="committee_position2">
+							<% }else{ %>
+								<input type="text" name="committee_position3" id="committee_position3" style="width:150px"/>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>기타 직책</th>				
+						<td colspan="3">
+							<% if(db_data.length > 0 && db_data[0].etc_position1 !=null) {%>
+							<input type="text" name="etc_position1" id="etc_position1" value="<%=db_data[0].etc_position1 %>" style="width:150px"/>
+							<input type="hidden" value="<%=db_data[0].etc_position%>" class="etc_position">
+							<% }else{ %>
+							<input type="text" name="etc_position1" id="etc_position1" value="" style="width:150px"/>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>상세전공명</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="orgmem_major_txt" name="orgmem_major_txt" value="<%=db_data[0].orgmem_major_txt==null ? '' : db_data[0].orgmem_major_txt %>" style="ime-mode:active;"/>
+						<% }else{ %>
+							<input type="text" id="orgmem_major_txt" name="orgmem_major_txt" style="ime-mode:active;" maxlength="15"/>
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th class="required_disp">휴대폰</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="orgmem_phone1" name="orgmem_phone1" value="<%=db_data[0].orgmem_phone1==null ? '' : db_data[0].orgmem_phone1 %>" style="width:60px;text-align: center;" onkeyup="CheckOnlyNumber(this);" />
+							 - 
+							<input type="text" id="orgmem_phone2" name="orgmem_phone2" value="<%=db_data[0].orgmem_phone2==null ? '' : db_data[0].orgmem_phone2 %>" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+							 - 
+							<input type="text" id="orgmem_phone3" name="orgmem_phone3" value="<%=db_data[0].orgmem_phone3==null ? '' : db_data[0].orgmem_phone3 %>" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+						<% }else{ %>
+							<input type="text" id="orgmem_phone1" name="orgmem_phone1" value="" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+							-
+							<input type="text" id="orgmem_phone2" name="orgmem_phone2" value="" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+							 -
+							<input type="text" id="orgmem_phone3" name="orgmem_phone3" value="" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+					<th>팩스번호</th>
+					<% if(db_data.length > 0) {%>
+						<td colspan="3">
+							<input type="text" id="orgmem_fax1" name="orgmem_fax1" value="<%=db_data[0].orgmem_fax1%>" style="width: 60px; text-align: center;" onkeyup="CheckOnlyNumber(this);" />
+							 - 
+							<input type="text" id="orgmem_fax2" name="orgmem_fax2" value="<%=db_data[0].orgmem_fax2%>" style="width: 60px; text-align: center;" onkeyup="CheckOnlyNumber(this);" />
+							 - 
+							<input type="text" id="orgmem_fax3" name="orgmem_fax3" value="<%=db_data[0].orgmem_fax3%>" style="width: 60px; text-align: center;" onkeyup="CheckOnlyNumber(this);" />
+						</td>
+					<% }else{ %>
+						<td colspan="3">
+							<input type="text" id="orgmem_fax1" name="orgmem_fax1" value="" style="width: 60px; text-align: center;" onkeyup="CheckOnlyNumber(this);" />
+							 - 
+							<input type="text" id="orgmem_fax2" name="orgmem_fax2" value="" style="width: 60px; text-align: center;" onkeyup="CheckOnlyNumber(this);" />
+							 - 
+							<input type="text" id="orgmem_fax3" name="orgmem_fax3" value="" style="width: 60px; text-align: center;" onkeyup="CheckOnlyNumber(this);" />
+						</td>
+					<% } %>
+				</tr>
+					<tr>
+						<th>이메일</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="orgmem_email" name="orgmem_email" value="<%=db_data[0].orgmem_email==null ? '' : db_data[0].orgmem_email %>" style="ime-mode:active;" />
+						<% }else{ %>
+							<input type="text" id="orgmem_email" name="orgmem_email" style="ime-mode:active;" />
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>근무지명</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="orgmem_office_nm" name="orgmem_office_nm" value="<%=db_data[0].orgmem_office_nm==null ? '' : db_data[0].orgmem_office_nm %>" style="ime-mode:active;" />
+						<% }else{ %>
+							<input type="text" id="orgmem_office_nm" name="orgmem_office_nm" style="ime-mode:active;"/>
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>직종</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="industry" name="industry" value="<%=db_data[0].industry==null ? '' : db_data[0].industry %>" style="ime-mode:active;" maxlength="15"/>
+						<% }else{ %>
+							<input type="text" id="industry" name="industry" style="ime-mode:active;" maxlength="15"/>
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+					<th>사업분야</th>
+					<% if(db_data.length > 0) {%>
+						<td colspan="3">
+							<input type="text" id="business_field" name=business_field value="<%=db_data[0].business_field %>" style="ime-mode: active;" />
+						</td>
+					<% }else { %>
+						<td colspan="3">
+							<input type="text" id="business_field" name="business_field" style="ime-mode: active;" />
+						</td>
+					<% } %>
+				</tr>	
+					<tr>
+						<th>근무지</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="orgmem_office_addr_zipcode" name="orgmem_office_addr_zipcode" value="<%=db_data[0].orgmem_office_addr_zipcode==null ? '' : db_data[0].orgmem_office_addr_zipcode %>" style="ime-mode:active; width:80px; text-align: center;" readonly="readonly"/>
+							<button class="ui-button" mode="1" type="button" onclick="kakaoJuso(1);">
+								<span class="ui-icon ui-icon-search"></span>검색
+							</button>
+							<input type="text" id="orgmem_office_addr1" name="orgmem_office_addr1" value="<%=db_data[0].orgmem_office_addr1==null ? '' : db_data[0].orgmem_office_addr1 %>" style="ime-mode:active;margin-top: 10px;" readonly="readonly" />
+							<input type="text" id="orgmem_office_addr2" name="orgmem_office_addr2" value="<%=db_data[0].orgmem_office_addr2==null ? '' : db_data[0].orgmem_office_addr2 %>" style="ime-mode:active;margin-top: 10px;" placeholder="상세주소를 입력하세요."/>
+						<% }else{ %>
+							<input type="text" id="orgmem_office_addr_zipcode" name="orgmem_office_addr_zipcode" style="ime-mode:active; width:80px; text-align: center;" readonly="readonly"/>
+							<button class="ui-button" mode="1" type="button" onclick="kakaoJuso(1);">
+								<span class="ui-icon ui-icon-search"></span>검색
+							</button>
+							<input type="text" id="orgmem_office_addr1" name="orgmem_office_addr1" style="ime-mode:active;margin-top: 10px;" readonly="readonly" />
+							<input type="text" id="orgmem_office_addr2" name="orgmem_office_addr2" style="ime-mode:active;margin-top: 10px;" readonly="readonly" placeholder="상세주소를 입력하세요."/>
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>부서</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="orgmem_department" name="orgmem_department" value="<%=db_data[0].orgmem_department==null ? '' : db_data[0].orgmem_department %>" style="ime-mode:active;" maxlength="15"/>
+						<% }else{ %>
+							<input type="text" id="orgmem_department" name="orgmem_department" style="ime-mode:active;" maxlength="15"/>
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>직위</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="orgmem_position" name="orgmem_position" value="<%=db_data[0].orgmem_position==null ? '' : db_data[0].orgmem_position %>" style="ime-mode:active;" maxlength="15"/>
+						<% }else{ %>
+							<input type="text" id="orgmem_position" name="orgmem_position" style="ime-mode:active;" maxlength="15"/>
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>연락처</th>
+						<td colspan="3">
+						<% if(db_data.length > 0) {%>
+							<input type="text" id="company_tel1" name="company_tel1" value="<%=db_data[0].company_tel1==null ? '' : db_data[0].company_tel1 %>" style="width:60px;text-align: center;" onkeyup="CheckOnlyNumber(this);" />
+							 - 
+							<input type="text" id="company_tel2" name="company_tel2" value="<%=db_data[0].company_tel2==null ? '' : db_data[0].company_tel2 %>" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+							 - 
+							<input type="text" id="company_tel3" name="company_tel3" value="<%=db_data[0].company_tel3==null ? '' : db_data[0].company_tel3 %>" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+						<% }else{ %>
+							<input type="text" id="company_tel1" name="company_tel1" value="" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+							-
+							<input type="text" id="company_tel2" name="company_tel2" value="" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+							 -
+							<input type="text" id="company_tel3" name="company_tel3" value="" style="width:60px;text-align: center;" maxlength="4" onkeyup="CheckOnlyNumber(this);" />
+						<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>자택 주소</th>
+						<td colspan="3">
+							<% if(db_data.length > 0) {%>
+								<input type="text" id="orgmem_home_addr_zipcode" name="orgmem_home_addr_zipcode" value="<%=db_data[0].orgmem_home_addr_zipcode==null ? '' : db_data[0].orgmem_home_addr_zipcode %>" style="ime-mode:active; width:80px; text-align: center;" readonly="readonly"/>
+								<button class="ui-button" mode="1" type="button" onclick="kakaoJuso(2);">
+									<span class="ui-icon ui-icon-search"></span>검색
+								</button>
+								<input type="text" id="orgmem_home_addr1" name="orgmem_home_addr1" value="<%=db_data[0].orgmem_home_addr1==null ? '' : db_data[0].orgmem_home_addr1 %>" style="ime-mode:active;margin-top: 10px;" readonly="readonly" />
+								<input type="text" id="orgmem_home_addr2" name="orgmem_home_addr2" value="<%=db_data[0].orgmem_home_addr2==null ? '' : db_data[0].orgmem_home_addr2 %>" style="ime-mode:active;margin-top: 10px;" placeholder="상세주소를 입력하세요."/>
+							<% }else{ %>
+								<input type="text" id="orgmem_home_addr_zipcode" name="orgmem_home_addr_zipcode" style="ime-mode:active; width:80px; text-align: center;" readonly="readonly"/>
+								<button class="ui-button" mode="1" type="button" onclick="kakaoJuso(2);">
+									<span class="ui-icon ui-icon-search"></span>검색
+								</button>
+								<input type="text" id="orgmem_home_addr1" name="orgmem_home_addr1" style="ime-mode:active;margin-top: 10px;" readonly="readonly" />
+								<input type="text" id="orgmem_home_addr2" name="orgmem_home_addr2" style="ime-mode:active;margin-top: 10px;" readonly="readonly" placeholder="상세주소를 입력하세요."/>
+							<% } %>
+						</td>
+					</tr>
+					<tr>
+						<th>홈페이지 주소</th>
+						<% if(db_data.length > 0) {%>
+							<td colspan="3">
+								<input type="text" id="orgmem_homepage" name="orgmem_homepage" value="<%=db_data[0].orgmem_homepage %>" " />
+							</td>
+						<% }else{ %>
+							<td colspan="3">
+								<input type="text" id="orgmem_homepage" name="orgmem_homepage" />
+							</td>
+						<% } %>
+					</tr>
+					<tr>
+						<th>SNS 주소</th>
+						<% if(db_data.length > 0) {%>
+							<td colspan="3">
+								<input type="text" id="orgmem_sns" name="orgmem_sns" value="<%=db_data[0].orgmem_sns %>" " />
+							</td>
+						<% }else{ %>
+							<td colspan="3">
+								<input type="text" id="orgmem_sns" name="orgmem_sns" />
+							</td>
+						<% } %>
+					</tr>
+					<tr>
+						<th>홍보동영상</th>
+						<% if(db_data.length > 0) {%>
+							<td colspan="3">
+								<input type="text" id="link1" name="link1" value="<%=db_data[0].link1 %>" " />
+							</td>
+						<% }else{ %>
+							<td colspan="3">
+								<input type="text" id="link1" name="link1" />
+							</td>
+						<% } %>
+					</tr>	
+					<tr>
+						<th>지식백과</th>
+						<% if(db_data.length > 0) {%>
+							<td colspan="3">
+								<input type="text" id="link2" name="link2" value="<%=db_data[0].link2 %>" " />
+							</td>
+						<% }else{ %>
+							<td colspan="3">
+								<input type="text" id="link2" name="link2" />
+							</td>
+						<% } %>
+					</tr>
+					<tr>
+					<th>비고</th>
+					<% if(db_data.length > 0) {%>
+						<td colspan="3">
+							<input type="text" id="remrk" name="remrk" value="<%=db_data[0].remrk %>" />
+						</td>
+					<% }else{ %> 
+						<td colspan="3">
+							<input type="text" id="remrk" name="remrk" />
+						</td>
+					<% } %>
+				</tr>
+				</tbody>		
+			</table>
+			
+				
+			</form>
+		
+			<p class="btn">
+				<% if(db_data.length > 0) {%>
+					<button class="ui-button" onclick="ormemSave();" type="button">
+						<span class="ui-icon ui-icon-refresh"></span>저장
+					</button>
+				<% } else {%>
+					<button class="ui-button" onclick="ormemSave();" type="button">
+						<span class="ui-icon ui-icon-document"></span>등록
+					</button>
+				<% } %>
+				<button class="ui-button" onclick="window.close();" type="button">
+					<span class="ui-icon ui-icon-closethick"></span>취소
+				</button>
+			</p>
+		</div>

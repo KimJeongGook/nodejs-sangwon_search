@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<script type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.validate.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.blockUI.js"></script>
+<script>
+
+  $(function(){
+    $(document).on('click','.eventBox',function(){
+      var param = $(this);
+    $("#status").val("U");
+
+    var cal_id = $(this).attr("data-cal_id");
+
+    $.ajax({
+      type: "post"
+      , url: "/userCalendarList"
+      , data: { cal_id: cal_id }
+      , success: function (response) {
+        console.log(response);
+        var item = response.db_data[0];
+        $("#handleBtnM").show();
+        $("#handleBtnD").show();
+        $("#handleBtnC").hide();
+        for (key in item) {
+          console.log(key + ":" + item[key]);
+
+          $("#" + key).val(item[key]);
+        }
+        $.blockUI({
+          message: $(".event_add_view"),
+          css: {
+            top: '15%',
+            left: '0',
+            right: '0',
+            width: '80%',
+            height: '65%',
+            cursor: null,
+            margin: 'auto',
+            border: 'none',
+            backgroundColor: '#FFF',
+            overflow: "scroll",
+            textAlign: "left"
+          },
+          onOverlayClick: $.unblockUI
+        });
+      }
+    });
+    });
+  });
+
+  function eventDtlShow() {
+    $("#status").val("C");
+
+    $("#title").val('');
+    $("#description").val('');
+    $("#start").val('');
+
+    $("#handleBtnM").hide();
+    $("#handleBtnD").hide();
+    $("#handleBtnC").show();
+
+
+    
+
+    $.blockUI({
+      message: $(".event_add_view"),
+      css: {
+        top: '15%',
+        left: '0',
+        right: '0',
+        width: '80%',
+        height: '65%',
+        cursor: null,
+        margin: 'auto',
+        border: 'none',
+        backgroundColor: '#FFF',
+        overflow: "scroll",
+        textAlign: "left"
+      },
+      onOverlayClick: $.unblockUI
+    });
+  }
+
+  function eventHandling(status) {
+    var eventData = {
+      status: status,
+      title: $("#title").val(),
+      start: $("#start").val(),
+      end: $("#start").val(),
+      cal_id: $("#cal_id").val(),
+      description: $("#description").val(),
+      backgroundColor: "D25565",
+      textColor: '#ffffff',
+      allDay: false
+    };
+
+    if (eventData.title == '') {
+      alert('일정명은 필수입니다.');
+      return false;
+    }
+
+
+    switch (eventData.status) {
+      case "D":
+        if (eventData.status == "D") {
+          if (confirm("삭제하시겠습니까?")) {
+            $.ajax({
+              type: "post",
+              url: "/userCalendarSave",
+              data: {
+                "eventData": eventData
+              },
+              success: function (response) {
+                loadYYMM(init.today);
+                loadDate(init.today.getDate(), init.today.getDay());
+                $(".dispatch_pop_close").click();
+              }
+            });
+          }
+        }
+        break;
+      case "C":
+        $.ajax({
+          type: "post",
+          url: "/userCalendarSave",
+          data: {
+            "eventData": eventData
+          },
+          success: function (response) {
+            loadYYMM(init.today);
+            loadDate(init.today.getDate(), init.today.getDay());
+            $(".dispatch_pop_close").click();
+          }
+        });
+        break;
+      case "U":
+        $.ajax({
+          type: "post",
+          url: "/userCalendarSave",
+          data: {
+            "eventData": eventData
+          },
+          success: function (response) {
+            loadYYMM(init.today);
+            loadDate(init.today.getDate(), init.today.getDay());
+            $(".dispatch_pop_close").click();
+          }
+        });
+        break;
+
+      default:
+        break;
+    }
+
+
+
+
+  }
+
+
+</script>
+
+<style>
+  html,
+  body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background: #fff !important;
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+</style>
+
+<body>
+
+
+  <div class="event_container">
+    <div class="my-calendar clearfix">
+      <div class="calendar-box">
+        <div class="ctr-box clearfix">
+          <button type="button" title="prev" class="btn-cal prev">
+          </button>
+          <span class="cal-year"></span>
+          <span class="cal-month"></span>
+          <button type="button" title="next" class="btn-cal next">
+          </button>
+        </div>
+        <table class="cal-table">
+          <thead>
+            <tr>
+              <th>일</th>
+              <th>월</th>
+              <th>화</th>
+              <th>수</th>
+              <th>목</th>
+              <th>금</th>
+              <th>토</th>
+            </tr>
+          </thead>
+          <tbody class="cal-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- // .my-calendar -->
+    <div class="btn_wrap">
+      <!-- <button onclick="eventDtlShow();" class="btn_round btn_blue">이벤트등록</button> -->
+    </div>
+
+    <div class="eventAllWrap">
+      <div class="monInfoWrap">
+        2020년 8월
+      </div>
+      <div class="eventWrap">
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="event_add_view" style="display: none;">
+    <input type="hidden" name="status" id="status">
+    <input type="hidden" name="cal_id" id="cal_id">
+    <div class="event_cont">
+      <div class="pop_title">
+        <p>행사관리</p><button class="dispatch_pop_close"><i class="fa fa-times"></i></button>
+      </div>
+      <dl>
+        <dt>행사 제목</dt>
+        <dd><input type="text" name="title" id="title" class="title"></dd>
+      </dl>
+      <dl>
+        <dt>행사 내용</dt>
+        <dd><textarea name="description" id="description" cols="30" rows="10"></textarea></dd>
+      </dl>
+      <dl>
+        <dt>행사 시작일</dt>
+        <dd><input type="date" name="start" id="start" class="start"></dd>
+      </dl>
+    </div>
+
+    <div class="pop_btn">
+      <!-- <button class="dispatch_pop_close"><i class="far fa-times-circle"></i>닫기</button> -->
+      <!-- <input type="button" class="dispatch_pop_close" value="닫기"> -->
+      <button type="button" value="등록" onclick="eventHandling('C');" id="handleBtnC"
+        class="btn_round btn_blue">등록</button>
+      <button type="button" value="수정" onclick="eventHandling('U');" id="handleBtnM" style="display: none;"
+        class="btn_round btn_blue">수정</button>
+      <button type="button" value="삭제" onclick="eventHandling('D')" style="display: none;" id="handleBtnD"
+        class="btn_round btn_gray">삭제</button>
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+</body>
+
+
+<script src="../../../vendor/user/js/swipe-event.js"></script>
+<script>
+
+  // ================================
+  // START YOUR APP HERE
+  // ================================
+  const init = {
+    //monList: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    monList: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+    ,
+    dayList: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+    today: new Date(),
+    monForChange: new Date().getMonth(),
+    activeDate: new Date(),
+    getFirstDay: (yy, mm) => new Date(yy, mm, 1),
+    getLastDay: (yy, mm) => new Date(yy, mm + 1, 0),
+    nextMonth: function () {
+      let d = new Date();
+      d.setDate(1);
+      d.setMonth(++this.monForChange);
+      this.activeDate = d;
+      return d;
+    },
+    prevMonth: function () {
+      let d = new Date();
+      d.setDate(1);
+      d.setMonth(--this.monForChange);
+      this.activeDate = d;
+      return d;
+    },
+    addZero: (num) => (num < 10) ? '0' + num : num,
+    activeDTag: null,
+    getIndex: function (node) {
+      let index = 0;
+      while (node = node.previousElementSibling) {
+        index++;
+      }
+      return index;
+    }
+  };
+
+  const $calBody = document.querySelector('.cal-body');
+  const $btnNext = document.querySelector('.btn-cal.next');
+  const $btnPrev = document.querySelector('.btn-cal.prev');
+
+  /**
+   * @param {number} date
+   * @param {number} dayIn
+  */
+  function loadDate(date, dayIn) {
+    //document.querySelector('.cal-day').textContent = init.dayList[dayIn];
+    //document.querySelector('.cal-date').textContent = date;
+  }
+
+  /**
+   * @param {date} fullDate
+   */
+  function loadYYMM(fullDate) {
+    let yy = fullDate.getFullYear();
+    let mm = fullDate.getMonth();
+    let firstDay = init.getFirstDay(yy, mm);
+    let lastDay = init.getLastDay(yy, mm);
+    let markToday;  // for marking today date
+
+    $(document.getElementsByClassName("eventWrap")).empty();
+
+    if (mm === init.today.getMonth() && yy === init.today.getFullYear()) {
+      markToday = init.today.getDate();
+    }
+    document.querySelector('.cal-month').textContent = init.monList[mm];
+    document.querySelector('.cal-year').textContent = yy + '년';
+    document.querySelector('.monInfoWrap').textContent = yy + '년 ' + (mm + 1) + '월';
+
+
+
+    mm = mm + 1;
+    mm = mm + "";
+
+
+    if (mm.length == 1) {
+      mm = "0" + mm;
+    }
+
+    var PARAM = new Object();
+    PARAM.year = yy;
+    PARAM.month = mm;
+
+    $.ajax({
+      type: "post"
+      , url: "/userCalendarList"
+      , data: PARAM
+      , success: function (response) {
+        console.log(response);
+
+        for (var idx in response.db_data) {
+          var item = response.db_data[idx];
+
+          var days = document.getElementsByClassName("day");
+
+          console.log(item);
+
+          for (var dayIdx in days) {
+            var day = days[dayIdx];
+            if (typeof (day) == "object" && day.getAttribute("data-date") == item.day.replace(/0/g, '')) {
+              // const mark = document.createElement("svg");
+              // mark.setAttribute("width","10");
+              // mark.setAttribute("height","10");
+              // const rect = document.createElement("circle");
+              // rect.setAttribute("cx","10");
+              // rect.setAttribute("cy","10");
+              // rect.setAttribute("r","10");
+              // rect.setAttribute("fill","red");
+              // rect.setAttribute("stroke-width","3");
+              // mark.appendChild(rect);
+
+              // day.appendChild(mark);
+
+              const img = document.createElement("img");
+              img.setAttribute("src", "https://svgsilh.com/svg_v2/306289.svg");
+              img.setAttribute("width", "10px");
+              img.setAttribute("height", "10px");
+              img.classList.add("event");
+              day.appendChild(img);
+            };
+          }
+
+          var eventBox = document.createElement("div");
+          eventBox.classList.add("eventBox");
+          eventBox.dataset.cal_id = item.cal_id;
+          // eventBox.addEventListener("click", eventBoxClick, eventBox);
+
+          var dateBox = document.createElement("div");
+          dateBox.classList.add("dateBox");
+
+          var dateBoxTop = document.createElement("span");
+          dateBoxTop.classList.add("dateBoxTop");
+          dateBoxTop.innerText = item.day;
+
+          var dateBoxBottom = document.createElement("span");
+          dateBoxBottom.classList.add("dateBoxBottom");
+          dateBoxBottom.innerText = item.dayofweek;
+
+          dateBox.appendChild(dateBoxTop);
+          dateBox.appendChild(dateBoxBottom);
+
+          var contentBox = document.createElement("div");
+          contentBox.classList.add("contentBox");
+          contentBox.innerText = item.title;
+
+          // var eventTypeBox = document.createElement("div");
+          // eventTypeBox.classList.add("eventTypeBox");
+
+          // var calendarImg = document.createElement("img");
+          // calendarImg.setAttribute("src","./calendar-512.webp");
+
+          //eventTypeBox.appendChild(calendarImg);
+
+          eventBox.appendChild(dateBox);
+          eventBox.appendChild(contentBox);
+          //eventBox.appendChild(eventTypeBox);
+
+          document.getElementsByClassName("eventWrap")[0].appendChild(eventBox);
+        }
+
+
+
+      }
+    });
+
+
+
+    let trtd = '';
+    let startCount;
+    let countDay = 0;
+    for (let i = 0; i < 6; i++) {
+      trtd += '<tr>';
+      for (let j = 0; j < 7; j++) {
+        if (i === 0 && !startCount && j === firstDay.getDay()) {
+          startCount = 1;
+        }
+        if (!startCount) {
+          trtd += '<td>'
+        } else {
+          let fullDate = yy + '.' + init.addZero(mm + 1) + '.' + init.addZero(countDay + 1);
+          trtd += '<td class="day';
+          trtd += (markToday && markToday === countDay + 1) ? ' today" ' : '"';
+          trtd += ` data-date="${countDay + 1}" data-fdate="${fullDate}">`;
+        }
+        trtd += (startCount) ? ++countDay : '';
+        if (countDay === lastDay.getDate()) {
+          startCount = 0;
+        }
+        trtd += '<div class="eventBox"></div></td>';
+      }
+      trtd += '</tr>';
+    }
+    $calBody.innerHTML = trtd;
+  }
+
+  /**
+   * @param {string} val
+   */
+  function createNewList(val) {
+    let id = new Date().getTime() + '';
+    let yy = init.activeDate.getFullYear();
+    let mm = init.activeDate.getMonth() + 1;
+    let dd = init.activeDate.getDate();
+    const $target = $calBody.querySelector(`.day[data-date="${dd}"]`);
+
+    let date = yy + '.' + init.addZero(mm) + '.' + init.addZero(dd);
+
+    let eventData = {};
+    eventData['date'] = date;
+    eventData['memo'] = val;
+    eventData['complete'] = false;
+    eventData['id'] = id;
+    init.event.push(eventData);
+    $todoList.appendChild(createLi(id, val, date));
+  }
+
+  loadYYMM(init.today);
+  loadDate(init.today.getDate(), init.today.getDay());
+
+  $btnNext.addEventListener('click', () => loadYYMM(init.nextMonth()));
+  $btnPrev.addEventListener('click', () => loadYYMM(init.prevMonth()));
+
+  $calBody.addEventListener('click', (e) => {
+    if (e.target.classList.contains('day')) {
+      if (init.activeDTag) {
+        init.activeDTag.classList.remove('day-active');
+      }
+      let day = Number(e.target.textContent);
+      loadDate(day, e.target.cellIndex);
+      e.target.classList.add('day-active');
+      init.activeDTag = e.target;
+      init.activeDate.setDate(day);
+      //console.log(init.activeDTag);
+      //reloadTodo();
+    }
+  });
+
+  document.addEventListener('swiped-left', function (e) {
+    loadYYMM(init.nextMonth());
+  });
+
+  document.addEventListener('swiped-right', function (e) {
+    loadYYMM(init.prevMonth());
+  });
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,136 @@
+var nodeExcel = require('excel-export');
+
+var db = require("../../DB_config.js").connect;
+
+exports.listener=function(request, response){
+	console.log("********************* excel_download_10.js enter *********************");
+	var sql = "";	
+	
+    var conf ={};
+    
+	//a=[i+1, mem_name, mem_phone, mem_position, mem_birth, mem_join, mem_ness_name, mem_ness_phone, mem_work_duty, mem_work_phone, mem_address_work, mem_home_phone, mem_address_home];
+    conf.cols = [{
+        caption:'번호',
+        type:'number',
+        width:8
+    },{
+        caption:'회사명',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:30         
+    },{
+        caption:'대표자',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:15
+    },{
+        caption:'소재지',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:40    
+    },{
+        caption:'주요품목',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:50    
+    },{
+        caption:'설립일',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:30    
+    },{   
+        caption:'종사자',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:15
+    },{
+        caption:'비고',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:50         
+    }];
+
+    
+    sql = "SELECT * FROM doc__10 ORDER BY idx \n";
+	
+	db.query(sql, function(error, results){
+		 if(error){
+			 //response.send(error);
+		 }else{
+			console.log("sql ::::::: " + sql);
+			
+			var arr = [];
+			
+			for(i=0; i<results.length; i++){
+				var idx = results[i].idx;
+                var company_name = results[i].company_name;                
+                var orgmem_name = results[i].orgmem_name;
+                var address = results[i].address;
+                var main_product = results[i].main_product;
+                var year = results[i].year;
+                var employee_num = results[i].employee_num;
+                var etc = results[i].etc;
+                
+				a=[idx, company_name, orgmem_name, address, main_product, year, employee_num, etc];
+				
+				arr.push(a);
+			}
+			
+			conf.rows = arr;
+			
+			console.log("arr[0] :: " + arr[0]);
+			console.log("arr[1] :: " + arr[1]);
+			
+			var result = nodeExcel.execute(conf);
+
+		    response.setHeader('Content-Type', 'application/vnd.openxmlformats');
+
+		    response.setHeader("Content-Disposition", "attachment; filename=" + "sheet10.xlsx");
+
+		    response.end(result, 'binary');
+		 }		 
+		 
+	});
+}

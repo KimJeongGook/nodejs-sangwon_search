@@ -1,0 +1,233 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+require('date-utils');
+var db = require("../../../DB_config.js").connect;
+var osModule = require('os');
+
+exports.listener=function(request, response){
+	console.log("##################################### company_save Enter #####################################");
+	
+	var use_os_falg = false;
+	if(osModule.type()=='Linux') use_os_falg = true;
+	var mode= request.param("mode");
+	
+	// 사업자번호
+	//var school_reg_no =  request.param("school_reg_no") == undefined ? '' : request.param("school_reg_no");
+	
+	var number =  request.param("no") == undefined ? '' : request.param("no"); // index
+	var company_name =  request.param("company_name") == undefined ? '' : request.param("company_name"); // 회사명
+	var orgmem_name =  request.param("orgmem_name") == undefined ? '' : request.param("orgmem_name"); // 대표자
+	var industry1 =  request.param("industry1") == undefined ? '' : request.param("industry1"); // 업종_대
+	var industry2 =  request.param("industry2") == '2차 선택' ? '' : request.param("industry2"); // 업종_중
+	var industry3 =  request.param("industry3") == '3차 선택' ? '' : request.param("industry3"); // 업종_소
+	var orgmem_office_addr1 =  request.param("orgmem_office_addr1") == undefined ? '' : request.param("orgmem_office_addr1"); // 주소
+	var orgmem_office_addr_zipcode =  request.param("orgmem_office_addr_zipcode") == undefined ? '' : request.param("orgmem_office_addr_zipcode"); // 우편번호
+	
+	var sales =  request.param("sales") == undefined ? '' : request.param("sales"); // 매출액
+	var employee_num =  request.param("employee_num") == undefined ? '' : request.param("employee_num"); // 종업원수
+	var create_year =  request.param("create_year") == undefined ? '' : request.param("create_year"); // 설립년도
+	var handling_item =  request.param("handling_item") == undefined ? '' : request.param("handling_item"); // 취급품목
+	
+	var company_tel1 =  request.param("company_tel1") == undefined ? '' : request.param("company_tel1"); // 회사번호1
+	var company_tel2 =  request.param("company_tel2") == undefined ? '' : request.param("company_tel2"); // 회사번호2
+	var company_tel3 =  request.param("company_tel3") == undefined ? '' : request.param("company_tel3"); // 회사번호3
+	var orgmem_fax1 =  request.param("orgmem_fax1") == undefined ? '' : request.param("orgmem_fax1"); // 팩스번호1
+	var orgmem_fax2 =  request.param("orgmem_fax2") == undefined ? '' : request.param("orgmem_fax2"); // 팩스번호2
+	var orgmem_fax3 =  request.param("orgmem_fax3") == undefined ? '' : request.param("orgmem_fax3"); // 팩스번호3
+	var orgmem_homepage =  request.param("orgmem_homepage") == undefined ? '' : request.param("orgmem_homepage"); // 홈페이지
+	
+	var classify_1 = "";
+	var classify_2 = "";
+	var classify_3 = "";
+	var classify_4 = "";
+	var classify_5 = "";
+	var classify_6 = "";
+	
+	var classify1_Y =  request.param("classify1_Y") == undefined ? '' : request.param("classify1_Y");	//신제품(NEP)
+	var classify1_N =  request.param("classify1_N") == undefined ? '' : request.param("classify1_N");	//신제품(NEP)
+	
+	var classify2_Y =  request.param("classify2_Y") == undefined ? '' : request.param("classify2_Y");	//성능인증
+	var classify2_N =  request.param("classify2_N") == undefined ? '' : request.param("classify2_N");	//성능인증
+	
+	var classify3_Y =  request.param("classify3_Y") == undefined ? '' : request.param("classify3_Y");	//여성기업
+	var classify3_N =  request.param("classify3_N") == undefined ? '' : request.param("classify3_N");	//여성기업
+	
+	var classify4_Y =  request.param("classify4_Y") == undefined ? '' : request.param("classify4_Y");	//산업융합
+	var classify4_N =  request.param("classify4_N") == undefined ? '' : request.param("classify4_N");	//산업융합
+	
+	var classify5_Y =  request.param("classify5_Y") == undefined ? '' : request.param("classify5_Y");	//우수조달
+	var classify5_N =  request.param("classify5_N") == undefined ? '' : request.param("classify5_N");	//우수조달
+	
+	var classify6_Y =  request.param("classify6_Y") == undefined ? '' : request.param("classify6_Y");	//장애인기업
+	var classify6_N =  request.param("classify6_N") == undefined ? '' : request.param("classify6_N");	//장애인기업
+	
+	if(classify1_Y != '') classify_1 = "Y";
+	else if(classify1_N != '') classify_1 = "N";
+	
+	if(classify2_Y != '') classify_2 = "Y";
+	else if(classify2_N != '') classify_2 = "N";
+	
+	if(classify3_Y != '') classify_3 = "Y";
+	else if(classify3_N != '') classify_3 = "N";
+	
+	if(classify4_Y != '') classify_4 = "Y";
+	else if(classify4_N != '') classify_4 = "N";
+	
+	if(classify5_Y != '') classify_5 = "Y";
+	else if(classify5_N != '') classify_5 = "N";
+	
+	if(classify6_Y != '') classify_6 = "Y";
+	else if(classify6_N != '') classify_6 = "N";
+	
+	console.log("classify_1 ::: " + classify_1);
+	console.log("classify_2 ::: " + classify_2);
+	console.log("classify_3 ::: " + classify_3);
+	console.log("classify_4 ::: " + classify_4);
+	console.log("classify_5 ::: " + classify_5);
+	console.log("classify_6 ::: " + classify_6);
+	
+	var create_id = request.session.ad_id;
+	var create_host = request.connection.remoteAddress;
+	 
+	var extensionIndex = "";
+	var extension = "";
+	var date = new Date();
+	var pathlast = __dirname;
+	var pathIndex = "";
+
+	if(use_os_falg) {
+		pathIndex = pathlast.lastIndexOf('\/custom_module');
+	} else {
+		pathIndex = pathlast.lastIndexOf('\\custom_module');
+	}
+	
+	var path = pathlast.substring(pathIndex, 0);						//파일이름
+	var class_img = "";
+	var classImg_original = "";
+	var classImg_path = "";
+
+	 var sql = "";
+		
+	 if(mode=="insert"){
+		 sql = "insert into orgmember( \n" +
+		 		"company_name, \n" +
+		 		"orgmem_name, \n" +
+		 		"industry1, \n" +
+		 		"industry2, \n" +
+		 		"industry3, \n" +
+		 		"orgmem_office_addr1, \n" +
+		 		"orgmem_office_addr_zipcode, \n" +
+		 		
+		 		"sales, \n" +
+		 		"employee_num, \n" +
+				"create_year, \n" +
+				"handling_item, \n" +
+				"company_tel1, \n" +
+				"company_tel2, \n" +
+				"company_tel3, \n" +
+				"orgmem_fax1, \n" +
+				"orgmem_fax2, \n" +
+				"orgmem_fax3, \n" +
+				"orgmem_homepage, \n" +
+				
+				"classify_1, \n" +
+				"classify_2, \n" +
+				"classify_3, \n" +
+				"classify_6, \n" +
+				"classify_7, \n" +
+				"classify_8, \n" +
+				
+		 		"create_id, \n" +
+		 		"create_date, \n" +
+		 		"create_host) \n" +
+		 		"values( \n" +
+		 		"'"+company_name+"', \n" +
+		 		"'"+orgmem_name+"', \n" +
+		 		"'"+industry1+"', \n" +
+		 		"'"+industry2+"', \n" +
+		 		"'"+industry3+"', \n" +
+		 		"'"+orgmem_office_addr1+"', \n" +
+		 		"'"+orgmem_office_addr_zipcode+"', \n" +
+		 		"'"+sales+"', \n" +
+		 		"'"+employee_num+"', \n" +
+		 		"'"+create_year+"', \n" +
+		 		"'"+handling_item+"', \n" +
+		 		"'"+company_tel1+"', \n" +
+		 		"'"+company_tel2+"', \n" +
+		 		"'"+company_tel3+"', \n" +
+		 		"'"+orgmem_fax1+"', \n" +
+		 		"'"+orgmem_fax2+"', \n" +
+		 		"'"+orgmem_fax3+"', \n" +
+		 		"'"+orgmem_homepage+"', \n" +
+		 		
+		 		"'"+classify_1+"', \n" +
+		 		"'"+classify_2+"', \n" +
+		 		"'"+classify_3+"', \n" +
+		 		"'"+classify_4+"', \n" +
+		 		"'"+classify_5+"', \n" +
+		 		"'"+classify_6+"', \n" +
+		 		
+                "'"+create_id+"', \n" +
+                "now(), " +
+                "'"+create_host+"'" +
+		 		")";
+	 }
+	 else {
+		 school_no = request.param("no");
+		 
+		 sql = "update orgmember set \n" +
+		 		"company_name='"+company_name+"', \n" +
+		 		"orgmem_name='"+orgmem_name+"', \n" +
+		 		"industry1='"+industry1+"', \n" +
+		 		"industry2='"+industry2+"', \n" +
+		 		"industry3='"+industry3+"', \n" +
+		 		"orgmem_office_addr1='"+orgmem_office_addr1+"', \n" +
+		 		"orgmem_office_addr_zipcode='"+orgmem_office_addr_zipcode+"', \n" +
+		 		
+		 		"sales='"+sales+"', \n" +
+		 		"employee_num='"+employee_num+"', \n" +
+				"create_year='"+create_year+"', \n" +
+				"handling_item='"+handling_item+"', \n" +
+				"company_tel1='"+company_tel1+"', \n" +
+				"company_tel2='"+company_tel2+"', \n" +
+				"company_tel3='"+company_tel3+"', \n" +
+				"orgmem_fax1='"+orgmem_fax1+"', \n" +
+				"orgmem_fax2='"+orgmem_fax2+"', \n" +
+				"orgmem_fax3='"+orgmem_fax3+"', \n" +
+				"orgmem_homepage='"+orgmem_homepage+"', \n" +
+				
+				"classify_1='"+classify_1+"', \n" +
+				"classify_2='"+classify_2+"', \n" +
+				"classify_3='"+classify_3+"', \n" +
+				"classify_6='"+classify_4+"', \n" +
+				"classify_7='"+classify_5+"', \n" +
+				"classify_8='"+classify_6+"', \n" +
+				
+		 		"update_id='"+create_id+"', \n" +
+		 		"update_date=now(), \n" +
+		 		"update_host='"+create_host+"' \n" +
+		 		"where orgmem_no=" + number;
+	 }
+	 
+	async.series({
+		one : function(callback){
+			console.log("sql == " + sql);
+			db.query(sql, function(error, results){
+				if(error){
+					response.send(error);
+				}else{
+					
+					callback(null, null);
+					
+				}
+			});				 
+		}
+	}, function(error, result){
+		response.writeHead(200, {
+			'Content-type': 'text/html; charset=utf-8'
+		});
+		response.end('<script>opener.document.writehtm.submit(); window.close();</script>');
+	});	 
+};

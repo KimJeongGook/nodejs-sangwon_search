@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+    <head>
+        <title>대구기업체총람</title>
+        <meta charset="utf-8" />  
+		<link rel="stylesheet" type="text/css" href="../../../css/admin/default.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/admin/layout.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../css/admin/basic.css"/>
+		<link rel="stylesheet" type="text/css" href="/js/jquery/css/jquery-ui.min.css" />
+		
+		<script type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery.validate.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery.form.js"></script>
+		<script src="https://kit.fontawesome.com/7460d40ad7.js" crossorigin="anonymous"></script>
+		
+		<script src="/js/common.js"></script>
+		<script src="/js/ums.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var menu = "<%=menuNum%>";
+				$('#lnb ul li').eq(menu).addClass('on');
+				
+				$.ajax({
+					type : "post",  
+				    url : "/admin/web/getAdminName",    
+				    dataType : "text",      
+				    success : function(data){
+				    	$( '#adminNameField' ).text(data);
+				    }, error : function(xhr, status, error) { // error 발생했을때
+				    	$( '#adminNameField' ).text("error");
+			      	}
+				});
+				
+				//허용된 탑 메뉴만 보이기
+				$.ajax({
+					type : "post",  
+				    url : "/admin/web/getChecked_power",    
+				    dataType : "text",      
+				    success : function(data){
+				    	var chkAry = new Array();
+				    	
+				    	chkAry = data.split('@');
+				    	
+				    	$('.tmenu').children().each(function(){
+				    		for(var i=0;i<chkAry.length;i++){
+				    			if($(this).val() == chkAry[i]){
+				    				$(this).show();
+				    			}
+				    		}
+				    	});
+				    }, error : function(xhr, status, error) { // error 발생했을때
+				    	alert('에러');
+			      	}
+				});
+			});
+			
+			function MM_openBrWindow(theURL,winName,features) {
+				window.open(theURL,winName,features);
+			}
+			function winOpen(){
+				var win = window.open('/member_list', 'member_list','width=540,height=900,scrollbars=yes');
+				win.focus();
+			}	
+			function fnLogOut() {
+				window.location.href='/admin/web/logout';
+			}
+			function go_indexUW(){
+				window.location.href='/index_uw';
+			}
+
+		</script>
+		
+	<style>
+		.tmenu li{display:none;}
+	</style>
+	</head>
+	
+	<body>
+		<!--상단-->
+		<div id="head">
+			<img src="/images/logo05.png" style="width: 200px; position: fixed; margin-top: 30px; padding-left: 1257px; padding-top: 14px;" />
+			<div>
+				<div class="float_l year_title">2021</div>
+				<span class="float_l head_title" style="padding-right: 50px;">대구기업체총람</span>
+				<span class="float_r" style="padding-left: 55px; padding-top: 20px;">
+					<button class="ui-button" onclick="go_indexUW();" type="button">
+						<i class="fas fa-home"></i> 처음으로
+					</button>
+					<!-- <button class="ui-button" onclick="winOpen();" type="button">
+						<span class="ui-icon ui-icon-clipboard"></span>전자수첩
+					</button> -->
+				</span>
+				<div class="float_l eng_title" style="padding-right: 150px;">Daegu Business Directory</div>
+			</div>
+		</div>
+	
+		<!-- <div id="lnb">
+			<ul class="tmenu">
+				<li value="1"><a href="/admin/web/orgm_list">회원관리</a></li>
+				<li value="2"><a href="/admin/web/board_list">공지사항관리</a></li>
+				<li value="3"><a href="/admin/web/hongbo_board_list">동문홍보관리</a></li>
+				<li value="3"><a href="/admin/web/event_board_list">행사일정관리</a></li>
+				<li value="3"><a href="/admin/web/event_list">행사관리</a></li> -->
+				<!-- <li value="4"><a href="/admin/web/admin_list">권한설정</a></li>
+				<li value="5"><a href="/admin/web/code_list">코드관리</a></li>
+				<li value="6"><a href="/admin/web/calendar">일정관리</a></li>
+				<li value="8" style="display: list-item;"><a href="/admin/web/dues_view">회비관리</a></li> -->
+				<!--<li value="6"><a href="/admin/web/ums_list">문자발송</a></li>-->
+			<!-- </ul>
+		</div> --> 
+		<div class="search_title">프리미엄 검색</div>
+		<div id="container">

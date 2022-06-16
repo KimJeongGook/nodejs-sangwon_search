@@ -1,0 +1,106 @@
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+<style>
+	#map { overflow: visible;}
+	.root_daum_roughmap_landing {margin: 0 auto;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".contImg").click(function() {
+			if ($(this).get(0).tagName == "IMG") {
+				var url = "/views/user/chart/img_view.html?imgSRC=" + $(this).attr("src");
+
+				var standalone = window.navigator.standalone, userAgent = window.navigator.userAgent
+						.toLowerCase(), safari = /safari/
+						.test(userAgent), ios = /iphone|ipod|ipad/
+						.test(userAgent);
+
+				if (ios) {
+					if (!standalone && safari) {
+						//browser
+					} else if (standalone
+							&& !safari) {
+						//standalone
+					} else if (!standalone
+							&& !safari) {
+						//uiwebview
+						window.location = "jscall://"
+								+ url;
+					}
+					;
+				} else {
+					// not ios
+					window.location.href = url;
+				}
+				;
+				//window.location.href = url;
+				//window.open('/views/user/hongbo_board/img_view.html?imgSRC='+$(this).attr("src")+'', 'hongboView_Pop', 'width=500, height=500');
+			}
+		});
+	});
+</script>
+
+<!-- 탭 -->
+<div class="intro_menu">
+	<ul>
+		<li><a href="chart_mba_list">인사말</a></li>
+		<li><a href="rules">회칙</a></li>
+		<li><a href="club">연혁</a></li>
+		<li><a href="orgchart">조직도</a></li>
+		<li><a href="membership">동문회비</a></li>
+		<li><a href="place" class="intro_menu_on">오시는길</a></li>
+	</ul>
+</div>
+
+<div id="container_intro">
+	<!-- 내용 -->
+	<div class="place_wrap">
+		<div class="map_wrap">
+			<div class="map_tit">
+				<span>대구공고 총동문회 사무실</span>
+			</div>
+			<div id="map" style="max-width:100%;height:250px;"></div>
+			<div class="place_txt">
+				<ul>
+					<li><p class="p_tit"><i class="fa fa-map-marker-alt"></i>주&nbsp;소</p>
+						<p>(41196) 대구광역시 동구 대현로 135 (신암동)</p></li>
+					<li><p class="p_tit"><i class="fa fa-bus"></i>버스</p>
+						<p><strong>대구동부고용복지플러스센터(제일안과쪽)</strong><br/>156, 401, 414-1, 521, 618, 708, 808, 937, 980, 동구3, 순환2-1, 팔공1</p>
+						<p><strong>대구동부고용복지플러스센터(우남아파트쪽)</strong><br/>414, 618, 650, 708, 808, 980, 동구3</p>
+						<p><strong>강남약국</strong><br/>156, 305, 401, 403, 414-1, 521, 618, 650, 708, 808, 980, 급행1, 동구3, 북구2, 팔공1</p>
+					</li>
+					<li><p class="p_tit"><i class="fa fa-subway"></i>지하철</p>
+						<p>1호선 신천(경북대 입구)역</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=27776ce9a963105ed959bb4af639fa29"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+	});
+	
+var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+
+var options = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(35.882824, 128.614142), //지도의 중심좌표.
+	level: 3 //지도의 레벨(확대, 축소 정도)
+};
+
+var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+// 마커가 표시될 위치입니다 
+var markerPosition  = new kakao.maps.LatLng(35.882998, 128.614193); 
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+    position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+</script>

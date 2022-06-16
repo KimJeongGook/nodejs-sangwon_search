@@ -1,0 +1,214 @@
+<script>
+
+
+$(document).ready(function () {
+            var currentDate = new Date();
+
+            var currentYear = currentDate.getFullYear();
+            var currentMonth = currentDate.getMonth();
+
+            var year = "<%=year%>";
+            var month = "<%=month%>";
+            currentYear = year*1;
+            currentMonth = month*1;
+
+            var search_month_html = "<option value=''>- 월 선택 -</option>";
+            for (var idx = 1; idx < 13; idx++) {
+
+                search_month_html += "<option value=" + lpad(idx, 2, '0');
+                search_month_html += ">" + idx + " 월</option>";
+
+                if (idx == 12) {
+                    $("#search_month").html(search_month_html);
+              
+                }
+            }
+
+            $("#search_month").val("<%=data[0].month %>");
+
+            var search_year_html = "<option value=''> - 년도 선택 - </option>";
+            for (var idx = 0; idx < 10; idx++) {
+                search_year_html += "<option value='" + (currentYear - idx) + "'";
+                search_year_html += ">" + (currentYear - idx) + "</option>";
+
+                if (idx == 9) {
+                    $("#search_year").html(search_year_html);
+                }
+            }
+            $("#search_year").val("<%=data[0].year %>");
+    });
+ function dues_modify(){
+        var PARAM = new Object();
+
+        PARAM.year = $("#search_year option:selected").val();
+        PARAM.month = $("#search_month option:selected").val();
+        PARAM.price = $("#pay_price").val();
+        PARAM.pay_option = $("#pay_option").val();
+        PARAM.dues_id = $("#orgmem_no").val();
+        PARAM.mode = 'update';
+        console.log($("#orgmem_no").val());
+        if($("#orgmem_no").val()== null || $("#orgmem_no").val() == ""){
+            alert("회원을 선택해주세요");
+        }else{
+            $.ajax({
+            url: "/admin/web/dues_save"
+            , data: PARAM
+            , type: "POST"
+            , success: function (result) {
+                window.close();
+            }
+        });
+        }
+
+    }
+
+    function lpad(str, padLen, padStr) {
+		if (padStr.length > padLen) {
+			console.log("오류 : 채우고자 하는 문자열이 요청 길이보다 큽니다");
+			return str;
+		}
+		str += ""; // 문자로
+		padStr += ""; // 문자로
+		while (str.length < padLen)
+			str = padStr + str;
+		str = str.length >= padLen ? str.substring(0, padLen) : str;
+		return str;
+	}
+</script>
+
+<style>
+    .content {
+        display: flex;
+        height: 90vh;
+        width: 100%;
+    }
+
+    .wrap {
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
+    .member_list {
+        width: 30%;
+        height: 95%;
+        border: 1px solid;
+        border-right: none;
+        margin: 1rem 0rem 1rem 1rem;
+    }
+
+    .payment_list {
+        width: 100%;
+        height: 95%;
+        border: 1px solid;
+    }
+
+    .member_header {
+        background: #746c6c;
+        ;
+        color: antiquewhite;
+        font-size: 14px;
+        padding: .3rem 1rem;
+    }
+
+    .memberList {
+        height: 100%;
+        overflow: scroll;
+    }
+</style>
+
+<h2>
+    <span class="float_l">회비관리</span><img src="../../../images/admin/btn_close.gif" alt="" class="float_r hand"
+        onclick="window.close();" />
+</h2>
+
+<input type="hidden" name="orgmem_no" id="orgmem_no" value="<%=duse_id%>">
+
+<div class="content">
+    <div class="wrap">
+        <div class="payment_list">
+            <div class="member_header">
+                회비 결제 정보
+            </div>
+            <div class="payment_box">
+                <table>
+
+                    <tr>
+                        <td>회원번호</td>
+                        <% if(data.length > 0) {%>
+                        <td id="orgmem_no_txt"><%=data[0].orgmem_no %></td>   
+                        <% }else{ %>
+                        <td id="orgmem_no_txt"></td>
+                        <% } %>
+                    </tr>
+
+                    <tr>
+                        <td>이름</td>
+                        <% if(data.length > 0) {%>
+                        <td id="orgmem_name"><%=data[0].orgmem_name %></td>
+                        <% }else{ %>
+                        <td id="orgmem_name"></td>
+                        <% } %>
+                    </tr>
+
+                    <tr>
+                        <td>기수</td>
+                        <% if(data.length > 0) {%>
+                        <td id="orgmem_seqNo"><%=data[0].orgmem_seqNo %></td>
+                        <% }else{ %>
+                        <td id="orgmem_seqNo"></td>   
+                        <% } %>                            
+                    </tr>
+
+                    <tr>
+                        <td>결제년도</td>
+                        <% if(data.length > 0) {%>
+                        <td id=""><select name="search_year" id="search_year" value="<%=data[0].year %>"></select></td>
+                        <% }else{ %>
+                        <td id=""><select name="search_year" id="search_year"></select></td>
+                        <% } %>  
+                    </tr>
+
+                    <tr>
+                        <td>결제월</td>
+                        <% if(data.length > 0) {%>
+                        <td id=""><select name="search_month" id="search_month" value="<%=data[0].month %>"></select></td>
+                        <% }else{ %>
+                        <td id=""><select name="search_month" id="search_month"></select></td>
+                        <% } %> 
+                    </tr>
+
+                    <tr>
+                        <td>회비구분</td>
+                        <% if(data.length > 0) {%>
+                        <td id=""><input type="text" id="pay_option" value="<%=data[0].pay_option %>" style="border: none; width: 50%;"></td>
+                        <% }else{ %>
+                        <td id=""><input type="text" id="pay_option" value="년회비" style="border: none; width: 50%;"></td>   
+                        <% } %> 
+                    </tr>
+
+                    <tr>
+                        <td>금액</td>
+                        <% if(data.length > 0) {%>
+                        <td id=""><input type="text" id="pay_price" value="<%=data[0].price %>" style="border: none; width: 25%;">원</td>
+                        <% }else{ %>
+                        <td id=""><input type="text" id="pay_price" value="20000" style="border: none; width: 25%;">원</td>
+                        <% } %> 
+                    </tr>
+
+                </table>
+            </div>
+
+            <input type="button" value="수정" onclick="dues_modify();" style="border: solid 1px #1c7ee1;
+			background: #4094e9;
+			background: -webkit-gradient(linear, left top, left bottom, from(#499bea), to(#207ce5));
+			background: -moz-linear-gradient(top, #499bea, #207ce5);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#499bea', endColorstr='#207ce5');
+			color: #fef4e9;
+			display: block;
+			margin: 10px auto;">
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+var db = require("../../DB_config.js").connect;
+
+exports.listener = function (request, response) {
+
+    var orgmem_no = request.param("orgmem_no");
+
+    var sql = "SELECT * FROM dues WHERE orgmem_no = '"+orgmem_no+"' ORDER BY month";
+    db.query(sql, function (error, result) {
+        console.log(sql);
+        response.send(result);
+    });
+};

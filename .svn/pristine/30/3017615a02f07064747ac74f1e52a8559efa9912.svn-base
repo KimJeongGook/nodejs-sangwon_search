@@ -1,0 +1,478 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<script src="https://kit.fontawesome.com/7460d40ad7.js" crossorigin="anonymous"></script>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="7.%20대구혁신도시%20이전%20공공기관%20현황.files/filelist.xml">
+<title>7. 대구혁신도시 이전 공공기관 현황</title>
+<style id="7. 대구혁신도시 이전 공공기관 현황_11936_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.font511936
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;}
+.xl6311936
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6411936
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;
+	padding-left:6px;}
+.xl6511936
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6611936
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6711936
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl6811936
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-char-type:none;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if !excel]>　　<![endif]-->
+<!--다음 내용은 Microsoft Excel의 웹 페이지로 게시 마법사를 사용하여 작성되었습니다.-->
+<!--같은 내용의 항목이 다시 게시되면 DIV 태그 사이에 있는 내용이 변경됩니다.-->
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 시작 -->
+<!----------------------------->
+
+<style type="text/css"> 
+	a:link { text-decoration:none; color:#ffffff;}
+	a:visited { text-decoration:none;color:white;}
+	a:active {text-decoration:none; color:#ccc; }
+	a:hover { text-decoration:none; color:white; }
+	
+	.table_content {margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 2%;}
+	th {border: 1px solid black;}
+	td {border: 1px solid black;}
+	tr {height: 40px;}
+	.td_c {background-color: white;}
+	.td_select {background-color: #fdbaba;}
+</style>
+
+<!-- <p class="float_r data_close" style="text-align:right;">
+	<button style="width: 80px; height: 30px; border-radius: 5px; background-color: #3b64af;">
+		<a href="/index_uw" target="_self" style="font-size: larger;">메인화면</a>
+	</button>
+</p> -->
+
+<div style="margin-top: 30px;">
+	<table class="table_content">
+		<colgroup>
+		    <col width="45%" />
+		    <col width="50%" />
+		</colgroup>
+		
+		<tr>
+			<th colspan="2" class="thead_th" style="height: 62px; background-color: #4f6fc1; color: white; font-weight: 600; font-size: 25px; text-align: left;">
+				<span style="padding-left: 15px;">대구기업체총람 부록자료</span>
+				<span style="padding-left: 40%; font-size: 18;">
+					<a href="/index_uw" target="_self"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i>메인화면</a>
+				</span>
+			</th>
+		</tr>
+		
+		<tbody>
+			<tr>
+                <td class="td_c" onClick="location.href='/file/user_html/1. 제24대 의원 명단(2021.04.01).htm'" style="cursor:pointer;">
+					<span style="color:black; margin: 5px; font-weight: 600;">1. 제24대 의원 명단(2021.04.01)</span>
+                </td>
+                <td class="td_select" onClick="location.href='/file/user_html/7. 대구혁신도시 이전 공공기관 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">7. 대구혁신도시 이전 공공기관 현황</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_c" onClick="location.href='/file/user_html/2. 전국상의 현황 대외협력팀(2021.04.05).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">2. 전국상의 현황 대외협력팀(2021.04.05)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/8. 대구지역 상장법인.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">8. 대구지역 상장법인</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/3. 유관기관.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">3. 유관기관</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/9. 월드클래스300 대구기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">9. 월드클래스300 대구기업</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/4. 경제관련단체.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">4. 경제관련단체</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/10. 대구 3030기업(2007~2020).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">10. 대구 3030기업(2007~2020)</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/5. 대구지역 협동조합.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">5. 대구지역 협동조합</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/11. 스타기업100, Pre-스타기업, 고용친화기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">11. 스타기업100, Pre-스타기업, 고용친화기업</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/6. 대구 산업단지 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">6. 대구 산업단지 현황</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/12. 물산업 클러스터 입주기업 리스트.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">12. 물산업 클러스터 입주기업 리스트</span>
+                </td>
+            </tr>
+		</tbody>
+    </table>
+</div>
+
+<div id="7. 대구혁신도시 이전 공공기관 현황_11936" align=center x:publishsource="Excel">
+
+<table border=1 cellpadding=0 cellspacing=0 width=1138 class=xl6611936
+ style='border-collapse:collapse;table-layout:fixed;width:854pt;margin-bottom:50px;'>
+ <col class=xl6611936 width=151 style='mso-width-source:userset;mso-width-alt:
+ 4832;width:113pt'>
+ <col class=xl6711936 width=101 style='mso-width-source:userset;mso-width-alt:
+ 3232;width:76pt'>
+ <col class=xl6611936 width=109 style='mso-width-source:userset;mso-width-alt:
+ 3488;width:82pt'>
+ <col class=xl6611936 width=212 style='mso-width-source:userset;mso-width-alt:
+ 6784;width:159pt'>
+ <col class=xl6611936 width=423 style='mso-width-source:userset;mso-width-alt:
+ 13536;width:317pt'>
+ <col class=xl6611936 width=142 style='mso-width-source:userset;mso-width-alt:
+ 4544;width:107pt'>
+ <tr class=xl6811936 height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6311936 width=151 style='height:34.5pt;width:113pt'>기 관
+  명</td>
+  <td class=xl6311936 width=101 style='border-left:none;width:76pt'>전화번호</td>
+  <td class=xl6311936 width=109 style='border-left:none;width:82pt'>홈페이지</td>
+  <td class=xl6311936 width=212 style='border-left:none;width:159pt'>주 소</td>
+  <td class=xl6311936 width=423 style='border-left:none;width:317pt'>주 요 업 무</td>
+  <td class=xl6311936 width=142 style='border-left:none;width:107pt'>(기관명 :
+  가나다순)</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>신용보증기금</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>430-4014</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.kodit.co.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 첨단로 7 (신서동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>신용보증을 통하여 중소기업의 금융을 원활히 하고 신용정보의 효율적인 관리ㆍ운영</td>
+  <td class=xl6811936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>중앙119구조본부</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>712-1011</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.rescue.go.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>달성군 구지면 구지서로 1 (수리리)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>국가적 차원의 특수 재난사고에 신속히 대응<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>중앙교육연수원</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>980-6597</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.neti.go.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 첨단로 80 (신서동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>교육관계 공무원의 핵심역량 개발 및 전문성 신장 지원</td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>중앙신체검사소</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>607-0201</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.mma.go.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 첨복로 10, 3층 (신서동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>지방병무청 병역판정검사 과정에서 면제대상자, 이의제기자, 정밀검사가 필요한 사람에 대하여 정밀 재신체검사를
+  실시<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>한국가스공사</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>670-0114</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.kogas.or.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 첨단로 120 (신서동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>LNG 인수기지와 천연가스 공급배관망을 건설하고 해외에서 LNG를 수입하여 인수기지에서 재기화한 후 도시가스사와
+  발전소에 안정적으로 공급<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>한국감정원</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>1644-2828</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.kab.co.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 이노밸리로 291 (신서동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>부동산의 가격 공시 및 통계·정보 관리 업무와 부동산시장 정책지원 등을 위한 조사·관리 업무 수행</td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>한국교육학술정보원</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>714-0210</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.keris.or.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 동내로 64 (동내동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>유치원부터 초ㆍ중ㆍ고, 대학에 이르기까지 교육과학술연구 분야 정보화와 관련된 다양한사업추진<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>한국사학진흥재단</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>770-2501</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.kfpp.or.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 혁신대로 345 (신서동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>사립학교의 교육환경개선 등 사학교육진흥을 위하여 사학진흥기금을 조성하고 지원</td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>한국산업기술평가관리원</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>718-8001</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.keit.re.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 첨단로8길 32 (신서동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>국가산업기술R&amp;D를기획ㆍ평가ㆍ관리<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>한국산업단지공단</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>070-8895-7013</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.kicox.or.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 첨단로 39 (신서동)<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>산업집적활성화 및 공장설립에 관한 법률에 의거 산업단지의 개발 및 관리와 기업체의 산업활동 지원</td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>한국장학재단</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>238-2212</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.kosaf.go.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 신암로 125 (신암동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>국가장학금 및 학자금지원<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <tr height=46 style='mso-height-source:userset;height:34.5pt'>
+  <td height=46 class=xl6411936 width=151 style='height:34.5pt;border-top:none;
+  width:113pt'>한국정보화진흥원</td>
+  <td class=xl6511936 width=101 style='border-top:none;border-left:none;
+  width:76pt'>230-1005</td>
+  <td class=xl6411936 width=109 style='border-top:none;border-left:none;
+  width:82pt'>www.nia.or.kr</td>
+  <td class=xl6411936 width=212 style='border-top:none;border-left:none;
+  width:159pt'>동구 첨단로 53 (신서동)</td>
+  <td class=xl6411936 width=423 style='border-top:none;border-left:none;
+  width:317pt'>국가정보화의 베이스캠프 역할 수행<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl6611936 width=142 style='border-top:none;border-left:none;
+  width:107pt'>　</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=151 style='width:113pt'></td>
+  <td width=101 style='width:76pt'></td>
+  <td width=109 style='width:82pt'></td>
+  <td width=212 style='width:159pt'></td>
+  <td width=423 style='width:317pt'></td>
+  <td width=142 style='width:107pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 끝-->
+<!----------------------------->
+</body>
+
+</html>

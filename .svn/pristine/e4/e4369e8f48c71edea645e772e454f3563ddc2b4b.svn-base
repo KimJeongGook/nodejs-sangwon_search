@@ -1,0 +1,403 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	if($("#topcompany2").val() == 'Y'){
+			$("#topcompany").prop("checked", true);
+		}else{
+			$("#topcompany").prop("checked", false);
+		}
+	var mode = tag_place("<%=mode%>");
+	var isDeleted = tag_place("<%=isDeleted%>"); // 삭제 쿼리 submit 했는지 구분
+	var domEleArray = [$('#bannerImg').clone()]; // 원본 복사(파일 초기화 관련)
+	
+	//달력
+	$(".datepicker").datepicker({
+				dateFormat: 'yy-mm-dd', //Input Display Format 변경
+				prevText: '이전 달',
+				nextText: '다음 달',
+				monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				dayNames: ['일','월','화','수','목','금','토'],
+				dayNamesShort: ['일','월','화','수','목','금','토'],
+				dayNamesMin: ['일','월','화','수','목','금','토'],
+				showMonthAfterYear: true,
+				changeMonth: true,
+				changeYear: true,
+				autoSize: false 
+			});
+	
+	var settingDate = new Date();
+	
+	if(mode == "write"){
+		$("#strt_dt").val($.datepicker.formatDate('yy-mm-dd', settingDate));
+		
+		settingDate.setYear(settingDate.getFullYear()+1);
+		$("#end_dt").val($.datepicker.formatDate('yy-mm-dd', settingDate));
+	}
+	
+	$("#org_search").click(function(e){
+		e.preventDefault();
+		
+		var cw=screen.availWidth;     //화면 넓이
+		var ch=screen.availHeight;    //화면 높이
+		var sw=800;    //띄울 창의 넓이
+		var sh=530;    //띄울 창의 높이
+		var ml=(cw-sw)/2;        //가운데 띄우기위한 창의 x위치
+		var mt=(ch-sh)/2;         //가운데 띄우기위한 창의 y위치
+		
+	    window.open('/admin/web/orgm_list_popup','org_search','width='+sw+',height='+sh+',top='+mt+',left='+ml+',resizable=no,scrollbars=yes');
+	});	
+	
+	$("#btn").click(function() {
+		if($('#topcompany').is(":checked") == true){
+			$('#topcompany').val("Y")
+		}else{
+			$('#topcompany').val("N")
+		}
+		var brdTitle = $("#brdTitle").val();
+		var brdContent = $("#brdContent").val();
+		var orgmem_no = $("#orgmem_no").val();
+		var strt_dt = $("#strt_dt").val();
+		var end_dt = $("#end_dt").val();
+		
+		if (brdTitle == "") {
+			alert("제목을 입력하세요.");
+			$("#brdTitle").focus();
+			return false;
+		}else if (brdContent == "") {
+			alert("내용을 입력하세요.");
+			$("#brdContent").focus();
+			return false;
+		}else if(orgmem_no == ""){
+			alert("기수/이름을 입력하세요.");
+			$("#org_search").click();
+			return false;
+		}
+		
+		if($("#bannerUseYn").is(":checked")){ // 배너등록 체크 시
+			if(strt_dt == ""){
+				alert("적용시작일자를 입력하세요.");
+				$("#strt_dt").focus();
+				return false;
+			}else if(end_dt == ""){
+				alert("적용종료일자를 입력하세요.");
+				$("#end_dt").focus();
+				return false;
+			}
+		}
+		
+		if($('input[name="brdPushYn"]').is(':checked')) { // push가 체크되면
+			if( $("select[name=orgmem_seqNo]").val() == "") {
+				alert( "PUSH 수신기수를 선택하세요." );
+				return false;
+			}
+			
+			$('input[name="brdPushYn_result"]').val("Y");
+		} else {
+			$('input[name="brdPushYn_result"]').val("N");
+		}
+		
+		brdContent = brdContent.replace(/'/g,"‘");
+		
+		$("#brdContent").val(brdContent)
+		
+		$("#boardwrite").attr("action","hongbo_board_save");
+		$("#boardwrite").submit();
+	});
+	
+	$('input[name="brdPushYn"]').click(function() {
+		if($('input[name="brdPushYn"]').is(':checked')) {
+			window.resizeTo(566, 890);
+			
+			$( '#push_detail' ).show();
+		} else {
+			window.resizeTo(566, 840);
+			
+			$( '#push_detail' ).hide();
+		}
+	});
+	
+	if(isDeleted == "N"){ //창을 띄울 때 
+		$("#bannerUseYn").attr("checked", "checked");
+		$(".applyDate").show();
+	}else{ // 삭제 동작이 일어날 때 
+		$("#strt_dt").val("");
+		$("#end_dt").val("");
+	}
+	
+	$("#bannerUseYn").on('click', function(){
+		if($("#bannerUseYn").is(':checked')) { // 배너등록 체크
+			$(".applyDate").show();
+		}else{
+			var no = $(".fileInfo").attr("no");
+			var name = $(".fileInfo").attr("name");
+			
+			domEleArray[1] = domEleArray[0].clone(true); // 쌔거(0번) -> 복사(1번)
+			$('#bannerImg').replaceWith(domEleArray[1]); // file 타입 초기화
+			
+			$(".applyDate").hide();
+			
+			if(no != undefined && name != undefined){ //파일이 이미 등록되어 있을 때
+				file_del(no, name);
+			}else{
+				$("#strt_dt").val("");
+				$("#end_dt").val("");
+			}
+		}
+	});
+	
+	$('#main_event_y').change(function(){
+		if($('#main_event_y').is(":checked")){
+			$("input:checkbox[id='main_event_n']").attr("checked", false);
+		}else{
+			$("input:checkbox[id='main_event_n']").attr("checked", true);
+		}
+	});
+	
+	$('#main_event_n').change(function(){
+		if($('#main_event_n').is(":checked")){
+			$("input:checkbox[id='main_event_y']").attr("checked", false);
+		}else{
+			$("input:checkbox[id='main_event_y']").attr("checked", true);
+		}
+	});
+	
+	
+});
+</script>
+
+<h2><span class="float_l">동문홍보</span><img src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" onclick="window.close();"/></h2>
+<div class="content">
+	<form action="" id="boardwrite" method="post" enctype="multipart/form-data" autocomplete="off">
+		<input type="hidden" name="file_no" value="" id="file_no"/>
+		<input type="hidden" name="file_name" value="" id="file_name"/>
+		<input type="hidden" name="mode" id="mode" />
+		<% if(data.length > 0) {%>
+			<input type="hidden" name="mode" value="modify"/> 
+			<input type="hidden" id="number" name="number" value="<%=data[0].board_no %>"/>
+		<% }else{ %>
+			<input type="hidden" name="mode" value="write"/>
+		<% } %>
+		<table>
+			<colgroup>
+				<col width="18%"/>
+				<col width="32%"/>
+				<col width="18%"/>
+				<col width="32%"/>
+			</colgroup>
+			<tr>
+				<th>제목</th>
+				<% if(data.length > 0) {%>
+					<td colspan="3"><input type="text" id="brdTitle" name="brdTitle" value="<%=data[0].board_title %>" style="ime-mode:active;"/></td>
+				<% }else{ %>
+					<td colspan="3"><input type="text" id="brdTitle" name="brdTitle" style="ime-mode:active;"/></td>
+				<% } %>
+			</tr>
+			<% if(data.length == 0) {%>
+			<tr>
+				<th>PUSH알림</th>
+				<td colspan="3">
+					<input type="checkbox" name="brdPushYn" value="Y" />
+					<input type="hidden" name="brdPushYn_result"/>
+				</td>
+			</tr>
+			<tr id="push_detail" style="display: none;">
+				<th>PUSH <br/>수신 기수</th>
+				<td colspan="3">
+					<% if(data.length > 0) {%>
+						<select name="orgmem_seqNo" id="orgmem_seqNo">
+							<option value="">선택하세요.</option>	
+							<option value="all">전체선택</option>	
+							<% for(var k=70; k>=1; k--){ %>								
+								<option value="<%=k%>" <%if( db_data[0].orgmem_seqNo == k ){%> selected="selected" <%}%>><%=k%>회</option>
+							<% } %>
+							<option value="0000" <%if( db_data[0].orgmem_seqNo == '0000' ){%> selected="selected" <%}%>>재일동문</option>
+							<option value="-1" <%if( db_data[0].orgmem_seqNo == '-1' ){%> selected="selected" <%}%>>개발자</option>
+						</select>
+					<% }else{ %>
+						<select name="orgmem_seqNo" id="orgmem_seqNo">
+							<option value="">선택하세요.</option>
+							<option value="all">전체선택</option>
+							<% for(var k=70; k>=1; k--){ %>
+								<option value="<%=k%>"><%=k%>회</option>
+							<% } %>
+							<option value="0000">재일동문</option>
+							<option value="-1">개발자</option>
+						</select>
+					<% } %>
+				</td>
+			</tr>				
+			<% }%>				
+			<tr>
+				<th>우선순위</th>
+				<% if(data.length > 0) {%>
+					<td colspan="3"><input type="text" id="sort" name="sort" value="<%=data[0].sort %>" style="width:50px;" /></td>
+				<% }else{ %>
+					<td colspan="3"><input type="text" id="sort" name="sort" style="width:50px;" /></td>
+				<% } %>					
+			</tr>				
+			<tr>
+				<th>대표이미지</th>
+				<td colspan="3">
+					<% if(data.length > 0 && data_main_file.length > 0) { %>
+					<%	 for(var i = 0; i < data_main_file.length; i++) { %>
+						<li>
+						<img src="../../../file/hongbo_board/<%=data_main_file[i].file_dtname %>" alt="사진" width="180px"/></br>
+						<%=data_main_file[i].file_name %>
+						<a href="#" onclick="javascript:file_del('<%=data_main_file[i].file_no %>','<%=data_main_file[i].file_dtname %>');">
+							<img src="../../../images/admin/icon_delete.gif" alt="삭제" />
+						</a>
+						</li>
+					<% 	 } %>						
+					<% }else{%>
+					<input type="file" id="aaa" name="brdFileMainImg[0]" value="" />
+					<% }%>
+				</td>
+			</tr>
+			<tr>
+				<th>100대기업</th>
+				<% if(data.length > 0) {%>
+					<td colspan="3"><input type="checkbox" id="topcompany" name="topcompany"  /></td>
+					<input type="hidden" id="topcompany2" name="topcompany2" value="<%=data[0].topcompany %>"/>
+				<% }else{ %>
+					<td colspan="3"><input type="checkbox" id="topcompany" name="topcompany"/></td>
+				<% } %>					
+			</tr>
+			<tr>
+				<th>노출여부</th>
+				<td colspan="3">
+					<% if(data.length > 0 && data[0].main_event_y!='Y' ) {%>
+					<input type="checkbox" id="main_event_y" name="main_event_y" value="Y"/>노출
+					<% }else{%>
+					<input type="checkbox" id="main_event_y" name="main_event_y" value="Y" checked/>노출
+					<% 	 } %>
+					<% if(data.length > 0 && data[0].main_event_n!='Y' ) {%>
+					<input type="checkbox" id="main_event_n" name="main_event_n" value="Y"/>비노출
+					<% }else if(data.length > 0 && data[0].main_event_n=='Y'){%>
+					<input type="checkbox" id="main_event_n" name="main_event_n" value="Y" checked/>비노출
+					<% }else{ %>
+					<input type="checkbox" id="main_event_n" name="main_event_n" value="N"/>비노출
+					<% } %>
+				</td>
+			</tr>	
+			<tr>
+				<th>배너등록</th>
+				<td colspan="3">
+					<input type="checkbox" id="bannerUseYn" />
+				</td>
+			</tr>	
+			<tr class="applyDate">
+				<th>배너이미지</th>
+				<td class="aaa" colspan="3">
+					<% if(data.length > 0 && data_banner_file.length > 0) { %>
+					<%	 for(var i = 0; i < data_banner_file.length; i++) { %>
+						<li class="fileInfo" no="<%=data_banner_file[i].file_no %>" name="<%=data_banner_file[i].file_dtname %>">
+						<img src="../../../file/hongbo_board/<%=data_banner_file[i].file_dtname %>" alt="사진" width="180px"/></br>
+						<%=data_banner_file[i].file_name %>
+						<a href="#" onclick="javascript:file_del('<%=data_banner_file[i].file_no %>','<%=data_banner_file[i].file_dtname %>');">
+							<img src="../../../images/admin/icon_delete.gif" alt="삭제" />
+						</a>
+						</li>
+					<% 	 } %>
+					<% }else{%>
+					<input type="file" id="bannerImg" name="brdFileBannerImg[0]" value="" />
+					<% }%>
+				</td>
+			</tr>
+			<tr class="applyDate" style="display:none;">
+				<th>배너적용기간</th>
+				<td colspan="3">
+				<% if(data.length > 0) {%>
+					<input type="text" id="strt_dt" name="strt_dt" class="datepicker" value="<%=data[0].strt_dt %>" style="width:100px;" readonly /> ~ <input type="text" id="end_dt" name="end_dt" class="datepicker" value="<%=data[0].end_dt %>" style="width:100px;" readonly />
+				<% }else{ %>
+					<input type="text" id="strt_dt" name="strt_dt" class="datepicker" style="width:100px;" readonly /> ~ <input type="text" id="end_dt" name="end_dt" class="datepicker" style="width:100px;" readonly />
+				<% } %>
+				</td>
+			</tr>	
+			<tr class="applyDate" style="display:none;">
+				<th>홈페이지</th>
+				<% if(data.length > 0 && data_banner_file.length > 0) {%>
+					<td colspan="3"><input type="text" id="homepage" name="homepage" value="<%=data[0].homepage %>"/></td>
+				<% }else{ %>
+					<td colspan="3"><input type="text" id="homepage" name="homepage" /></td>
+				<% } %>
+			</tr>	
+			<tr>
+				<th>기수/이름</th>
+				<td colspan="3">
+					<% if(data.length > 0) {%>
+						<input type="text" id="orgmem_seqNm" name="orgmem_seqNm" value="<%=data[0].orgmem_seqNm %>" style="width:100px;" readonly />
+						<input type="text" id="orgmem_name" name="orgmem_name" value="<%=data[0].orgmem_name %>" style="width:70px;" readonly />
+						<input type="hidden" id="orgmem_no" name="orgmem_no" value="<%=data[0].orgmem_no %>" />
+					<% } else { %>
+						<input type="text" id="orgmem_seqNm" name="orgmem_seqNm" value="" style="width:100px;" readonly />
+						<input type="text" id="orgmem_name" name="orgmem_name" value="" style="width:70px;" readonly />
+						<input type="hidden" id="orgmem_no" name="orgmem_no" value="" />
+					<% } %>
+					<button class="ui-button" id="org_search" type="button">
+						<span class="ui-icon ui-icon-search"></span>검색
+					</button>
+					<!-- <button class="btn_big_blue hand" id="org_search">검색</button> -->
+				</td>
+			</tr>				
+			<tr>
+				<% if(data.length > 0) {%>
+					<td colspan="4" class="align_c"><textarea style="height:150px; ime-mode:active;" id="brdContent" name="brdContent"><%=data[0].board_content %></textarea></td>
+				<% }else{ %>
+					<td colspan="4" class="align_c"><textarea style="height:150px; ime-mode:active;" id="brdContent" name="brdContent"></textarea></td>
+				<% } %>
+			</tr>
+			<tr>
+				<th>첨부파일</th>
+				<% if(data.length > 0) { %>
+				<td name="file_name" colspan="3">
+					<p class="red pm_5">※ 첨부파일은 이미지만 올려주세요!</p>
+				<% 	for(var i = 0; i < data_file.length; i++) { %>					
+					<li>
+						<%=data_file[i].file_name %>
+						<a href="#" onclick="javascript:file_del('<%=data_file[i].file_no %>','<%=data_file[i].file_dtname %>');">
+							<img src="../../../images/admin/icon_delete.gif" alt="삭제" />
+						</a>
+					</li>
+				<% 	} %>
+				<%  if(data_file.length < 3) {
+						for(var i = data_file.length; i < 3; i++) { %>
+						<li><input type="file" id="brdFileImg[<%=i%>]" name="brdFileImg[<%=i%>]" /></li>
+					<% 	} %>
+					</td>
+				<%	} %>
+				<% }else{ %>
+					<td name="file_name" colspan="3">
+						<p class="red pm_5">※ 첨부파일은 이미지만 올려주세요!</p>
+						<li><input type="file" id="brdFileImg[0]" name="brdFileImg[0]" /></li>
+						<li><input type="file" id="brdFileImg[1]" name="brdFileImg[1]" /></li>
+						<li><input type="file" id="brdFileImg[2]" name="brdFileImg[2]" /></li>
+					</td>
+				<% } %> 
+			</tr>
+		</table>
+	</form>
+	<p class="btn">
+		<!-- <button class="btn_big_blue hand" id="btn">등록</button>
+		<button class="btn_big_black hand" id="btn_bak" onclick="window.close();">취소</button> -->
+		<button class="ui-button" id="btn" type="button">
+			<span class="ui-icon ui-icon-document"></span>등록
+		</button>
+		<button class="ui-button" onclick="window.close();" type="button">
+			<span class="ui-icon ui-icon-closethick"></span>취소
+		</button>
+	</p>
+</div>
+<script type="text/javascript">
+function file_del(no, name) {
+		if(confirm("실제 파일이 삭제됩니다 \n정말 삭제하시겠습니까?")){
+			$("#strt_dt").val("");
+			$("#end_dt").val("");
+			$('#file_no').val(no);
+			$('#file_name').val(name);
+			$("#boardwrite").attr("action", "hongbo_board_file_del");
+			$("#boardwrite").submit();
+		}else{
+			$(".applyDate").show();
+		}
+	}
+</script>	

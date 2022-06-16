@@ -1,0 +1,203 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+
+<script src="/js/common.js"></script>
+
+<script type="text/javascript">
+	var strlimit = 0;
+	var endlimit = 0;
+	$(document).ready(function() {
+		var active = '<%=active%>'; // 게시판 카테고리 선택
+		$('#'+active).addClass('active'); // 선택된 카테고리에 'active'클래스 추가
+		$('#category').val('<%=active%>'); // 선택된 카테고리에 'active'클래스 추가
+
+		$('.board_item').click(function(){
+			var cat = this.dataset.cat;
+			console.log(cat);
+			switch(cat){
+				case "base":
+				break;
+
+				case "top":
+				break;
+
+			}
+			window.location.href="hongbo_board_list?category="+cat;
+
+		});
+		/*page_navi*/
+		 var page_navi = tag_place("<%=page_navi%>");
+		$('#page_navi').html(page_navi);
+		/*page_navi*/
+		
+		$('.board_view').live("click", function (){
+			var form = document.boardForm;
+			form.action = 'hongbo_board_view';
+			
+			$('input[name="brd_no"]').val($(this).attr('brd_no'));
+			//form.submit();
+			var url = "/hongbo_board_view?brd_no="+$(this).attr('brd_no') +"&category=<%=active%>";
+			window.location.href = url;
+		});
+		
+		var num = 0;
+		var endNum = $("input[name='jsonlength']").val();
+		
+		ajax_data();
+		
+		$(window).scroll(function(){
+			endNum = $("input[name='jsonlength']").val();
+
+			if(Math.ceil($(this).scrollTop()) % ($(document).height() - $(window).height()) <= 1){
+				 if(strlimit + endlimit < endNum) {
+					num++;
+					strlimit = num * 8;
+					
+					if(strlimit + endlimit > endNum) {
+						endlimit = endNum - strlimit;
+						//alert("1strlimit :: " + strlimit + "\nendlimit :: " + endlimit + "\nendNum :: " + endNum + "\nendlimit :: " + endlimit + "\nNumber(endlimit) :: " + endlimit);
+						
+						if(endlimit > 0) ajax_data(strlimit, endlimit);
+					} else if(endNum > endlimit){
+						endlimit = 8;
+						ajax_data(strlimit, endlimit);
+					}
+					
+				} 
+			}
+			
+		});
+	});
+	
+	function goPage(p_num){
+		var frm = document.boardForm;
+		frm.action = 'hongbo_board_list';
+		frm.nowPage.value = p_num;
+		frm.submit();
+	}
+	
+	function ajax_data(strlimit, endlimit) {
+		$.ajax({
+	        type:"POST",
+	        url:"/hongbo_board_list_data",
+	        datatype:"json",
+			data:{strlimit : strlimit, endlimit : endlimit, active: "<%=active%>"},
+	        success : function(json) {	        	
+	        	var ment = makeHtml(json.db_data, json.result);
+	       		$("#hongbo_limitAra").append(ment);
+	       		/* $("#member_count").text(json.db_data_length); */
+	       		//$("#member_count").text(json.db_data_length + "(" + json.app_install_count +")"); 앱설치수 숨김
+	       		$("input[name='jsonlength']").val(json.db_data_length); 
+	        },
+	        beforeSend : function(){
+	        	$('.wrap-loading').removeClass('display-none');
+	        },
+	        complete : function(){
+	        	$('.wrap-loading').addClass('display-none');
+	        },
+	        error : function(xhr, status, error) {
+	        	alert("등록된 게시물이 없습니다.");
+	        } 
+	  	});
+	}
+
+	function makeHtml(json, results){
+		console.log(json);
+		var text="";
+		for(var i=0; i<json.length; i++){
+			text+='<li class="board_view hand" brd_no="'+json[i].board_no+'" brd_cnt="'+json[i].board_cnt+'">';
+			if(json[i].img_file_name == ''){
+				text+='<img src="/images/admin/noimg_hongbo.gif" alt="" />';
+			}else{
+				text+='<img src="/file/hongbo_board/'+json[i].img_file_name+'" alt="" />';
+			}
+			text+='<dl>';
+			text+='<dt>'+json[i].board_title+'</dt>';
+			text+='<dd>'+json[i].board_content+'</dd>';
+			text+='<dd class="year">';
+			if(json[i].org_leader_day == ''){
+				text+='&nbsp;';
+			}else{
+				text+=json[i].orgmem_name+'('+ json[i].orgmem_leader_code +')';
+			}
+			text+='</dd>';
+			
+			/* text+='<dd class="sms_btn">';
+			text+='<a href="#"><img src="../../../../images/icon_call.png" alt="전화걸기" class="icon_call" /></a>';
+			text+='<a href="#"><img src="../../../../images/icon_message.png" alt="문자메세지" class="icon_message" />';
+			text+='</dd>'; */
+			
+			text+='</dl></li>';
+		}
+		if(json.length==0){
+			text+='<p style="background:#ffffff;padding:50px 0;text-align:center;margin-bottom:20px;">등록된 게시물이 없습니다.</p>'
+		}
+		
+		return text;
+	}
+	
+	
+	
+</script>
+
+<div id="board_cat">
+	<div class="board_item" data-cat="base" id="base">동문홍보</div>
+	<div class="board_item" data-cat="top"  id="top">대구공고 100대 기업</div>
+</div>
+<div id="container">
+	<div class="gallery_list">
+		<form name="boardForm" method="post" onsubmit="return false;" autocomplete="off">
+			<input type="hidden" name="nowPage" value="<%=nowPage%>"/>
+			<input type="hidden" id="phone" name="phone" value=""/>
+			<input type="hidden" id="brd_no" name="brd_no" value=""/>
+			<input type="hidden" name="jsonlength" value="<%=db_data_length %>" />
+			<input type="hidden" name="endlimit" value="" />
+			<input type="hidden" id="category" name="category" value=""/>
+			
+			<ul class="hongbo_limit" id="hongbo_limitAra"></ul>
+			
+			<div class="wrap-loading" style="display:none">
+				<div><img src="../../../images/ajax-loader.gif" /></div>
+			</div>
+			<!-- <ul>
+				<% for(var i = 0; i < data.length; i++) {%>
+				<li class="board_view hand" brd_no="<%=data[i].board_no %>" brd_cnt="<%=data[i].board_cnt %>">
+				<%	if(data[i].img_file_name == ''){%>
+					<img src="/images/admin/noimg_hongbo.gif" alt="" />
+				<%	}else{%>
+					<img src="/file/hongbo_board/<%=data[i].img_file_name%>" alt="" />
+				<%	}%>
+					<dl>
+						<dt><%=data[i].board_title %></dt>
+						<dd><%=data[i].board_content %></dd>
+						<dd class="year">
+						<%
+						if(data[i].org_leader_day == ''){
+						%>
+						&nbsp;
+						<%
+						}else{
+						%>
+						<%=data[i].orgmem_name %> (<%=data[i].orgmem_leader_code %>)
+						<%
+						}
+						%>						
+						</dd>
+						<dd class="sms_btn">
+							<a href="#"><img src="../../../../images/icon_call.png" alt="전화걸기" class="icon_call" /></a>
+							<a href="#"><img src="../../../../images/icon_message.png" alt="문자메세지" class="icon_message" /></a>	
+						</dd>
+					</dl>
+				</li>
+				<% } %>
+				<% if(data.length == 0) {%>
+				<p style="background:#ffffff;padding:50px 0;text-align:center;margin-bottom:20px;">
+					등록된 게시물이 없습니다.
+				</p>
+				<% }%>				
+			</ul> -->
+		</form>
+	</div>
+	<div class="admin_paging" id="page_navi" align="center">
+	</div>
+</div>
+<!-- //컨텐츠 -->

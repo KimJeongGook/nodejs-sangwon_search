@@ -1,0 +1,82 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+	var connectorNo = session.connectorNo(request);
+	
+	var mngt_no = request.param("orgmem_no");
+	
+	var sql = "select " +	
+		" orgmem_no,	\n" +
+		" orgmem_name,	\n" +
+		" orgmem_birth_year,	\n" +
+		//" orgmem_address_work,	\n" +
+		" orgmem_work_duty,	\n" +
+		" orgmem_phone1,	\n" +
+		" orgmem_phone2,	\n" +
+		" orgmem_phone3,	\n" +
+		" concat(orgmem_phone1, '-', orgmem_phone2, '-', orgmem_phone3) as orgmem_phone, \n" +
+		" orgmem_email,	\n" +
+		" orgmem_img,	\n" +
+		" company_img1,	\n" +
+		" company_img2,	\n" +
+		" company_img3,	\n" +
+		" company_img4,	\n" +
+		" business_card,	\n" +
+		" company_intro,	\n" +
+		" orgmem_lunar,	\n" +
+		" (case orgmem_lunar when 'Y' then '음력' when 'N' then '양력' end) as orgmem_lunar_nm, \n" +
+		" orgmem_seqNo,	\n" +
+		" date_format(create_date, '%Y.%m.%d') as c_date,	\n" +
+	    " (select org_seqNo from org_seq where org_no = orgmem_seqNo) as org_leader, \n" + 
+	    " (select org_seqYear from org_seq where org_no = orgmem_seqNo) as org_leader_day, \n" +
+	    " concat((select org_seqYear from org_seq where org_no = orgmem_seqNo), '학번(', (select org_seqNo from org_seq where org_no = orgmem_seqNo), '기)') as org_leader_nm, \n" +
+		" orgmem_keyword,	\n" +
+		" orgmem_leader_code,	\n" +
+		" ifnull(getCodeName('orgmem_major', orgmem_major),'') as orgmem_major_nm, \n" +
+		" orgmem_major_txt,	\n" +
+		" ifnull(getCodeName('orgmem_area',orgmem_area),'') as orgmem_area_nm, \n" +
+		//" ifnull(getCodeName('orgmem_orgMba',orgmem_position_mba),'') as orgmem_position_mba,	\n" +
+		" orgmem_memberYn,	\n" +
+		" code1,	\n" +
+		" code2,	\n" +
+		" code3,	\n" +
+		" code4,	\n" +
+		" orgmem_office_nm,	\n" +
+		" orgmem_office_addr1,	\n" +
+		" orgmem_office_addr2,	\n" +
+		" orgmem_office_addr_zipcode,	\n" +
+		" orgmem_home_addr1,	\n" +
+		" orgmem_home_addr2,	\n" +
+		" orgmem_home_addr_zipcode,	\n" +
+		" company_tel1,	\n" +
+		" company_tel2,	\n" +
+		" company_tel3,	\n" +
+		" orgmem_fax1,  \n" +
+		" orgmem_fax2,  \n" +
+		" orgmem_fax3,  \n" +
+		" orgmem_disp_yn,	\n" +
+		" orgmem_homepage, \n"+
+		" orgmem_sns, \n"+
+		" link1, \n" +
+		" create_id,	\n" +
+		" create_date,	\n" +
+		" create_host	\n" +
+		//" from orgmember where orgmem_no =  53557";	
+	    " from orgmember where orgmem_disp_yn = 'Y' and orgmem_no = " + mngt_no;	
+	
+	console.log("sql == %s", sql);
+	
+	db.query(sql, function(error, results){
+		response.send({
+			connectorNo : connectorNo,
+			data : results
+		});
+	});
+};

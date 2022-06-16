@@ -1,0 +1,91 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#brd_modify").click(function(){
+		window.resizeBy("0", "130");
+		
+		location.href="event_write?mode=modify&number="+$(this).attr("board_no");
+	});
+});
+</script>
+
+<h2><span class="float_l">행사</span><img onclick="window.close();" src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" /></h2>
+ 	<div class="content"> 
+		<table class="mb_10">
+			<tr>
+				<th>제목</th>
+				<td><%=db_data[0].board_title%></td>
+			</tr>
+			<tr>
+				<th>조회수</th>
+				<td><%=db_data[0].board_cnt%></td>
+			</tr>
+			<tr>
+				<th>우선순위</th>
+				<td><%=db_data[0].sort%></td>
+			</tr>
+			<tr>
+				<th>대표이미지</th>
+				<td>
+				<%
+				if(db_data_main_file.length){
+					for(var i = 0; i < db_data_main_file.length; i++){
+				%>
+					<li><a href="/download/<%=db_data_main_file[i].file_dtname%>/<%=db_data_main_file[i].file_name%>/event"><%=db_data_main_file[i].file_name%></a></li>
+				<%
+					}
+				}
+				%>
+				</td>
+			</tr>			
+			<tr>
+				<th>배너이미지</th>
+				<td>
+				<%
+				if(db_data_banner_file.length){
+					for(var i = 0; i < db_data_banner_file.length; i++){
+				%>
+					<li><a href="/download/<%=db_data_banner_file[i].file_dtname%>/<%=db_data_banner_file[i].file_name%>/event"><%=db_data_banner_file[i].file_name%></a></li>
+				<%
+					}
+				}
+				%>
+				</td>
+			</tr>
+			<tr>
+				<th>배너적용기간</th>
+				<td>
+					<%=db_data[0].strt_dt %> ~ <%=db_data[0].end_dt %>
+				</td>
+			</tr>	
+			<tr>
+				<th>작성자</th>
+				<td><%=db_data[0].create_name%></td>
+			</tr>
+			<tr>
+				<th>작성일</th>
+				<td><%=db_data[0].c_date%></td>
+			</tr>
+			<tr>
+				<td colspan="2"><pre><%=db_data[0].board_content%></pre>
+				<%
+				if(db_data_file.length){
+					for(var i = 0; i < db_data_file.length; i++){
+				%>
+					<img src="/file/event/<%=db_data_file[i].file_dtname%>" alt="" />
+				<%
+					}
+				}
+				%>		
+				</td>
+			</tr>
+		</table>
+
+		<p class="btn">
+			<button class="ui-button" board_no="<%=db_data[0].board_no %>" id="brd_modify" type="button">
+				<span class="ui-icon ui-icon-refresh"></span>수정
+			</button>
+			<button class="ui-button" onclick="window.close();" type="button">
+				<span class="ui-icon ui-icon-closethick"></span>취소
+			</button>
+		</p>
+	</div>

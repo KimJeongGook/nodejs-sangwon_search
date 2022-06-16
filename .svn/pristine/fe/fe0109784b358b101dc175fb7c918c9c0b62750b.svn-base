@@ -1,0 +1,18 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config").connect;
+var layout = require("../../../function/layout.js");
+var code = require("../../../function/codeMngt.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+
+	console.log("********************* btn_user_method.js enter *********************");
+	
+	fs.readFile("./views/user/web/search_data.html", "utf-8", function(error, data){
+		response.send();
+	});
+}

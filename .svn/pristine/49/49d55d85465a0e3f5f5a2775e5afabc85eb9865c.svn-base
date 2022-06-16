@@ -1,0 +1,320 @@
+function getCheckByteObject( objName, limitByte ) {
+	var byteIs = 0;
+	var curText = objName.value;
+
+	for ( var i = 0; i < curText.length; i++ ) {
+		thisChar = curText.charAt(i);
+		escChar = escape( thisChar );
+
+		//´,¨, ¸ : 2byte 임에도 브라우져에서 1byte로 계산
+		if (thisChar == "´" || thisChar == "¨" || thisChar == "¸" || thisChar == "§" ) {
+			byteIs++;
+		}
+		if ( escChar.length > 4 ) {
+			byteIs += 2; //특수문자 한글인 경우.
+		} else if(thisChar != '\r') {
+			//개행을 제외한 이외의 경우
+			byteIs += 1;
+		}
+		if ( byteIs > parseInt(limitByte) ) {
+			alert( limitByte + "byte를 초과하실 수 없습니다." );
+			thisText = curText.substring(0, i);
+			objName.value = thisText;
+			break;
+		}
+	}
+}
+
+function addLeftZone() {
+	var leftNo = document.getElementById("leftNo_hidden");
+	var leftPhoneNum = document.getElementById("leftPhoneNum_hidden");
+	var leftFlag = document.getElementById("leftFlag_hidden");
+	var leftName = document.getElementById("leftName_hidden");
+	
+	var no = "";
+	var num = "";
+	var code = "";
+	var name = "";
+	
+	var arrNo = leftNo.value.split("\n");
+	var arrNum = leftPhoneNum.value.split("\n");
+	var arrCode = leftFlag.value.split("\n");
+	var arrName = leftName.value.split("\n");
+
+	for (var i=0;i<arrNo.length-1;i++) {
+		no = arrNo[i]; //기수목록
+		num = arrNum[i]; //기수목록
+		code = arrCode[i]; //기수 키값
+		name = arrName[i]; //이름
+		inputLeftZone(no, num, code, name);
+	}
+}
+
+function addLeftZone2() { //기수별 부분 라디오 버튼 func
+	var leftNo = document.getElementById("leftNo_hidden");
+	var leftPhoneNum = document.getElementById("leftPhoneNum_hidden");
+	var leftFlag = document.getElementById("leftFlag_hidden");
+	var leftName = document.getElementById("leftName_hidden");
+	
+	var token = chkToken(leftPhoneNum);
+	var affectedCount=0;
+	var no = "";
+	var flag = "";
+	var name = "";
+	var phoneNum = "";
+	
+	if (token=="") {
+		phoneNum = _phoneNumberIn(leftPhoneNum.value);
+		phoneNum = addPhoneCheck(phoneNum);
+		no = leftNo.value;
+		flag = leftFlag.value;
+		name = leftName.value;
+		
+		if (phoneNum.length>0) {
+			inputLeftZone2(phoneNum, no, formatPhoneNumber(phoneNum), flag, name);
+			affectedCount++;
+		}
+	} else {
+		var retValue = "";
+		var arrPhoneNumber = leftPhoneNum.value.split(token);
+		var arrNo = leftNo.value.split(token);
+		var arrFlag = leftFlag.value.split(token);
+		var arrName = leftName.value.split(token);
+		
+		for (var i=0;i<arrPhoneNumber.length;i++) {
+			phoneNum = _phoneNumberIn(arrPhoneNumber[i]);
+			phoneNum = addPhoneCheck(phoneNum);
+			no = arrNo[i];
+			flag = arrFlag[i];
+			name = arrName[i];
+			
+			if (phoneNum.length>0) {
+				inputLeftZone2(phoneNum, no, formatPhoneNumber(phoneNum), flag, name);
+				affectedCount++;
+			}
+		}
+	}
+}
+
+function addRightZone() {
+	var rightNo = document.getElementById("rightNo_hidden");
+	var rightPhoneNum = document.getElementById("rightPhoneNum_hidden");
+	var rightFlag = document.getElementById("rightFlag_hidden");
+	var rightName = document.getElementById("rightName_hidden");
+	
+	var token = chkToken(rightPhoneNum);
+	var affectedCount=0;
+	var no = "";
+	var flag = "";
+	var name = "";
+	var phoneNum = "";
+	
+	if (token=="") {
+		phoneNum = _phoneNumberIn(rightPhoneNum.value);
+		phoneNum = addPhoneCheck(phoneNum);
+		no = rightNo.value;
+		flag = rightFlag.value;
+		name = rightName.value;
+		
+		if (phoneNum.length>0) {
+			inputRightZone(phoneNum, no, formatPhoneNumber(phoneNum), flag, name);
+			affectedCount++;
+		}
+	} else {
+		var retValue = "";
+		var arrPhoneNumber = rightPhoneNum.value.split(token);
+		var arrNo = rightNo.value.split(token);
+		var arrFlag = rightFlag.value.split(token);
+		var arrName = rightName.value.split(token);
+		
+		for (var i=0;i<arrPhoneNumber.length;i++) {
+			phoneNum = _phoneNumberIn(arrPhoneNumber[i]);
+			phoneNum = addPhoneCheck(phoneNum);
+			no = arrNo[i];
+			flag = arrFlag[i];
+			name = arrName[i];
+			
+			if (phoneNum.length>0) {
+				inputRightZone(phoneNum, no, formatPhoneNumber(phoneNum), flag, name);
+				affectedCount++;
+			}
+		}
+	}
+	if (affectedCount<1) {
+		alert(' 전화번호가 정확하지 않거나, \n 입력된 값이 없어 전화번호가 추가되지 않았습니다.');
+		rightPhoneNum.value="";
+		return;
+	} else {
+		rightPhoneNum.value="";
+		activateReplaceAddressBook();
+	}
+}
+
+function inputLeftZone(no, num, flag, name) {
+	var checkHtml = "";
+	checkHtml += "<tr id="+ no +">";
+	checkHtml += 	"<td><input type='checkBox' name='phoneNumChk' id="+ no +" value='"+ num +"'></td>";
+	checkHtml += 	"<td style='text-align:left;'>"+ name +"</td>";
+	if(flag == "교수진"){
+		checkHtml += 	"<td>"+ flag +"</td>";
+	}else{
+		checkHtml += 	"<td>"+ flag +"기</td>";
+	}
+	checkHtml += 	"<td style='text-align:center;'>"+ num +"</td>";
+	checkHtml += "</tr>";
+	$('#leftZone_tb').append(checkHtml);
+}
+
+function inputLeftZone2(no, orgNo, num, flag, name) {
+	var leftHTML = "";
+	leftHTML += "<tr id="+ orgNo +">";
+	leftHTML += 	"<td><input type='checkBox' name='phoneNumChk' id="+ orgNo +" value='"+no+"'></td>";
+	leftHTML += 	"<td style='text-align:left;'>"+ name +"</td>";
+	if(flag == "교수진"){
+		leftHTML += 	"<td>"+ flag +"</td>";
+	}else{
+		leftHTML += 	"<td>"+ flag +"기</td>";
+	}
+	leftHTML += 	"<td style='text-align:center;'>"+ num +"</td>";
+	leftHTML += "</tr>";
+	$('#leftZone_tb').append(leftHTML);
+}
+
+function inputRightZone(no, orgNo, num, flag, name) {
+	var rightHTML = "";
+	rightHTML += "<tr id="+ orgNo +" val="+ no +">";
+	rightHTML += 	"<td><input type='checkBox' name='phoneNumChk2' id="+ orgNo +" value='"+no+"' style='margin:0'></td>";
+	rightHTML += 	"<td style='text-align:left;'>"+ name +"</td>";
+	if(flag == "교수진"){
+		rightHTML += 	"<td>"+ flag +"</td>";
+	}else{
+		rightHTML += 	"<td>"+ flag +"기</td>";
+	}
+	rightHTML += 	"<td style='text-align:center;'>"+ num +"</td>";
+	rightHTML += "</tr>";
+	$('#rightZone_tb').append(rightHTML);
+}
+
+function chkTitle() {
+	var inputForm = document.inputMessageForm;
+	var title = inputForm.title.value;
+	if (title=="제목을 입력하세요.") {
+		inputForm.title.value="";
+	}
+}
+
+function delPhoneNumber(flg) {
+	if (flg=="s") {
+		$("input[name='phoneNumChk2']:checked").parent().parent().remove();
+	} else if(flg=="a"){
+		$("#rightZone_tb").empty();
+	}
+	
+	displayPhoneCnt($("#rightZone_tb").find("tr").size());
+}
+
+function formatPhoneNumber(val) {
+	var retVal;
+	val = val.split("-").join("");
+	if (val.length==10) {
+		retVal = val.substr(0,3)+"-"+val.substr(3,3)+"-"+val.substr(6,4);
+	} else if (val.length==11) {
+		retVal = val.substr(0,3)+"-"+val.substr(3,4)+"-"+val.substr(7,4);
+	} else {
+		retVal = val;
+	}
+	return retVal;
+}
+
+function activateReplaceAddressBook() {
+	var desObj = document.getElementById("tonumberzone");
+	var desCnt = 0;
+	
+	try {desCnt = desObj.length;} catch(e) {}
+	if (desCnt>0) {
+		var flg = false;
+		for (var i=0;i<desCnt;i++) {
+			if (desObj.options[i].value.indexOf(":")<1){
+				flg=true;break;
+			}
+		}
+	}
+}
+
+function displayPhoneCnt(num) {
+	if(num == -1){
+		num = 0;
+	}
+	document.getElementById("totPhoneCntDiv").innerHTML = "<strong>총 "+ num +"명</strong>";
+}
+
+function chkToken(con) {	
+	var htmlCon = con.value;
+	var splitToken="";
+	if (htmlCon.indexOf("\r\n") >=0) {
+		splitToken = "\r\n";
+	} else if (htmlCon.indexOf("\r") >=0) {
+		splitToken = "\r";
+	} else if (htmlCon.indexOf("\n") >=0) {
+		splitToken = "\n";
+	}
+	return splitToken;
+}
+
+function addPhoneCheck(tmpVal) {
+	tmpVal = tmpVal.split("-").join("").split(" ").join("").split("/").join("");
+	if (tmpVal.charAt(0)!="0"){
+		tmpVal = "0"+tmpVal;
+	}
+	if (tmpVal.length<10||tmpVal.length>12){return "";	}
+	if (isNaN(tmpVal)){return "";	}
+	if (tmpVal.substr(0,2)!="01" && tmpVal.substr(0,3)!="070"  && tmpVal.substr(0,4)!="0505" && tmpVal.substr(0,4)!="0503"){return "";	}
+	return tmpVal;
+}
+
+function chkPhoneNumber(con) {
+	var conValue = con.value;
+	var token = chkToken(con);
+
+	if (token=="") {
+		phoneNumberIn(con);
+	} else {
+		var retValue = "";
+		var arrPhoneNumber = con.value.split(token);
+		for (var i=0;i<arrPhoneNumber.length;i++) {
+			var phoneNum = _phoneNumberIn(arrPhoneNumber[i]);
+			if (retValue!="") {
+				retValue+=token+phoneNum;
+			} else {
+				retValue+=phoneNum;
+			}
+		}
+		con.value = retValue;
+	}
+}
+
+function phoneNumberIn(obj) {
+	obj.value = _phoneNumberIn(obj.value);
+}
+
+function _phoneNumberIn(str) {
+	var workStr = "";
+	var typeNum         = " 0123456789-";
+	var typeSign        = " -";
+	var signChk         = true;
+	var dotChk          = true;
+
+	if ( typeNum.indexOf(str.substr(0,1)) > 0 )   // 부호와 숫자가 처음 시작가능하다.
+	{
+		workStr = str.substring(0, 1);
+		for (var i = 1; i < str.length; i++)
+		{
+			var chkNum = str.substring(i, i+1);
+			if ( typeNum.indexOf(chkNum) > 0 )  // 숫자인지
+			{
+				workStr = workStr + chkNum;
+			}
+		}
+	}
+	return workStr;
+}

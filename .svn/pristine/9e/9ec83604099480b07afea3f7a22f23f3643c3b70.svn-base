@@ -1,0 +1,1031 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+
+    	$("#search_company").focus();
+    	
+    	var industry1 = tag_place("<%=industry1%>");
+    	$('#industry1').html(industry1);
+    	
+    	$("#search_name").val("<%=search_name%>");
+    	$("#search_company").val("<%=search_company%>");
+    	$("#search_item").val("<%=search_item%>");
+    	
+    	$("#industry1").val("<%=industry1_code%>");
+    	
+    	if("<%=industry2_code%>" != "undefined"){
+    		setPosi_change_SelectBox();
+    	}
+    	
+    	$("#search_area").val("<%=search_area%>");
+    	$("#search_employee_num1").val("<%=search_employee_num1%>");
+    	$("#search_employee_num2").val("<%=search_employee_num2%>");
+    	$("#search_create_year1").val("<%=search_create_year1%>");
+    	$("#search_create_year2").val("<%=search_create_year2%>");
+    	$("#search_sales1").val("<%=search_sales1%>");
+    	$("#search_sales2").val("<%=search_sales2%>");
+    	
+    	if("<%=classify1%>" == 'Y'){
+    		$('[id=classify1]').attr('value', 'Y');
+    		$('[id=classify1]').attr('checked', true);
+    	}
+    	if("<%=classify2%>" == 'Y'){
+    		$('[id=classify2]').attr('value', 'Y');
+    		$('[id=classify2]').attr('checked', true);
+    	}
+    	if("<%=classify3%>" == 'Y'){
+    		$('[id=classify3]').attr('value', 'Y');
+    		$('[id=classify3]').attr('checked', true);
+    	}
+    	if("<%=classify6%>" == 'Y'){
+    		$('[id=classify6]').attr('value', 'Y');
+    		$('[id=classify6]').attr('checked', true);
+    	}
+    	if("<%=classify7%>" == 'Y'){
+    		$('[id=classify7]').attr('value', 'Y');
+    		$('[id=classify7]').attr('checked', true);
+    	}
+    	if("<%=classify8%>" == 'Y'){
+    		$('[id=classify8]').attr('value', 'Y');
+    		$('[id=classify8]').attr('checked', true);
+    	}
+    	
+    	$('#industry1').change(function(){
+    		setPosiSelectBox();
+    	});
+    	
+    	$('#industry2').change(function(){
+    		setPosi_SelectBox();
+    	});
+    	
+    	$('#type_select').change(function(){
+    		$("#type_result").val($("#type_select").val());
+    	});
+    	
+    	$("#search_company").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_name").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_item").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_area").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_employee_num1").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_employee_num2").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_create_year1").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_create_year2").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_sales1").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	$("#search_sales2").keydown(function(e){
+    		if(e.keyCode == 13) chkbox_chk();
+    	});
+    	
+    	// Element 에 style 한번에 오브젝트로 설정하는 함수 추가
+        Element.prototype.setStyle = function(styles) {
+            for (var k in styles) this.style[k] = styles[k];
+            return this;
+        };
+    });
+    
+    /*************************************************/
+    function setPosi_change_SelectBox(){
+		var s_num;
+		var e_num;
+		var middle_category;
+		
+		var upcodeval = $("#industry1 option:selected").val();
+		$('#industry3 option').remove();
+		
+		var obj = document.getElementById("industry3");
+
+		var opt = "";
+
+		opt = document.createElement('option');
+
+		opt.text = "3차 선택";
+
+		obj.add(opt);
+
+		switch(upcodeval){
+		case "001":
+			s_num = '001';
+			e_num = '024';
+			middle_category = 'main001_m_category';
+			break;
+		case "002":
+			s_num = '001';
+			e_num = '003';
+			middle_category = 'main002_m_category';
+			break;
+		case "003":
+			s_num = '001';
+			e_num = '002';
+			middle_category = 'main003_m_category';
+			break;
+		case "004":
+			s_num = '001';
+			e_num = '017';
+			middle_category = 'main004_m_category';
+			break;
+		case "005":
+			s_num = '001';
+			e_num = '005';
+			middle_category = 'main005_m_category';
+			break;
+		case "006":
+			s_num = '001';
+			e_num = '009';
+			middle_category = 'main006_m_category';
+			break;
+		case "007":
+			s_num = '001';
+			e_num = '004';
+			middle_category = 'main007_m_category';
+			break;
+		case "008":
+			s_num = '001';
+			e_num = '003';
+			middle_category = 'main008_m_category';
+			break;
+		default:
+			break;
+		}
+	
+		if($("#industry1 option:selected").val() > 0){
+			var selectval = $("#industry2 option:selected").val();
+		} else{
+			var selectval = '';
+		}
+	
+		change_Position(s_num, e_num, middle_category, selectval, upcodeval);
+	}
+    
+    function change_Position(s_num, e_num, p_code, selectval, upcode){
+    	
+    	selectval = "";
+    	
+    	$.ajax({
+    		type : "POST",
+            url : "get_position",
+            contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+            data : {
+            	p_code : p_code,
+            	start_num : s_num,
+            	end_num : e_num,
+            	c_code : selectval,
+            	upcode : upcode
+           	}, success : function(data) {
+           		$('#industry2 option').remove();
+           		$('#industry2').html(data);
+           		
+           		if("<%=industry2_code%>" != "undefined"){
+           			$("#industry2").val("<%=industry2_code%>");
+           			
+           			if("<%=industry3_code%>" != "undefined"){
+           	    		setPosi_change2_SelectBox();
+           	    	}
+            	}
+           		
+            }, error : function(xhr, status, error) {
+            	alert("오류가 발생했습니다.");
+            	console.log(error);
+            	return false;
+            }
+    	});
+    }
+    
+    function setPosi_change2_SelectBox(){
+		var s_num;
+		var e_num;
+		var subclass_category;
+		
+		var upcodeval1 = $("#industry1 option:selected").val();
+		var upcodeval2 = $("#industry2 option:selected").val();
+		
+		switch(upcodeval2){
+		case "001":
+			subclass_category = 'main' + upcodeval1 + '_m1_sc_category';
+			break;
+		case "002":
+			subclass_category = 'main' + upcodeval1 + '_m2_sc_category';
+			break;
+		case "003":
+			subclass_category = 'main' + upcodeval1 + '_m3_sc_category';
+			break;
+		case "004":
+			subclass_category = 'main' + upcodeval1 + '_m4_sc_category';
+			break;
+		case "005":
+			subclass_category = 'main' + upcodeval1 + '_m5_sc_category';
+			break;
+		case "006":
+			subclass_category = 'main' + upcodeval1 + '_m6_sc_category';
+			break;
+		case "007":
+			subclass_category = 'main' + upcodeval1 + '_m7_sc_category';
+			break;
+		case "008":
+			subclass_category = 'main' + upcodeval1 + '_m8_sc_category';
+			break;
+		case "009":
+			subclass_category = 'main' + upcodeval1 + '_m9_sc_category';
+			break;
+		case "010":
+			subclass_category = 'main' + upcodeval1 + '_m10_sc_category';
+			break;
+		case "011":
+			subclass_category = 'main' + upcodeval1 + '_m11_sc_category';
+			break;
+		case "012":
+			subclass_category = 'main' + upcodeval1 + '_m12_sc_category';
+			break;
+		case "013":
+			subclass_category = 'main' + upcodeval1 + '_m13_sc_category';
+			break;
+		case "014":
+			subclass_category = 'main' + upcodeval1 + '_m14_sc_category';
+			break;
+		case "015":
+			subclass_category = 'main' + upcodeval1 + '_m15_sc_category';
+			break;
+		case "016":
+			subclass_category = 'main' + upcodeval1 + '_m16_sc_category';
+			break;
+		case "017":
+			subclass_category = 'main' + upcodeval1 + '_m17_sc_category';
+			break;
+		case "018":
+			subclass_category = 'main' + upcodeval1 + '_m18_sc_category';
+			break;
+		case "019":
+			subclass_category = 'main' + upcodeval1 + '_m19_sc_category';
+			break;
+		case "020":
+			subclass_category = 'main' + upcodeval1 + '_m20_sc_category';
+			break;
+		case "021":
+			subclass_category = 'main' + upcodeval1 + '_m21_sc_category';
+			break;
+		case "022":
+			subclass_category = 'main' + upcodeval1 + '_m22_sc_category';
+			break;
+		case "023":
+			subclass_category = 'main' + upcodeval1 + '_m23_sc_category';
+			break;
+		case "024":
+			subclass_category = 'main' + upcodeval1 + '_m24_sc_category';
+			break;
+		case "025":
+			subclass_category = 'main' + upcodeval1 + '_m25_sc_category';
+			break;
+		case "026":
+			subclass_category = 'main' + upcodeval1 + '_m26_sc_category';
+			break;
+		case "027":
+			subclass_category = 'main' + upcodeval1 + '_m27_sc_category';
+			break;
+		case "028":
+			subclass_category = 'main' + upcodeval1 + '_m28_sc_category';
+			break;
+		case "029":
+			subclass_category = 'main' + upcodeval1 + '_m29_sc_category';
+			break;
+		case "030":
+			subclass_category = 'main' + upcodeval1 + '_m30_sc_category';
+			break;
+		default:
+			break;
+		}
+	
+		if($("#industry2 option:selected").val() > 0){
+			var selectval = $("#industry3 option:selected").val();
+		} else{
+			var selectval = '';
+		}
+		change2_Position(s_num, e_num, subclass_category, selectval, upcodeval2);
+	}
+    
+    function change2_Position(s_num, e_num, p_code, selectval, upcode){
+    	
+    	selectval = "";
+    	
+    	$.ajax({
+    		type : "POST",
+            url : "get_position2",
+            contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+            data : {
+            	p_code : p_code,
+            	start_num : s_num,
+            	end_num : e_num,
+            	c_code : selectval,
+            	upcode : upcode
+           	}, success : function(data) {
+           		$('#industry3 option').remove();
+           		$('#industry3').html(data);
+           		
+           		if("<%=industry3_code%>" != "undefined"){
+           			$("#industry3").val("<%=industry3_code%>");
+            	}
+            }, error : function(xhr, status, error) {
+            	alert("오류가 발생했습니다.");
+            	console.log(error);
+            	return false;
+            }
+    	});
+    }
+    
+    /*************************************************/
+    
+    function setPosiSelectBox(){
+		var s_num;
+		var e_num;
+		var middle_category;
+		
+		var upcodeval = $("#industry1 option:selected").val();
+		$('#industry3 option').remove();
+		
+		var obj = document.getElementById("industry3");
+
+		var opt = "";
+
+		opt = document.createElement('option');
+
+		opt.text = "3차 선택";
+
+		obj.add(opt);
+
+		switch(upcodeval){
+		case "001":
+			s_num = '001';
+			e_num = '024';
+			middle_category = 'main001_m_category';
+			break;
+		case "002":
+			s_num = '001';
+			e_num = '003';
+			middle_category = 'main002_m_category';
+			break;
+		case "003":
+			s_num = '001';
+			e_num = '002';
+			middle_category = 'main003_m_category';
+			break;
+		case "004":
+			s_num = '001';
+			e_num = '017';
+			middle_category = 'main004_m_category';
+			break;
+		case "005":
+			s_num = '001';
+			e_num = '005';
+			middle_category = 'main005_m_category';
+			break;
+		case "006":
+			s_num = '001';
+			e_num = '009';
+			middle_category = 'main006_m_category';
+			break;
+		case "007":
+			s_num = '001';
+			e_num = '004';
+			middle_category = 'main007_m_category';
+			break;
+		case "008":
+			s_num = '001';
+			e_num = '003';
+			middle_category = 'main008_m_category';
+			break;
+		default:
+			break;
+		}
+	
+		if($("#industry1 option:selected").val() > 0){
+			var selectval = $("#industry2 option:selected").val();
+		} else{
+			var selectval = '';
+		}
+	
+		getPosition(s_num, e_num, middle_category, selectval, upcodeval);
+	}
+    
+    function getPosition(s_num, e_num, p_code, selectval, upcode){
+    	
+    	selectval = "";
+    	
+    	$.ajax({
+    		type : "POST",
+            url : "get_position",
+            contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+            data : {
+            	p_code : p_code,
+            	start_num : s_num,
+            	end_num : e_num,
+            	c_code : selectval,
+            	upcode : upcode
+           	}, success : function(data) {
+           		$('#industry2 option').remove();
+           		$('#industry2').html(data);
+            }, error : function(xhr, status, error) {
+            	alert("오류가 발생했습니다.");
+            	console.log(error);
+            	return false;
+            }
+    	});
+    }
+    
+    function setPosi_SelectBox(){
+		var s_num;
+		var e_num;
+		var subclass_category;
+		
+		var upcodeval1 = $("#industry1 option:selected").val();
+		var upcodeval2 = $("#industry2 option:selected").val();
+		
+		switch(upcodeval2){
+		case "001":
+			subclass_category = 'main' + upcodeval1 + '_m1_sc_category';
+			break;
+		case "002":
+			subclass_category = 'main' + upcodeval1 + '_m2_sc_category';
+			break;
+		case "003":
+			subclass_category = 'main' + upcodeval1 + '_m3_sc_category';
+			break;
+		case "004":
+			subclass_category = 'main' + upcodeval1 + '_m4_sc_category';
+			break;
+		case "005":
+			subclass_category = 'main' + upcodeval1 + '_m5_sc_category';
+			break;
+		case "006":
+			subclass_category = 'main' + upcodeval1 + '_m6_sc_category';
+			break;
+		case "007":
+			subclass_category = 'main' + upcodeval1 + '_m7_sc_category';
+			break;
+		case "008":
+			subclass_category = 'main' + upcodeval1 + '_m8_sc_category';
+			break;
+		case "009":
+			subclass_category = 'main' + upcodeval1 + '_m9_sc_category';
+			break;
+		case "010":
+			subclass_category = 'main' + upcodeval1 + '_m10_sc_category';
+			break;
+		case "011":
+			subclass_category = 'main' + upcodeval1 + '_m11_sc_category';
+			break;
+		case "012":
+			subclass_category = 'main' + upcodeval1 + '_m12_sc_category';
+			break;
+		case "013":
+			subclass_category = 'main' + upcodeval1 + '_m13_sc_category';
+			break;
+		case "014":
+			subclass_category = 'main' + upcodeval1 + '_m14_sc_category';
+			break;
+		case "015":
+			subclass_category = 'main' + upcodeval1 + '_m15_sc_category';
+			break;
+		case "016":
+			subclass_category = 'main' + upcodeval1 + '_m16_sc_category';
+			break;
+		case "017":
+			subclass_category = 'main' + upcodeval1 + '_m17_sc_category';
+			break;
+		case "018":
+			subclass_category = 'main' + upcodeval1 + '_m18_sc_category';
+			break;
+		case "019":
+			subclass_category = 'main' + upcodeval1 + '_m19_sc_category';
+			break;
+		case "020":
+			subclass_category = 'main' + upcodeval1 + '_m20_sc_category';
+			break;
+		case "021":
+			subclass_category = 'main' + upcodeval1 + '_m21_sc_category';
+			break;
+		case "022":
+			subclass_category = 'main' + upcodeval1 + '_m22_sc_category';
+			break;
+		case "023":
+			subclass_category = 'main' + upcodeval1 + '_m23_sc_category';
+			break;
+		case "024":
+			subclass_category = 'main' + upcodeval1 + '_m24_sc_category';
+			break;
+		case "025":
+			subclass_category = 'main' + upcodeval1 + '_m25_sc_category';
+			break;
+		case "026":
+			subclass_category = 'main' + upcodeval1 + '_m26_sc_category';
+			break;
+		case "027":
+			subclass_category = 'main' + upcodeval1 + '_m27_sc_category';
+			break;
+		case "028":
+			subclass_category = 'main' + upcodeval1 + '_m28_sc_category';
+			break;
+		case "029":
+			subclass_category = 'main' + upcodeval1 + '_m29_sc_category';
+			break;
+		case "030":
+			subclass_category = 'main' + upcodeval1 + '_m30_sc_category';
+			break;
+		default:
+			break;
+		}
+	
+		if($("#industry2 option:selected").val() > 0){
+			var selectval = $("#industry3 option:selected").val();
+		} else{
+			var selectval = '';
+		}
+		get_Position(s_num, e_num, subclass_category, selectval, upcodeval2);
+	}
+    
+    function get_Position(s_num, e_num, p_code, selectval, upcode){
+    	
+    	selectval = "";
+    	
+    	$.ajax({
+    		type : "POST",
+            url : "get_position2",
+            contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+            data : {
+            	p_code : p_code,
+            	start_num : s_num,
+            	end_num : e_num,
+            	c_code : selectval,
+            	upcode : upcode
+           	}, success : function(data) {
+           		$('#industry3 option').remove();
+           		$('#industry3').html(data);
+            }, error : function(xhr, status, error) {
+            	alert("오류가 발생했습니다.");
+            	console.log(error);
+            	return false;
+            }
+    	});
+    }
+    
+    function check(){
+    	$("#industry1_nm").val($("#industry1 option:selected").text());
+    	$("#industry2_nm").val($("#industry2 option:selected").text());
+    	$("#industry3_nm").val($("#industry3 option:selected").text());
+    	
+        var search_company = $("input[name='search_company']").val();
+        var search_name = $("input[name='search_name']").val();
+        var search_item = $("input[name='search_item']").val();
+        var search_industry1 = $("#industry1 option:selected").val();
+        var search_industry2 = $("#industry2 option:selected").val();
+        var search_industry3 = $("#industry3 option:selected").val();
+        var search_area = $("input[name='search_area']").val();
+        var search_employee_num1 = $("input[name='search_employee_num1']").val();
+        var search_employee_num2 = $("input[name='search_employee_num2']").val();
+        var search_create_year1 = $("input[name='search_create_year1']").val();
+        var search_create_year2 = $("input[name='search_create_year2']").val();
+        var search_sales1 = $("input[name='search_sales1']").val();
+        var search_sales2 = $("input[name='search_sales2']").val();
+        var classify1 = $("input[name='classify1']").val();
+        var classify2 = $("input[name='classify2']").val();
+        var classify3 = $("input[name='classify3']").val();
+        var classify4 = $("input[name='classify4']").val();
+        var classify5 = $("input[name='classify5']").val();
+        var classify6 = $("input[name='classify6']").val();
+        var classify7 = $("input[name='classify7']").val();
+        var classify8 = $("input[name='classify8']").val();
+        var classify9 = $("input[name='classify9']").val();
+        var classify10 = $("input[name='classify10']").val();
+
+        if(search_industry2 == ''){
+        	search_industry2 = '2차 선택';
+        }
+        
+        if(search_industry3 == ''){
+        	search_industry3 = '3차 선택';
+        }
+        
+        // 검색 조건 확인
+        if(search_industry1 == '' && search_industry2 == '2차 선택' && search_industry3 == '3차 선택' && search_company == '' && search_name == '' && search_item == '' && search_area == '' && search_employee_num1 == '' && search_employee_num2 == '' && search_create_year1 == '' && search_create_year2 == '' && search_sales1 == '' && search_sales2 == '' && classify1 == 'N' && classify2 == 'N' && classify3 == 'N' && classify6 == 'N' && classify7 == 'N' && classify8 == 'N'){
+        	modal_error_open('search_msg_modal');
+        	return false;
+        } else {
+        	var frm = document.searchForm;
+        	frm.target = '_self';
+        	frm.action = 'search_data';
+        	frm.submit();
+            //var win = window.open("", "popWin", 'width=1500, height=940, scrollbars=yes');
+            //document.searchForm.submit();
+            //window.location.reload();
+        }
+    }
+
+    function chkbox_chk(){
+        if($('input:checkbox[id=classify1]').is(':checked') == true){
+            $('[id=classify1]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify2]').is(':checked') == true){
+            $('[id=classify2]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify3]').is(':checked') == true){
+            $('[id=classify3]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify4]').is(':checked') == true){
+            $('[id=classify4]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify5]').is(':checked') == true){
+            $('[id=classify5]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify6]').is(':checked') == true){
+            $('[id=classify6]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify7]').is(':checked') == true){
+            $('[id=classify7]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify8]').is(':checked') == true){
+            $('[id=classify8]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify9]').is(':checked') == true){
+            $('[id=classify9]').attr('value', 'Y');
+        }if($('input:checkbox[id=classify10]').is(':checked') == true){
+            $('[id=classify10]').attr('value', 'Y');
+        }
+        check();
+
+    }
+        
+    function CheckOnlyNumber(TextBoxControl){
+        inputValue = TextBoxControl.value.replace(/ /g, "") ;
+
+        if(inputValue.replace(/\d/g,"").length!=0){
+            TextBoxControl.blur();
+            setTimeout(function(){
+            	modal_error_open('number_msg_modal');
+    			
+                TextBoxControl.value = "";
+                TextBoxControl.focus();
+            }, 200);
+            return false ;
+        }          
+        return true ;
+    }
+    
+    function maxLengthCheck(object) {
+        if( object.value.length > object.maxLength) {
+            object.value = object.value.slice(0, object.maxLength);
+        }
+    }
+
+    function reset_chk(){
+    	$("#search_name").val("");
+    	$("#search_company").val("");
+    	$("#search_item").val("");
+    	$("#industry1").val("");
+    	$("#industry2").val("");
+    	$("#industry3").val("");
+    	
+    	$("#search_area").val("");
+    	$("#search_employee_num1").val("");
+    	$("#search_employee_num2").val("");
+    	$("#search_create_year1").val("");
+    	$("#search_create_year2").val("");
+    	$("#search_sales1").val("");
+    	$("#search_sales2").val("");
+    	
+    	$('[id=classify1]').attr('value', 'N');
+		$('[id=classify1]').attr('checked', false);
+		
+		$('[id=classify2]').attr('value', 'N');
+		$('[id=classify2]').attr('checked', false);
+		
+		$('[id=classify3]').attr('value', 'N');
+		$('[id=classify3]').attr('checked', false);
+		
+		$('[id=classify6]').attr('value', 'N');
+		$('[id=classify6]').attr('checked', false);
+		
+		$('[id=classify7]').attr('value', 'N');
+		$('[id=classify7]').attr('checked', false);
+		
+		$('[id=classify8]').attr('value', 'N');
+		$('[id=classify8]').attr('checked', false);
+		
+    	var industry1 = tag_place("<%=industry1%>");
+    	$('#industry1').html(industry1);
+    	$('#industry2').html("<option value=''>2차 선택</option>");
+    	$('#industry3').html("<option value=''>3차 선택</option>");
+    }
+    
+    function getNumber(obj){
+        
+        var num01;
+        var num02;
+        num01 = obj.value;
+        num02 = num01.replace(/\D/g,""); //숫자가 아닌것을 제거, 
+                                         //즉 [0-9]를 제외한 문자 제거; /[^0-9]/g 와 같은 표현
+        num01 = setComma(num02); //콤마 찍기
+        obj.value =  num01;
+
+   }
+   function setComma(n) {
+        var reg = /(^[+-]?\d+)(\d{3})/;   // 정규식
+        n += '';                          // 숫자를 문자열로 변환         
+        while (reg.test(n)) {
+           n = n.replace(reg, '$1' + ',' + '$2');
+        }         
+        return n;
+   }
+   
+   function modal_error_open(id){
+		// 모달창 띄우기
+	   	var zIndex = 2000;
+	   	var modal = document.getElementById(id);
+	   	var modal_close_class = "";
+	   	
+	   	if(id == "search_msg_modal"){
+			modal_close_class = '.search_msg_modal_close_btn';
+	  	} else if(id == "number_msg_modal") {
+	  		modal_close_class = '.number_msg_modal_close_btn';
+	  	}
+	   	
+	   	var bg = document.createElement('div');
+		// 모달 div 뒤에 희끄무레한 레이어
+		bg.setStyle({
+			position: 'fixed',
+			zIndex: zIndex,
+			left: '0px',
+			top: '0px',
+			width: '100%',
+			height: '100%',
+			overflow: 'auto',
+			// 레이어 색갈은 여기서 바꾸면 됨
+			backgroundColor: 'rgba(0,0,0,0.4)'
+		});
+		document.body.append(bg);
+	
+		// 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
+		modal.querySelector(modal_close_class).addEventListener('click', function() {
+			bg.remove();
+			modal.style.display = 'none';
+			document.getElementById("my_modal").style.display = "block";
+		});
+	
+		modal.setStyle({
+			position: 'fixed',
+			display: 'block',
+			boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+			
+			// 시꺼먼 레이어 보다 한칸 위에 보이기
+			zIndex: zIndex + 1,
+			
+			// div center 정렬
+			top: '50%',
+			left: '50%',
+			transform: 'translate(-50%, -50%)',
+			msTransform: 'translate(-50%, -50%)',
+			webkitTransform: 'translate(-50%, -50%)'
+		});
+	}
+
+</script>
+
+<style type="text/css">
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0; } 
+		.table_bottom{text-align: center;}
+		.table_bottom .btn_big_black{width: 80px; background: #1e2545;}
+		.search_table input[type~="checkbox"]{margin-right: 5px;width: 15px; height: 15px;}
+		.filter_wrap{background-color: #e7ebf1;height: 60px;padding: 15px 0; border:1px solid #ccc;}
+		.filter_wrap table{height: 100%; }
+		.search_table .search_list{margin: 20px 0;}
+		.search_table .search_list tr th{width: 50px;}
+		.search_table .search_list tr td:nth-child(2){}
+		.search_table .search_list tr td:nth-child(4){})
+		.search_table .search_list tr td{width: 6%; padding: 10px 15px;}
+		.search_table .search_list tr td input{width:230px; border:0px;}
+		
+		#search_msg_modal {
+		    display: none;
+		    width: 300px;
+		    background-color: #fefefe;
+		    border: 1px solid #888;
+		    border-radius: 3px;
+		    height: 95px;
+		}
+		#number_msg_modal {
+		    display: none;
+		    width: 300px;
+		    background-color: #fefefe;
+		    border: 1px solid #888;
+		    border-radius: 3px;
+		    height: 95px;
+		}
+		
+    </style>
+	<style>
+/*  .imgbox{
+	    margin:10px;
+	    text-align: center;
+	    background: url(images/line.png) ,url(images/line.png) ,url(images/line2.png) ,url(images/line2.png);
+	    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+	    background-position:bottom, top, left, right;
+	    } */
+			.swiper-container {position: fixed;width: 100%;min-width: 320px;height: 100%;background-size: cover;}
+			
+			.swiper-wrapper {overflow: visible;}
+			
+			.swiper-slide {text-align: center;font-size: 18px;background: #fff;
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+			
+			.swiper-slide a, .swiper-slide img {width: 100%;vertical-align: top;}
+			
+			.classmenu {width: 100px;}
+            .banner {margin-top: 50px;width: 100%;}
+            .search {position: absolute; left: 50%; transform: translateX(-50%); text-align: center;}
+            .search_button {background-color:#666;width: 50px;height: 30px;margin-left:20px;font-size:14px;font-weight: bold; color:#fff; border-radius: 5px;}
+            .search_table { width: 96%; text-align: center;margin: 10px auto;}
+            .search_table td {width: 100px; text-align: left;}
+            .search_table th {width: 3px; text-align: left;font-size: 16px; font-weight: 400;}
+            .search_table tr {text-align: center; }
+            .search_table .search_list .td_empty {width:30px;}
+            .search_table .search_list .selectBox {width:265px; border:1px solid #ccc;border-radius: 4px;}
+            .search_table .search_list .border_style {border:1px solid #ccc; padding:20px 0 20px 0;}
+            .search_table .search_list .td_style {padding: 5px 0px 5px 0px;}
+            .search_table .search_list .background_color {background-color: #e7ebf1;}
+            .search_table .search_list .input_style {height:43px; margin-left:6px; text-align:left; padding-left: 10px;}
+            .search_table .search_list .inputs {width: 56px; border:1px solid #ccc;border-radius: 4px; text-align: right;}
+            .search_table .search_list .text_center {text-align:center; font-weight: bold;}
+            
+            .search_table .div_set {margin-top: 15px;}
+    </style>
+
+    <!--<div style="position:absolute; left: 50%;transform: translateX(-50%);font-weight: bold;font-size:large;color: #fff; background-color: black; padding: 6px 17px;border-radius:5px;">프리미엄 검색</div>-->
+    <div style="border: 4px solid #ccc; padding-bottom: 10px; width: 90%; margin: 10px auto;">
+	    <div class="search_table">
+	        <form action="/search_data" id="searchForm" name="searchForm" method="POST" autocomplete="off" target="popWin">
+	        <input type="hidden" id="type_result" name="type_result" value="and_select"/>
+	        <input type="hidden" id="industry1_nm" name="industry1_nm" value=""/>
+	        <input type="hidden" id="industry2_nm" name="industry2_nm" value=""/>
+	        <input type="hidden" id="industry3_nm" name="industry3_nm" value=""/>
+	        
+	            <table class="search_list">
+	                <tr>
+	                    <th class="border_style background_color text_center">기업명</th>
+	                        <td class="td_style border_style">
+	                            <input type="text" id="search_company" name="search_company" class="input_style" style="ime-mode: active;" />
+	                        </td>
+	                        <td class="td_empty"></td>
+	                    <th class="background_color" style="border-left:1px solid #ccc; border-top:1px solid #ccc; border-right:1px solid #ccc;"></th>
+	                        <td style="border-top:1px solid #ccc; border-right:1px solid #ccc; text-align:center;">
+	                        	<div style="text-align:left; padding-left:4px; color: red; font-size: 12px;"> &nbsp; 상위 옵션부터 선택하세요.</div>
+	                            <select name="industry1" id="industry1" class="selectBox" style="margin-top: 9px; text-align:center; margin-bottom: -32px;"></select>
+	                        </td>
+	                </tr>
+	                
+	                <tr>
+	                    <th class="border_style background_color text_center">대표자명</th>
+	                        <td class="td_style border_style">
+	                            <input type="text" id="search_name" name="search_name" class="input_style" style="ime-mode: active;" />
+	                        </td>
+	                        <td class="td_empty"></td>
+	                   <th class="background_color text_center" style="border-left:1px solid #ccc; border-right:1px solid #ccc;">업종</th>
+	                        <td style="border-right:1px solid #ccc; text-align:center; padding-top: 28px;">
+	                        	<select name="industry2" id="industry2" class="selectBox"><option>2차 선택</option></select>
+	                        </td>
+	                </tr>
+	                
+	                <tr>
+	                    <th class="border_style background_color text_center">주요취급품목</th>
+	                        <td class="td_style border_style">
+	                            <input type="text" id="search_item" name="search_item" class="input_style" style="ime-mode: active;" />
+	                        </td>
+	                        <td class="td_empty"></td>
+	                    <th class="background_color" style="border-left:1px solid #ccc; border-bottom:1px solid #ccc; border-right:1px solid #ccc;"></th>
+	                    	<td style="border-bottom:1px solid #ccc; border-right:1px solid #ccc; text-align:center;">
+	                            <select name="industry3" id="industry3" class="selectBox" style="margin-bottom:3px;"><option>3차 선택</option></select>
+	                        </td>
+	                </tr>
+	                <tr>
+	                    <th class="border_style background_color text_center">주소</th>
+	                        <td class="td_style border_style">
+	                            <input type="text" id="search_area" name="search_area" class="input_style" style="ime-mode: active;" />
+	                        </td>
+	                        <td class="td_empty"></td>
+	                    <th class="border_style background_color text_center">상시종업원수</th>
+	                        <td class="td_style border_style" style="padding-left:6px;">
+	                            <input type="text" class="inputs" id="search_employee_num1" name="search_employee_num1" value="" maxlength="7" onchange="getNumber(this);" onkeyup="getNumber(this);" style="padding-right:6px;"/>
+	                            <span style="font-size:11px;">&nbsp;(명)&nbsp;이상&nbsp;~&nbsp;</span>
+	                            <input type="text" class="inputs" id="search_employee_num2" name="search_employee_num2" value="" maxlength="7" onchange="getNumber(this);" onkeyup="getNumber(this);" style="padding-right:6px;"/>
+	                            <span style="font-size:11px;">&nbsp;(명)&nbsp;이하</span>
+	                        </td>
+	                </tr>		
+	                <tr>
+	                    <th class="border_style background_color text_center">설립년도</th>
+	                        <td class="td_style border_style" style="padding-left:6px;">
+	                            <input type="text" class="inputs" id="search_create_year1" name="search_create_year1" value="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="CheckOnlyNumber(this);" style="padding-right:6px;"/>
+	                            <span style="font-size:11px;">&nbsp;(년)&nbsp;부터&nbsp;~&nbsp;</span>
+	                            <input type="text" class="inputs" id="search_create_year2" name="search_create_year2" value="" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="CheckOnlyNumber(this);" style="padding-right:6px;"/>
+	                            <span style="font-size:11px;">&nbsp;(년)&nbsp;까지</span>
+	                        </td>
+	                        <td class="td_empty"></td>
+	                    <th class="border_style background_color text_center">매출액</th>
+	                        <td class="td_style border_style" style="padding-left:6px;">
+	                            <input type="text" class="inputs" id="search_sales1" name="search_sales1" value="" maxlength="7" onchange="getNumber(this);" onkeyup="getNumber(this);" style="padding-right:6px;"/>
+	                            <span style="font-size:10px;">&nbsp;(백만원)&nbsp;이상&nbsp;~&nbsp;</span>
+	                            <input type="text" class="inputs" id="search_sales2" name="search_sales2" value="" maxlength="7" onchange="getNumber(this);" onkeyup="getNumber(this);" style="padding-right:6px;"/>
+	                            <span style="font-size:10px;">&nbsp;(백만원)&nbsp;이하</span>
+	                        </td>
+	                </tr>
+	            </table>
+	            
+	            <div class="filter_wrap">
+	           	 	<table>
+		                <tr>
+		                    <td rowspan="2" style="text-align: center; font-size: 14px; font-weight: bold; width:70px;">기업구분검색</td>
+		                    <td style="width:130px;"><label><input type="checkbox" id="classify1" name="classify1" value="N" />산업통상자원부 신제품인증</label></td>
+		                    <td style="width:130px;"><label><input type="checkbox" id="classify2" name="classify2" value="N" />중소벤처기업부 성능인증</label></td>
+		                    <td><label><input type="checkbox" id="classify3" name="classify3" value="N" />여성기업</label></td>
+		                    <!-- <td><label><input type="checkbox" id="classify4" name="classify4" value="N" />달성1차</label></td> -->
+		                    <!-- <td><label><input type="checkbox" id="classify5" name="classify5" value="N" />테크노폴리스</label></td> -->
+		                </tr>
+		                <tr>
+		                    <td><label><input type="checkbox" id="classify6" name="classify6" value="N" />산업통상자원부 산업융합품목</label></td>
+		                    <td><label><input type="checkbox" id="classify7" name="classify7" value="N" />조달청 우수조달물품</label></td>
+		                    <td><label><input type="checkbox" id="classify8" name="classify8" value="N" />장애인기업</label></td>
+		                    <!-- <td><label><input type="checkbox" id="classify9" name="classify9" value="N" />달성2차</label></td> -->
+		                    <!-- <td><label><input type="checkbox" id="classify10" name="classify10" value="N" />국가산단</label></td> -->
+		                </tr>
+		            </table>
+				  </div>
+			  
+	        </form>
+	        
+	    </div>
+    	<div style="font-size: 12px; text-align: center;">※ 응답 기업이 제출한 자료를 근거로 작성된 내용이므로 실제와 다르거나 누락될 수 있습니다.</div>
+    	<div style="font-size: 12px; text-align: center;">※ 업체 정보에 대한 수정사항이 있을 경우 대구상공회의소 조사홍보팀 (053-222-3063) 으로 연락바랍니다.</div>
+    </div>
+    
+    <div class="table_bottom" style="margin-top:20px; width: 90%; margin-left: 5%;">
+    	<select id="type_select" name="type_select" style="width:80px; border:1px solid #ccc;border-radius: 4px; margin-left: 10%;">
+    		<option value="and_select" selected>AND</option>
+    		<option value="or_select">OR</option>
+    	</select>
+        <input type="button" value="검색" onclick="chkbox_chk()" class="btn_big_black">
+        <input type="button" value="검색초기화" onclick="reset_chk()" class="btn_big_black" style="background: #0d23bd; float: right;">
+        <!-- <button class="cnlth_button" onclick="" type="button">취소</button> -->
+        
+    </div>
+    
+    <div id="search_msg_modal" style="display:none; margin-bottom:10px">
+		<div style="font-size: 20px; text-align: center; padding-top: 15px;">검색조건을 입력하세요.</div>
+		<p class="float_r data_close" style="text-align:center;">
+		    <button class="ui-button search_msg_modal_close_btn" type="button" style="margin-top: 12px;">닫기</button>
+		</p>
+	</div>
+    
+    <div id="number_msg_modal" style="display:none; margin-bottom:10px">
+		<div style="font-size: 20px; text-align: center; padding-top: 15px;">숫자만 입력하세요.</div>
+		<p class="float_r data_close" style="text-align:center;">
+		    <button class="ui-button number_msg_modal_close_btn" type="button" style="margin-top: 12px;">닫기</button>
+		</p>
+	</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

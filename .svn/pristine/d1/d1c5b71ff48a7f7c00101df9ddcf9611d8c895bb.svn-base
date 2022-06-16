@@ -1,0 +1,65 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var page_navi = require("../../../function/board_page_navi_user.js");
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+	var connectorNo = session.connectorNo(request);
+	
+	var table = "hongbo_board";
+	var file_table = "hongbo_files";		
+	var nowPage = (request.param("nowPage")==null) ? 1 : request.param("nowPage");
+	var active = (request.param("category")==null) ? 'base' : request.param("category");
+	var row_count = 10;
+	var col_count = 10;
+	var p_where = ""; 
+	fs.readFile("./views/user/hongbo_board/board_list.html", "utf-8", function(error, data){
+		page_navi.action('hongbo', p_where, nowPage, col_count, row_count, function(error, page_txt, page_start, page_end){
+			/*var sql = "select a.*, date_format(a.create_date, '%Y-%m-%d') as c_date,";
+			sql +=" cast(if(a.sort = '', '9999999999', a.sort) as UNSIGNED) as brd_sort,";
+			sql +=" (select ad_nm from admin where ad_id = a.create_id) as create_name, ";
+			sql +=" ifnull((select c.file_dtname from "+file_table+" c where c.board_no = a.board_no and c.file_type='main'), '') as img_file_name, ";
+			sql +=" ifnull(b.orgmem_name, '') as orgmem_name, ";
+			sql +=" ifnull((select org_seqNo from org_seq where org_no = b.orgmem_seqNo), '') as org_leader, ";
+			sql +=" ifnull((select org_seqYear from org_seq where org_no = b.orgmem_seqNo), '') as org_leader_day, ";
+			sql +=" orgmem_leader_code, ";
+			sql +=" (select count(*) from hongbo_board_comment c where c.board_no = a.board_no) as comment_cnt";
+			sql +=" from "+table+" a left outer join orgmember b on a.orgmem_no = b.orgmem_no ";
+			sql += " where a.board_id = 'hongbo'";
+			sql += " order board_no desc";
+			sql += " limit " + page_start +", " + page_end;*/
+			
+			var sql = "";
+			switch (active) {
+			case 'base':	
+			sql += "select count(1) as tot_cnt from hongbo_board where topcompany = '' or topcompany IS NULL OR topcompany = 'N'";
+				break;
+			case 'top':	
+			sql += "select count(1) as tot_cnt from hongbo_board where topcompany = 'Y'";
+				break;
+			}
+		
+			db.query(sql, function(error, results){
+				if(error){
+					response.send(error);
+				}else{
+					console.log(sql);
+					response.send(ejs.render(layout.include("app_user", data), {
+						connectorNo : connectorNo,
+						data : results,
+						db_data_length : results.tot_cnt,
+						page_navi :page_txt,
+						nowPage : nowPage,
+						active : active,
+						menuNum:4
+					}));
+				}
+			});
+		});
+	}); 
+};

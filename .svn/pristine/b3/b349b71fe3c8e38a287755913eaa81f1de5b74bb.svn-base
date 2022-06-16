@@ -1,0 +1,447 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".contImg").click(function() {
+			if( $(this).get(0).tagName=="IMG" ) {
+				var url = "/views/user/chart/img_view.html?imgSRC="+$(this).attr("src");
+				
+				var standalone = window.navigator.standalone,
+			    userAgent = window.navigator.userAgent.toLowerCase(),
+			    safari = /safari/.test( userAgent ),
+			    ios = /iphone|ipod|ipad/.test( userAgent );
+				
+				if( ios ) {
+				    if ( !standalone && safari ) {
+				        //browser
+				    } else if ( standalone && !safari ) {
+				        //standalone
+				    } else if ( !standalone && !safari ) {
+				        //uiwebview
+				        window.location="jscall://"+url;
+				    };
+				} else {
+					// not ios
+					window.location.href = url;
+				};
+				//window.location.href = url;
+				//window.open('/views/user/hongbo_board/img_view.html?imgSRC='+$(this).attr("src")+'', 'hongboView_Pop', 'width=500, height=500');
+			}
+		});
+	});
+</script>
+
+<!-- 탭 -->
+<div class="intro_menu">
+   <ul>
+	<li><a href="chart_mba_list">인사말</a></li>
+	<li><a href="rules">회칙</a></li>
+	<li><a href="club">연혁</a></li>
+	<li><a href="orgchart">조직도</a></li>
+	<li><a href="history" class="intro_menu_on">역대회장</a></li>
+	<li><a href="place">오시는길</a></li>
+   </ul>
+</div>
+<div class="intro_history">
+	<div>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 3대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_3.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>김교상 <span style="font-size : 17px;"> </span></li>
+						<li><span class="sub_tit">연대 : 제 3대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit"> </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 4대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_4.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>박해충 <span style="font-size : 17px;"> </span></li>
+						<li><span class="sub_tit">연대 : 제 4대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit"> </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 6대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_6.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>이종근 <span style="font-size : 17px;"> </span></li>
+						<li><span class="sub_tit">연대 : 제 6대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit"></span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 7대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_7.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>전우성 <span style="font-size : 17px;"> 21회 기계과</span></li>
+						<li><span class="sub_tit">연대 : 제 7대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">(전)항만하역협회 지사장 </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 9대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_9.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>류찬우 <span style="font-size : 17px;"> </span></li>
+						<li><span class="sub_tit">연대 : 제 9대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit"> </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 10, 11대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_10_11.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>여일균 <span style="font-size : 17px;"> </span></li>
+						<li><span class="sub_tit">연대 : 제 10, 11대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit"> </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 12대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_12.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>박정기 <span style="font-size : 17px;"> </span></li>
+						<li><span class="sub_tit">연대 :  </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit"></span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 13대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_13.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>김상윤 <span style="font-size : 17px;"> 25회 토목과</span></li>
+						<li><span class="sub_tit">연대 : 제 13대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">학교법인 금성학원 상임이사 </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 14대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_14.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>김상윤 <span style="font-size : 17px;"> 28회 방직과</span></li>
+						<li><span class="sub_tit">연대 : 제 14대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">(전)김종필총리 특별보좌관 </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 15대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_15.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>류병하 <span style="font-size : 17px;"> 29회 전기과</span></li>
+						<li><span class="sub_tit">연대 : 제 15대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">(전)영등포구의회 의원 </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 16, 17대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_16_17.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>남정도 <span style="font-size : 17px;"> </span></li>
+						<li><span class="sub_tit">연대 :  </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit"></span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 20대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_20.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>이인세 <span style="font-size : 17px;"> 38회 기계과</span></li>
+						<li><span class="sub_tit">연대 : 제 20대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">특허법인 아주 총괄전무이사 </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 21대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_21.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>박순황 <span style="font-size : 17px;"> 39회 기계과</span></li>
+						<li><span class="sub_tit">연대 : 제 21대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">㈜건우정공 대표이사 </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제22대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_22.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>이한명 <span style="font-size : 17px;"> 40회 건축과</span></li>
+						<li><span class="sub_tit">연대 : 제 22대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">(전)모우종합건축사사무소 대표 </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 23대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_23.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>류권형 <span style="font-size : 17px;"> 41회 전기과</span></li>
+						<li><span class="sub_tit">연대 : 제 23대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">건축업 </span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 24대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_24.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>이승붕 <span style="font-size : 17px;"> 42회 화학과</span></li>
+						<li><span class="sub_tit">연대 : 제 24대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">금강화공약품㈜ 대표</span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 26대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_26.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>김문학 <span style="font-size : 17px;"> 44회 기계과</span></li>
+						<li><span class="sub_tit">연대 : 제 26대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">김문학회계사무소 세무사</span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 27대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_27.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>김정환 <span style="font-size : 17px;"> 45회 토목과</span></li>
+						<li><span class="sub_tit">연대 : 제 27대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">㈜대경포장 회장</span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 28대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_28.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>송해남 <span style="font-size : 17px;"> 47회 방직과</span></li>
+						<li><span class="sub_tit">연대 : 제 28대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">그린 ENG㈜ 대표이사</span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 29대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_29.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>이의시 <span style="font-size : 17px;"> 48회 기계과</span></li>
+						<li><span class="sub_tit">연대 : 제 29대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : </span></li>
+						<li><span class="sub_tit">이스턴 R&E㈜ 회장</span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<p class="more cyears1"><i class="fa fa-plus-circle"></i></p>
+			<dt class="cyears">
+				<span>제 30대 회장</span>
+			</dt>
+			<dd>
+				<div class="img_wrap">
+					<img src="/images/ceo_history_34.jpg" style="width : 100%; height : 100%;" />
+				</div>
+				<div class="txt_wrap">
+					<ul>
+						<li>김재중 <span style="font-size : 17px;">49회 전기과</span></li>
+						<li><span class="sub_tit">연대 : 제 30대 회장 </span></li>
+						<li><span class="sub_tit">재임기간 : 2019.01~2019.12</span></li>
+						<li><span class="sub_tit">(주)예스피치 대표이사</span></li>
+					</ul>
+				</div>
+			</dd>
+		</dl>
+	</div>
+</div>

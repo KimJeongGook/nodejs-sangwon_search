@@ -1,0 +1,105 @@
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						$(".contImg")
+								.click(
+										function() {
+											if ($(this).get(0).tagName == "IMG") {
+												var url = "/views/user/chart/img_view.html?imgSRC="
+														+ $(this).attr("src");
+
+												var standalone = window.navigator.standalone, userAgent = window.navigator.userAgent
+														.toLowerCase(), safari = /safari/
+														.test(userAgent), ios = /iphone|ipod|ipad/
+														.test(userAgent);
+
+												if (ios) {
+													if (!standalone && safari) {
+														//browser
+													} else if (standalone
+															&& !safari) {
+														//standalone
+													} else if (!standalone
+															&& !safari) {
+														//uiwebview
+														window.location = "jscall://"
+																+ url;
+													}
+													;
+												} else {
+													// not ios
+													window.location.href = url;
+												}
+												;
+												//window.location.href = url;
+												//window.open('/views/user/hongbo_board/img_view.html?imgSRC='+$(this).attr("src")+'', 'hongboView_Pop', 'width=500, height=500');
+											}
+										});
+					});
+</script>
+
+<!-- 탭 -->
+<div class="intro_menu">
+	<ul>
+		<li><a href="chart_mba_list" class="intro_menu_on">인사말</a></li>
+		<li><a href="rules">회칙</a></li>
+		<li><a href="club">연혁</a></li>
+		<li><a href="orgchart">조직도</a></li>
+		<li><a href="membership">동문회비</a></li>
+		<li><a href="place">오시는길</a></li>
+	</ul>
+</div>
+
+<div id="container_intro">
+	<!-- 내용 -->
+	<div class="intro_greeting">
+		<h4 class="hide">회장인사말</h4>
+		<div class="greeting_top">
+			<img src="images/ceo_img.png" alt="총동문회장 박종판" width="140" />
+			<div class="greeting_t">
+				<br>
+				<p style="color: #666; font-weight: bold; font-size: 18px; letter-spacing: -2px;">
+					대구공고 총동문회</p>
+				<p>제 34대 회장</p>
+				<p>
+					<strong
+						style="color: #006ab5; font-weight: bold; font-size: 22px;">박종판</strong>&nbsp;50회
+					토목과
+				</p>
+			</div>
+		</div>
+		<div class="greeting_text">
+			<p>
+				대구공고 동문 여러분 안녕하십니까? <br /> 제34대 총동문회장 박종판입니다.<br />
+				<br /> 2020년 庚子年 새해가 밝았습니다.<br /> 새해 좋은 꿈 꾸셨는지요?<br /> 새해를 맞아 더욱
+				健康하시고, 하시는 일 萬事亨通 하시길 바랍니다.<br /> 우리 동문회 또한, 많은 동문이 함께하여 사람이 넘치는
+				동문회가 되었으면 합니다.<br /> 진정성 있는 열린 자세로 동문회의 세세한 일까지도 함께하고 같이 하겠습니다.
+				동문회 管理者로서의 소임에 성심껏 임하도록 하겠습니다.<br />
+				<br /> 동문 여러분, <br /> ''함께 하는 동문회, 같이 하는 동문회''를 만듭시다.<br /> 개인적
+				사정과 이익을 우선으로 여기는 현대 사회에서 개인적 희생과 협력만을 요구하는 동문회라는 곳이 마뜩잖은 것은 너나없이
+				마찬가지일 것입니다.<br />
+				<br /> 그러나 우리가 살면서 내게 이익되고 편한 일만 하고 살 수는 없는 것 아니겠습니까?<br /> 내가
+				아니어도 누군가 하겠지 여기고, 너도나도 하지 않으면 그 누군가는 누구여야 할까요?<br /> 그 누군가는 해야 할
+				일이고, 누군가의 보이지 않는 손을 필요로 하는 곳이 동문회입니다.<br />
+				<br /> 先代의 선배님들께서 이미 그 수고를 아끼지 않으셨고, 열정적인 노고와 개인적 희생이 켜켜이 쌓여 왔습니다.<br />
+				그것은 전통이라는 이름으로 우리들의 자랑으로 남아 있습니다.<br /> 다만 우리가 그것을 잘 몰랐고, 다 함께 관심을
+				두고 같이하지 못했을 뿐입니다.<br /> 동문회의 가장 의미 있는 가치는 함께하고 같이 하는 일일 것입니다.<br />
+				<br /> 승거목단(繩鋸木斷) 수적석천(水滴石穿) 이라는 말이 있습니다.<br /> 새끼줄로 톱질하여도 나무가
+				잘리고, 물방울이 돌을 뚫는다는 말입니다.<br /> 작은 하나하나가 모이면 못할 것이 없습니다.<br />
+				<br /> 2020년 한 해 동안 저도 열심히 하겠습니다.<br /> 내실 있고 단단한, 역동적인 동문회가 되도록
+				힘쓰겠습니다.<br /> 지켜봐 주십시오.<br /> 동문님들의 많은 관심과 협조를 바랍니다.<br />
+				<br /> 庚子年 새해에도 늘 健康하시고, <br /> 동문님 가정 마다에 幸福 가득하십시오.<br />
+			</p>
+		</div>
+		<div class="greeting_sign">
+			<p>
+				<br /> (2020.1. 2  총동문회장 박종판)<br />
+				<br />
+			</p>
+		</div>
+	</div>
+</div>

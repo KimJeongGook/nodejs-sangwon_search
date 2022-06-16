@@ -1,0 +1,140 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".contImg").click(function() {
+			if( $(this).get(0).tagName=="IMG" ) {
+				var url = "/views/user/chart/img_view.html?imgSRC="+$(this).attr("src");
+				
+				var standalone = window.navigator.standalone,
+			    userAgent = window.navigator.userAgent.toLowerCase(),
+			    safari = /safari/.test( userAgent ),
+			    ios = /iphone|ipod|ipad/.test( userAgent );
+				
+				if( ios ) {
+				    if ( !standalone && safari ) {
+				        //browser
+				    } else if ( standalone && !safari ) {
+				        //standalone
+				    } else if ( !standalone && !safari ) {
+				        //uiwebview
+				        window.location="jscall://"+url;
+				    };
+				} else {
+					// not  ios
+					window.location.href = url;
+				};
+				//window.location.href = url;
+				//window.open('/views/user/hongbo_board/img_view.html?imgSRC='+$(this).attr("src")+'', 'hongboView_Pop', 'width=500, height=500');
+			}
+		});
+	});
+</script>
+
+<!-- 탭 -->
+<div class="intro_menu">
+   <ul>
+	<li><a href="chart_mba_list">인사말</a></li>
+	<li><a href="rules">회칙</a></li>
+	<li><a href="club" class="intro_menu_on">연혁</a></li>
+	<li><a href="orgchart">조직도</a></li>
+	<li><a href="membership">동문회비</a></li>
+	<li><a href="place">오시는길</a></li>
+   </ul>
+</div>
+<div id="container_intro">
+	<!-- 내용 -->
+	<div class="intro_history">
+		<div>
+			<dl>
+				<p class="more cyears1">
+					<i class="fa fa-plus-circle"></i>
+				</p>
+				<dt class="cyears">
+					<span style="color: #333333; font-weight: bold; font-size: 18px;">1930년대 ~ 1950년대</span>
+				</dt>
+				<dd>
+					<p><span class="year">1930.04.01</span><span class="txt">- 대구공립보습학교 동창회 발족</span></p>
+					<p><span class="year">1940.03.05</span><span class="txt">- 대구공립직업학교 동창회 개칭</span></p>
+					<p><span class="year">1944.03.10</span><span class="txt">- 대구공립공업학교 동창회로 개칭</span></p>
+					<p><span class="year">1946.09.01</span><span class="txt">- 대구공립공업중학교 동창회로 개칭</span></p>
+					<p><span class="year">1950.06.04</span><span class="txt">- 대구기업체총람 개칭</span></p>
+					<p><span class="year">1930.06.04</span><span class="txt">- 제1대 문위경(13회)회장 취임</span></p>
+					<p><span class="year">1954.02.14</span><span class="txt">- 제2,3대 유배근(16회)회장 취임</span></p>
+					<p><span class="year">1956.03.11</span><span class="txt">- 제4대 이석원(17회)회장 취임</span></p>
+					<p><span class="year">1957.03.03</span><span class="txt">- 제5대 이덕구(13회)회장 취임</span></p>
+				</dd>
+			</dl>
+			<dl>
+				<p class="more cyears1">
+					<i class="fa fa-plus-circle"></i>
+				</p>
+				<dt class="cyears">
+					<span style="color: #333333; font-weight: bold; font-size: 18px;">1960년대 ~ 1980년대</span>
+				</dt>
+				<dd>
+					<p><span class="year">1979.04.01</span><span class="txt">- 제 6,7대 박해충(19회)회장 취임 <br/>(동창회사무실 개설: 동인동)</span></p>
+					<p><span class="year">1980.08.24</span><span class="txt">- 제8대 홍종현(19회)회장 취임</span></p>
+					<p><span class="year">1980.10.19</span><span class="txt">- 제1회 추계체육대회 개최</span></p>
+					<p><span class="year">1982.04.04</span><span class="txt">- 제9대 원성한(22회)회장 취임 <br/>(동창회사무실 이전: 대현동)</span></p>
+					<p><span class="year">1983.04.03</span><span class="txt">- 제10대 전우성(21회)회장 취임</span></p>
+					<p><span class="year">1983.04.03</span><span class="txt">- 회칙개정 : 대구공업중고등학교 총동창회·대구공업중고등학교 총동문회</span></p>
+					<p><span class="year">1984.04.01</span><span class="txt">- 제11대 표대수(24회)회장 취임</span></p>
+					<p><span class="year">1986.04.20</span><span class="txt">- 제12,13,14대 류찬우(14회)회장 취임</span></p>
+					<p><span class="year">1986.10.13</span><span class="txt">- 제12대 전두환대통령 모교 방문</span></p>
+				</dd>
+			</dl>
+			<dl>
+				<p class="more cyears1">
+					<i class="fa fa-plus-circle"></i>
+				</p>
+				<dt class="cyears">
+					<span style="color: #333333; font-weight: bold; font-size: 18px;">1990년대 ~ 2000년대</span>
+				</dt>
+				<dd>
+					<p><span class="year">1990.05.16</span><span class="txt">- 총동문회사무실 이전: 모교도서관 3층</span></p>
+					<p><span class="year">1994.01.11</span><span class="txt">- 제15대 여일균(24회)회장 취임</span></p>
+					<p><span class="year">1996.10.13</span><span class="txt">- 제16대 김영호(26회)회장 취임</span></p>
+					<p><span class="year">1998.07.01</span><span class="txt">- 제17대 전종식(28회)회장 취임</span></p>
+					<p><span class="year">2000.07.01</span><span class="txt">- 제18대 김인상(31회)회장 취임</span></p>
+					<p><span class="year">2001.07.01</span><span class="txt">- 제19대 손만수(33회)회장 취임</span></p>
+					<p><span class="year">2001.10.30</span><span class="txt">- 제1회 대구공고 총동문회 골프대회 개최 <br/>(경기도 기흥 C.C)</span></p>
+					<p><span class="year">2003.07.01</span><span class="txt">- 제20대 박규하(34회)회장 취임</span></p>
+					<p><span class="year">2003.12.06</span><span class="txt">- 대구공고 80년사 발간사업회 발족 <br/>(회장: 최순달/21회)</span></p>
+					<p><span class="year">2005.04.01</span><span class="txt">- 데구공고 80년사 발간 및 동문명부 발간</span></p>
+					<p><span class="year">2005.07.01</span><span class="txt">- 제21대 오상두(36회)회장 취임</span></p>
+					<p><span class="year">2006.06.30</span><span class="txt">- 총동문회 역사관 건립사업회 발족 <br/>(회장: 박규하/34회)</span></p>
+					<p><span class="year">2007.06.27</span><span class="txt">- 회칙개정: 모든임원 임기 1년/연임 가능</span></p>
+					<p><span class="year">2007.07.01</span><span class="txt">- 제22대 박대현(37회)회장 취임</span></p>
+					<p><span class="year">2008.07.01</span><span class="txt">- 제23대 황보유(38회)회장 취임</span></p>
+					<p><span class="year">2009.07.01</span><span class="txt">- 제24대 정성관(39회)회장 취임</span></p>
+				</dd>
+			</dl>
+			<dl>
+				<p class="more cyears1">
+					<i class="fa fa-plus-circle"></i>
+				</p>
+				<dt class="cyears">
+					<span style="color: #333333; font-weight: bold; font-size: 18px;">2010년대 ~ 2020년대</span>
+				</dt>
+				<dd>
+					<p><span class="year">2010.07.01</span><span class="txt">- 제25대 이동연(40회)회장 취임</span></p>
+					<p><span class="year">2011.07.01</span><span class="txt">- 제26대 김진해(41회)회장 취임</span></p>
+					<p><span class="year">2012.05.30</span><span class="txt">- 대구공고 총동문회 역사관 건립 개관</span></p>
+					<p><span class="year">2012.06.29</span><span class="txt">- 명칭변경: 대구공업중고등학교 총동문회·대구기업체총람</span></p>
+					<p><span class="year">2012.06.30</span><span class="txt">- 대구공고 동문명부 발간(2차)</span></p>
+					<p><span class="year">2012.07.01</span><span class="txt">- 제27대 신동출(42회)회장 취임</span></p>
+					<p><span class="year">2013.07.01</span><span class="txt">- 제28대 이종성(43회)회장 취임</span></p>
+					<p><span class="year">2014.06.30</span><span class="txt">- 회계연도변경: 7월1일·1월1일</span></p>
+					<p><span class="year">2014.11.06</span><span class="txt">- 회칙개정: 대구공고총동문회 사무국·대구공고총동문회 사무처</span></p>
+					<p><span class="year">2015.01.01</span><span class="txt">- 제29대 장준혁(45회)회장 취임</span></p>
+					<p><span class="year">2016.06.30</span><span class="txt">- 대구공고 동문명부 발간(3차)</span></p>
+					<p><span class="year">2016.01.01</span><span class="txt">- 제30대 이진호(46회)회장 취임</span></p>
+					<p><span class="year">2017.01.01</span><span class="txt">- 제31대 권오광(47회)회장 취임</span></p>
+					<p><span class="year">2018.01.01</span><span class="txt">- 제32대 이정곤(48회)회장 취임</span></p>
+					<p><span class="year">2018.04.08</span><span class="txt">- 제1회 대구공고 총동문회 등반대회 개최 (팔공산)</span></p>
+				</dd>
+			</dl>
+		</div>
+	</div>
+</div>

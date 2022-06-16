@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>대구기업체총람</title>
+	<meta charset="utf-8" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/default.css"/>
+	<link rel="stylesheet" type="text/css" href="css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="/js/jquery/css/jquery-ui-1.8.2.custom.css"/>
+	<link rel="stylesheet" type="text/css" href="/js/jquery/css/swiper.min.css"/>
+	
+	<script type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery/jquery-ui-1.8.16.custom.min.js"></script>		
+	<script type="text/javascript" src="/js/jquery/swiper.jquery.min.js"></script>
+	<style>
+    .imgbox{
+    margin:10px;
+    text-align: center;
+    background: url(images/line.png) ,url(images/line.png) ,url(images/line2.png) ,url(images/line2.png);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-position:bottom, top, left, right;
+    }
+    
+    .swiper-container {
+        position:fixed;
+        bottom:60px;
+        width: 100%;
+        max-height: 70px;
+        
+    }
+    .swiper-wrapper{ overflow: visible; }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-slide a, .swiper-slide img{ width:100%; vertical-align: top;}
+    </style>
+    
+    <script>
+		$(document).ready(function(){
+		    var swiper = new Swiper('.swiper-container', {
+		        centeredSlides: true,
+		        autoplay: 1000,
+		        speed:2000,
+		        autoplayDisableOnInteraction: false
+		    });
+		    
+		    $('.board_view').click(function(e) {
+		    	e.preventDefault();
+		    	
+				var form = document.boardForm;
+				form.action = 'hongbo_board_view';
+				
+				$('input[name="brd_no"]').val($(this).attr('brd_no'));
+				var url = "/hongbo_board_view?brd_no="+$(this).attr('brd_no');
+				window.location.href = url;
+			});
+		});
+	</script>
+	</head>
+<body style="background: #014da2 url(images/intro.png); background-repeat: no-repeat, repeat; background-position: center top; background-size:contain , 12px; ">
+<!-- <img src="images/bg_cover.png" alt="" style="position:absolute; right:0; top:0;" /> -->
+
+<form name="boardForm" method="post" onsubmit="return false;" autocomplete="off">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<%
+				for(var i = 0; i < banner_data.length; i++){
+			%>
+					<div class="swiper-slide">
+						<a href="#" class="board_view hand" brd_no="<%=banner_data[i].board_no %>">
+							<img src="/file/hongbo_board/<%=banner_data[i].file_dtname%>" />
+						</a>
+					</div>
+			<%
+				}
+			%>
+		</div>
+	</div>
+</form>
+
+<!-- 하단 -->
+<div id="footer">
+	<ul>
+		<!-- <li><a href="rule_mba"><img src="images/footer01.png" alt=""/><br />회칙</a></li> -->
+		<li><a href="chart_mba_list"><img src="images/footer01.png" alt=""/><br />조직도</a></li>
+		<li><a href="member_list"><img src="images/footer02.png" alt=""/><br />회원검색</a></li>
+		<li><a href="board_list"><img src="images/footer03.png" alt=""/><br />공지사항</a></li>		
+		<li><a href="hongbo_board_list"><img src="images/footer04.png" alt=""/><br />동문홍보</a></li>
+	</ul>	
+</div>
+<!-- //하단 -->

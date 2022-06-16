@@ -1,0 +1,21 @@
+/*var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var page_navi = require("../../../function/board_page_navi.js");
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+	var connectorNo = session.connectorNo(request);
+
+	fs.readFile("./views/user/rule/rule_mba.html", "utf-8", function(error, data){
+		response.send(ejs.render(layout.include("app_user", data), {
+			menuNum : 0,
+			connectorNo : connectorNo
+		})); 
+	}); 
+};
+*/

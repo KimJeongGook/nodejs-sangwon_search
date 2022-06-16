@@ -1,0 +1,231 @@
+/**
+ * New node file
+ */
+
+var nodeExcel = require('excel-export');
+
+var db = require("../../../DB_config.js").connect;
+
+exports.listener=function(request, response){
+	console.log("********************* admin_exceldown.js enter *********************");
+//app.get('/Excel', function(req, res){
+
+	var search_text = request.param("search_text")==undefined ? "" : request.param("search_text");
+	/*var search_position = request.param("search_position")==undefined ? "" : request.param("search_position"); */
+	var order_type = request.param("order_type")==undefined ? "no" : request.param("order_type");
+	
+	var sql = "";	
+	
+    var conf ={};
+    
+	//a=[i+1, mem_name, mem_phone, mem_position, mem_birth, mem_join, mem_ness_name, mem_ness_phone, mem_work_duty, mem_work_phone, mem_address_work, mem_home_phone, mem_address_home];
+    conf.cols = [{
+        caption:'번호',
+        type:'number',
+        width:8
+    },{
+        caption:'회사명',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:15          
+    },{
+        caption:'대표자명',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:15
+    },{
+        caption:'주소',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:30    
+    },{
+        caption:'홈페이지',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:30    
+    },{   
+        caption:'대표전화',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:15
+    },{
+        caption:'대표팩스',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:15         
+    },{
+        caption:'매출액(백만원)',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:30
+    },{
+        caption:'종업원수',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:30
+    },{
+        caption:'설립연도',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:30
+    },{
+        caption:'취급품목',
+        captionStyleIndex: 1,        
+        type:'string',
+        beforeCellWrite:function(row, cellData){
+                         if(cellData==null)
+             return '';
+            else
+             return cellData.toUpperCase();
+        }
+        , width:15
+    }];
+
+    
+    sql = "select \n";
+	sql += "@RNUM := @RNUM + 1 as num \n";
+	sql += ", orgmem_no \n";
+	sql += ", company_name \n";
+	sql += ", orgmem_name \n";
+	sql += ", orgmem_office_addr1 \n";
+	sql += ", orgmem_office_addr2 \n";
+	sql += ", orgmem_area \n";
+	sql += ", industry1 \n";
+	sql += ", industry2 \n";
+	sql += ", industry3 \n";
+	sql += ", handling_item \n";
+	sql += ", employee_num \n";
+	sql += ", create_year \n";
+	sql += ", sales \n";
+	sql += ", orgmem_homepage \n";
+	sql += ", company_tel1 \n";
+	sql += ", company_tel2 \n";
+	sql += ", company_tel3 \n";
+	sql += ", orgmem_fax1 \n";
+	sql += ", orgmem_fax2 \n";
+	sql += ", orgmem_fax3 \n";
+	sql += "from	orgmember a \n";
+	sql += "        , (SELECT @RNUM := 0 ) r \n";
+	sql += "where 1 = 1";
+	
+	/*if(search_position != ''){
+		sql += " and orgmem_position = '" + search_position +"' \n";
+	}*/
+	
+	if(search_text != ''){
+		sql += 'and (';
+		sql += "orgmem_name like'%" + search_text  + "%' \n" ;
+		sql += ')';
+	}
+	 
+	 if(order_type=='no'){
+		 sql += " order by orgmem_no desc ";
+	 }else if(order_type=='name'){
+		 sql += " order by orgmem_name asc ";
+	 }
+	
+	console.log("sql ::: " + sql);
+	
+	db.query(sql, function(error, results){
+		 if(error){
+			 //response.send(error);
+		 }else{
+			var arr = [];
+			
+			for(i=0; i<results.length; i++){
+				var company_name = results[i].company_name;
+                var orgmem_name = results[i].orgmem_name;                
+                var orgmem_office_addr1 = results[i].orgmem_office_addr1;
+                var orgmem_homepage = results[i].orgmem_homepage;
+                
+                var company_tel = "";
+				if(results[i].company_tel1 !=null && results[i].company_tel1 !=''){
+					company_tel = results[i].company_tel1 +"-"+ results[i].company_tel2 +"-"+ results[i].company_tel3;
+                }else{
+                	company_tel = "";
+                }	
+                
+				var orgmem_fax = "";
+                if(results[i].orgmem_fax1 !=null && results[i].orgmem_fax1 !=''){
+                	orgmem_fax = results[i].orgmem_fax1 +"-"+ results[i].orgmem_fax2 +"-"+ results[i].orgmem_fax3;
+                }else{
+                	orgmem_fax = "";
+                }
+                               						
+                var sales = results[i].sales;									               								
+				var employee_num = results[i].employee_num;
+				var create_year = results[i].create_year;
+				var handling_item = results[i].handling_item;
+				
+				a=[i+1, company_name, orgmem_name, orgmem_office_addr1, orgmem_homepage, company_tel, orgmem_fax, sales, employee_num, create_year, handling_item];
+			
+				arr.push(a);
+			}
+			
+			conf.rows = arr;
+			
+			var result = nodeExcel.execute(conf);
+
+		    response.setHeader('Content-Type', 'application/vnd.openxmlformats');
+
+		    response.setHeader("Content-Disposition", "attachment; filename=" + "orgmember_export.xlsx");
+
+		    response.end(result, 'binary');
+		 }		 
+		 
+	});
+}

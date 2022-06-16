@@ -1,0 +1,834 @@
+
+/**
+ * Module dependencies.
+ */
+require('log-timestamp')(function() { 
+    var dt;
+    dt = new Date();
+    dt = dt.getFullYear() + "-" + ((dt.getMonth() + 1) < 10 ? "0" + (dt.getMonth() + 1) : (dt.getMonth() + 1)) + "-" + (dt.getDate() < 10 ? "0" + dt.getDate() : dt.getDate()) + " " + (dt.getHours() < 10 ? "0" + dt.getHours() : dt.getHours()) + ":" + (dt.getMinutes() < 10 ? "0" + dt.getMinutes() : dt.getMinutes()) + ":" + (dt.getSeconds() < 10 ? "0" + dt.getSeconds() : dt.getSeconds());
+
+    return dt;
+});
+var express = require('express')
+  , http = require('http')
+  , fs = require('fs')
+  , ejs = require('ejs')
+  , JSONStream = require('JSONStream')
+  , async = require('async')
+  , url = require('url')
+  , cookieParser = require('cookie-parser');
+  //, usb = require("usb");
+  //, jwt = require('jwt');
+
+/*custom modules start*/
+var db = require("./custom_module/DB_config.js").connect;
+var layout = require("./function/layout.js");
+
+//web
+/* admin */
+var admin_login = require("./custom_module/admin/web/admin/admin_login.js");
+var admin_logout = require("./custom_module/admin/web/admin/admin_logout.js");
+
+var admin_list = require("./custom_module/admin/web/admin/admin_list.js");
+var admin_save = require("./custom_module/admin/web/admin/admin_save.js");
+var admin_del = require("./custom_module/admin/web/admin/admin_del.js");
+var admin_writeForm = require("./custom_module/admin/web/admin/admin_writeForm.js");
+var admin_id_chk = require("./custom_module/admin/web/admin/admin_id_chk.js");
+var admin_addForSearch = require("./custom_module/admin/web/admin/admin_addForSearch.js");
+var getAdminName = require("./custom_module/admin/web/admin/getAdminName.js");
+var getSendList = require("./custom_module/admin/web/admin/getSendList.js");
+var getChecked_power = require("./custom_module/admin/web/admin/getChecked_power.js");
+var getRepre_number = require("./custom_module/admin/web/admin/getRepre_number.js");
+var getSMS_sender = require("./custom_module/admin/web/admin/getSMS_sender.js");
+
+
+/* orgmember_mngt */
+var orgm_write = require("./custom_module/admin/web/orgmember_mngt/orgm_write.js");
+var orgm_view = require("./custom_module/admin/web/orgmember_mngt/orgm_view.js");
+var orgm_save = require("./custom_module/admin/web/orgmember_mngt/orgm_save.js");
+var orgm_list = require("./custom_module/admin/web/orgmember_mngt/orgm_list.js");
+var orgm_list_excel_down = require("./custom_module/admin/web/orgmember_mngt/orgm_list_excel_down.js");
+var orgm_list_popup = require("./custom_module/admin/web/orgmember_mngt/orgm_list_popup.js");
+var orgm_del = require("./custom_module/admin/web/orgmember_mngt/orgm_del.js");
+var orgm_restore = require("./custom_module/admin/web/orgmember_mngt/orgm_restore.js");
+var orgm_modify = require("./custom_module/admin/web/orgmember_mngt/orgm_modify.js");
+var orgm_file_del = require("./custom_module/admin/web/orgmember_mngt/orgm_file_del.js");
+
+var orgSeq_mngt = require("./custom_module/admin/web/orgmember_mngt/orgSeq_mngt.js");
+var orgSeq_del = require("./custom_module/admin/web/orgmember_mngt/orgSeq_del.js");
+var orgSeq_save = require("./custom_module/admin/web/orgmember_mngt/orgSeq_save.js");
+var getFlag_bearer = require("./custom_module/admin/web/orgmember_mngt/getFlag_bearer.js");
+var phoneNumChk = require("./custom_module/admin/web/orgmember_mngt/phoneNumChk.js");
+var orgm_udpateDisp = require("./custom_module/admin/web/orgmember_mngt/orgm_udpateDisp.js");
+
+var company_write = require("./custom_module/admin/web/orgmember_mngt/company_write.js");
+var get_admin_position = require("./custom_module/admin/web/orgmember_mngt/get_admin_position.js");
+var get_admin_position2 = require("./custom_module/admin/web/orgmember_mngt/get_admin_position2.js");
+var company_save = require("./custom_module/admin/web/orgmember_mngt/company_save.js");
+var company_view = require("./custom_module/admin/web/orgmember_mngt/company_view.js");
+var company_modify = require("./custom_module/admin/web/orgmember_mngt/company_modify.js");
+var print_admin_list = require("./custom_module/admin/web/orgmember_mngt/print_admin_list.js");
+
+/* board */
+var board_list = require("./custom_module/admin/web/board/board_list.js");
+var board_view = require("./custom_module/admin/web/board/board_view.js");
+var board_write = require("./custom_module/admin/web/board/board_write.js");
+var board_save = require("./custom_module/admin/web/board/board_save.js");
+var board_del = require("./custom_module/admin/web/board/board_del.js");
+var board_file_del = require("./custom_module/admin/web/board/board_file_del.js");
+var comment_view = require("./custom_module/admin/web/board/comment_view.js");
+
+var hongbo_board_list = require("./custom_module/admin/web/hongbo_board/board_list.js");
+var hongbo_board_view = require("./custom_module/admin/web/hongbo_board/board_view.js");
+var hongbo_board_write = require("./custom_module/admin/web/hongbo_board/board_write.js");
+var hongbo_board_save = require("./custom_module/admin/web/hongbo_board/board_save.js");
+var hongbo_board_del = require("./custom_module/admin/web/hongbo_board/board_del.js");
+var hongbo_board_file_del = require("./custom_module/admin/web/hongbo_board/board_file_del.js");
+var hongbo_comment_view = require("./custom_module/admin/web/hongbo_board/comment_view.js");
+
+var event_list = require("./custom_module/admin/web/event/board_list.js");
+var event_view = require("./custom_module/admin/web/event/board_view.js");
+var event_write = require("./custom_module/admin/web/event/board_write.js");
+var event_save = require("./custom_module/admin/web/event/board_save.js");
+var event_del = require("./custom_module/admin/web/event/board_del.js");
+var event_file_del = require("./custom_module/admin/web/event/board_file_del.js");
+var event_comment_view = require("./custom_module/admin/web/event/comment_view.js");
+var user_event_request_list = require("./custom_module/user/event_request/request_list.js");
+
+
+/* 일정 */
+var calendar = require("./custom_module/admin/web/calendar/calendar.js");
+var calendarList = require("./custom_module/admin/web/calendar/calendarList.js");
+var calendarSave = require("./custom_module/admin/web/calendar/calendarSave.js");
+
+
+/* code */
+var code_list = require("./custom_module/admin/web/code/code_list.js");
+var code_write = require("./custom_module/admin/web/code/code_write.js");
+var code_write_child = require("./custom_module/admin/web/code/code_write_child.js");
+var code_save = require("./custom_module/admin/web/code/code_save.js");
+var code_del = require("./custom_module/admin/web/code/code_del.js");
+var code_chk = require("./custom_module/admin/web/code/code_chk.js");
+
+/* 문자발송 */
+var ums_list = require("./custom_module/admin/web/ums/ums_list.js");
+var ums_result = require("./custom_module/admin/web/ums/ums_result.js");
+var ums_send = require("./custom_module/admin/web/ums/ums_send.js");
+var ums_latest = require("./custom_module/admin/web/ums/ums_latest.js");
+var ums_result_excel_down = require("./custom_module/admin/web/ums/ums_result_excel_down.js");
+
+
+/* 회비관리 */
+
+var dues_view = require("./custom_module/admin/web/dues_manage/dues_view.js");
+var dues_modify = require("./custom_module/admin/web/dues_manage/dues_modify.js");
+var dues_popup = require("./custom_module/admin/web/dues_manage/dues_popup.js");
+var dues_getMemberList = require("./custom_module/admin/web/dues_manage/dues_getMemberList.js");
+var dues_getMemberInfo = require("./custom_module/admin/web/dues_manage/dues_getMemberInfo.js");
+var dues_save = require("./custom_module/admin/web/dues_manage/dues_save.js");
+var duse_info = require("./custom_module/user/member/get_dues_info.js");
+//파일삭제 test
+var fileDel = require("./custom_module/admin/web/code/fileDel.js");
+
+//app
+/* main */
+var main = require("./custom_module/user/main/main.js");
+
+/*회칙*/
+/*var rule_mba = require("./custom_module/user/rule/rule_mba.js");*/
+
+/* 조직도 */
+var chart_mba_list = require("./custom_module/user/chart/chart_mba_list.js");
+var orgchart = require("./custom_module/user/chart/orgchart.js");
+var history = require("./custom_module/user/chart/history.js");
+var club = require("./custom_module/user/chart/club.js");
+var place = require("./custom_module/user/chart/place.js");
+var rules = require("./custom_module/user/chart/rules.js");
+var membership = require("./custom_module/user/chart/membership.js");
+
+/* 회원검색 */
+var member_list = require("./custom_module/user/member/member_list.js");			//회원검색 list
+var member_list_data = require("./custom_module/user/member/member_list_data.js");			//회원검색 list_data
+var member_list_data2 = require("./custom_module/user/member/member_list_data2.js");			//회원검색 list_data
+var member_view = require("./custom_module/user/member/member_view.js");			//회원검색 view
+var member_modify = require("./custom_module/user/member/member_modify.js");			// 회원정보 수정
+var member_setup = require("./custom_module/user/member/member_setup.js");			// 세팅
+var member_setup_save = require("./custom_module/user/member/member_setup_save.js");			// 세팅저장
+
+/* 인쇄 작업 */
+var print_list = require("./custom_module/user/print/print_list.js");			//인쇄작업 list
+
+/* 공지사항 */
+var user_brd_list = require("./custom_module/user/board/board_list.js");
+var user_brd_view = require("./custom_module/user/board/board_view.js");
+var user_comment_list = require("./custom_module/user/board/comment_list.js");
+var user_comment_save = require("./custom_module/user/board/comment_save.js");
+
+/* 동문홍보 */
+var user_hongbo_brd_list = require("./custom_module/user/hongbo_board/board_list.js");
+var user_hongbo_brd_view = require("./custom_module/user/hongbo_board/board_view.js");
+var user_hongbo_comment_list = require("./custom_module/user/hongbo_board/comment_list.js");
+var user_hongbo_comment_save = require("./custom_module/user/hongbo_board/comment_save.js");
+var user_hongbo_brd_list_data = require("./custom_module/user/hongbo_board/board_list_data.js");
+
+
+/* 일정 */
+var userCalendar = require("./custom_module/user/calendar/calendar.js");
+var userCalendarList = require("./custom_module/user/calendar/calendarList.js");
+var userCalendarSave = require("./custom_module/user/calendar/calendarSave.js");
+
+
+/* ios 관련 */
+var ios_user_check = require("./custom_module/ios/ios_user_check.js");
+var ios_user_check_sms_send = require("./custom_module/ios/ios_user_check_sms_send.js");
+var ios_user_check_last_proc = require("./custom_module/ios/ios_user_check_last_proc.js");
+var ios_get_info = require("./custom_module/ios/ios_get_info.js");
+var ios_index = require("./custom_module/ios/ios_index.js");
+
+
+/* 행사관리 */
+var event_board_list = require("./custom_module/admin/web/event_board/board_list.js");
+var event_board_view = require("./custom_module/admin/web/event_board/board_view.js");
+var event_board_write = require("./custom_module/admin/web/event_board/board_write.js");
+var event_board_save = require("./custom_module/admin/web/event_board/board_save.js");
+var event_board_del = require("./custom_module/admin/web/event_board/board_del.js");
+var event_board_file_del = require("./custom_module/admin/web/event_board/board_file_del.js");
+//var event_comment_view = require("./custom_module/admin/web/event_board/comment_view.js");
+
+
+/* 행사관리신청 */
+var event_request_list = require("./custom_module/admin/web/event_request/request_list.js");
+var event_request_exceldown = require("./custom_module/admin/web/event_request/request_exceldown.js");
+var request_modify = require("./custom_module/admin/web/event_request/request_modify.js");
+
+
+
+/* 행사일정관리 user*/
+var user_event_board_list = require("./custom_module/user/event_board/board_list.js");
+var user_event_board_view = require("./custom_module/user/event_board/board_view.js");
+var user_event_comment_list = require("./custom_module/user/event_board/comment_list.js");
+var user_event_comment_save = require("./custom_module/user/event_board/comment_save.js");
+// 추가
+var user_event_member_check = require("./custom_module/user/event_board/member_check.js");
+var user_event_request_save = require("./custom_module/user/event_board/event_request_save.js");
+
+/*custom modules end*/
+
+/*all environments*/
+var app = express();
+
+/////////////////////////////////////////////인터셉터용/////////////////////////////////////////////
+app.use(cookieParser());
+/*app.use(function(req, res, next) {
+	var usbData = req.query;
+
+	//console.log("usbData.vid :: " + usbData.vid + " usbData.pid :: " + usbData.pid);
+
+	var isAuth = req.cookies.isAuth || 'N';
+	var uri = req.url;
+	
+	if (uri.lastIndexOf('.') > -1 || uri == "/return_back" || uri.indexOf('/admin') > -1 || isAuth == 'Y') {
+		next();
+	} else {
+		if (usbData.vid == undefined) {
+			res.cookie("isAuth", isAuth);
+			res.redirect('/return_back');
+		}
+		else {
+
+			for (var i=0; i<usbData.vid.length; i++){
+				var vid = usbData.vid[i];
+				var pid = usbData.pid[i];
+
+				var sql = "";
+
+				sql += "SELECT	count(1) as cnt \n";
+				sql += "FROM usb_number where vid = '" + vid + "' \n";
+				sql += "and pid = '" + pid + "' \n";
+
+				if (i == usbData.vid.length-1) {
+					db.query(sql, function(error, results){
+
+					if(results[0].cnt == "1"){
+						isAuth = 'Y';
+						res.cookie("isAuth", isAuth);
+						next();
+					} else {
+						if ((isAuth == 'N')) {
+							res.cookie("isAuth", isAuth);
+							res.redirect('/return_back');
+						}
+					}
+					});
+				}
+				else {
+					db.query(sql, function(error, results){
+						if(results[0].cnt == "1"){
+							isAuth = 'Y';
+							res.cookie("isAuth", isAuth);
+							next();
+						}
+					});
+
+				}
+			}
+		}
+	}
+});*/
+
+
+/////////////////////////////////////////////인터셉터용/////////////////////////////////////////////
+
+app.configure(function(){ 
+	app.use(express.cookieParser());
+	app.use(express.session({ secret : "secret key" }));
+	//app.use(express.session({
+		//secret : "secret key", // 비밀키
+		/*cookie: {
+			maxAge: 1000 * 60 * 60 // 쿠키 유효기간 1시간
+		}*/
+		//cookie  : { maxAge  : new Date(Date.now() + (60 * 1000 * 30)) }
+	//}));
+	app.use(express.static(__dirname));
+	app.use(express.bodyParser({}));
+	app.use(app.router);
+});
+
+/*파일다운로드*/
+app.get('/download/:id/:rid/:table', function(req, res) {
+	var filename = req.params.id;
+	var filerealname = req.params.rid;
+	var table = req.params.table;
+	var filepath = __dirname + '\/file\/'+table+'\/' + filename;
+
+	res.download(filepath, encodeURI(filerealname));
+});
+
+
+// ios 인증페이지
+app.get("/certify_intro", function(request, response){
+	response.redirect('/certify');
+});
+
+app.get("/certify", function(request, response){
+	// fs.readFile('views/ios/certify_page.html', "utf-8", function(error, data){
+		fs.readFile('views/ios/simple_login.html', "utf-8", function(error, data){
+		//var payload = { create : 'flash21' }, secret = 'secret_token'
+		//var token = jwt.encode(payload, secret);
+		//esponse.redirect('/certify?token='+token);
+		//response.setHeader("page_token", token);
+		response.send(layout.include("ios_index", data));
+	});
+});
+
+app.post("/ios_user_check", ios_user_check.listener);
+app.post("/ios_user_check_sms_send", ios_user_check_sms_send.listener);
+app.post("/ios_user_check_last_proc", ios_user_check_last_proc.listener);
+app.post("/ios_get_info", function(request, response){
+	ios_get_info.listener(request, response);
+});
+app.get("/ios_index", function(request, response){
+	ios_index.listener(request, response);
+});
+
+//관리자web 부분 start
+//사용자 index web_admin
+app.get("/admin/web", function(request, response){
+	if(request.session.admin_yn=='Y'){
+		response.redirect('/admin/web/orgm_list');
+	}else{
+		fs.readFile('views/admin/web/index.html', "utf-8", function(error, data){
+			response.send(layout.include("web_index", data));
+		});
+	}
+});
+
+var webUrl = "/admin/web";
+
+app.get(webUrl+"/login", admin_login.listener);
+app.post(webUrl+"/login", admin_login.listener);
+
+app.get(webUrl+"/logout", admin_logout.listener);
+app.post(webUrl+"/logout", admin_logout.listener);
+
+app.get(webUrl+"/admin_writeForm", admin_writeForm.listener);
+app.post(webUrl+"/admin_writeForm", admin_writeForm.listener);
+
+app.post(webUrl+"/admin_id_chk", admin_id_chk.listener);
+
+app.get(webUrl+"/admin_list", admin_list.listener);
+app.post(webUrl+"/admin_list", admin_list.listener);
+
+app.get(webUrl+"/admin_save", admin_save.listener);
+app.post(webUrl+"/admin_save", admin_save.listener);
+
+app.get(webUrl+"/admin_del", admin_del.listener);
+app.post(webUrl+"/admin_del", admin_del.listener);
+
+app.get(webUrl+"/admin_addForSearch", admin_addForSearch.listener);
+app.post(webUrl+"/admin_addForSearch", admin_addForSearch.listener);
+
+app.get(webUrl+"/getAdminName", getAdminName.listener);
+app.post(webUrl+"/getAdminName", getAdminName.listener);
+
+app.get(webUrl+"/getSendList", getSendList.listener);
+app.post(webUrl+"/getSendList", getSendList.listener);
+
+app.get(webUrl+"/getChecked_power", getChecked_power.listener);
+app.post(webUrl+"/getChecked_power", getChecked_power.listener);
+
+app.get(webUrl+"/getRepre_number", getRepre_number.listener);
+app.post(webUrl+"/getRepre_number", getRepre_number.listener);
+
+app.get(webUrl+"/getSMS_sender", getSMS_sender.listener);
+app.post(webUrl+"/getSMS_sender", getSMS_sender.listener);
+
+/* orgmember_mngt 시작 */
+app.get(webUrl+"/orgm_write", orgm_write.listener);
+app.post(webUrl+"/orgm_write", orgm_write.listener);
+
+app.get(webUrl+"/orgm_view", orgm_view.listener);
+app.post(webUrl+"/orgm_view", orgm_view.listener);
+
+app.post(webUrl+"/orgm_save", orgm_save.listener);
+app.get(webUrl+"/orgm_save", orgm_save.listener);
+
+app.get(webUrl+"/orgm_list", orgm_list.listener);
+app.post(webUrl+"/orgm_list", orgm_list.listener);
+
+app.get(webUrl+"/orgm_list_excel_down", orgm_list_excel_down.listener);
+app.post(webUrl+"/orgm_list_excel_down", orgm_list_excel_down.listener);
+
+app.get(webUrl+"/orgm_list_popup", orgm_list_popup.listener);
+app.post(webUrl+"/orgm_list_popup", orgm_list_popup.listener);
+
+app.post(webUrl+"/orgm_del", orgm_del.listener);
+app.get(webUrl+"/orgm_del", orgm_del.listener);
+
+app.post(webUrl+"/orgm_restore", orgm_restore.listener);
+app.get(webUrl+"/orgm_restore", orgm_restore.listener);
+ 
+app.post(webUrl+"/orgm_modify", orgm_modify.listener);
+app.get(webUrl+"/orgm_modify", orgm_modify.listener);
+
+app.post(webUrl+"/orgm_file_del", orgm_file_del.listener);
+
+app.get(webUrl+"/orgSeq_mngt", orgSeq_mngt.listener);
+app.post(webUrl+"/orgSeq_mngt", orgSeq_mngt.listener);
+
+app.get(webUrl+"/orgSeq_del", orgSeq_del.listener);
+app.post(webUrl+"/orgSeq_del", orgSeq_del.listener);
+
+app.get(webUrl+"/orgSeq_save", orgSeq_save.listener);
+app.post(webUrl+"/orgSeq_save", orgSeq_save.listener);
+
+app.get(webUrl+"/getFlag_bearer", getFlag_bearer.listener);
+app.post(webUrl+"/getFlag_bearer", getFlag_bearer.listener);
+
+app.get(webUrl+"/phoneNumChk", phoneNumChk.listener);
+app.post(webUrl+"/phoneNumChk", phoneNumChk.listener);
+
+app.post(webUrl+"/orgm_udpateDisp", orgm_udpateDisp.listener);
+
+app.get(webUrl+"/company_write", company_write.listener);
+app.post(webUrl+"/company_write", company_write.listener);
+
+app.get(webUrl+"/get_admin_position", get_admin_position.listener);
+app.post(webUrl+"/get_admin_position", get_admin_position.listener);
+
+app.get(webUrl+"/get_admin_position2", get_admin_position2.listener);
+app.post(webUrl+"/get_admin_position2", get_admin_position2.listener);
+
+app.get(webUrl+"/company_save", company_save.listener);
+app.post(webUrl+"/company_save", company_save.listener);
+
+app.get(webUrl+"/company_view", company_view.listener);
+app.post(webUrl+"/company_view", company_view.listener);
+
+app.get(webUrl+"/company_modify", company_modify.listener);
+app.post(webUrl+"/company_modify", company_modify.listener);
+
+app.get(webUrl+"/print_admin_list", print_admin_list.listener);
+app.post(webUrl+"/print_admin_list", print_admin_list.listener);
+
+/* orgmember_mngt 끝 */
+
+app.get(webUrl+"/code_list", code_list.listener);
+app.post(webUrl+"/code_list", code_list.listener);
+app.get(webUrl+"/code_list_child", code_list.listener);
+app.post(webUrl+"/code_list_child", code_list.listener);
+app.get(webUrl+"/code_write", code_write.listener);
+app.post(webUrl+"/code_write", code_write.listener);
+app.get(webUrl+"/code_write_child", code_write_child.listener);
+app.post(webUrl+"/code_write_child", code_write_child.listener);
+
+app.get(webUrl+"/ums_list", ums_list.listener);
+app.post(webUrl+"/ums_list", ums_list.listener);
+app.get(webUrl+"/ums_result", ums_result.listener);
+app.post(webUrl+"/ums_result", ums_result.listener);
+app.get(webUrl+"/ums_send", ums_send.listener);
+app.post(webUrl+"/ums_send", ums_send.listener);
+app.get(webUrl+"/ums_latest", ums_latest.listener);
+app.post(webUrl+"/ums_latest", ums_latest.listener);
+app.get(webUrl+"/ums_result_excel_down", ums_result_excel_down.listener);
+app.post(webUrl+"/ums_result_excel_down", ums_result_excel_down.listener);
+
+//파일삭제 test예제
+app.post(webUrl+"/fileDel", fileDel.listener);
+
+/* code */
+app.post(webUrl+"/code_save", code_save.listener);
+app.get(webUrl+"/code_del", code_del.listener);
+app.post(webUrl+"/code_del", code_del.listener);
+app.post(webUrl+"/code_chk", code_chk.listener);
+
+/* board */
+app.get(webUrl+"/board_list", board_list.listener);
+app.post(webUrl+"/board_list", board_list.listener);
+app.get(webUrl+"/board_write", board_write.listener);
+app.post(webUrl+"/board_write", board_write.listener);
+app.get(webUrl+"/board_view", board_view.listener);
+app.post(webUrl+"/board_view", board_view.listener);
+app.post(webUrl+"/board_save", board_save.listener);
+app.post(webUrl+"/board_del", board_del.listener);
+app.get(webUrl+"/board_file_del", board_file_del.listener);
+app.post(webUrl+"/board_file_del", board_file_del.listener);
+app.get(webUrl+"/comment_view", comment_view.listener);
+
+app.get(webUrl+"/hongbo_board_list", hongbo_board_list.listener);
+app.post(webUrl+"/hongbo_board_list", hongbo_board_list.listener);
+app.get(webUrl+"/hongbo_board_write", hongbo_board_write.listener);
+app.post(webUrl+"/hongbo_board_write", hongbo_board_write.listener);
+app.get(webUrl+"/hongbo_board_view", hongbo_board_view.listener);
+app.post(webUrl+"/hongbo_board_view", hongbo_board_view.listener);
+app.post(webUrl+"/hongbo_board_save", hongbo_board_save.listener);
+app.post(webUrl+"/hongbo_board_del", hongbo_board_del.listener);
+app.get(webUrl+"/hongbo_board_file_del", hongbo_board_file_del.listener);
+app.post(webUrl+"/hongbo_board_file_del", hongbo_board_file_del.listener);
+app.get(webUrl+"/hongbo_comment_view", hongbo_comment_view.listener);
+
+app.get(webUrl+"/event_list", event_list.listener);
+app.post(webUrl+"/event_list", event_list.listener);
+app.get(webUrl+"/event_write", event_write.listener);
+app.post(webUrl+"/event_write", event_write.listener);
+app.get(webUrl+"/event_view", event_view.listener);
+app.post(webUrl+"/event_view", event_view.listener);
+app.post(webUrl+"/event_save", event_save.listener);
+app.post(webUrl+"/event_del", event_del.listener);
+app.get(webUrl+"/event_file_del", event_file_del.listener);
+app.post(webUrl+"/event_file_del", event_file_del.listener);
+app.get(webUrl+"/event_comment_view", event_comment_view.listener);
+app.post(webUrl+"/event_comment_view", event_comment_view.listener);
+// app.get(webUrl+"/event_comment_view", event_comment_view.listener);
+//관리자web 부분 end
+
+//app부분 strat
+/* main */
+app.get("/", main.listener);
+
+/*회칙*/
+/*app.get("/rule_mba", rule_mba.listener);
+app.post("/rule_mba", rule_mba.listener);*/
+
+/* 조직도 */
+app.get("/chart_mba_list", chart_mba_list.listener);
+app.post("/chart_mba_list", chart_mba_list.listener);
+app.get("/club", club.listener);
+app.post("/club", club.listener);
+app.get("/history", history.listener);
+app.post("/history", history.listener);
+app.get("/orgchart", orgchart.listener);
+app.post("/orgchart", orgchart.listener);
+app.get("/place", place.listener);
+app.post("/place", place.listener);
+app.get("/rules", rules.listener);
+app.post("/rules", rules.listener);
+app.get("/membership", membership.listener);
+app.post("/membership", membership.listener);
+
+
+
+/* 회원검색 */
+app.get("/member_list", member_list.listener);				//회원검색 list
+app.post("/member_list", member_list.listener);				
+app.get("/member_list_data", member_list_data.listener);				//회원검색 list
+app.post("/member_list_data", member_list_data.listener);
+app.get("/member_list_data2", member_list_data2.listener);				//회원검색 list
+app.post("/member_list_data2", member_list_data2.listener);
+
+app.get("/member_view", member_view.listener);				//회원검색 view
+app.post("/member_view", member_view.listener);				
+app.post("/member_modify", member_modify.listener);				
+app.post("/member_setup", member_setup.listener);				
+app.post("/member_setup_save", member_setup_save.listener);				
+
+/* 인쇄 작업 */
+app.get("/print_list", print_list.listener);
+app.post("/print_list", print_list.listener);
+
+/* 공지사항 */
+app.get("/board_list", user_brd_list.listener);		//board list
+app.post("/board_list", user_brd_list.listener);			
+app.get("/board_view", user_brd_view.listener);		//board view
+app.post("/board_view", user_brd_view.listener);
+app.post("/comment_list", user_comment_list.listener);
+app.post("/comment_save", user_comment_save.listener);
+
+/* 동문홍보 */
+app.get("/hongbo_board_list", user_hongbo_brd_list.listener);		//board list
+app.post("/hongbo_board_list", user_hongbo_brd_list.listener);			
+app.get("/hongbo_board_view", user_hongbo_brd_view.listener);		//board view
+app.post("/hongbo_board_view", user_hongbo_brd_view.listener);
+app.post("/hongbo_comment_list", user_hongbo_comment_list.listener);
+app.post("/hongbo_comment_save", user_hongbo_comment_save.listener);
+app.get("/hongbo_board_list_data", user_hongbo_brd_list_data.listener);		//board list
+app.post("/hongbo_board_list_data", user_hongbo_brd_list_data.listener);	
+
+/* 행사관리 */
+app.get(webUrl+"/event_board_list", event_board_list.listener);
+app.post(webUrl+"/event_board_list", event_board_list.listener);
+app.get(webUrl+"/event_board_write", event_board_write.listener);
+app.post(webUrl+"/event_board_write", event_board_write.listener);
+app.get(webUrl+"/event_board_view", event_board_view.listener);
+app.post(webUrl+"/event_board_view", event_board_view.listener);
+app.post(webUrl+"/event_board_save", event_board_save.listener);
+app.post(webUrl+"/event_board_del", event_board_del.listener);
+app.get(webUrl+"/event_board_file_del", event_board_file_del.listener);
+app.post(webUrl+"/event_board_file_del", event_board_file_del.listener);
+app.get(webUrl+"/event_comment_view", event_comment_view.listener);
+
+/* 행사신청관리 */
+app.get(webUrl+"/event_request_list", event_request_list.listener);
+app.post(webUrl+"/event_request_list", event_request_list.listener);
+app.post(webUrl+"/eventExceldown", event_request_exceldown.listener);
+app.post(webUrl+"/request_modify", request_modify.listener);
+app.get("/event_req_list", user_event_request_list.listener);
+app.post("/event_req_list", user_event_request_list.listener);
+
+/* 행사일정관리 */
+app.get("/event_board_list", user_event_board_list.listener);
+app.post("/event_board_list", user_event_board_list.listener);
+app.get("/event_board_view", user_event_board_view.listener);
+app.post("/event_board_view", user_event_board_view.listener);
+app.post("/event_comment_list", user_event_comment_list.listener);
+app.post("/event_comment_save", user_event_comment_save.listener);
+
+
+/* 일정 */
+app.get(webUrl+"/calendar", calendar.listener);
+app.post(webUrl+"/calendar", calendar.listener);
+app.get(webUrl+"/calendarList", calendarList.listener);
+app.post(webUrl+"/calendarList", calendarList.listener);
+app.get(webUrl+"/calendarSave", calendarSave.listener);
+app.post(webUrl+"/calendarSave", calendarSave.listener);
+
+app.get("/calendar", calendar.listener);
+app.post("/calendar", calendar.listener);
+app.get("/calendarList", calendarList.listener);
+app.post("/calendarList", calendarList.listener);
+app.get("/calendarSave", calendarSave.listener);
+app.post("/calendarSave", calendarSave.listener);
+
+
+/* 일정 */
+app.get("/userCalendar", userCalendar.listener);
+app.post("/userCalendar", userCalendar.listener);
+app.get("/userCalendarList", userCalendarList.listener);
+app.post("/userCalendarList", userCalendarList.listener);
+app.get("/userCalendarSave", userCalendarSave.listener);
+app.post("/userCalendarSave", userCalendarSave.listener);
+
+
+/* 회비관리 */
+
+app.get(webUrl+"/dues_view", dues_view.listener);
+app.post(webUrl+"/dues_view", dues_view.listener);
+
+app.get(webUrl+"/dues_modify", dues_modify.listener);
+app.post(webUrl+"/dues_modify", dues_modify.listener);
+
+app.get(webUrl+"/dues_popup", dues_popup.listener);
+app.post(webUrl+"/dues_popup", dues_popup.listener);
+
+app.get(webUrl+"/dues_getMemberList", dues_getMemberList.listener);
+app.post(webUrl+"/dues_getMemberList", dues_getMemberList.listener);
+
+app.get(webUrl+"/dues_getMemberInfo", dues_getMemberInfo.listener);
+app.post(webUrl+"/dues_getMemberInfo", dues_getMemberInfo.listener);
+
+app.get(webUrl+"/dues_save", dues_save.listener);
+app.post(webUrl+"/dues_save", dues_save.listener);
+
+app.get("/duse_info", duse_info.listener);
+app.post("/duse_info", duse_info.listener);
+
+
+app.post("/event_member_check", user_event_member_check.listener);	// 행사신청을 위한 회원체크
+app.get("/event_request_save", user_event_request_save.listener);
+app.post("/event_request_save", user_event_request_save.listener);
+
+app.get("/fail", function(request, response){
+	fail.listener(request, response);
+});
+
+var fail = require("./custom_module/fail.js");
+var andhttp = require("./custom_module/android/andhttp.js");
+
+app.post("/insertPushData", andhttp.action);
+
+var app_version = require("./function/app_version.js");
+app.post("/app_version", app_version.action);
+
+// ---------------------------------------- user Web --------------------------------//
+var index_uw = require("./custom_module/user/web/index_uw.js");
+app.get("/index_uw", function(request, response){
+	fs.readFile('views/user/web/index_uw.html', "utf-8", function(error, data){
+		response.send(layout.include("index_uw", data));
+	});
+
+});
+app.post("/index_uw",index_uw.listener);
+
+var excel_search = require("./custom_module/user/web/excel_search.js");
+var excel_download_1 = require("./custom_module/user/web/excel_download_1.js");
+var excel_download_2 = require("./custom_module/user/web/excel_download_2.js");
+var excel_download_3 = require("./custom_module/user/web/excel_download_3.js");
+var excel_download_4 = require("./custom_module/user/web/excel_download_4.js");
+var excel_download_5 = require("./custom_module/user/web/excel_download_5.js");
+var excel_download_6 = require("./custom_module/user/web/excel_download_6.js");
+var excel_download_7 = require("./custom_module/user/web/excel_download_7.js");
+var excel_download_8 = require("./custom_module/user/web/excel_download_8.js");
+var excel_download_9 = require("./custom_module/user/web/excel_download_9.js");
+var excel_download_10 = require("./custom_module/user/web/excel_download_10.js");
+var excel_download_11 = require("./custom_module/user/web/excel_download_11.js");
+var excel_download_12 = require("./custom_module/user/web/excel_download_12.js");
+
+app.get("/excel_search", excel_search.listener);
+app.post("/excel_search", excel_search.listener);
+
+app.get("/excel_download_1", excel_download_1.listener);
+app.post("/excel_download_1", excel_download_1.listener);
+
+app.get("/excel_download_2", excel_download_2.listener);
+app.post("/excel_download_2", excel_download_2.listener);
+
+app.get("/excel_download_3", excel_download_3.listener);
+app.post("/excel_download_3", excel_download_3.listener);
+
+app.get("/excel_download_4", excel_download_4.listener);
+app.post("/excel_download_4", excel_download_4.listener);
+
+app.get("/excel_download_5", excel_download_5.listener);
+app.post("/excel_download_5", excel_download_5.listener);
+
+app.get("/excel_download_6", excel_download_6.listener);
+app.post("/excel_download_6", excel_download_6.listener);
+
+app.get("/excel_download_7", excel_download_7.listener);
+app.post("/excel_download_7", excel_download_7.listener);
+
+app.get("/excel_download_8", excel_download_8.listener);
+app.post("/excel_download_8", excel_download_8.listener);
+
+app.get("/excel_download_9", excel_download_9.listener);
+app.post("/excel_download_9", excel_download_9.listener);
+
+app.get("/excel_download_10", excel_download_10.listener);
+app.post("/excel_download_10", excel_download_10.listener);
+
+app.get("/excel_download_11", excel_download_11.listener);
+app.post("/excel_download_11", excel_download_11.listener);
+
+app.get("/excel_download_12", excel_download_12.listener);
+app.post("/excel_download_12", excel_download_12.listener);
+
+// ---------------------------------------- user Web --------------------------------//
+
+var search = require("./custom_module/user/web/search.js");
+var search_data = require("./custom_module/user/web/search_data.js");
+var get_position = require("./custom_module/user/web/get_position.js");
+var get_position2 = require("./custom_module/user/web/get_position2.js");
+var Exceldown = require("./custom_module/user/web/Exceldown.js");
+var btn_preview = require("./custom_module/user/web/btn_preview.js");
+var btn_user_method = require("./custom_module/user/web/btn_user_method.js");
+
+app.get("/search", search.listener);
+app.post("/search", search.listener);
+
+app.get("/search_data", search_data.listener);
+app.post("/search_data", search_data.listener);
+
+app.get("/get_position", get_position.listener);
+app.post("/get_position", get_position.listener);
+
+app.get("/get_position2", get_position2.listener);
+app.post("/get_position2", get_position2.listener);
+
+app.get("/Exceldown", Exceldown.listener);
+app.post("/Exceldown", Exceldown.listener);
+
+app.get("/btn_preview", btn_preview.listener);
+app.post("/btn_preview", btn_preview.listener);
+
+app.get("/btn_user_method", btn_user_method.listener);
+app.post("/btn_user_method", btn_user_method.listener);
+
+//---------------------------------------- admin Web --------------------------------//
+var admin_exceldown = require("./custom_module/admin/web/excel/admin_exceldown.js");
+
+app.get(webUrl+"/admin_exceldown", admin_exceldown.listener);
+app.post(webUrl+"/admin_exceldown", admin_exceldown.listener);
+
+//---------------------------------------- user 권한 오류 Web --------------------------------//
+var return_back = require("./custom_module/user/web/return_back.js");
+
+app.get("/return_back", return_back.listener);
+app.post("/return_back",return_back.listener);
+
+// ---------------------------------------- user 권한 오류 Web --------------------------------//
+
+//db 커넥션이 끊어지는것을 막기위해
+function keepalive() {
+	console.log("----------------");
+	console.log("keepalive()");
+	console.log("first:"+db.state);
+	//(db가 disconnect되면 다시 연결)
+	/*if(db.state == "disconnected"){ 
+		db = require("./custom_module/DB_config.js").connect;
+		console.log("if disconnected -> " + db.state);
+	}*/	
+    db.query('select 1', [], function(err, result) {
+	    //if(err) return console.log(err);
+		if(err) console.log(err);
+	    else console.log("select 1");// Successul keepalive
+
+		console.log("last:"+db.state);
+		console.log("----------------");
+    });
+}	
+
+//setInterval(keepalive, 1000 * 60 * 1);	
+//setInterval(keepalive, 5000);	
+
+/*서버시작 & 포트*/
+var server = http.createServer(app).listen(9079, function(){
+	console.log("sangwon_search nodeJs SERVER START~~~!! 9079");
+});
+
+
+process.on
+(
+    'uncaughtException',
+    function (err)
+    {
+        var stack = err.stack;
+        var timeout = 1;
+
+        console.log("#######################################################################################################");
+        console.log("SERVER CRASHED!");
+        console.log("#######################################################################################################");
+        console.log(err, stack);
+        console.log("#######################################################################################################");
+
+    }
+);

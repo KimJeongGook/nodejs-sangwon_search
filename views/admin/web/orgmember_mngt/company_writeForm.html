@@ -1,0 +1,269 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	var mode = "<%=mode%>";
+	
+});
+
+function complaintSave(){
+
+	if($('#orgmem_name').val()==''){
+		alert('이름을 입력해 주세요.');
+		$('#orgmem_name').focus();
+		return false;
+ 	}
+	
+	var form = document.company__writeForm;
+	form.action='/admin/web/company_save';
+	form.submit();
+}
+
+
+function leadingZeros(n, digits) {
+	var zero = '';
+	n = n.toString();
+	
+	if (n.length < digits) {
+	  for (i = 0; i < digits - n.length; i++)
+	    zero += '0';
+	}
+	return zero + n;
+}
+
+function CheckOnlyNumber(TextBoxControl){
+	inputValue = TextBoxControl.value.replace(/ /g, "") ;
+	
+	if(inputValue.replace(/\d/g,"").length!=0){
+		alert("숫자만 입력해주세요.");
+		TextBoxControl.value = "";
+		TextBoxControl.focus();
+		return false ;
+	}
+	return true ;
+}
+	
+</script>
+<h2>
+	<% if(mode == 'write'){ %>
+		<span class="float_l">동문등록</span>
+	<%} else {%>
+		<span class="float_l">수정</span>
+	<%}%>
+</h2>
+
+<div class="content">
+	<form action="" id="company__writeForm" name="company__writeForm" method="post" enctype="multipart/form-data" autocomplete="off">
+		<% if(db_data.length > 0) {%> 
+			<input type="hidden" name="orgmem_no" value="<%=db_data[0].orgmem_no%>" /> 
+			<input type="hidden" name="mode" value="modify" /> 
+		<% }else{ %> 
+			<input type="hidden" name="mode" value="insert" /> 
+		<% } %>
+				
+		<table class="mb_10">
+			<tr>
+				<th>졸업사진</th>
+				<td colspan="3">
+					<% if(db_data.length > 0 && db_data[0].orgmem_grdimg !=null && db_data[0].orgmem_grdimg != '') {%>
+						<img src="../../../../file/member/<%=db_data[0].orgmem_grdimg %>" alt="사진" width="150px;" >&nbsp;
+						<img src="../../../../images/admin/icon_delete.gif" class="hand" onclick="file_del('<%=db_data[0].orgmem_no %>', '<%=db_data[0].orgmem_grdimg %>','member')" alt="삭제">
+						<input type="hidden" id="orgmem_grdimg" name="orgmem_grdimg" value="<%=db_data[0].orgmem_grdimg %>" />
+					<% }else{ %>
+						<input type="file" id="orgmem_grdimg" name="orgmem_grdimg" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>현재사진</th>
+				<td colspan="3">
+					<% if(db_data.length > 0 && db_data[0].orgmem_nowimg !=null && db_data[0].orgmem_nowimg != '') {%>
+						<img src="../../../../file/member/<%=db_data[0].orgmem_nowimg %>" alt="사진" width="150px;" >&nbsp;
+						<img src="../../../../images/admin/icon_delete.gif" class="hand" onclick="file_del('<%=db_data[0].orgmem_no %>', '<%=db_data[0].orgmem_nowimg %>','member')" alt="삭제">
+						<input type="hidden" id="orgmem_nowimg" name="orgmem_nowimg" value="<%=db_data[0].orgmem_nowimg %>" />
+					<% }else{ %>
+						<input type="file" id="orgmem_nowimg" name="orgmem_nowimg" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>졸업기수</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="orgmem_seqNo" name="orgmem_seqNo" value="<%=db_data[0].orgmem_seqNo %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="orgmem_seqNo" name="orgmem_seqNo" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>졸업반</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="orgmem_class" name="orgmem_class" value="<%=db_data[0].orgmem_class %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="orgmem_class" name="orgmem_class" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th><span style="color: #980000; font-weight: bold;">*</span>이름</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="orgmem_name" name="orgmem_name" value="<%=db_data[0].orgmem_name %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="orgmem_name" name="orgmem_name" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>한자</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="orgmem_name_han" name="orgmem_name_han" value="<%=db_data[0].orgmem_name_han %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="orgmem_name_han" name="orgmem_name_han" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>연락처</th>
+				<% if(db_data.length > 0) {%>
+					<td colspan="3">
+						<input type="text" id="orgmem_home_tel1" name="orgmem_home_tel1" value="<%=db_data[0].orgmem_home_tel1%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="orgmem_home_tel2" name="orgmem_home_tel2" value="<%=db_data[0].orgmem_home_tel2%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="orgmem_home_tel3" name="orgmem_home_tel3" value="<%=db_data[0].orgmem_home_tel3%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+					</td>
+				<% }else{ %>
+					<td colspan="3">
+						<input type="text" id="orgmem_home_tel1" name="orgmem_home_tel1" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="orgmem_home_tel2" name="orgmem_home_tel2" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="orgmem_home_tel3" name="orgmem_home_tel3" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+					</td>
+				<% } %>
+			</tr>
+			<tr>
+				<th>휴대폰</th>
+				<% if(db_data.length > 0) {%>
+					<td colspan="3">
+						<input type="text" id="orgmem_phone1" name="orgmem_phone1" value="<%=db_data[0].orgmem_phone1%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="orgmem_phone2" name="orgmem_phone2" value="<%=db_data[0].orgmem_phone2%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="orgmem_phone3" name="orgmem_phone3" value="<%=db_data[0].orgmem_phone3%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+					</td>
+				<% }else{ %>
+					<td colspan="3">
+						<input type="text" id="orgmem_phone1" name="orgmem_phone1" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="orgmem_phone2" name="orgmem_phone2" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="orgmem_phone3" name="orgmem_phone3" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+					</td>
+				<% } %>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="orgmem_home_addr1" name="orgmem_home_addr1" value="<%=db_data[0].orgmem_home_addr1 %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="orgmem_home_addr1" name="orgmem_home_addr1" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>회사명</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="company_name" name="company_name" value="<%=db_data[0].company_name %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="company_name" name="company_name" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>부서</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="company_position1" name="company_position1" value="<%=db_data[0].company_position1 %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="company_position1" name="company_position1" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>직위</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="company_position2" name="company_position2" value="<%=db_data[0].company_position2 %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="company_position2" name="company_position2" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>회사주소</th>				
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="orgmem_office_addr1" name="orgmem_office_addr1" value="<%=db_data[0].orgmem_office_addr1 %>" style="ime-mode: active;" />
+					<% }else { %>
+						<input type="text" id="orgmem_office_addr1" name="orgmem_office_addr1" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>회사번호</th>
+				<% if(db_data.length > 0) {%>
+					<td colspan="3">
+						<input type="text" id="company_tel1" name="company_tel1" value="<%=db_data[0].company_tel1%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="company_tel2" name="company_tel2" value="<%=db_data[0].company_tel2%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="company_tel3" name="company_tel3" value="<%=db_data[0].company_tel3%>" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+					</td>
+				<% }else{ %>
+					<td colspan="3">
+						<input type="text" id="company_tel1" name="company_tel1" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="company_tel2" name="company_tel2" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+						&nbsp; - &nbsp;
+						<input type="text" id="company_tel3" name="company_tel3" value="" style="width: 60px" onkeyup="CheckOnlyNumber(this);" />
+					</td>
+				<% } %>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="orgmem_email" name="orgmem_email" value="<%=db_data[0].orgmem_email %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="orgmem_email" name="orgmem_email" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+			<tr>
+				<th>비고</th>
+				<td colspan="3">
+					<% if(db_data.length > 0) {%>
+						<input type="text" id="remrk" name="remrk" value="<%=db_data[0].remrk %>" style="ime-mode: active;" />
+					<% }else{ %>
+						<input type="text" id="remrk" name="remrk" style="ime-mode: active;" />
+					<% } %>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<p class="btn">
+		<% if(db_data.length > 0) {%>
+			<button type="button" class="btn_big_blue hand" onclick="complaintSave();">수정</button>
+		<% } else {%>
+			<button type="button" class="btn_big_blue hand" onclick="complaintSave();">등록</button>
+		<% } %>
+
+		<button type="button" class="btn_big_black hand" onclick="window.close();">취소</button>
+	</p>
+</div>

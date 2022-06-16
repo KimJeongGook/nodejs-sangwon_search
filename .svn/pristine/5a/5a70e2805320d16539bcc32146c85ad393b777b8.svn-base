@@ -1,0 +1,94 @@
+
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+var layout = require("../../../../function/layout.js");
+var code = require("../../../../function/codeMngt.js");
+var db = require("../../../DB_config.js").connect;
+var session = require("../../../../function/session.js");
+
+exports.listener=function(request, response){
+	console.log("##################################### company_modify Enter #####################################");
+	
+	var connectorTitle = session.connectorTitle(request);
+	var orgmem_no = request.param("number");
+	var mode = "modify";
+	
+	var industry1 =  request.param("industry1") == '1차 선택' ? '' : request.param("industry1"); // 업종_대
+	var industry2 =  request.param("industry2") == '2차 선택' ? '' : request.param("industry2"); // 업종_중
+	var industry3 =  request.param("industry3") == '3차 선택' ? '' : request.param("industry3"); // 업종_소
+	
+	var industry2_mid = industry2.substring(1, 2); //가운데 숫자
+	var industry2_number = "";
+	
+	if(industry2_mid == '0'){
+		industry2_number = industry2.substring(3, 2);
+	} else {
+		industry2_number = industry2.substring(1, 3);
+	}
+	
+	console.log("industry2_number :: " + industry2_number);
+	
+	var industry2_search = "main" + industry1 + "_m_category";
+	var industry3_search = "main" + industry1 + "_m" + industry2_number + "_sc_category";
+
+	console.log("industry2_search ::: " + industry2_search);
+	console.log("industry3_search ::: " + industry3_search);
+	
+	var sql1 = "select " +
+					" orgmem_no,	\n" +
+					" company_name,	\n" +
+					" orgmem_name,	\n" +
+					" industry1,	\n" +
+					" industry2,	\n" +
+					" industry3,	\n" +
+					" orgmem_office_addr1,	\n" +
+					" orgmem_office_addr_zipcode,	\n" +
+					" sales,	\n" +
+					" employee_num,	\n" +
+					" create_year,	\n" +
+					" handling_item,	\n" +
+					" company_tel1,	\n" +
+					" company_tel2,	\n" +
+					" company_tel3,	\n" +
+					" orgmem_fax1,	\n" +
+					" orgmem_fax2,	\n" +
+					" orgmem_fax3,	\n" +
+					" orgmem_homepage,	\n" +
+					" classify_1,	\n" +
+					" classify_2,	\n" +
+					" classify_3,	\n" +
+					" classify_6,	\n" +
+					" classify_7,	\n" +
+					" classify_8,	\n" +
+					" create_id,	\n" +
+					" create_date,	\n" +
+					" create_host,	\n" +
+					" date_format(create_date, '%Y.%m.%d') as c_date	\n" +
+				" from orgmember where orgmem_no = " + orgmem_no;
+	
+	console.log("company_modify sql1 ::::: " + sql1);
+	
+	fs.readFile("./views/admin/web/orgmember_mngt/company_industry_writeForm.html", "utf-8", function(error, data){
+			db.query(sql1, function(error, results1){
+				code.selectBoxList("main_category", results1[0].industry1, function(err,industry1){
+					code.selectBoxList(industry2_search, results1[0].industry2, function(err,industry2){
+						code.selectBoxList(industry3_search, results1[0].industry3, function(err,industry3){
+							response.send(ejs.render(layout.include("web_admin_popup", data), {
+								db_data : results1,
+								connectorTitle:connectorTitle ,
+								menuNum: 3,
+								subMenuNum: 0,
+								mode : mode,
+								industry1 : industry1,
+								industry2 : industry2,
+								industry3 : industry3
+							}));
+						});
+					});
+					
+				});
+			});
+	});
+};

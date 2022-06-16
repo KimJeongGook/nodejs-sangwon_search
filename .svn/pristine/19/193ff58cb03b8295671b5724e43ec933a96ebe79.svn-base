@@ -1,0 +1,705 @@
+<%if(menuNum!=null){%>	
+	<script type="text/javascript">
+	var connectorNo = "<%=connectorNo%>";
+	var ynflag = 0;
+	var tagflag = 0;
+	var m_check = "";
+	$(document).ready(function(){
+		// var browserInfo = navigator.userAgent;	
+		// var filter = "win16|win32|win64|mac|macintel";
+		// 	 if ( navigator.platform ) { 
+		// 			if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) { 
+		// 				// alert("mobile");
+		// 					//mobile web
+							
+		// 					if(browserInfo.indexOf("flash21_mmate")>-1){
+		// 						// alert("mobile app");
+		// 					}
+		// 					//mobile app
+		// 					else {
+		// 						// alert("mobile web");
+		// 						location.href = '/fail';
+		// 					}
+		// 			} else { //pc 
+		// 				location.href = '/fail';
+		// 			}
+		// 		}
+		$('.m_follow').hide();
+		$('.m_money').hide();
+		$('.m_top').hide();
+		var mNum = '<%=menuNum%>';
+		var titleNm = '';
+
+		
+		if(mNum==1){
+			titleNm = '동문회 소개';
+		}else if(mNum==2){
+			$('.m_follow').show();
+			$('.m_money').show();
+			$('.m_top').show();
+			titleNm = '동문검색';
+
+			if(search_all == "내정보"){
+				mNum=5;
+				titleNm = '내정보';
+				$('.m_follow').hide();
+				$('.m_money').hide();
+				$('.m_top').hide();
+			}else if(search_all == 1){
+				titleNm = '총동문회 임원';
+			}else if(search_all == '고문'){
+				titleNm = '총동문회 고문';
+			}else if(search_all == '자문'){
+				titleNm = '총동문회 자문위원';
+			}else if(search_all == '지역'){
+				titleNm = '지역동문회 임원';
+			}else if(search_all == '장학회'){
+				titleNm = '대구공고 동문 장학회';
+			}else if(search_all == '기수'){
+				titleNm = '기수별 동문회원';
+			}
+		}else if(mNum==3){
+			titleNm = '공지사항';
+		}else if(mNum==4){
+			titleNm = '동문홍보'
+		}else if(mNum==5){
+			titleNm = '개인정보수정'
+		}else if(mNum==6){
+			titleNm = '행사일정'
+		}
+		$('#titleNm').html(titleNm);
+		
+		$('#footer ul li a img').each(function(i){
+			$(this).eq(i).attr('src', "images/footer0"+(parseInt(i))+".png");
+		});
+		$('#footer ul li').eq(mNum).addClass('on');
+		$('#footer ul li a img').eq(mNum).attr('src', "images/footer0"+(parseInt(mNum))+"_on.png");
+		
+		$(".mem_setup").click(function(e) {
+			e.preventDefault();
+			mem_ajax_data();
+		});
+		
+		$(".dispatch_pop_close").click(function(e) {
+			//$(window).unbind("touchmove");
+			ynflag=0;
+			$.unblockUI();
+		});
+		
+		$(".myInfo_modify_btn").click(function(e) {
+			e.preventDefault();
+			
+			/* if($.isNumeric($('#orgmem_phone1').val()) == false || $.trim($('#orgmem_phone1').val()) == "" || $.trim($('#orgmem_phone1').val()).length != 3 ) {
+				$('#orgmem_phone1').val("").focus();
+				alert("유효하지 않는 번호입니다.1");
+				return false;
+			}
+			if($.isNumeric($('#orgmem_phone2').val()) == false || $.trim($('#orgmem_phone2').val()) == "" || $.trim($('#orgmem_phone2').val()).length < 3 ) {
+				$('#orgmem_phone2').val("").focus();
+				alert("유효하지 않는 번호입니다.");
+				return false;
+			}
+			if($.isNumeric($('#orgmem_phone3').val()) == false || $.trim($('#orgmem_phone3').val()) == "" || $.trim($('#orgmem_phone3').val()).length != 4 ) {
+				$('#orgmem_phone3').val("").focus();
+				alert("유효하지 않는 번호입니다.");
+				return false;
+			} 
+			
+			if( !validateEmail($('#orgmem_email').val()) ) {
+				alert("이메일주소가 유효하지 않습니다.");
+				return false;
+			}*/
+			
+			if(confirm("개인정보를 수정하시겠습니까?")) {
+				$('#member_modify_form').ajaxSubmit({
+					dataType : 'text', 
+				beforeSend : function(){
+					$('.wrap-loading').removeClass('display-none');
+				},
+					success : function(data) {
+						alert( '개인정보가 수정되었습니다.' );
+						if(mNum == 1) window.location.reload();
+						$(".dispatch_pop_close").click();
+						m_check = "m_check";
+						strlimit = 0;
+						endlimit = 20;
+						ajax_data0(strlimit,endlimit,m_check);
+					},
+					complete:function(){
+				$('.wrap-loading').addClass('display-none');
+		    },
+					error : function(){
+						alert( '개인정보 수정을 실패하였습니다.' );
+						$(".dispatch_pop_close").click();
+					}
+				});
+			} else {
+				alert( '취소되었습니다.' );
+				$(".dispatch_pop_close").click();
+			}
+		});
+		
+		//팝업yn세팅해야함
+		$("#app_setup").click(function(){
+	 		// $.ajax({
+		    //     type:"POST",
+			// 	url:"/member_setup",
+		    //     datatype:"json",
+		    //     data:{orgmem_no : connectorNo},
+		    //     success : function(json) {
+		    //     	if( json.data.length != 0 ) {
+			        	
+		    //     		$(json.data).each(function(key, data){
+		    //     			$(".popup_yn_btn").removeClass("on");
+		    //     			$(".popup_yn_btn").removeAttr("checked");
+		    //     			$(".popup_yn_btn[value="+data.popup_yn+"]").addClass("on");
+		    //     			$(".popup_yn_btn[value="+data.popup_yn+"]").attr("checked" , "checked");
+		    //    		});
+		        		
+		    //     		//$(window).bind("touchmove", function(e){e.preventDefault()});
+		        		
+ 			        	$.blockUI({ 
+				            message: $(".app_setup"),
+				            css: { 
+				            	top: '0',
+				            	right: '0',
+				            	height: '100%',
+				            	width: '95%',
+				            	cursor : null,
+				                border: 'none',
+				                backgroundColor: '#FFF' 
+				            },
+				            onOverlayClick: $.unblockUI
+				        });
+		//         	} else {
+		//         		alert( '개인설정 가져오기를 실패하였습니다.' );
+		//         	}
+		//         },
+		//         error : function(xhr, status, error) {
+		//         	alert("error");
+		//         } 
+		//   	});
+		// });
+		
+		// $(".popup_yn_btn").click(function(){
+		// 	var popup_yn = $(this).attr("value");
+			
+	 	// 	$.ajax({
+		//         type:"POST",
+		//         url:"/member_setup_save",
+		//         datatype:"text",
+		//         data:{popup_yn : popup_yn, orgmem_no : connectorNo},
+		//         success : function(data) {
+		//         	if(data == "success"){
+		//         		$(".dispatch_pop_close").click();
+		//         		alert("설정이 변경되었습니다.");
+		//         		return false;
+		//         	}else{
+		//         		alert("설정이 변경에 실패하였습니다.");
+		//         		return false;
+		//         	}
+		        	
+		//         },
+		//         error : function(xhr, status, error) {
+		//         	alert("error");
+		//         } 
+		//   	});			
+		});
+	});
+	
+	function mem_ajax_data() {
+ 		$.ajax({
+	        type:"POST",
+	        url:"/member_view",
+	        datatype:"json",
+	        data:{orgmem_no : connectorNo},
+	        success : function(json, value) {
+	        	if( json.data.length != 0 ) {
+		        	$.each(json.data[0], function(key, value) {
+						var text = "";
+						if(key=='orgmem_img'){
+		        			if(value != null && value != '' && value != 'null'){
+			        			text = '<img src="../../../file/member/'+value+'" alt="사진" width="150px" />&nbsp';
+		        				text += '<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(' + connectorNo + ' , \''+ value + '\', \'member\')" alt="삭제" />';		
+			        			text += '<input type="hidden" id="memberImg" name="memberImg" value='+ value +' />'
+			        		
+			        			$('#memberimg').html(text);
+		        			}
+		        			else{
+								text = '<input type="file" id="memberImg" name="memberImg" maxlength="50" style="width:90%; ime-mode:active;" onchange="preview(this,$(\'#memberimg\'))"/>';	
+		        				$('#memberimg').html(text);
+		        			}
+		        		} else if(key == 'company_img1'){
+		        			if(value != null && value != '' && value != 'null'){
+			        			text = '<img src="../../../file/member/'+value+'" alt="사진" width="150px" />&nbsp';
+		        				text += '<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(' + connectorNo + ' , \''+ value + '\', \'com1\')" alt="삭제" />';		
+			        			text += '<input type="hidden" id="company_img1" name="company_img1" value='+ value +' />'
+			        			$('#companyimg1').html(text);
+		        			}
+		        			else{
+		        				text = '<input type="file" id="company_img1" name="company_img1" maxlength="50" style="width:90%; ime-mode:active;" onchange="preview(this,$(\'#companyimg1\'))"/>';
+								$('#companyimg1').html(text);
+		        			}
+		        		} else if(key == 'company_img2'){
+		        			if(value != null && value != '' && value != 'null'){
+			        			text = '<img src="../../../file/member/'+value+'" alt="사진" width="150px" />&nbsp';
+		        				text += '<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(' + connectorNo + ' , \''+ value + '\', \'com2\')" alt="삭제" />';		
+			        			text += '<input type="hidden" id="company_img2" name="company_img2" value='+ value +' />'
+			        		
+			        			$('#companyimg2').html(text);
+		        			}
+		        			else{
+		        				text = '<input type="file" id="company_img2" name="company_img2" maxlength="50" style="width:90%; ime-mode:active;" onchange="preview(this,$(\'#companyimg2\'))"/>';
+		        				$('#companyimg2').html(text);
+		        			}
+		        		} else if(key == 'company_img3'){
+		        			if(value != null && value != '' && value != 'null'){
+			        			text = '<img src="../../../file/member/'+value+'" alt="사진" width="150px" />&nbsp';
+		        				text += '<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(' + connectorNo + ' , \''+ value + '\', \'com3\')" alt="삭제" />';		
+			        			text += '<input type="hidden" id="company_img3" name="company_img3" value='+ value +' />'
+			        		
+			        			$('#companyimg3').html(text);
+		        			}
+		        			else{
+		        				text = '<input type="file" id="company_img3" name="company_img3" maxlength="50" style="width:90%; ime-mode:active;" onchange="preview(this,$(\'#companyimg3\'))"/>';
+		        				$('#companyimg3').html(text);
+		        			}
+		        		} else if(key == 'company_img4'){
+		        			if(value != null && value != '' && value != 'null'){
+			        			text = '<img src="../../../file/member/'+value+'" alt="사진" width="150px" />&nbsp';
+		        				text += '<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(' + connectorNo + ' , \''+ value + '\', \'com4\')" alt="삭제" />';		
+			        			text += '<input type="hidden" id="company_img4" name="company_img4" value='+ value +' />'
+			        		
+			        			$('#companyimg4').html(text);
+		        			}
+		        			else{
+		        				text = '<input type="file" id="company_img4" name="company_img4" maxlength="50" style="width:90%; ime-mode:active;" onchange="preview(this,$(\'#companyimg4\'))"/>';
+		        				$('#companyimg4').html(text);
+		        			}
+		        		} else if(key == 'business_card'){
+		        			if(value != null && value != '' && value != 'null'){
+			        			text = '<img src="../../../file/member/'+value+'" alt="사진" width="150px" />&nbsp';
+		        				text += '<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(' + connectorNo + ' , \''+ value + '\', \'card\')" alt="삭제" />';		
+			        			text += '<input type="hidden" id="business_card" name="business_card" value='+ value +' />'
+			        		
+			        			$('#cardimg').html(text);
+		        			}
+		        			else{
+		        				text = '<input type="file" id="business_card" name="business_card" maxlength="50" style="width:90%; ime-mode:active;" onchange="preview(this,$(\'#cardimg\'))"/>';
+		        				$('#cardimg').html(text);
+		        			}
+		        		} else if(key == 'company_intro'){
+		        			if(value != null && value != '' && value != 'null'){		        			
+			        			text = value + '<img src="../../../images/pdficon.png" alt="파일" width="20px" />&nbsp;'
+		        				text += '<img src="../../../images/admin/icon_delete.gif" class="hand" onclick="file_del(' + connectorNo + ' , \''+ value + '\', \'file\')" alt="삭제" />';		
+			        			text += '<input type="hidden" id="company_intro" name="company_intro" value='+ value +' />'
+			        		
+			        			$('#introfile').html(text);
+		        			}
+		        			else{
+		        				text = '<input type="file" id="company_intro" name="company_intro" maxlength="50" style="width:90%; ime-mode:active; accept=".pdf" onchange="filePreview(this,$(\'#introfile\'));"/>';
+		        				$('#introfile').html(text);
+		        			}
+		        		}else{
+		        			if( $('#'+key).length != 0 ) {
+				        		
+				        		if( $('#'+key).get(0).tagName == 'SPAN' ) {
+				        			$('#'+key).html( value );
+				        		} else if( $('#'+key).get(0).tagName == 'INPUT' ) {
+					        		$('#'+key).val(value);
+				        		} else if( $('#'+key).get(0).tagName == 'SELECT' ) {
+					        		$('#'+key).val(value);
+				        		}
+			        		}
+		        		}
+		        	});
+		        	
+		        	$("input[name=no]").val(connectorNo);
+		        	
+		        	//$(window).bind("touchmove", function(e){e.preventDefault()});
+		        	
+		        	$.blockUI({ 
+			            message: $(".setup"),
+			            css: { 
+			            	top: '10%',
+			            	left : '0',
+			            	right : '0',
+			            	width: '90%',
+			            	height: '80%',
+			            	margin: '0 auto',
+			                border: 'none',
+			                overflow : 'scroll',
+			                cursor : null,
+			                backgroundColor: '#FFF', 
+			            },
+			            onOverlayClick: $.unblockUI
+			        }); 
+	        	} else {
+	        		alert( '개인정보 가져오기를 실패하였습니다.' );
+	        	}
+	        },
+	        error : function(xhr, status, error) {
+	        	alert("error");
+	        } 
+	  	});
+	}	
+
+	function file_del(no, name, type) {
+		if(confirm("파일을 삭제하시겠습니까?")){
+			$.ajax({
+		        type:"POST",
+		        url:"/admin/web/orgm_file_del",
+		        data:{number : no, file_name : name, type : type},
+		        success : function(data) {
+		        	if(data == 'success'){
+		        		alert("파일삭제이 삭제되었습니다.");
+		        		/* window.location.reload(); */
+		        		mem_ajax_data(); 
+		        	}else{
+		        		alert("파일삭제가 실패했습니다");
+		        	}
+		        },
+		        error : function(xhr, status, error) {
+		        	alert("파일삭제가 실패했습니다");
+		        }
+		  	});	
+			
+		}
+	}
+
+		
+			function filePreview(file,target){
+
+		var file = file.files;
+
+		// console.log(file[0].name);
+
+		if((file[0].name.indexOf('pdf')) < 0){ //회사소개자료
+			alert("PDF파일만 업로드 가능합니다.");
+			$("#company_intro").val("");
+		}
+		$(target.selector).append('<div style="border:1px solid black; width:50px; position:relative; left:100px;"> <input type="button" value="업로드" onclick="m_save()"></div>'); //원문 ('<div class="save_btn" onclick="m_save()"><i class="fa fa-upload"></i></div>');
+		}
+
+	function preview(input, target) {
+		console.log(target.selector);
+		if(input.files && input.files[0]){
+		var fileName= input.files[0].name;
+		var ext=fileName.substr(fileName.length-3, fileName.length);
+		if(ext == "PEG" || ext == "peg"){
+			ext = "jpeg"
+		}
+		var isCheck=false; 
+			if(ext.toLowerCase()=='jpg' || ext.toLowerCase()=='gif' || ext.toLowerCase()=='png' || ext.toLowerCase()=='jpeg'){
+			isCheck=true;  
+			// var text = "";
+			// text = '<input type="file" id="company_img1" name="company_img1" maxlength="50" ime-mode:active;" accept="image/*" onchange="preview(this,$(\'#c_img1\'));" />';
+			
+			// $('#company_img11').html(text);
+			// var text1 = "";
+			// text1 = '<input type="file" id="company_img2" name="company_img2" maxlength="50" ime-mode:active;" accept="image/*" onchange="preview(this,$(\'#c_img2\'));" />';
+			// $('#company_img22').html(text1);	
+		}
+		$(target.selector).append('<div style="border:1px solid black; width:50px; position:relative; left:100px;"> <input type="button" value="업로드" onclick="m_save()"></div>'); //원문 ('<div class="save_btn" onclick="m_save()"><i class="fa fa-upload fa-2x"></i></div>');
+		if(isCheck==false){
+			alert("이미지파일만 업로드 가능합니다.");
+			jQuery(input).val("");
+			return;
+		}
+		var reader = new FileReader();
+		reader.readAsDataURL(input.files[0]);          
+		reader.onload = function(e) {
+			jQuery(target).attr('src', e.target.result);
+		}
+		}
+	}
+	function m_save(){
+		if(confirm("정보를 수정하시겠습니까?")){
+				$('#member_modify_form').ajaxSubmit({
+					dataType : 'text', 
+					success : function(data) {
+						alert( '개인정보가 수정되었습니다.' );
+						$(".dispatch_pop_close").click();
+						m_check = "m_check";
+						strlimit = 0;
+						endlimit = 20;
+						ajax_data0(strlimit,endlimit,m_check);
+					},
+		    
+					error : function(){
+						alert( '개인정보 수정을 실패하였습니다.' );
+						$(".dispatch_pop_close").click();
+					}
+					
+	});
+	} else {
+				alert( '취소되었습니다.' );
+				$(".dispatch_pop_close").click();
+			}
+}
+	function search_areah(event){
+		console.log(event);
+		strlimit = 0;
+		endlimit = 20;
+		num = 0;
+		var search_txt = $("input[name='search_text']").val();
+		//var orgmem_seqNo = $("#orgSeqList").val();
+		var orgmem_seqNum = $("#orgmem_seqNum").val();
+		$("#mbr_limitAra").html("");
+		var follow = '';
+		if(event == 'follow'){
+			$("#follow").val(event);
+			follow = 'start'
+		}else if(event == 'money'){
+			$("#follow").val(event);
+			follow = 'money'
+		}else if(event == 'top'){
+			$("#follow").val(event);
+			follow = 'top'
+		}
+
+		ajax_data(strlimit, endlimit);
+	}
+
+
+function ajax_data0(strlimit, endlimit,follow) {
+	
+	var search_txt = $("input[name='search_text']").val();
+	//var orgmem_seqNo = $("#orgSeqList").val();
+	var search_seqNo = $("#search_seqNo").val();
+	var search_major = $("#search_major").val();
+	var search_area = $("#search_area").val();
+	
+	$.ajax({
+        type:"POST",
+        url:"/member_list_data",
+        datatype:"json",
+		data:{strlimit : strlimit, endlimit : endlimit, search_text : search_txt, search_seqNo : search_seqNo, search_major : search_major, search_area : search_area,follow:follow,m_check:m_check },
+        success : function(json) {
+			$("#mbr_limitAra").empty();
+			var ment = makeText(json.db_data, json.result);
+       		$("#mbr_limitAra").append(ment);
+       		$("#member_count").text(json.db_data_length);
+       		//$("#member_count").text(json.db_data_length + "(" + json.app_install_count +")"); 앱설치수 숨김
+       		$("input[name='jsonlength']").val(json.db_data_length); 
+        },
+        beforeSend : function(){
+        	$('.wrap-loading').removeClass('display-none');
+        },
+        complete : function(){
+        	$('.wrap-loading').addClass('display-none');
+        },
+        error : function(xhr, status, error) {
+        	alert("등록된 회원이 없습니다.");
+        } 
+  	});
+}
+	
+	</script>
+	<style>
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ .blockPage {overflow-y: scroll;}
+ .blockPage::-webkit-scrollbar {width: 10px;}
+ .blockPage::-webkit-scrollbar-thumb {background-color: gray;}
+</style>
+	<!--상단-->
+		<div id="head">
+			<a href="/"><img src="/images/logo.png" alt="" /></a>
+			<span>
+				<img src="/images/100_business.png" alt="100대 기업" class="m_top" onclick="search_areah('top')">
+				<!-- <i class="fa fa-dice fa-1x m_top" onclick="search_areah('top')"></i> -->
+				<i class="fa fa-piggy-bank fa-1x m_money" onclick="search_areah('money')"></i>
+				<!--<i class="fa fa-star fa-1x m_follow" onclick="search_areah('follow')"></i>-->
+				<!-- <a href="#" class="mem_setup"><i class="far fa-user"></i></a> -->
+				<!-- <a href="javascript:history.back();"><i class="fa fa-arrow-left"></i></a> -->
+				<a href="#" id="app_setup"><i class="far fa-question-circle fa-lg"></i></a>
+			</span>
+		</div>
+		<div class="sub_head">
+			<font id="titleNm"><!-- title_name --></font>&nbsp;&nbsp;<font id="member_count"></font>
+		</div>
+	<!--//상단-->
+	
+	<div class="setup table01" style="display:none;">
+		<form action="/member_modify" id="member_modify_form" name="writeForm" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="no" value="" />
+			<div class="table_top">
+				<p>개인정보수정</p>
+			</div>
+			<table>
+				<colgroup>
+					<col width="30%" style="height: 100px;"/>
+					<col />
+				</colgroup>
+
+				<tbody>
+					<tr>
+						<th>이름/휴대폰</th>
+						<td>
+							<span id="orgmem_name"></span>/<span id="orgmem_phone1" ></span>-<span id="orgmem_phone2"></span>-<span id="orgmem_phone3"></span>
+						</td>
+					
+					</tr>
+					<tr>
+						<th>프로필 사진</th>
+						<td id="memberimg"></td>
+					</tr>
+					<tr>
+						<th>회사사진1</th>
+						<td id="companyimg1"></td>
+					</tr>
+					<tr>
+						<th>회사사진2</th>
+						<td id="companyimg2"></td>
+					</tr>
+					<tr>
+						<th>회사사진3</th>
+						<td id="companyimg3"></td>
+					</tr>
+					<tr>
+						<th>회사사진4</th>
+						<td id="companyimg4"></td>
+					</tr>
+					<tr>
+						<th>명함사진</th>
+						<td id="cardimg"></td>
+					</tr>
+					<tr>
+						<th>회사소개자료</th>
+						<td id="introfile"></td>
+					</tr>
+					<tr>
+						<th>회사이름</th>
+						<td><input id="orgmem_office_nm" name="orgmem_office_nm" maxlength="50" style="width:90%; ime-mode:active;"/>
+							<!-- <div div style="border:1px solid black; width:50px; position:relative; left:100px;"> <input type="button" value="수정" onclick="m_save()"></div> -->
+							
+						</td>
+					</tr>
+					<tr>
+						<th>회사주소</th>
+						<td><input id="orgmem_office_addr1" name="orgmem_office_addr1" style="width:90%; ime-mode:active;"></input>
+							<!-- <div div style="border:1px solid black; width:50px; position:relative; left:100px;"> <input type="button" value="수정" onclick="m_save()"></div> -->
+							
+						</td>
+					</tr>
+					<tr>
+						<th>회사전화</th>
+						<td><input type="number" id="company_tel1" name="company_tel1" style="width:25%; ime-mode:active;"/>
+						<input type="number" id="company_tel2" name="company_tel2" style="width:25%; ime-mode:active;"/>
+						<input type="number" id="company_tel3" name="company_tel3" style="width:25%; ime-mode:active;"/>
+							
+						<!-- <div div style="border:1px solid black; width:50px; position:relative; left:100px;"> <input type="button" value="수정" onclick="m_save()"></div> -->
+						
+							
+						</td>
+					
+					</tr>
+					<tr>
+						<th>홈페이지 주소</th>
+						<td><input id="orgmem_homepage" name="orgmem_homepage" maxlength="50" style="width:90%; ime-mode:active;"/>
+							<!-- <div div style="border:1px solid black; width:50px; position:relative; left:100px;"> <input type="button" value="수정" onclick="m_save()"></div> -->
+							
+						</td>
+					</tr>
+					<tr>
+						<th>SNS 주소</th>
+						<td><input id="orgmem_sns" name="orgmem_sns" maxlength="50" style="width:90%; ime-mode:active;"/>
+							
+						</td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td><input id="orgmem_email" name="orgmem_email" maxlength="50" style="width:90%; ime-mode:active;"/>
+							
+						</td>
+					</tr>
+					<tr>
+						<th>홍보동영상</th>
+						<td><input id="link1" name="link1" maxlength="50" style="width:90%; ime-mode:active;"/>
+							<!--원문 <div class="save_btn" onclick="m_save()"><i class="fa fa-upload"></i></div>-->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="table_bottom">
+				<ul>
+					<li><button class="myInfo_modify_btn">수정</button></li>
+					<li><div style="margin: 11px;" class="dispatch_pop_close">닫기</div></li>  <!-- style="margin: 11px;"추가 -->
+				</ul>
+			</div>
+			<!-- <button class="btn_blue btn_round myInfo_modify_btn">수정</button> -->
+		</form>
+		<div class="wrap-loading display-none">
+			<div><img src="/images/admin/ajax-loader_big.gif" /></div>
+		</div> 
+	</div>
+	
+	<div class="service_center app_setup setup_popup" style="display:none;">
+		<div class="sercive_head">
+			<p class="close"><i class="fa fa-times fa-lg dispatch_pop_close"></i></p>
+		</div>
+		<div class="alarm_setup">
+			<span class="set_tit">메세지도착 알림 설정</span>
+			<p class="btn_setup">
+				<label>
+					<input type="checkbox" />
+					<i></i>
+				</label>
+				<!-- <input type="radio" value="y" class="popup_yn_btn" /><button type="button" class="popup_yn_btn btn_skyblue btn_default" value="y">ON</button> <input type="radio" value="n" class="popup_yn_btn" /><button type="button" class="popup_yn_btn btn_white btn_default" value="n">OFF</button> -->
+			</p>
+		</div>
+		<div class="setup_notice">
+			<span class="set_tit">서비스 및 장애센터</span>
+			<p>모바일 회원수첩 이용시 불편한 점이나 개선사항이 있으시면 언제든지 연락해 주시기 바랍니다.   </p>
+			<p>빠른 시일내에 수용하여 사용자가 더 쉽고 편리하게 사용할 수 있도록 지원하겠습니다.</p>
+			<p>언제나 저희 (주)플래시21을 믿고 지지해주셔서 항상 감사드립니다.</p>
+		 </div>
+		 <div class="setup_txt">
+			<div class="setup_content">
+			   <div class="head">앱 제작 업체</div>
+			   <div class="txt">(주)플래시21</div>
+			</div>
+			<div class="setup_content">
+			   <div class="head">홈페이지</div>
+			   <div class="txt"><a href="http://www.flash21.com">www.flash21.com</a></div>
+			</div>
+			<div class="setup_content">
+			   <div class="head">담당자</div>
+			   <div class="txt">오유나 이사</div>
+			</div>
+			<div class="setup_content">
+			   <div class="head">서비스 문의</div>
+			   <div class="txt">010-2107-4500</div>
+			</div>
+			<div class="setup_content">
+			   <div class="head">제작문의</div>
+			   <div class="txt">yuna@flash21.com</div>
+			</div>
+			<div class="setup_content_c">
+			   <div class="head">동문회 당담자</div>
+			   <div class="txt">사무처장 추승철 59회</div>
+			</div>
+			<div class="setup_content_c">
+			   <div class="head">문의</div>
+			   <div class="txt">010-3803-9128</div>
+			</div>
+		 </div>
+		<div class="set_icon">
+			<a href="#"><img src="images/icon_naverblog.png"></a>
+			<a href="#"><img src="images/icon_instagram.png"></a>
+			<a href="#"><img src="images/icon_facebook.png"></a>
+			<a href="#"><img src="images/icon_youtube.png"></a>
+		</div>
+		<!-- <h2>메세지도착 알림 설정</h2>
+		<p class="btn_setup">
+			<input type="radio" value="y" class="popup_yn_btn" /><button class="popup_yn_btn btn_black btn_round" value="y">ON</button> <input type="radio" value="n" class="popup_yn_btn" /><button class="popup_yn_btn btn_black btn_round" value="n">OFF</button>
+		</p>	 -->
+	</div>		
+	<!-- 로딩 -->
+
+
+<%}%>

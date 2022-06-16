@@ -1,0 +1,174 @@
+<style>
+.overflow {
+      height: 400px;
+    }
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		//전공 selectbox
+		var s_orgmem_major = tag_place("<%=s_orgmem_major%>");
+		$('#search_major').html(s_orgmem_major);
+		
+		$("#search_major option").each(function(){
+    		if($('input[name="s_major"]').val()==$(this).val()){
+    			$(this).attr('selected',true);
+    		}
+    	});
+		
+		//직위 selectbox
+		var s_orgmem_area = tag_place("<%=s_orgmem_area%>");
+		$('#search_area').html(s_orgmem_area);
+		
+		$("#search_area option").each(function(){
+    		if($('input[name="s_area"]').val() == $(this).val()){
+    			$(this).attr('selected', true);
+    		}
+    	});
+		
+		/*page_navi*/
+		var page_navi = tag_place("<%=page_navi%>");
+		$('#page_navi').html(page_navi);
+		/*page_navi*/
+
+
+		$('#searchAction').click(function(){
+			var frm = document.writehtm;
+			$('#nowPage').val(1);
+			frm.action = '/admin/web/orgm_list_popup';
+			frm.submit();
+		});
+		$("#search_text").keydown(function(e){
+			if(e.keyCode == 13) $('#searchAction').click();
+		});
+		
+		$(".org_click").click(function(){
+			var orgmem_no = $(this).attr("orgmem_no");
+			var orgmem_name = $(this).attr("orgmem_name");
+			var orgmem_seqNo = $(this).attr("orgmem_seqNo");
+			
+			if(orgmem_seqNo == "0000") orgmem_seqNo = "재일동문";
+			else orgmem_seqNo = orgmem_seqNo+"회";
+			
+			$(opener.document).find("#orgmem_no").val(orgmem_no);
+			$(opener.document).find("#orgmem_name").val(orgmem_name);
+			$(opener.document).find("#orgmem_seqNm").val(orgmem_seqNo);
+			
+			window.close();
+		});
+		
+		$( "#orgSeqList" ).selectmenu({width: 100}).selectmenu( "menuWidget" ).addClass( "overflow" );
+		$( "#search_major" ).selectmenu({width: 100});
+		$( "#search_area" ).selectmenu({width: 100});
+	});
+	
+	function goPage(p_num){
+		var frm = document.writehtm;
+		frm.action = '/admin/web/orgm_list_popup';
+		frm.nowPage.value = p_num;
+		frm.submit();
+	}
+	 
+</script>
+	<h2>
+		<span class="float_l">회원검색</span>
+		<img src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" onclick="self.close();"/>
+	</h2>
+
+	<form action="/admin/web/orgm_list" id="writehtm" name="writehtm" method="post" onsubmit="return false;" autocomplete="off">
+		<input type="hidden" name="nowPage" value="<%=nowPage%>" id="nowPage"/>
+		<input type="hidden" name="brd_no" id="brd_no" value=""/>
+		<input type="hidden" name="s_major" id="s_major" value="<%=search_major%>"/>
+		<input type="hidden" name="s_area" id="s_area" value="<%=search_area%>"/>
+		
+	
+		<div class="board_search">
+			<p class="float_r">
+				<select name="orgmem_seqNo" id="orgSeqList">
+					<option value="" >기수선택</option>
+					
+					<% for(var k=70; k>=1; k--){ %>	
+						<option value="<%=k%>" <%if(orgmem_seqNo==k){%>selected="selected"<%}%>><%=k%>회</option>
+					<% } %>
+					<option value="0000" <%if(orgmem_seqNo=="0000"){%>selected="selected"<%}%>>재일동문</option>
+				</select>
+				<select name="search_major" id="search_major"></select>
+				<select name="search_area" id="search_area"></select>
+				<input type="text" name="search_text" id="search_text" value="<%=search_text%>" style="ime-mode:active; height: 24px;"/>
+				<!-- <input type="button" value="검색"  class="btn_small_black" id="searchAction" /> -->
+				<button class="ui-button" id="searchAction" type="button">
+					<span class="ui-icon ui-icon-search"></span>검색
+				</button>
+			</p>
+		</div>
+	
+		<div class="board_list">
+			<table>
+				<colgroup>
+					<col width="5%" /> <!-- 번호 -->
+					<col width="8%" /> <!-- 이름 -->
+					<col width="9%" /> <!-- 기수 -->
+					<col width="8%" /> <!-- 전공 -->
+					<col width="8%" /> <!-- 지역 -->
+					<col width="14%"/> <!-- 휴대폰 -->
+					<col width="18%" /> <!-- 근무지명 -->
+					<col /> <!-- 근무지 주소-->
+				</colgroup>
+	
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>이름</th>
+						<th>기수</th>
+						<th>전공</th>
+						<th>지역</th>
+						<th>휴대폰</th>
+						<th>근무지명</th>
+						<th>근무지주소</th>
+					</tr>
+				</thead>
+	
+				
+				<tbody>
+				<% if(db_data.length > 0) {
+					for(var i = 0; i < db_data.length; i++){ %>
+						<tr class="hand org_click" orgmem_no="<%=db_data[i].orgmem_no %>" orgmem_name="<%=db_data[i].orgmem_name %>" orgmem_seqNo="<%=db_data[i].orgmem_seqNo %>">
+							<td>
+								<%=page_start++%>
+							</td>
+							<td class="hand" style="text-align:left;" onclick="MM_openBrWindow('orgm_view','','width=450,height=750,scrollbars=1','<%=db_data[i].orgmem_no%>','')"> 
+								<%=db_data[i].orgmem_name %>
+							</td>
+							<td><%=db_data[i].orgmem_seqNm %></td>
+							<td><%=db_data[i].orgmem_major %></td>
+							<td><%=db_data[i].orgmem_area %></td>
+							<td>
+								<%if(db_data[i].orgmem_phone0 !=null && db_data[i].orgmem_phone0 !=''){%>
+									<%=db_data[i].orgmem_phone0 %>-<%=db_data[i].orgmem_phone2 %>-<%=db_data[i].orgmem_phone3 %>
+								<%}else{%>
+									<%=db_data[i].orgmem_phone1 %>-<%=db_data[i].orgmem_phone2 %>-<%=db_data[i].orgmem_phone3 %>
+								<%}%>
+							</td>
+						    <td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left;">
+						    	<%=db_data[i].orgmem_office_nm==null ? '' : db_data[i].orgmem_office_nm %>
+						    </td>
+						    <td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left;">
+						    	<%=db_data[i].orgmem_office_addr1==null ? '' : db_data[i].orgmem_office_addr1 %>
+						    	<%=db_data[i].orgmem_office_addr2==null ? '' : db_data[i].orgmem_office_addr2 %>
+						    </td>
+						</tr>
+					<% } } else {%>
+				<tr>
+					<td colspan="10">등록된 회원이 없습니다.</td>
+				</tr>
+				<% } %>
+				</tbody>
+			</table>
+		</div>
+	</form>
+	<!-- 페이징 -->
+	<div class="mt_20">
+		<div class="paging" id="page_navi">
+		</div>
+	</div>
+	<!-- //페이징 -->

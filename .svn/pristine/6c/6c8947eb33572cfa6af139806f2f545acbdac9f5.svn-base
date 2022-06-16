@@ -1,0 +1,428 @@
+<link type='text/css' href='/js/simplemodal-basic/css/demo.css' rel='stylesheet' media='screen' />
+<link type='text/css' href='/js/simplemodal-basic/css/basic.css' rel='stylesheet' media='screen' />
+<script type='text/javascript' src='/js/simplemodal-basic/js/jquery.simplemodal.js'></script>
+
+<script>
+	$(document).ready(function(){
+		$('input[name="st_date"], input[name="ed_date"]').val($.datepicker.formatDate('yy-mm-dd', new Date()));
+		
+		$.datepicker.regional['ko'] = {
+			buttonImage: '/images/admin/icon_calendar.gif',
+		    buttonImageOnly: true,
+	        closeText: '닫기',
+	        prevText: '이전달',
+	        nextText: '다음달',
+	        currentText: '오늘',
+	        monthNames: ['1월(JAN)','2월(FEB)','3월(MAR)','4월(APR)','5월(MAY)','6월(JUN)',
+	        '7월(JUL)','8월(AUG)','9월(SEP)','10월(OCT)','11월(NOV)','12월(DEC)'],
+	        monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+	        '7월','8월','9월','10월','11월','12월'],
+	        dayNames: ['일','월','화','수','목','금','토'],
+	        dayNamesShort: ['일','월','화','수','목','금','토'],
+	        dayNamesMin: ['일','월','화','수','목','금','토'],
+	        weekHeader: 'Wk',
+	        dateFormat: 'yy-mm-dd',
+	        firstDay: 0,
+	        isRTL: false,
+	        showMonthAfterYear: true,
+	        yearSuffix: '',
+	        showOn: 'both',
+	        buttonText: "달력",
+	        changeMonth: true,
+	        changeYear: true,
+	        showButtonPanel: true,
+	        yearRange: 'c-99:c+99',
+	    };
+	    $.datepicker.setDefaults($.datepicker.regional['ko']);
+	    
+	    $('#st_date').datepicker();
+	    $('#st_date').datepicker("option", "maxDate", $("#ed_date").val());
+	    $('#st_date').datepicker("option", "onClose", function ( selectedDate ) {
+        	$("#ed_date").datepicker( "option", "minDate", selectedDate );
+        	$('img.ui-datepicker-trigger').css({'cursor':'pointer', 'vertical-align':'middle', 'margin-left':'3px'}); // 달력 아이콘 스타일
+   		 });
+	    
+	    $('#ed_date').datepicker();
+	    $('#ed_date').datepicker("option", "minDate", $("#st_date").val());
+	    $('#ed_date').datepicker("option", "onClose", function ( selectedDate ) {
+        	$("#st_date").datepicker( "option", "maxDate", selectedDate );
+        	$('img.ui-datepicker-trigger').css({'cursor':'pointer', 'vertical-align':'middle', 'margin-left':'3px'}); // 달력 아이콘 스타일
+    	});
+		    
+		$('img.ui-datepicker-trigger').css({'cursor':'pointer', 'vertical-align':'middle', 'margin-left':'3px'}); // 달력 아이콘 스타일
+		
+		$("#searchBtn").on("click", function(){
+			$("#resultCnt").text("");
+			$("#excelBtn").show();
+			
+			if($('select[name="type"]').val() == "all"){
+				$('select[name="tr_sendstat"]').val("all");
+			}
+			
+			if($('select[name="type"]').val() == "all"){
+				$('select[name="status"]').val("all");
+			}
+			
+			var type = $('select[name="type"]').val();
+			
+			var tr_sendstat = $('select[name="tr_sendstat"]').val();
+			var status = $('select[name="status"]').val();
+			
+			var st_date = $('input[name="st_date"]').val();
+			var ed_date = $('input[name="ed_date"]').val();
+			
+			var chd_st_date = st_date.split("-").join("").substring(0,6); //테이블명에 들어갈 날짜(MMS_LOG_201512)
+			var chd_ed_date = ed_date.split("-").join("").substring(0,6); //테이블명에 들어갈 날짜(MMS_LOG_201512)
+			
+			$("#chd_st_date").val(chd_st_date);
+			$("#chd_ed_date").val(chd_ed_date);
+			
+			var sdate = parseInt(st_date.split("-").join(""));
+			var edate = parseInt(ed_date.split("-").join(""));
+			
+			/* 유효성 검사 */
+			if(st_date.value == "" || ed_date.value == ""){ //같은 년도만 검색할 수 있다.
+				alert("검색 조건을 입력하세요");
+			}else if(chd_st_date.substring(0,4) != chd_ed_date.substring(0,4)){
+				alert("두 날짜의 년도가 다릅니다.");
+			}else{
+				$.ajax({
+					type : "post",  
+					url : "/admin/web/ums_result",
+					data : {
+								type : type,
+								tr_sendstat : tr_sendstat,
+								status : status,
+								st_date : st_date,
+								ed_date : ed_date,
+								chd_st_date : chd_st_date,
+								chd_ed_date : chd_ed_date
+							  },
+					dataType : "json",
+					success : function(data){
+						var tableHTML = "";
+						var layerHTML = "";
+						if(data.length>0) {
+			    			$.each(data, function(index) {
+			    				if(type == "all"){
+			    					if(data[index].TR_MSG != undefined){
+				    					tableHTML += "<tr>";
+				    						tableHTML += "<td class='align_l'>"+data[index].TR_MSG+"</td>";
+				    						tableHTML += "<td>"+data[index].TR_PHONE+"</td>";
+				    						if(data[index].orgmem_seqNo == ""){
+				    							tableHTML += "<td>"+data[index].orgmem_seqNo+"</td>";
+				    						}else{
+					    						tableHTML += "<td>"+data[index].orgmem_seqNo+"기</td>";
+				    						}
+				    						tableHTML += "<td>"+data[index].orgmem_name+"</td>";
+				    						if(data[index].TR_SENDSTAT == 0){
+				    							tableHTML += "<td>발송대기</td>";
+				    						}else if(data[index].TR_SENDSTAT == 1){
+				    							tableHTML += "<td>송신완료</td>";
+				    						}else{
+				    							tableHTML += "<td>결과수신완료</td>";
+				    						}
+				    						if(data[index].TR_SENDDATE.substring(20, 22) == "AM"){
+					    						tableHTML += "<td>"+data[index].TR_SENDDATE.replace("AM", "오전")+"</td>";
+				    						}else{
+				    							tableHTML += "<td>"+data[index].TR_SENDDATE.replace("PM", "오후")+"</td>";
+				    						}
+				    						tableHTML += "<td>SMS</td>";
+				    					tableHTML += "</tr>";	
+			    					}else{
+			    						tableHTML += "<tr>";
+				    						tableHTML += "<td class='align_l'>"+data[index].SUBJECT+" <a href='javascript:;' onclick='layerPop("+index+");'><img src='../../../images/admin/btn_view.png'></a></a></td>";
+				    						tableHTML += "<td>"+data[index].PHONE+"</td>";
+				    						if(data[index].orgmem_seqNo == ""){
+				    							tableHTML += "<td>"+data[index].orgmem_seqNo+"</td>";
+				    						}else{
+					    						tableHTML += "<td>"+data[index].orgmem_seqNo+"기</td>";
+				    						}
+				    						tableHTML += "<td>"+data[index].orgmem_name+"</td>";
+				    						if(data[index].STATUS == 0){
+				    							tableHTML += "<td>전송대기</td>";
+				    						}else if(data[index].STATUS == 2){
+				    							tableHTML += "<td>송신완료</td>";
+				    						}else{
+				    							tableHTML += "<td>결과수신완료</td>";
+				    						}
+				    						if(data[index].REQDATE.substring(20, 22) == "AM"){
+					    						tableHTML += "<td>"+data[index].REQDATE.replace("AM", "오전")+"</td>";
+				    						}else{
+				    							tableHTML += "<td>"+data[index].REQDATE.replace("PM", "오후")+"</td>";
+				    						}
+				    						if(data[index].file_cnt_real > 0) {
+				    							tableHTML += "<td>MMS</td>";
+				    						} else {
+				    							tableHTML += "<td>LMS</td>";
+				    						}
+				    					tableHTML += "</tr>";	
+				    					
+				    					layerHTML += 	"<div id='layer"+index+"' class='pop-layer'>"
+				    					layerHTML += 		"<div class='pop-container'>"
+				    					layerHTML += 			"<div class='pop-conts'>"
+				    					layerHTML += 				"<p class='ctxt mb20'>"+data[index].MSG.replace(new RegExp('\r?\n','g'), '<br />')+"</p>"
+				    					layerHTML += 			"</div>"
+				    					layerHTML += 		"</div>"
+			    						layerHTML +=			"<div class='btn-r'>"
+			    						layerHTML +=				"<a href='#' class='umsQuick' msg='"+data[index].MSG+"'>문구활용</a>"
+				    					layerHTML +=				"<a href='#' class='cbtn'>Close</a>"
+				    					layerHTML +=			"</div>"
+				    					layerHTML += 	"</div>"
+				    					
+			    					}
+			    				}else if(type == "sms"){
+			    					tableHTML += "<tr>";
+			    						tableHTML += "<td class='align_l'>"+data[index].TR_MSG+"</td>";
+			    						tableHTML += "<td>"+data[index].TR_PHONE+"</td>";
+			    						if(data[index].orgmem_seqNo == ""){
+			    							tableHTML += "<td>"+data[index].orgmem_seqNo+"</td>";
+			    						}else{
+				    						tableHTML += "<td>"+data[index].orgmem_seqNo+"기</td>";
+			    						}
+			    						tableHTML += "<td>"+data[index].orgmem_name+"</td>";
+			    						if(data[index].TR_SENDSTAT == 0){
+			    							tableHTML += "<td>발송대기</td>";
+			    						}else if(data[index].TR_SENDSTAT == 1){
+			    							tableHTML += "<td>송신완료</td>";
+			    						}else{
+			    							tableHTML += "<td>결과수신완료</td>";
+			    						}
+			    						if(data[index].TR_SENDDATE.substring(20, 22) == "AM"){
+				    						tableHTML += "<td>"+data[index].TR_SENDDATE.replace("AM", "오전")+"</td>";
+			    						}else{
+			    							tableHTML += "<td>"+data[index].TR_SENDDATE.replace("PM", "오후")+"</td>";
+			    						}
+			    						tableHTML += "<td>SMS</td>";
+			    					tableHTML += "</tr>";	
+			    				}else{
+			    					tableHTML += "<tr>";
+			    						tableHTML += "<td class='align_l'>"+data[index].SUBJECT+" <a href='javascript:;' onclick='layerPop("+index+");'><img src='../../../images/admin/btn_view.png'></a></td>";
+			    						tableHTML += "<td>"+data[index].PHONE+"</td>";
+			    						if(data[index].orgmem_seqNo == ""){
+			    							tableHTML += "<td>"+data[index].orgmem_seqNo+"</td>";
+			    						}else{
+				    						tableHTML += "<td>"+data[index].orgmem_seqNo+"기</td>";
+			    						}
+			    						tableHTML += "<td>"+data[index].orgmem_name+"</td>";
+			    						if(data[index].STATUS == 0){
+			    							tableHTML += "<td>전송대기</td>";
+			    						}else if(data[index].STATUS == 2){
+			    							tableHTML += "<td>송신완료</td>";
+			    						}else{
+			    							tableHTML += "<td>결과수신완료</td>";
+			    						}
+			    						if(data[index].REQDATE.substring(20, 22) == "AM"){
+				    						tableHTML += "<td>"+data[index].REQDATE.replace("AM", "오전")+"</td>";
+			    						}else{
+			    							tableHTML += "<td>"+data[index].REQDATE.replace("PM", "오후")+"</td>";
+			    						}
+			    						if(data[index].file_cnt_real > 0) {
+			    							tableHTML += "<td>MMS</td>";
+			    						} else {
+			    							tableHTML += "<td>LMS</td>";
+			    						}
+			    					tableHTML += "</tr>";	
+			    					
+			    					layerHTML += 	"<div id='layer"+index+"' class='pop-layer'>"
+			    					layerHTML += 		"<div class='pop-container'>"
+			    					layerHTML += 			"<div class='pop-conts'>"
+			    					layerHTML += 				"<p class='ctxt mb20'>"+data[index].MSG.replace(new RegExp('\r?\n','g'), '<br />')+"</p>"
+			    					layerHTML += 			"</div>"
+			    					layerHTML += 		"</div>"
+		    						layerHTML +=			"<div class='btn-r'>"
+			    					layerHTML +=				"<a href='#' class='umsQuick' msg='"+data[index].MSG+"'>문구활용</a>"
+			    					layerHTML +=				"<a href='#' class='cbtn'>Close</a>"
+			    					layerHTML +=			"</div>"
+			    					layerHTML += 	"</div>"
+			    				}
+			    			});
+			    			
+			    			$("#resultCnt").text(data.length);
+			    		}else{
+			    			tableHTML += "<tr>";
+			    			tableHTML += 	"<td colspan='7'>조회된 데이터가 없습니다.</td>";
+			    			tableHTML += "</tr>";
+			    		}
+						$('#listArea').html(tableHTML);
+						$('#layerPop').html(layerHTML);
+					},beforeSend : function(){
+						$('.wrap-loading').removeClass('display-none');
+					},complete : function(){
+						$('.wrap-loading').addClass('display-none');
+				    }, error : function(xhr, status, error) {
+				    		alert("[오류] 상세설명\n\nxhr == " + xhr + "\n\nstatus == " + status + "\n\nerror == " + error);
+			      	}
+				});
+			}
+		});
+		
+		$("#excelBtn").on('click', function(){
+			var frm = document.result;
+		    var url    = "/admin/web/ums_result_excel_down";
+		    
+		    frm.action = url;
+		    frm.method = "post";
+		    frm.submit();
+		});
+		
+		$('select[name="type"]').on('change', function(){
+			if($(this).val() == "sms"){
+				$('select[name="tr_sendstat"]').show();
+				$('select[name="status"]').hide();
+			}else if($(this).val() == "lms"){
+				$('select[name="tr_sendstat"]').hide();
+				$('select[name="status"]').show();
+			}else{
+				$('select[name="tr_sendstat"]').hide();
+				$('select[name="status"]').hide();
+			}
+		});
+	});
+	
+	function layerPop(index){
+		var temp = $("#layer"+index+"");     //레이어의 id를 temp변수에 저장
+		var bg = temp.prev().hasClass('bg');    //dimmed 레이어를 감지하기 위한 boolean 변수
+		 
+		if(bg){
+			$('.layer').fadeIn();
+		}else{
+			temp.fadeIn();  //bg 클래스가 없으면 일반레이어로 실행한다.
+		}
+		 
+		temp.find('a.cbtn').click(function(e){
+			if(bg){
+				$('.layer').fadeOut();
+			}else{
+				temp.fadeOut();     //'닫기'버튼을 클릭하면 레이어가 사라진다.
+			}
+			e.preventDefault();
+		});
+		
+		temp.find('a.umsQuick').click(function(e){
+			if(confirm('문구를 활용하시겠습니까?')) {
+				var msg_length = 0;
+    			var msg_val = $(this).attr('msg');
+    			
+    			msg_length = (function(s, b, i, c){
+    				for(b=i=0;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1);
+    				return b
+    			})(msg_val);
+    			
+    			if(msg_length > 0) {
+    				$("#ums_msg_length",opener.document).html("").html(msg_length);
+    			}
+    			
+				$("textarea[name='ums_msg']",opener.document).val( $(this).attr('msg') );
+				window.open('about:blank', '_self').close();
+			}
+		});
+		 
+		$('.layer .bg').click(function(e){
+			$('.layer').fadeOut();
+			e.preventDefault();
+		});
+		
+		temp.center();
+	}
+	
+	jQuery.fn.center = function () {
+	    this.css("position","absolute");
+	    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+	    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+	    return this;
+	}
+</script>
+
+<style type="text/css">
+	.pop-layer {display:none; position: absolute; top: 50%; left: 50%; width: 410px; height:500px;  background-color:#fff; border: 5px solid #3571B5; z-index: 10;} 
+	.pop-layer .pop-container {padding: 20px 25px; width: 360px; height:400px; overflow-y:scroll;}
+	.pop-layer p.ctxt {color: #666; line-height: 25px;}
+	.pop-layer .btn-r {width: 100%; margin:10px 0 20px; padding-top: 10px; border-top: 1px solid #DDD; text-align:right;}
+	a.cbtn {display:inline-block; height:25px; padding:0 14px 0; border:1px solid #304a8a; background-color:#3f5a9d; font-size:13px; color:#fff; line-height:25px;}
+	a.cbtn:hover {border: 1px solid #091940; background-color:#1f326a; color:#fff;}
+	
+	a.umsQuick {display:inline-block; height:25px; padding:0 14px 0; border:1px solid #e27730; background-color:#e27730; font-size:13px; color:#fff; line-height:25px;}
+	a.umsQuick:hover {border: 1px solid #ff6600; background-color:#ff6600; color:#fff;}
+	
+	.wrap-loading{ /*화면 전체를 어둡게 합니다.*/
+	    position: fixed;
+	    left:0;
+	    right:0;
+	    top:0;
+	    bottom:0;
+	    background: rgba(0,0,0,0.2); /*not in ie */
+	    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#20000000', endColorstr='#20000000');    /* ie */
+	}
+	.wrap-loading div{position: fixed; top:50%; left:50%;margin-left: -21px; margin-top: -21px;}
+	.display-none{display:none;}
+</style>
+
+<form name="result" id="result" method="post" action="/admin/web/ums_result" autocomplete="off">
+	<div class="popup">
+		<h2><span>문자발송 결과조회</span><img class="float_r hand" onclick="window.close();" alt="" src="/images/admin/btn_close.gif"></h2>
+		<div class="mb_10 ml_50">
+			<input class="datePicker" type="text" id="st_date" name="st_date" readonly="readonly" style="width:70px;"/>&nbsp;~&nbsp;<input class="datePicker" type="text" id="ed_date" name="ed_date" readonly="readonly" style="width:70px;"/>
+			<input type="hidden" id="chd_st_date" name="chd_st_date"/>
+			<input type="hidden" id="chd_ed_date" name="chd_ed_date"/>
+			
+			
+			<select name="type" class="ml_10">
+				<option value="all">전체선택</option>
+				<option value="sms">SMS</option>
+				<option value="lms">LMS</option>
+				<option value="mms">MMS</option>
+			</select>
+			
+			<select name="tr_sendstat" style="display:none;">
+				<option value="all">전체선택</option>
+				<option value="0">발송대기</option>
+				<option value="1">전송완료</option>
+				<option value="2">결과수신완료</option>
+			</select>
+			
+			<select name="status" style="display:none;">
+				<option value="all">전체선택</option>
+				<option value="0">전송대기</option>
+				<option value="2">송신완료</option>
+				<option value="3">결과수신</option>
+			</select>
+			
+			<input type="button" id="searchBtn" class="btn_big_black hand" value="검색">
+			<input type="button" id="excelBtn" class="btn_big_red hand" value="EXCEL" style="display:none;">
+			
+			<p style="float:right; margin-right:50px; margin-top:9px;">검색 건수 : <span id="resultCnt"></span></p>
+		</div>
+		<div class="board_list">
+		
+			<table>
+				<colgroup>
+					<col width="#" />
+					<col width="10%" />
+					<col width="7%" />
+					<col width="7%" />
+					<col width="15%" />
+					<col width="17%" />
+					<col width="7%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th>문자제목</th>
+						<th>전화번호</th>
+						<th>기     수</th>
+						<th>이     름</th>
+						<th>발송상태</th>
+						<th>발송날짜</th>
+						<th>구     분</th>
+					</tr>
+				</thead>
+				<tbody id = "listArea">
+				</tbody>
+			</table>
+		</div>
+	</div>
+</form>
+<form id="layerPop" autocomplete="off"></form>
+<div class="wrap-loading display-none">
+    <div><img src="../../../images/ajax-loader.gif" /></div>
+</div>

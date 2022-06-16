@@ -1,0 +1,43 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	$('input[name="login_btn"]').live('click', function(){
+		var login_id = $('input[name="login_id"]').val().replace(/(\s*)/g, "");
+		if(login_id == "") {
+			alert('아이디를 입력하세요.\n\nEnter your ID');
+			$('input[name="login_id"]').val("");
+			return false;
+		} else {
+			$('input[name="login_id"]').val(login_id);
+		}
+		var login_pw = $('input[name="login_pw"]').val().replace(/(\s*)/g, "");
+		if(login_pw == "") {
+			alert('비밀번호를 입력하세요.\n\nEnter your Password');
+			$('input[name="login_pw"]').val("");
+			return false;
+		} else {
+			$('input[name="login_pw"]').val(login_pw);
+		}
+		
+		if( (login_id!="test") || (login_pw!="1234") ) {
+			alert("등록된 사용자가 아닙니다.");
+			$('input[name="login_id"]').val("");
+			$('input[name="login_pw"]').val("");
+			return false;
+		} else {
+			window.location.href = "/";
+		}
+	});
+});
+</script>
+
+<div class="login">
+	<dl>
+		<dt>ID</dt>
+		<dd><input type="text" name="login_id"/></dd>
+	</dl>
+	<dl>
+		<dt>Password</dt>
+		<dd><input type="password" name="login_pw"/></dd>
+	</dl>
+</div>
+<p class="align_c"><input type="button" value="로그인(Login)" class="btn_blue btn_blue_login" name="login_btn"></p>

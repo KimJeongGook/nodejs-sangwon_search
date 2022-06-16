@@ -1,0 +1,115 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+	});
+</script>
+	<h2><span class="float_l">기업상세</span><!-- <img onclick="window.close();" src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" /> --></h2>
+ 	<div class="content"> 
+		<table class="mb_10">
+			<tr>
+			</tr>
+		</table>
+
+		<table>
+			<tr>
+				<th>기업명</th>
+				<td><%=db_data[0].company_name %></td>
+			</tr>
+			<tr>
+				<th>대표자</th>
+				<td><%=db_data[0].orgmem_name %></td>
+			</tr>
+			<tr>
+				<th>업종_대</th>
+				<td><%=db_data[0].industry1_nm %></td>
+			</tr>
+			<tr>
+				<th>업종_중</th>
+				<td><%=db_data[0].industry2_nm %></td>
+			</tr>
+			<tr>
+				<th>업종_소</th>
+				<td><%=db_data[0].industry3_nm %></td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td><%=db_data[0].orgmem_office_addr1 %></td>
+			</tr>	
+			<tr>
+				<th>우편번호</th>
+				<td><%=db_data[0].orgmem_office_addr_zipcode %></td>
+			</tr>	
+			<tr>
+				<th>매출액</th>
+				<td><%=db_data[0].sales %></td>
+			</tr>	
+			<tr>
+				<th>종업원수</th>
+				<td><%=db_data[0].employee_num %></td>
+			</tr>
+			<tr>
+				<th>설립년도</th>
+				<td><%=db_data[0].create_year %></td>
+			</tr>
+			<tr>
+				<th>취급품목</th>
+				<td><%=db_data[0].handling_item %></td>
+			</tr>
+			<tr>
+				<th>회사번호</th>
+				<td>
+					<%if(db_data[0].company_tel1!=null && db_data[0].company_tel1!='null' && db_data[0].company_tel1!=''){%>
+						<%=db_data[0].company_tel1 %>-<%=db_data[0].company_tel2 %>-<%=db_data[0].company_tel3 %>
+					<%}%>
+				</td>
+			</tr>
+			<tr>
+				<th>팩스번호</th>
+				<td>
+					<%if(db_data[0].orgmem_fax1!=null && db_data[0].orgmem_fax1!='null' && db_data[0].orgmem_fax1!=''){%>
+						<%=db_data[0].orgmem_fax1 %>-<%=db_data[0].orgmem_fax2 %>-<%=db_data[0].orgmem_fax3 %>
+					<%}%>
+				</td>
+			</tr>
+			<tr>
+				<th>업체홈페이지</th>
+				<td><%=db_data[0].orgmem_homepage %></td>
+			</tr>
+			
+			<tr>
+				<th>신제품(NEP)</th>
+				<td><%=db_data[0].classify_1 %></td>
+			</tr>
+			
+			<tr>
+				<th>성능인증</th>
+				<td><%=db_data[0].classify_2 %></td>
+			</tr>
+			
+			<tr>
+				<th>여성기업</th>
+				<td><%=db_data[0].classify_3 %></td>
+			</tr>
+			
+			<tr>
+				<th>산업융합</th>
+				<td><%=db_data[0].classify_6 %></td>
+			</tr>
+			
+			<tr>
+				<th>우수조달</th>
+				<td><%=db_data[0].classify_7 %></td>
+			</tr>
+			
+			<tr>
+				<th>장애인기업</th>
+				<td><%=db_data[0].classify_8 %></td>
+			</tr>
+			
+		</table>
+
+		<p class="btn">
+			<button class="btn_big_blue hand" onclick="location.href='company_modify?mode=modify&number=<%=db_data[0].orgmem_no %>&industry1=<%=db_data[0].industry1 %>&industry2=<%=db_data[0].industry2 %>&industry3=<%=db_data[0].industry3 %>'">수정</button>
+			<button class="btn_big_black hand" onclick="window.close();">닫기</button>
+		</p>
+	</div>

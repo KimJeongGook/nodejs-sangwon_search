@@ -1,0 +1,47 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".contImg").click(function() {
+			if( $(this).get(0).tagName=="IMG" ) {
+				var url = "/views/user/chart/img_view.html?imgSRC="+$(this).attr("src");
+				
+				var standalone = window.navigator.standalone,
+			    userAgent = window.navigator.userAgent.toLowerCase(),
+			    safari = /safari/.test( userAgent ),
+			    ios = /iphone|ipod|ipad/.test( userAgent );
+				
+				if( ios ) {
+				    if ( !standalone && safari ) {
+				        //browser
+				    } else if ( standalone && !safari ) {
+				        //standalone
+				    } else if ( !standalone && !safari ) {
+				        //uiwebview
+				        window.location="jscall://"+url;
+				    };
+				} else {
+					// not ios
+					window.location.href = url;
+				};
+				//window.location.href = url;
+				//window.open('/views/user/hongbo_board/img_view.html?imgSRC='+$(this).attr("src")+'', 'hongboView_Pop', 'width=500, height=500');
+			}
+		});
+	});
+</script>
+
+<!-- 탭 -->
+<div class="intro_menu">
+   <ul>
+	<li><a href="chart_mba_list">인사말</a></li>
+	<li><a href="rules">회칙</a></li>
+	<li><a href="club">연혁</a></li>
+	<li><a href="orgchart" class="intro_menu_on">조직도</a></li>
+	<li><a href="membership">동문회비</a></li>
+	<li><a href="place">오시는길</a></li>
+   </ul>
+</div>
+<div id="container_intro">
+	<img src="images/orgchart.jpg" style="max-width: 100%;">
+</div>

@@ -1,0 +1,235 @@
+<h2><span class="float_l">회원관리</span><img onclick="window.close();" src="../../../images/admin/btn_close.gif" alt="" class="float_r hand" /></h2>
+<script>
+	$(document).ready(function(){
+		if("<%=db_data[0].topcompany %>" == "Y"){
+			$(".topcompany").prop("checked", true);	
+			$(".topcompany").attr("disabled", true);	
+		}else{
+			$(".topcompany").prop("checked", false);
+			$(".topcompany").attr("disabled", true);	
+		}
+	});
+
+</script>
+
+<div class="content"> 
+   <table class="mb_10">
+	   <tr>
+		   <% if(db_data.length > 0 && db_data[0].orgmem_img != null && db_data[0].orgmem_img != '') {%>
+			   <th><img src="../../../file/member/<%=db_data[0].orgmem_img %>" alt="사진" width="117px"/></th>
+		   <% }else{ %>
+			   <th><img src="../../../../images/icon_dispatch.png" alt="" width="117px"/></th>
+		   <% } %>
+		   <td>
+			   <dl>
+				   <dt><strong><%=db_data[0].orgmem_name %></strong>							
+				   </dt>
+				   <dd>
+				   </dd>
+			   </dl>
+		   </td>
+	   </tr>
+   </table>
+   <table class="mb_10">
+	   
+	   <tr>
+	   <th>회사사진</th>
+	   
+		   <% if(db_data.length > 0 && db_data[0].company_img1 != null && db_data[0].company_img1 != '') {%>
+		   <td>
+			   <img src="../../../file/member/<%=db_data[0].company_img1 %>" alt="사진" width="117px"/>
+		   </td>
+		   <% } %>
+
+
+		   <% if(db_data.length > 0 && db_data[0].company_img2 != null && db_data[0].company_img2 != '') {%>
+		   <td>
+			   <img src="../../../file/member/<%=db_data[0].company_img2 %>" alt="사진" width="117px"/>
+		   </td>
+		   <% } %>
+
+
+		   <% if(db_data.length > 0 && db_data[0].company_img3 != null && db_data[0].company_img3 != '') {%>
+		   <td>
+			   <img src="../../../file/member/<%=db_data[0].company_img3 %>" alt="사진" width="117px"/>
+		   </td>
+		   <% } %>
+
+
+		   <% if(db_data.length > 0 && db_data[0].company_img4 != null && db_data[0].company_img4 != '') {%>
+		   <td>
+			   <img src="../../../file/member/<%=db_data[0].company_img4 %>" alt="사진" width="117px"/>
+		   </td>
+		   <% } %>
+	   </tr>
+	   
+	   <tr>
+			   <th>명함</th>
+			   <% if(db_data.length > 0 && db_data[0].business_card != null && db_data[0].business_card != '') {%>
+				   <td colspan="4">
+					   <img src="../../../file/member/<%=db_data[0].business_card %>" alt="사진" width="117px"/>
+				   </td>
+				   <% } %>
+	   </tr>
+	   
+	   <tr>
+			   <th>회사소개자료</th>
+			   <% if(db_data.length > 0 && db_data[0].company_intro != null && db_data[0].company_intro != '') {%>
+				   <td colspan="4">
+				   <a href="/../../../file/member/<%=db_data[0].company_intro%>"download>
+				   <%=db_data[0].company_intro %>
+				   </a>
+					   <img src="../../../images/pdficon.png" alt="사진" width="20px"/>
+				   </td>
+				   <% } %>
+	   </tr>
+   </table>
+   <table>
+	   <tbody>
+		   <!-- <tr>
+			   <th>코드1</th>
+			   <td><%=db_data[0].code1==null ? '' : db_data[0].code1 %></td>
+			   <th>코드2</th>
+			   <td><%=db_data[0].code2==null ? '' : db_data[0].code2 %></td>
+		   </tr>
+		   <tr>
+			   <th>코드3</th>
+			   <td><%=db_data[0].code3==null ? '' : db_data[0].code3 %></td>
+			   <th>코드4</th>
+			   <td><%=db_data[0].code4==null ? '' : db_data[0].code4 %></td>
+		   </tr> -->
+		   	<tr>
+				<th>100대 기업</th>
+				<td colspan="4" class="topcompany">
+					<input type="checkbox" class="topcompany">
+				</td>
+			</tr>  
+		   <tr>
+			   <th>성명(국문)</th>
+			   <td colspan="4"><%=db_data[0].orgmem_name==null ? '' : db_data[0].orgmem_name %></td>
+		   </tr>
+		   <tr>
+			   <th>성명(한문)</th>
+			   <td colspan="4"><%=db_data[0].orgmem_name_chi==null ? '' : db_data[0].orgmem_name_chi %></td>
+		   </tr>
+		   <tr>
+			   <th>기수</th>
+			   <td colspan="4"><%=db_data[0].orgmem_seqNm==null ? '' : db_data[0].orgmem_seqNm %></td>
+		   </tr>
+		   <tr>
+			   <th>지역</th>
+			   <td colspan="4"><%=db_data[0].orgmem_area==null ? '' : db_data[0].orgmem_area %></td>
+		   </tr>
+		   <tr>
+			   <th>전공</th>
+			   <td colspan="4"><%=db_data[0].orgmem_major==null ? '' : db_data[0].orgmem_major %></td>
+		   </tr>
+		   <tr>
+			   <th>상세전공</th>
+			   <td colspan="4"><%=db_data[0].orgmem_major_txt==null ? '' : db_data[0].orgmem_major_txt %></td>
+		   </tr>
+		   <tr>
+				<th>동문회직책</th>
+				<td colspan="4"><%=db_data[0].orgmem_position1==null ? '' : db_data[0].orgmem_position1 %> -> <%=db_data[0].orgmem_position2==null ? '' : db_data[0].orgmem_position2 %> -> <%=db_data[0].orgmem_position3==null ? '' : db_data[0].orgmem_position3 %></td>
+		   </tr>
+		   <tr>
+				<th>장학회직책</th>
+				<td colspan="4"><%=db_data[0].chapter_position1==null ? '' : db_data[0].chapter_position1 %> -> <%=db_data[0].chapter_position2==null ? '' : db_data[0].chapter_position2 %> -> <%=db_data[0].chapter_position3==null ? '' : db_data[0].chapter_position3 %></td>
+		   </tr>
+		   <tr>
+				<th>위원회직책</th>
+				<td colspan="4"><%=db_data[0].committee_position1==null ? '' : db_data[0].committee_position1 %> -> <%=db_data[0].committee_position2==null ? '' : db_data[0].committee_position2 %> -> <%=db_data[0].committee_position3==null ? '' : db_data[0].committee_position3 %></td>
+		   </tr>
+		   <tr>
+			<th>자문 / 고문</th>
+			<td colspan="4"><%=db_data[0].etc_position==null ? '' : db_data[0].etc_position %></td>
+			  </tr>
+			<tr>
+				<th>기타 직책</th>
+				<td colspan="4"><%=db_data[0].etc_position1==null ? '' : db_data[0].etc_position1 %></td>
+			</tr>
+		   <tr>
+			   <th>휴대폰</th>
+			   <td colspan="4"><%=db_data[0].orgmem_phone1==null ? '' : db_data[0].orgmem_phone1 %>-<%=db_data[0].orgmem_phone2==null ? '' : db_data[0].orgmem_phone2 %>-<%=db_data[0].orgmem_phone3==null ? '' : db_data[0].orgmem_phone3 %></td>
+		   </tr>
+		   <tr>
+			   <th>팩스번호</th>
+			   <td colspan="4"><%=db_data[0].orgmem_fax1==null ? '' : db_data[0].orgmem_fax1 %>-<%=db_data[0].orgmem_fax2==null ? '' : db_data[0].orgmem_fax2 %>-<%=db_data[0].orgmem_fax3==null ? '' : db_data[0].orgmem_fax3 %></td>
+		   </tr>
+		   <tr>
+			   <th>이메일</th>
+			   <td colspan="4"><%=db_data[0].orgmem_email==null ? '' : db_data[0].orgmem_email %></td>
+		   </tr>
+		   <tr>
+			   <th>근무지명</th>
+			   <td colspan="4"><%=db_data[0].orgmem_office_nm==null ? '' : db_data[0].orgmem_office_nm %></td>
+		   </tr>
+		   <tr>
+			   <th>직종</th>
+			   <td colspan="4"><%=db_data[0].industry==null ? '' : db_data[0].industry %></td>
+		   </tr>
+		   <tr>
+			   <th>사업분야</th>
+			   <td colspan="4"><%=db_data[0].business_field==null ? '' : db_data[0].business_field %></td>
+		   </tr>
+		   <tr>
+			   <th>근무지 주소</th>
+			   <td colspan="4">
+				   우편번호(<%=db_data[0].orgmem_office_addr_zipcode==null ? '' : db_data[0].orgmem_office_addr_zipcode %>)
+				   <%=db_data[0].orgmem_office_addr1==null ? '' : db_data[0].orgmem_office_addr1 %>
+				   <%=db_data[0].orgmem_office_addr2==null ? '' : db_data[0].orgmem_office_addr2 %>
+			   </td>
+		   </tr>
+		   <tr>
+			   <th>부서</th>
+			   <td colspan="4"><%=db_data[0].orgmem_department==null ? '' : db_data[0].orgmem_department %></td>
+		   </tr>
+		   <tr>
+			   <th>직위</th>
+			   <td colspan="4"><%=db_data[0].orgmem_position==null ? '' : db_data[0].orgmem_position %></td>
+		   </tr>
+		   <tr>
+			   <th>연락처</th>
+			   <td colspan="4"><%=db_data[0].company_tel1==null ? '' : db_data[0].company_tel1 %>-<%=db_data[0].company_tel2==null ? '' : db_data[0].company_tel2 %>-<%=db_data[0].company_tel3==null ? '' : db_data[0].company_tel3 %></td>
+		   </tr>
+		   <tr>
+			   <th>자택 주소</th>
+			   <td colspan="4">
+				   우편번호(<%=db_data[0].orgmem_home_addr_zipcode==null ? '' : db_data[0].orgmem_home_addr_zipcode %>)
+				   <%=db_data[0].orgmem_home_addr1==null ? '' : db_data[0].orgmem_home_addr1 %>
+				   <%=db_data[0].orgmem_home_addr2==null ? '' : db_data[0].orgmem_home_addr2 %>
+			   </td>
+		   </tr>
+		   <tr>
+			   <th>홈페이지 주소</th>
+			   <td colspan="4"><%=db_data[0].orgmem_homepage==null ? '' : db_data[0].orgmem_homepage %></td>
+		   </tr>
+		   <tr>
+			   <th>SNS 주소</th>
+			   <td colspan="4"><%=db_data[0].orgmem_sns==null ? '' : db_data[0].orgmem_sns %></td>
+		   </tr>
+		   <tr>
+			   <th>홍보동영상</th>
+			   <td colspan="4"><%=db_data[0].link1==null ? '' : db_data[0].link1 %></td>
+		   </tr>
+		   <tr>
+			   <th>지식백과</th>
+			   <td colspan="4"><%=db_data[0].link2==null ? '' : db_data[0].link2 %></td>
+		   </tr>
+		   <tr>
+			   <th>비고</th>
+			   <td colspan="4"><%=db_data[0].remrk==null ? '' : db_data[0].remrk %></td>
+		   </tr>
+	   </tbody>
+   </table>
+   <p class="btn">
+	   <% if (db_data[0].orgmem_seqNo != '00'){ %>
+		   <button class="ui-button" onclick="location.href='orgm_modify?mode=modify&number=<%=db_data[0].orgmem_no %>'" type="button">
+			   <span class="ui-icon ui-icon-refresh"></span>수정
+		   </button>
+	   <%}%>
+	   <button class="ui-button" onclick="window.close();" type="button">
+		   <span class="ui-icon ui-icon-closethick"></span>취소
+	   </button>
+   </p>
+</div>

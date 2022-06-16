@@ -1,0 +1,280 @@
+<script type="text/javascript">
+   
+   $(document).ready(function(){
+      // function getParameterByName(name) {
+      //    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      //    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      //    results = regex.exec(location.search);
+      //    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      // }
+
+      var name = '<%= search_name %>';
+      // var seqNo = '<%= search_name %>';
+
+      var postData = {
+         "name" : name,
+      };
+      console.log(postData);
+      $.ajax({
+         url: '/search_result',
+         type: 'POST',
+         data: postData,
+         success: function(data){
+            // console.log(data.success);
+            // console.log(data.result);
+      
+            var userList = data.result;
+            var userListLength = userList.length;
+     
+            for(var i = 0; i < userListLength; i++){
+               
+               var user = userList[i];
+               var userName = user.orgmem_name;
+               var userSeqNo = user.orgmem_seqNo;
+               var userGrdYear = user.orgmem_grdyear;
+               var userGrdImg = user.grd_img;
+
+               var container = document.getElementsByClassName('container')[0];
+               var member_container = document.createElement('div');
+               member_container.classList.add('member-container');
+               
+
+
+
+               var userImg = document.createElement('div');
+               if(userGrdImg != ''){
+                  userImg.innerHTML = "<img src=../file/member/"+userGrdImg+" class='member-img' data-num= '"+ user.orgmem_no +"' />";
+               }else {
+                  userImg.innerHTML = "<img src=../file/member/no-img.jpg class='member-img' data-num= '"+ user.orgmem_no +"' />";
+               }
+               userImg.onclick = function(){
+                  enterUserInfo(event)
+               }
+               
+               var name = document.createElement('div');
+               name.classList.add('member-name');
+               name.innerHTML = userName;
+
+               var seqNo = document.createElement('div');
+               seqNo.classList.add('member-seqNo');
+               
+               seqNo.innerHTML = userSeqNo;
+
+               member_container.appendChild(userImg);
+               member_container.appendChild(name);
+               member_container.appendChild(seqNo);
+
+
+               container.appendChild(member_container);
+            }
+         },
+         error: function(xhr, status, error){
+            alert('ajax post error');
+            console.log(error);
+         }
+      });
+
+   });
+   function enterUserInfo(event) {
+      const memNum = event.target.dataset.num
+      location.href = `/search_view/${memNum}`
+   }
+
+   function goPage(p_num){
+      var frm = document.writehtm;
+      frm.action = 'search_data';
+      frm.nowPage.value = p_num;
+      frm.type_result.value = $("#type_result").val();
+      frm.submit();
+   }
+
+
+   function back_html(){
+      var form = document.writehtm;
+      var url = '/search';
+      
+      form.action = url;
+      form.target = '_self';
+      form.submit();
+   }
+   
+   function btnUserMethod(){
+      // 모달창 띄우기
+      var id = 'userMethod_modal';
+      var zIndex = 5000;
+      var modal = document.getElementById(id);
+      
+      $.ajax({
+         type:"POST",
+         url:"/btn_user_method",
+         datatype:"json",
+         data:{ },
+         success : function(json, value) {
+            if( value == 'success' ) {
+            
+               var bg = document.createElement('div');
+               // 모달 div 뒤에 희끄무레한 레이어
+               bg.setStyle({
+                  position: 'fixed',
+                  zIndex: zIndex,
+                  left: '0px',
+                  top: '0px',
+                  width: '100%',
+                  height: '100%',
+                  overflow: 'auto',
+                  // 레이어 색갈은 여기서 바꾸면 됨
+                  backgroundColor: 'rgba(0,0,0,0.4)'
+               });
+               document.body.append(bg);
+            
+               // 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
+               modal.querySelector('.userMethod_modal_close_btn').addEventListener('click', function() {
+                  bg.remove();
+                  modal.style.display = 'none';
+                  document.getElementById("my_modal").style.display = "block";
+               });
+            
+               modal.setStyle({
+                  position: 'fixed',
+                  display: 'block',
+                  boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                  
+                  // 시꺼먼 레이어 보다 한칸 위에 보이기
+                  zIndex: zIndex + 1,
+                  
+                  // div center 정렬
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  msTransform: 'translate(-50%, -50%)',
+                  webkitTransform: 'translate(-50%, -50%)'
+               });
+              }
+         },
+         error : function(xhr, status, error) {
+            alert("error");
+         }
+      });
+   }
+   
+   function modal_error_open(id){
+      // 모달창 띄우기
+         var zIndex = 2000;
+         var modal = document.getElementById(id);
+         var modal_close_class = "";
+         
+         if(id == "print_msg_modal"){
+         modal_close_class = '.print_msg_modal_close_btn';
+        }
+         
+         var bg = document.createElement('div');
+      // 모달 div 뒤에 희끄무레한 레이어
+      bg.setStyle({
+         position: 'fixed',
+         zIndex: zIndex,
+         left: '0px',
+         top: '0px',
+         width: '100%',
+         height: '100%',
+         overflow: 'auto',
+         // 레이어 색갈은 여기서 바꾸면 됨
+         backgroundColor: 'rgba(0,0,0,0.4)'
+      });
+      document.body.append(bg);
+   
+      // 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
+      modal.querySelector(modal_close_class).addEventListener('click', function() {
+         bg.remove();
+         modal.style.display = 'none';
+         document.getElementById("my_modal").style.display = "block";
+      });
+   
+      modal.setStyle({
+         position: 'fixed',
+         display: 'block',
+         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+         
+         // 시꺼먼 레이어 보다 한칸 위에 보이기
+         zIndex: zIndex + 1,
+         
+         // div center 정렬
+         top: '50%',
+         left: '50%',
+         transform: 'translate(-50%, -50%)',
+         msTransform: 'translate(-50%, -50%)',
+         webkitTransform: 'translate(-50%, -50%)'
+      });
+   }
+   function back(){
+      history.back();
+   }
+   </script>
+   <style>
+      .data_title{margin-left:0;font-size: 25px; font-weight: 400; letter-spacing: 1px; margin: 3px 10px; color: #fff;}
+      .th_style{position: sticky; top: -1px; height: 40px; background-color: #ebebec;}
+      td{height: 45px;border: 1px solid #e0e0e0;}
+      th{border: 1px solid #e0e0e0;}
+      
+      #userMethod_modal {
+          display: none;
+          width: 900px;
+          background-color: #fefefe;
+          border: 1px solid #888;
+          border-radius: 3px;
+          height: 700px;
+      }
+      #print_msg_modal {
+          display: none;
+          width: 300px;
+          background-color: #fefefe;
+          border: 1px solid #888;
+          border-radius: 3px;
+          height: 95px;
+      }
+   .container{
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      overflow-y: scroll;
+      height: 65vh;
+   }
+   .member-container{
+      width: calc(100% / 3);
+      text-align: center;
+      margin-bottom: 30px;
+   }
+   .member-img{
+      width: 240px;
+      height:300px;
+   }
+   .member-name{
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin: 3px 10px;
+   }
+   .member-grdyear{
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin: 3px 10px;
+   }
+   .member-seqNo{
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin: 3px 10px;
+   }
+   
+   </style>
+   <div style="clear: both; margin-bottom: 10px; padding: 7px 10px; background: #3b64af; color: #fff; font-size: 14px; overflow: hidden; box-sizing: border-box; height: 36px; margin-top: 0px;">
+      <span class="float_l data_title">검색 결과</span>
+      <input type="button" onclick="back()" value="검색화면으로 돌아가기" style="border: none;">
+   </div>
+   
+   <div  style="padding: 2rem;">
+      <div style="font-size: 2rem; text-align: center; margin-bottom: 2rem;"><span style="font-size: 3rem; font-family: Black Han Sans;"><%=search_name%></span> 님으로 동문검색한 결과입니다.</div>
+   
+      <div class="container">
+      </div>
+   </div>

@@ -1,0 +1,48 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+	var connectorNo = session.connectorNo(request);
+	var year = request.param("year")==undefined ? "" : request.param("year");
+	var month = request.param("month")==undefined ? "" : request.param("month");
+	var cal_id = request.param("cal_id")==undefined ? "" : request.param("cal_id");
+
+	var searchDate = year + month + "";
+	var sql = "";
+
+	
+
+	sql +="select cal_id, title,description ,DATE_FORMAT(start,'%Y-%m-%d') AS start, DATE_FORMAT(end,'%Y-%m-%d') AS end, backgroundColor, textColor, allDay, DATE_FORMAT(start,'%d') AS day, DATE_FORMAT(start,'%m') AS month,case WEEKDAY(start) \n"
+    sql +="when '0' then '월요일' \n"
+    sql +="when '1' then '화요일' \n"
+    sql +="when '2' then '수요일' \n"
+    sql +="when '3' then '목요일' \n"
+    sql +="when '4' then '금요일' \n"
+    sql +="when '5' then '토요일' \n"
+    sql +="when '6' then '일요일' \n"
+    sql +="end as dayofweek \n";
+	sql +="from calendar \n"
+	sql +="WHERE 1=1 \n"
+	if(cal_id !=""){
+		sql += "AND cal_id='"+cal_id+"'"
+	}else{
+		sql += "AND DATE_FORMAT(start,'%Y%m') = '"+searchDate+"'"
+	}
+	sql +="ORDER BY DATE_FORMAT(start,'%d')";
+
+	console.log(sql);
+	fs.readFile("./views/user/calendar/calendar.html", "utf-8", function(error, data){
+		db.query(sql, function(error, results){
+			response.send({
+				connectorNo : connectorNo,
+				db_data : results
+			}); 
+		});
+	}); 
+};

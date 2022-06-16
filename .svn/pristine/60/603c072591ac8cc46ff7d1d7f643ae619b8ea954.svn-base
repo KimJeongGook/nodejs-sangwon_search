@@ -1,0 +1,49 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+
+	
+	var orgm = request.param("orgm")==undefined ? "" : request.param("orgm");
+    var status = request.param("status")==undefined ? "" : request.param("status");
+	var connectorNo = session.connectorNo(request);
+	
+	var sql="";
+
+    if(status == 'c'){ 
+        sql = "insert into orgmember_follow " +
+		"(orgmem_no, orgmem_fno) " +
+		"values ('" + connectorNo + "', '" + orgm + "')";
+
+		console.log("sql : " + sql);
+
+    }else if(status == 'd'){
+        sql = "delete from orgmember_follow where orgmem_no = '"+ connectorNo +"' AND orgmem_fno = '"+ orgm +"'";
+        
+        console.log("sql : " + sql);
+    }
+		
+	
+	db.query(sql, [], function(error, results){
+		if(error){
+			console.log(error);
+		}else{
+            if(status == 'c'){
+                response.send("csuccess");
+            }else if(status == 'd'){
+                response.send("dsuccess");
+            }
+			
+		}
+	});
+};
+	
+
+
+

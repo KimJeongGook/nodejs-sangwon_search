@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>접속실패</title>
+</head>
+<body>
+<div style="width:100%; height:100%; text-align:center; vertical-align: middle;"><br><br>
+대구공고 총동문회 수첩에 관심을 가져 주셔서 감사합니다.<p> 
+현재 귀하는 인증절차가 필요합니다.<p>
+대구공고 총동문회 관리자에게 문자주세요<p>
+이이름, 기수, 전공을 보내주시면<p> 
+신속히 처리하겠습니다.<p>
+<a href ="tel:010-3803-9128">전화 문의하기</a> <br><br>
+ <a href ="sms:010-3803-9128?body=이름, 기수, 전공을 입력해 주세요">문자보내기</a>     
+  </div>
+</body>
+</html>

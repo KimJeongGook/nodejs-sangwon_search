@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>대구기업체총람</title>
+	<meta charset="utf-8" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10, user-scalable=no" />
+	<!-- fontawesome -->
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/default.css"/>
+	<link rel="stylesheet" type="text/css" href="css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+	<link rel="stylesheet" type="text/css" href="/js/jquery/css/jquery-ui-1.8.2.custom.css"/>
+	<link rel="stylesheet" type="text/css" href="/js/jquery/css/swiper.min.css"/>
+	
+	<script type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery/jquery-ui-1.8.16.custom.min.js"></script>		
+	<script type="text/javascript" src="/js/jquery/swiper.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+		});
+		
+		function main_go(){
+			window.location.href='/';
+		}
+	</script>
+
+
+</head>
+
+<body>
+	<img src="images/prohibition.png" alt="" style="padding-left: 24%; padding-top: 10%; position: inherit;" />
+    <!--상단-->
+	<div id="header_index">
+	 <div class="wrap">
+	 <!-- <img src="/images/logo05.png" style="width: 450px;"> -->
+	 </div>
+	</div>
+	<div style="padding-top: 0%; margin-top: -120px; width: 63%; text-align: center; font-weight: bold; font-size: 23px;">
+		<div style="margin: 10px; color:red;">※ USB가 인식되지 않았습니다. USB를 연결해주세요.</div>
+		<div style="color:red;">※ 사용문의는 대구상원고등학교 (053-***-****) 으로 연락바랍니다.</div>
+	</div>
+	<div class="search_button search_btn_area" style="margin-left: 24%; margin-top: 3%;" onclick="main_go();">
+		<a href="#">메인으로</a>
+	</div>
+</body>

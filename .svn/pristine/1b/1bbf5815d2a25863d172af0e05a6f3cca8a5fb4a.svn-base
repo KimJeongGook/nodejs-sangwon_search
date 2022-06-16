@@ -1,0 +1,60 @@
+<%- include ../components/header.ejs %>
+
+<div style="height: calc(100% - 80px); display: flex; align-items: center; padding: 0 30px;">
+   <div style="height: 100%; width: 50%;">
+      <div style=" display: flex; justify-content: center; padding-top: 30px;">
+         <div>
+            <%if(result[0].orgmem_grdimg != '') { %> 
+            <div style="width: 340px; height: 450px; margin-right: 30px;">
+               <img src="/file/member/<%=result[0].orgmem_grdimg %>" style="width: 100%; height: 100%; border-radius: 30px;"/>
+            </div>
+            <% } else { %>
+            <div style="width: 340px; height: 450px; margin-right: 30px;">
+               <img src="/file/member/no-img.jpg " style="width: 100%; height: 100%; border-radius: 30px;" />
+            </div>
+            <div style="position: absolute; top: 30%; left: 10%; font-size: 24px; font-weight: bold; text-align: center; font-family: yg-jalnan;">동문의 사진이 등록되어<br> 있지 않습니다.</div>
+            <% } %>
+         </div>
+         <div style="width: 340px; height: 450px;">
+            <img src="/file/member/<%=result[0].now_img %>" style="width: 100%; height: 100%; border-radius: 30px;"/>
+         </div>
+      </div>
+      <div style="font-family: yg-jalnan; display: flex; justify-content: center; padding-top: 30px; font-size: 50px;">
+         <%= result[0].orgmem_seqNo%>회 
+         <%=result[0].orgmem_name %>
+      </div>
+   </div>
+   <div>
+      <div style="width:900px; overflow: hidden;">
+         <div class="swiper-container" >
+            <div class="swiper-wrapper">
+               <% if(team_img != '') { %>
+                 <% for(i = 0; i < class_img.length; i++){ %>
+                  <div class="swiper-slide">
+                     <img src="/file/member_group/<%=class_img[i].orgmem_grdimg %>" style="width: 100%; height: 650px; border-radius: 30px;"/>
+                  </div>
+                  <div class="swiper-slide">
+                     <img src="/file/member_group/<%=team_img[i].orgmem_grdimg %>" style="width: 100%; height: 650px; border-radius: 30px;"/>
+                  </div>
+                  <% } %> 
+               <% } else if(result[0].orgmem_class == ''){ %>
+                  <div>
+                     <img src="/file/member_group/sanwong_noimg.jpg" style="width: 100%; height: 650px; border-radius: 30px;"/>
+                  </div>
+               <% } else { %>
+                  <% for(i = 0; i < class_img.length; i++){ %>
+                     <div class="swiper-slide">
+                        <img src="/file/member_group/<%=class_img[i].orgmem_grdimg %>" style="width: 100%; height: 650px; border-radius: 30px;"/>
+                     </div>
+                  <% } %> 
+               <% } %> 
+              
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+ 
+
+
+<%- include ../components/footer.ejs %>

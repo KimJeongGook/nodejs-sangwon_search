@@ -1,0 +1,1854 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<script src="https://kit.fontawesome.com/7460d40ad7.js" crossorigin="anonymous"></script>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="2021.04.05.(전국상의%20현황)_대외협력팀_1.files/filelist.xml">
+<title>2. 전국상의 현황 대외협력팀(2021.04.05)</title>
+<style id="2021.04.05.(전국상의 현황)_대외협력팀_1_350_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.font5350
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;}
+.font6350
+	{color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;}
+.xl15350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl63350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl64350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	background:#BFBFBF;
+	mso-pattern:black none;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl65350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl66350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl67350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl68350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl69350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt hairline windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;
+	mso-text-control:shrinktofit;}
+.xl70350
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:22.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt hairline windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:8.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:"맑은 고딕", monospace;
+	mso-font-charset:129;
+	mso-char-type:none;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if !excel]>　　<![endif]-->
+<!--다음 내용은 Microsoft Excel의 웹 페이지로 게시 마법사를 사용하여 작성되었습니다.-->
+<!--같은 내용의 항목이 다시 게시되면 DIV 태그 사이에 있는 내용이 변경됩니다.-->
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 시작 -->
+<!----------------------------->
+
+<style type="text/css"> 
+	a:link { text-decoration:none; color:#ffffff;}
+	a:visited { text-decoration:none;color:white;}
+	a:active {text-decoration:none; color:#ccc; }
+	a:hover { text-decoration:none; color:white; }
+	
+	.table_content {margin-left: auto; margin-right: auto; border-collapse: collapse; border: 1px solid black; margin-bottom: 2%;}
+	th {border: 1px solid black;}
+	td {border: 1px solid black;}
+	tr {height: 40px;}
+	.td_c {background-color: white;}
+	.td_select {background-color: #fdbaba;}
+</style>
+
+<!-- <p class="float_r data_close" style="text-align:right;">
+	<button style="width: 80px; height: 30px; border-radius: 5px; background-color: #3b64af;">
+		<a href="/index_uw" target="_self" style="font-size: larger;">메인화면</a>
+	</button>
+</p> -->
+
+<div style="margin-top: 30px;">
+	<table class="table_content">
+		<colgroup>
+		    <col width="45%" />
+		    <col width="50%" />
+		</colgroup>
+		
+		<tr>
+			<th colspan="2" class="thead_th" style="height: 62px; background-color: #4f6fc1; color: white; font-weight: 600; font-size: 25px; text-align: left;">
+				<span style="padding-left: 15px;">대구기업체총람 부록자료</span>
+				<span style="padding-left: 40%; font-size: 18;">
+					<a href="/index_uw" target="_self"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i>메인화면</a>
+				</span>
+			</th>
+		</tr>
+		
+		<tbody>
+			<tr>
+                <td class="td_c" onClick="location.href='/file/user_html/1. 제24대 의원 명단(2021.04.01).htm'" style="cursor:pointer;">
+					<span style="color:black; margin: 5px; font-weight: 600;">1. 제24대 의원 명단(2021.04.01)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/7. 대구혁신도시 이전 공공기관 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">7. 대구혁신도시 이전 공공기관 현황</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_select" onClick="location.href='/file/user_html/2. 전국상의 현황 대외협력팀(2021.04.05).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">2. 전국상의 현황 대외협력팀(2021.04.05)</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/8. 대구지역 상장법인.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">8. 대구지역 상장법인</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/3. 유관기관.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">3. 유관기관</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/9. 월드클래스300 대구기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">9. 월드클래스300 대구기업</span>
+                </td>
+            </tr>
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/4. 경제관련단체.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">4. 경제관련단체</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/10. 대구 3030기업(2007~2020).htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">10. 대구 3030기업(2007~2020)</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/5. 대구지역 협동조합.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">5. 대구지역 협동조합</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/11. 스타기업100, Pre-스타기업, 고용친화기업.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">11. 스타기업100, Pre-스타기업, 고용친화기업</span>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td class="td_c" onClick="location.href='/file/user_html/6. 대구 산업단지 현황.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">6. 대구 산업단지 현황</span>
+                </td>
+                <td class="td_c" onClick="location.href='/file/user_html/12. 물산업 클러스터 입주기업 리스트.htm'" style="cursor:pointer;">
+                	<span style="color:black; margin: 5px; font-weight: 600;">12. 물산업 클러스터 입주기업 리스트</span>
+                </td>
+            </tr>
+		</tbody>
+    </table>
+</div>
+
+<div id="2021.04.05.(전국상의 현황)_대외협력팀_1_350" align=center x:publishsource="Excel">
+
+<table border=0 cellpadding=0 cellspacing=0 width=1039 class=xl63350
+ style='border-collapse:collapse;table-layout:fixed;width:781pt;margin-bottom:50px;'>
+ <col class=xl66350 width=40 style='mso-width-source:userset;mso-width-alt:
+ 1280;width:30pt'>
+ <col class=xl66350 width=62 style='mso-width-source:userset;mso-width-alt:
+ 1984;width:47pt'>
+ <col class=xl66350 width=77 style='mso-width-source:userset;mso-width-alt:
+ 2464;width:58pt'>
+ <col class=xl66350 width=89 style='mso-width-source:userset;mso-width-alt:
+ 2848;width:67pt'>
+ <col class=xl66350 width=91 style='mso-width-source:userset;mso-width-alt:
+ 2912;width:68pt'>
+ <col class=xl66350 width=82 style='mso-width-source:userset;mso-width-alt:
+ 2624;width:62pt'>
+ <col class=xl69350 width=342 style='mso-width-source:userset;mso-width-alt:
+ 10944;width:257pt'>
+ <col class=xl66350 width=128 span=2 style='mso-width-source:userset;
+ mso-width-alt:4096;width:96pt'>
+ <tr height=54 style='mso-height-source:userset;height:40.5pt'>
+  <td colspan=9 height=54 class=xl70350 width=1039 style='height:40.5pt;
+  width:781pt'>전국상공회의소 현황 <font class="font6350">[2021. 4. 5 기준]</font></td>
+ </tr>
+ <tr class=xl67350 height=41 style='mso-height-source:userset;height:30.75pt'>
+  <td height=41 class=xl64350 width=40 style='height:30.75pt;border-top:none;
+  width:30pt'>No.</td>
+  <td class=xl64350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>상의</td>
+  <td class=xl64350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>회장</td>
+  <td class=xl64350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>상근부회장</td>
+  <td class=xl64350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>사무국장</td>
+  <td class=xl64350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>우편번호</td>
+  <td class=xl64350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>주소</td>
+  <td class=xl64350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>대표전화</td>
+  <td class=xl64350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>대표팩스</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>1</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>서울</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>최태원</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>우태희</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>박종갑</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>04513</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>서울특별시 중구 세종대로 39 상공회의소회관</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(02) 6050-3114</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>6050-3200</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>2</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>부산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>장인화</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>(공석)</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>박종민</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>47354</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>부산광역시 부산진구 황령대로 24</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(051) 990-7000</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>990-7039</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>3</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>대구</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이재하</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>이재경</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>이종학</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>41260</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>대구광역시 동구 동대구로 457</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(053) 222-3000</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>222-3060</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>4</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>인천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>심재선</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>박인서</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김재식</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>21632</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>인천광역시 남동구 은봉로 60번길 46</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(032) 810-2800</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>810-2807</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>5</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>광주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>정창선</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>최종만</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>채화석</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>61981</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>광주광역시 서구 대남대로 465</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(062) 350-5800</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>350-5839</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>6</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>대전</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>정태희</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>민병덕</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>35235</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>대전광역시 서구 대덕대로 176번길 51</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(042) 480-3114</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>480-3100</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>7</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>울산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이윤철</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>차의환</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>(공석)</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>44689</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>울산광역시 남구 돋질로 97</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(052) 228-3000</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>258-0093</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>8</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>세종</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이두식</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>이문구</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>30150</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>세종특별자치시 한누리대로 2003, 5층(소담동, 펠리체타워3)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(044) 863-3080</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>863-3081</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>9</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>수원</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>홍지호</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>최운주</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>16313</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>수원시 장안구 수성로 311</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 244-3451</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>243-8449</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>10</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>안성</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>한영세</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>유승표</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>17595</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>안성시 미양로 847</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 676-4411</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>676-4414</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>11</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>안양과천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>배해동</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김태영</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>14092</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>안양시 만안구 안양로 133</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 447-9171</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>443-9260</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>12</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>부천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김종흠</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김응래</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>14611</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>부천시 장말로 289</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(032) 663-6601</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>654-5698</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>13</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>성남</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>정영배</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>박충신</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>13567</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>성남시 분당구 양현로 164</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 781-7901</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>781-7905</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>14</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>경기북부</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>최근수</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>임성호</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>11780</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>의정부시 추동로 140</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 853-6681</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>853-6685</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>15</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>평택</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이보영</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>오병선</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>17828</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>평택시 평택로 149</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 655-5813</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>654-6409</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>16</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>이천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박경미</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>임진성</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>17380</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>이천시 이섭대천로 1119<span style='mso-spacerun:yes'>&nbsp;&nbsp;</span></td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 633-3961</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>634-3965</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>17</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>안산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이성호</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김진근</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>15357</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>안산시 단원구 적금로 120</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 410-3030</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>410-3037</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>18</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>화성</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박성권</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>고희준</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>18590</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>화성시 향남읍 토성로 14</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 350-7900</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>350-7990</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>19</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>용인</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>서석홍</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>최명호</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>17057</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>용인시 처인구 명지로 81</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 332-9812</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>336-2529</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>20</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>김포</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이규식</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>이규종</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>10092</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>김포시 감암로 125-2</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 983-6655</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>984-6009</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>21</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>군포</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김용일</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>유주형</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>15850</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>군포시 고산로 166 sk벤티음 102동 1204호</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 398-8451</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>398-8455</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>22</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>광주하남</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김풍호</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>(공석)</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>12744</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>광주시 행정타운로 69가길 8</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 761-9090</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>761-8486</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>23</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>시흥</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>성낙헌</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>박영식</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>15073</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>시흥시 산기대학로 237 시흥비지니스센터 13층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 501-5700</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>501-2200</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>24</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>광명</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박문영</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>박성복</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>14237</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>광명시 철산로 20, 901호</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(02) 2060-3047</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>2066-3011</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>25</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>경기동부</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>성희승</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김상겸</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>12239</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>남양주시 홍유릉로 248번길 39 다남프라자 405호</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 592-3039</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>591-3054</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>26</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>고양</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>권영기</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김재훈</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>10401</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>고양시 일산동구 중앙로 1275번길 38-31 4층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 969-5817</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>969-5877</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>27</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>포천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이민형</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김재완</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>11149</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>포천시 중앙로 34번길 8 근로자종합복지회관 4층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 535-0072</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>535-2932</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>28</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>오산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이택선</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>배유덕</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>18135</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>오산시 성호대로 84, 2층(원동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 373-7441</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>373-7445</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>29</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>의왕</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김철환</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>성창준</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>16072</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>의왕시 오전공업길 13, 벽산선영테크노피아 1101호</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 451-5061</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>451-5063</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>30</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>파주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박종찬</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>신동주</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>10915</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>경기도 파주시 금빛로 15 미라클프라자 10층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(031) 8071-4240</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>8071-4499</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>31</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>춘천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>고광만</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김태희</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>24272</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>강원도 춘천시 금강로 29</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(033) 251-2673</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>251-2674</td>
+ </tr>
+ <tr height=47 style='page-break-before:always;mso-height-source:userset;
+  height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>32</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>강릉</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김형익</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>심일석</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>25475</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>강릉시 종합운동장길 88</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(033) 643-4411</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>643-4414</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>33</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>원주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>조창진</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>조원학</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>26337</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>원주시 북원로 2551</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(033) 743-2991</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>743-2995</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>34</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>삼척</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>정희수</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김병호</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>25921</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>삼척시 진주로 54</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(033) 573-2401</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>573-3404</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>35</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>속초</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>하명호</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김대중</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>24837</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>속초시 중앙로 98 신성빌딩 6층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(033) 633-2564</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>631-6977</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>36</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>동해</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>하종갑</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김일래</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>25769</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>동해시 중앙로 240 3층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(033) 533-3976</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>535-2010</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>37</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>태백</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박성율</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>함억철</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>26011</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>태백시 황지로 188-1</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(033) 552-5555</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>552-3727</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>38</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>청주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이두영</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김형균</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>28514</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>청주시 상당구 상당로 106 (북문로2가)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(043) 229-2700</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>254-2766</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>39</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>충주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>강성덕</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>백한기</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>27339</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>충주시 으뜸로 31(금릉동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(043) 843-7001</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>844-6135</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>40</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>음성</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박병욱</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>성기노</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>27669</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>음성군 대소면 대금로 286</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(043) 873-9911</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>873-2454</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>41</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>진천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>왕용래</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김혁동</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>27832</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>진천군 진천읍 상산로 10-4, 와이엠빌딩 6층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(043) 537-5900</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>537-5905</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>42</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>제천단양</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>한정철</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>권경준</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>27116</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>제천시 제2바이오밸리로 3길 34 2층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(043)-642-3114</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>642-3112</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>43</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>충남북부</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>한형기</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>김현철</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>윤원중</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>31169</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>천안시 서북구 광장로 215(불당동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(041) 559-5700</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>556-7137</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>44</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>서산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>조경상</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>가재무</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>31984</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>서산시 읍내3로 28(읍내동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(041) 663-3063</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>663-3065</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>45</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>당진</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이범주</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>황명동</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>31778</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>당진시 남부로 256(수청동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(041) 357-2500</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>357-2503</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>46</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>전주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>윤방섭</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>이승복</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>54969</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>전주시 완산구 홍산로 276</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(063) 280-1100</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>280-1129</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>47</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>익산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김원요</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>이윤근</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>54620</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>익산시 인북로 187</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(063) 857-3535</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>857-3539</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>48</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>군산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김동수</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>조경수</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>54026</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>군산시 내항1길 4(장미동 4)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(063) 453-8601</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>453-8606</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>49</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>전북서남</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>최종필</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>정일환</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>56160</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>정읍시 서부로 6</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(063) 537-4511</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>537-4514</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>50</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>목포</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이한철</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>최창호</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>58754</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>목포시 해안로 173번길 29(중동2가)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(061) 242-8581</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>242-8584</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>51</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>순천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이흥우</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>서호기</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>57956</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>순천시 장명로 18</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(061) 741-5511</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>741-5311</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>52</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>여수</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이용규</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>최준열</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>59631</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>여수시 좌수영로 962-12</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(061) 641-4001</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>641-4005</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>53</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>광양</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이백구</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>박형배</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>57771</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>광양시 항만대로 465 월드마린센터 8층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(061) 793-0012</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>793-6822</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>54</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>김천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>안용우</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>(공석)</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>39545</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>김천시 시청로 137(신음동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 433-2680</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>0504-926-0066</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>55</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>안동</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이동시</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>강기훈</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>36709</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>안동시 축제장길 240</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 859-3090</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>859-3092</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>56</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>포항</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>문충도</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김영철</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>37783</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>포항시 남구 포스코대로 333</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 274-2233</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>283-1823</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>57</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>경주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이상걸</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김종율</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>38145</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>경주시 중앙로 67-2</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 741-6601</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>741-6600</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>58</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>영주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>조관섭</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>송병권</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>36099</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>영주시 선비로 182<span style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 632-8830</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>633-8594</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>59</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>구미</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>윤재호</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>김달호</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>39277</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>구미시 송정대로 120</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 454-6601</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>454-6606</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>60</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>경산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>안태영</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>박정원</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>38621</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>경산시 경안로 223</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(053) 811-3031</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>811-3035</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>61</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>영천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>정서진</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>조달호</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>38891</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>영천시 금완로 63(완산동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 335-6000</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>331-8774</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>62</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>칠곡</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>정영출</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>장용화</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>39909</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>칠곡군 왜관읍 공단로 1길 7</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 974-0850</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>971-3315</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>63</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>상주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>신동우</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>이종만</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>37194</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>상주시 중앙로 224(성하동) 2층</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(054) 533-5841</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>533-5843</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>64</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>창원</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>구자천</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>손무곤</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>(공석)</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>51444</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>창원시 의창구 중앙대로 166(신월동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 210-3000</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>210-3020</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>65</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>진주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이영춘</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>박수현</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>52782</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>진주시 동진로 255</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 753-0411</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>755-8220</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>66</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>통영</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>이상석</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>강석수</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>53043</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>통영시 중앙로 242(북신동 95-10) 구. 알리안츠생명㈜</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 643-2330</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>644-2334</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>67</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>사천</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>서희영</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>허태중</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>52540</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>사천시 용현면 사천대로 969-4</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 833-2204</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>832-6569</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>68</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>양산</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박병대</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>신정학</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>50617</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>양산시 중앙로 198(북부동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 386-4001</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>386-4006</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>69</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>김해</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박명진</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>전동관</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>50924</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>김해시 호계로 422번길 24</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 337-6001</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>337-6006</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>70</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>밀양</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>손영준</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>이재승</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>50436</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>밀양시 중앙로 270(삼문동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 355-7111</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>352-4774</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>71</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>함안</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>박계출</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>하상원</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>52034</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>함안군 가야읍 함안대로 735</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 584-2376</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>584-2379</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>72</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>거제</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김환중</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>이정학</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>53260</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>거제시 고현로 14길 43-8(고현동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(055) 637-3830</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>637-3931</td>
+ </tr>
+ <tr height=47 style='mso-height-source:userset;height:35.25pt'>
+  <td height=47 class=xl65350 width=40 style='height:35.25pt;border-top:none;
+  width:30pt'>73</td>
+  <td class=xl65350 width=62 style='border-top:none;border-left:none;
+  width:47pt'>제주</td>
+  <td class=xl65350 width=77 style='border-top:none;border-left:none;
+  width:58pt'>김대형</td>
+  <td class=xl65350 width=89 style='border-top:none;border-left:none;
+  width:67pt'>　</td>
+  <td class=xl65350 width=91 style='border-top:none;border-left:none;
+  width:68pt'>강태욱</td>
+  <td class=xl65350 width=82 style='border-top:none;border-left:none;
+  width:62pt'>63219</td>
+  <td class=xl68350 width=342 style='border-top:none;border-left:none;
+  width:257pt'>제주시 청사로 1길 18-4(도남동)</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>(064) 757-2164</td>
+  <td class=xl66350 width=128 style='border-top:none;border-left:none;
+  width:96pt'>757-2167</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=40 style='width:30pt'></td>
+  <td width=62 style='width:47pt'></td>
+  <td width=77 style='width:58pt'></td>
+  <td width=89 style='width:67pt'></td>
+  <td width=91 style='width:68pt'></td>
+  <td width=82 style='width:62pt'></td>
+  <td width=342 style='width:257pt'></td>
+  <td width=128 style='width:96pt'></td>
+  <td width=128 style='width:96pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--Excel의 웹 페이지 마법사로 게시해서 나온 결과의 끝-->
+<!----------------------------->
+</body>
+
+</html>

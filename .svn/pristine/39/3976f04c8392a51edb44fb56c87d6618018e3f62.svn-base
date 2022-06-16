@@ -1,0 +1,406 @@
+var fs = require("fs");
+var http = require("http");
+var ejs = require("ejs");
+var async = require("async");
+
+var db = require("../../DB_config.js").connect;
+var layout = require("../../../function/layout.js");
+var session = require("../../../function/session.js");
+
+exports.listener=function(request, response){
+	var limit_num = "";
+	
+	var search_seqNo = request.param("search_seqNo")==undefined ? "" : request.param("search_seqNo");
+	var search_major = request.param("search_major")==undefined ? "" : request.param("search_major");
+	var search_area = request.param("search_area")==undefined ? "" : request.param("search_area");
+	var search_text = request.param("search_text")==undefined ? "" : request.param("search_text");
+	var search_position1 = request.param("search_position1")==undefined ? "" : request.param("search_position1");
+	var follow = request.param("follow")==undefined ? "" : request.param("follow");
+	var connectorNo = session.connectorNo(request);
+	var app_user_search = request.param("app_user_search") == undefined ? '' : request.param("app_user_search");
+	var connectorDivision = request.param("connectorDivision") == undefined ? '' : request.param("connectorDivision");
+	var admin = request.param("admin") == undefined ? '' : request.param("admin");
+	var m_check = request.param("m_check") == undefined ? '' : request.param("m_check");
+	var sql="";
+	var app_install_sql = "";
+	var where_sql = "";
+	var view_cnt = request.param("view_cnt") == undefined ? 20 : request.param("view_cnt");
+	var search_all = request.param("search_all") == undefined ? '' : request.param("search_all");
+	var strlimit = request.param("strlimit") == undefined ? 0 : request.param("strlimit");
+	var endlimit = request.param("endlimit") == undefined ? 20 : request.param("endlimit");
+	
+	console.log("follow!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+follow);
+	console.log("search_all!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+search_all);
+	/* 카운트 S */
+
+	if(follow == 'follow'){
+		var count_sql = "SELECT COUNT(n.orgmem_no) AS cnt\n"
+		count_sql += "FROM  orgmember_follow n, orgmember a WHERE\n"
+		count_sql += "n.orgmem_fno = a.orgmem_no\n"
+		count_sql += "and n.orgmem_no = '"+connectorNo+"'\n"
+		count_sql+= "AND orgmem_phone1 IS NOT NULL\n"
+		count_sql+= "AND orgmem_phone1 != ''\n"
+	}else if(follow == 'money'){
+		var count_sql ="SELECT COUNT(n.dues_id) AS cnt\n"
+		count_sql +="FROM  dues n, orgmember a WHERE\n"
+		count_sql +="n.orgmem_no = a.orgmem_no\n"
+		//count_sql +="and n.month = DATE_FORMAT(NOW(),'%m')\n"
+		count_sql+= "AND orgmem_phone1 IS NOT NULL\n"
+		count_sql+= "AND orgmem_phone1 != ''\n"
+	}else if(follow == 'top'){
+		var count_sql = "select count(*) as cnt\n"
+		count_sql+=	"from  orgmember\n"
+		count_sql+= "where 1=1\n"
+		count_sql+= "and topcompany = 'Y'\n"
+		count_sql+= "AND orgmem_phone1 IS NOT NULL\n"
+		count_sql+= "AND orgmem_phone1 != ''\n"
+	}else if(follow == 'my'){
+		var count_sql = "select count(*) as cnt\n"
+		count_sql+=	"from  orgmember\n"
+		count_sql+= "where 1=1\n"
+		//count_sql+= "and orgmem_no =53557\n"	
+		count_sql+= "and orgmem_no = '"+connectorNo+"'\n"	
+	}
+	else{
+		var count_sql = "select count(*) as cnt\n"
+		count_sql+=	"from  orgmember a\n"
+		count_sql+= "where 1=1\n"
+	}
+	var count_where_sql = "";
+	
+	if(search_text!=''){
+		count_where_sql += " and (orgmem_name like '%" + search_text + "%' \n";
+		count_where_sql += " or (select code_name from code where code_group = 'orgmem_orgMba' and code = orgmem_position_mba) like '%" + search_text + "%' \n";
+		//count_where_sql += " or orgmem_address_home like '%" + search_text + "%' \n";
+		//count_where_sql += " or orgmem_address_work like '%" + search_text + "%' \n";
+		count_where_sql += " or orgmem_keyword like '%" + search_text + "%' \n";
+		count_where_sql += " or orgmem_work_duty like '%" + search_text + "%' \n";
+		count_where_sql += " or concat(orgmem_phone1, orgmem_phone2, orgmem_phone3)  like  concat('%',replace('" + search_text + "','-',''),'%') )\n";
+	}
+/*
+	if(orgmem_seqNo == ''){
+		sql += " and orgmem_seqNo != '00' \n";
+		count_where_sql += " and orgmem_seqNo != '00' \n";
+	}else if(orgmem_seqNo != ''){
+		if(orgmem_seqNo == 'moreData'){
+			sql += " and cast( getOrgSeqNo(orgmem_seqNo) as signed) between 1 and 28\n"; //28기이전 데이터 조회
+			count_where_sql += " and cast( getOrgSeqNo(orgmem_seqNo) as signed) between 1 and 28\n"; //28기이전 데이터 조회
+		}else{
+			sql += " and orgmem_seqNo = '" + orgmem_seqNo + "' \n"; //선택기수 조회
+			count_where_sql += " and orgmem_seqNo = '" + orgmem_seqNo + "' \n"; //선택기수 조회
+		}
+	}
+*/	
+	//sql += " and orgmem_seqNo != '00' \n";
+	if(app_user_search != '' && app_user_search != null){
+		count_where_sql += "and (select x.type from push x where x.orgmem_no = a.orgmem_no order by final_date limit 0,1) IS NOT NULL" + " \n";
+	}
+
+	count_where_sql += " and orgmem_seqNo != '-1' \n";
+	count_where_sql += " and orgmem_disp_yn = 'Y' \n";
+	count_where_sql += " AND orgmem_phone1 IS NOT NULL\n";
+	count_where_sql += " AND orgmem_phone1 != ''\n";
+
+	if(m_check == "m_check"){
+		count_where_sql +=" and a.orgmem_no = '"+connectorNo+"'\n";
+		//count_where_sql +=" and a.orgmem_no = 53557\n";	
+	}
+	
+	if(search_seqNo != ''){
+		count_where_sql += " and orgmem_seqNo = '" + search_seqNo + "' \n";
+	}
+	
+	if(search_major != ''){
+		count_where_sql += " and orgmem_major = '" + search_major + "' \n";
+	}
+	if(search_all == ''){
+	if(search_position1 != '' && search_position1 != '자문위원' && search_position1 != '총동문회 고문' && search_position1 != '장학회' && search_position1 != '지역'){
+		count_where_sql += " and orgmem_position1 = '" + search_position1 + "' \n";
+	}else if(search_position1 != '' && search_position1 != '장학회'  && search_position1 != '지역' || (search_position1 == '자문위원' || search_position1 == '총동문회 고문')){
+		count_where_sql += " and etc_position = '" + search_position1 + "' \n";
+	}else if(search_position1 != '' && search_position1 != '자문위원' && search_position1 != '총동문회 고문' && search_position1 == '장학회'){
+		count_where_sql += " and chapter_position1 = '(재)대구공고 동문 장학회' \n";
+	}else if(search_position1 != '' && search_position1 != '자문위원' && search_position1 != '총동문회 고문' && search_position1 != '장학회' && search_position1 == "지역"){
+		count_where_sql += "and orgmem_position1 = '3'\n";
+	}
+	}else if(search_all != ''){
+		if(search_all == '1'){
+			count_where_sql += "and orgmem_position1 = '" + search_all + "'\n";
+		}else if(search_all == '고문'){
+			count_where_sql += " and etc_position = '총동문회 고문' \n";
+		}else if(search_all == '자문'){
+			count_where_sql += " and etc_position = '자문위원' \n";
+		}else if(search_all == '장학회'){
+			count_where_sql += " and chapter_position1 = '(재)대구공고 동문 장학회' \n";
+		}else if(search_all == "지역"){
+			count_where_sql += "and orgmem_position1 = '3'\n";
+		}else if(search_all == "기수"){
+			count_where_sql += "and orgmem_position1 != '3'\n";
+		}else if(search_all == "내정보"){
+			//count_sql+= "and orgmem_no =53557\n"
+			count_where_sql +=" and a.orgmem_no = '"+connectorNo+"'\n"; 
+		}
+	}
+
+
+	count_sql = count_sql + count_where_sql;
+	console.log("count_sql123: " + count_sql);
+	
+	/* 카운트 E */
+
+	/* 데이터 S */
+	
+	sql = "select \n";
+	sql += "@RNUM := @RNUM + 1 as num \n";
+	sql += ", orgmem_no \n";
+	sql += ", orgmem_name \n";
+	sql += ", orgmem_birth_year \n";
+	sql += ", orgmem_position \n";
+	sql += ", ifnull(orgmem_phone0, '') as orgmem_phone0 \n";
+	sql += ", ifnull(orgmem_phone1, '') as orgmem_phone1 \n"; 
+	sql += ", ifnull(orgmem_phone2, '') as orgmem_phone2 \n";
+	sql += ", ifnull(orgmem_phone3, '') as orgmem_phone3 \n";
+	sql += ", ifnull(company_tel1, '') as orgmem_tel1 \n";
+	sql += ", ifnull(company_tel2, '') as orgmem_tel2 \n";
+	sql += ", ifnull(company_tel3, '') as orgmem_tel3 \n";
+	sql += ", ifnull(orgmem_fax1, '') as orgmem_fax1 \n";
+	sql += ", ifnull(orgmem_fax2, '') as orgmem_fax2 \n";
+	sql += ", ifnull(orgmem_fax3, '') as orgmem_fax3 \n";
+	sql += ", orgmem_homepage \n";
+	sql += ", orgmem_sns \n";
+	sql += ", link1 \n";
+	sql += ", link2 \n";
+	sql += ", remrk \n";
+	sql += ", business_field \n";
+	sql += ", orgmem_img \n";
+	sql += ", company_img1 \n";
+	sql += ", company_img2 \n";
+	sql += ", company_img3 \n";
+	sql += ", company_img4 \n";
+	sql += ", business_card \n";
+	sql += ", company_intro \n";
+	sql += ", orgmem_email \n";
+	sql += ", orgmem_seqNo \n";
+	sql += ", orgmem_seqNum \n";
+	sql += ", orgmem_keyword \n";
+	sql += ", orgmem_position_mba \n";
+	sql += ", orgmem_major \n";
+	sql += ", orgmem_major_txt \n";
+	sql += ", orgmem_memberYn \n";
+	sql += ", orgmem_lunar \n";
+	sql += ", orgmem_url \n";
+	sql += ", create_id \n";
+	sql += ", create_date \n";
+	sql += ", create_host \n";
+	sql += ", app_install \n";
+	sql += ", orgmem_leader_code \n";
+	sql += ", ifnull(orgmem_work_duty, '') as orgmem_work_duty \n";
+	sql += ", ifnull(orgmem_office_nm, '') as orgmem_office_nm \n";
+	sql += ", ifnull(orgmem_office_addr1, '') as orgmem_office_addr1 \n";
+	sql += ", ifnull(orgmem_office_addr2, '') as orgmem_office_addr2 \n";
+	sql += ", ifnull(orgmem_office_addr_zipcode, '') as orgmem_office_addr_zipcode \n";
+	sql += ", ifnull(getCodeName('orgmem_major', orgmem_major),'') as orgmem_major_nm \n";
+	sql += ", ifnull(getCodeName('orgmem_area',orgmem_area),'') as orgmem_area_nm \n";
+	sql += ", orgmem_disp_yn \n";
+	sql += ", (select x.type from push x where x.orgmem_no = a.orgmem_no order by final_date limit 0,1) as device_os \n";
+	sql += ", (SELECT COUNT(n.orgmem_no) FROM  orgmember_follow n WHERE n.orgmem_fno = a.orgmem_no AND n.orgmem_no = '"+connectorNo+"') AS fcount \n";
+	sql += ", CASE WHEN (SELECT COUNT(*) FROM dues WHERE orgmem_no = a.orgmem_no) > 0 THEN 'yes' ELSE 'no' END AS dues \n";
+	sql += ", topcompany \n";
+	sql += ", IF(orgmem_position1 = 1,(SELECT code_name FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_position'),IF(orgmem_position1 = 3,(SELECT code_name FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_area_position'),orgmem_position2) )as orgmem_position2\n";
+	sql += ", case when orgmem_position2 = '001' then '1' when orgmem_position2 = '002' then '2' when orgmem_position2 = '003' then '3' when orgmem_position2 = '004' then '4' when orgmem_position2 = '005' then '5' when orgmem_position2 = '006' then '6'when orgmem_position2 = '007' then '7' when orgmem_position2 = '008' then '8' when orgmem_position2 = '고문' then '9' when orgmem_position2 = '자문위원' then '10' when orgmem_position2 = '장학회' then '11'when orgmem_position2 = '지역동문회' then '12' when orgmem_position2 = '회원' then '13' END AS sort_po \n";
+	sql += ", (SELECT code_order FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_position')as codeor\n";
+	sql += ", orgmem_position3 \n";
+	sql += ", chapter_position1 \n";
+	sql += ", chapter_position2 \n";
+	sql += ", chapter_position3 \n";
+	sql += ", committee_position1 \n";
+	sql += ", committee_position2 \n";
+	sql += ", committee_position3 \n";
+	sql += ", etc_position \n";
+	sql += ", etc_position1 \n";
+	sql += "from	orgmember a \n";
+	sql += "        , (SELECT @RNUM := 0 ) r \n";
+	sql += "where	1 = 1";
+	sql += " AND orgmem_phone1 IS NOT NULL\n";
+	sql += "  AND orgmem_phone1 != ''\n";
+	if(m_check == "m_check"){
+	  sql +=" and orgmem_no = '"+connectorNo+"'\n";
+	  //sql +=" and orgmem_no = 53557\n";	
+	}
+	/*sql =  "select * from (";
+	sql += "select @RNUM := @RNUM + 1 as num, \n";
+	sql += "orgmem_no, orgmem_name, orgmem_birth_year, orgmem_position, ifnull(orgmem_phone0, '') as orgmem_phone0, ifnull(orgmem_phone1, '') as orgmem_phone1, ifnull(orgmem_phone2, '') as orgmem_phone2, ifnull(orgmem_phone3, '') as orgmem_phone3, orgmem_email, orgmem_img, orgmem_seqNo, orgmem_seqNum, orgmem_keyword, orgmem_position_mba, orgmem_major, orgmem_major_txt, orgmem_memberYn, orgmem_lunar, orgmem_url, create_id, create_date, create_host, app_install, orgmem_leader_code, ifnull(orgmem_work_duty, '') as orgmem_work_duty, ifnull(orgmem_office_nm, '') as orgmem_office_nm, ifnull(orgmem_office_addr1, '') as orgmem_office_addr1, ifnull(orgmem_office_addr2, '') as orgmem_office_addr2, ifnull(orgmem_office_addr_zipcode, '') as orgmem_office_addr_zipcode,    \n";
+	sql += "ifnull(getCodeName('orgmem_major', orgmem_major),'') as orgmem_major_nm, \n";
+	sql += "ifnull(getCodeName('orgmem_area',orgmem_area),'') as orgmem_area_nm, \n";
+	sql += "orgmem_disp_yn, \n";
+	sql += "(select x.type from push x where x.orgmem_no = a.orgmem_no order by final_date limit 0,1) as device_os ";
+	sql += "from orgmember a, (SELECT @RNUM := 0 ) r \n";
+	
+	sql += "order by a.orgmem_name asc \n";
+	sql += ") k ";
+	sql += "where 1=1 "; */
+
+	if(search_text!=''){
+		where_sql += " and (orgmem_name like '%" + search_text + "%' \n";
+		where_sql += " or (select code_name from code where code_group = 'orgmem_orgMba' and code = orgmem_position_mba) like '%" + search_text + "%' \n";
+		//where_sql += " or orgmem_address_home like '%" + search_text + "%' \n";
+		//where_sql += " or orgmem_address_work like '%" + search_text + "%' \n";
+		where_sql += " or orgmem_keyword like '%" + search_text + "%' \n";
+		where_sql += " or orgmem_work_duty like '%" + search_text + "%' \n";
+		where_sql += " or concat(orgmem_phone1, orgmem_phone2, orgmem_phone3)  like  concat('%',replace('" + search_text + "','-',''),'%') )\n";
+	}
+	/*
+	if(orgmem_seqNo == ''){
+		sql += " and orgmem_seqNo != '00' \n";
+		where_sql += " and orgmem_seqNo != '00' \n";
+	}else if(orgmem_seqNo != ''){
+		if(orgmem_seqNo == 'moreData'){
+			sql += " and cast( getOrgSeqNo(orgmem_seqNo) as signed) between 1 and 28\n"; //28기이전 데이터 조회
+			where_sql += " and cast( getOrgSeqNo(orgmem_seqNo) as signed) between 1 and 28\n"; //28기이전 데이터 조회
+		}else{
+			sql += " and orgmem_seqNo = '" + orgmem_seqNo + "' \n"; //선택기수 조회
+			where_sql += " and orgmem_seqNo = '" + orgmem_seqNo + "' \n"; //선택기수 조회
+		}
+	}
+	*/
+	console.log("1233333333333333333333333"+app_user_search);
+	if(app_user_search != '' && app_user_search != null){
+		where_sql += "and (select x.type from push x where x.orgmem_no = a.orgmem_no order by final_date limit 0,1) IS NOT NULL" + " \n";
+	}
+
+	where_sql += " and orgmem_seqNo != '-1' \n";
+	where_sql += " and orgmem_disp_yn = 'Y' \n";
+	
+	
+	if(search_seqNo != ''){
+		where_sql += " and orgmem_seqNo = '" + search_seqNo + "' \n";
+	}
+	
+	if(search_major != ''){
+		where_sql += " and orgmem_major = '" + search_major + "' \n";
+	}
+
+	if(search_all == ''){
+		if(search_position1 != '' && search_position1 != '자문위원' && search_position1 != '총동문회 고문'  && search_position1 != '장학회' && search_position1 != '지역'){
+			where_sql += "and orgmem_position1 = '" + search_position1 + "' \n";
+		}else if(search_position1 != '' && search_position1 != '장학회' && search_position1 != '지역' || (search_position1 == '자문위원' || search_position1 == '총동문회 고문')){
+			where_sql += " and etc_position = '" + search_position1 + "' \n";
+		}else if(search_position1 != '' && search_position1 != '자문위원' && search_position1 != '총동문회 고문' && search_position1 == '장학회'){
+			where_sql += " and chapter_position1 = '(재)대구공고 동문 장학회' \n";
+		}else if(search_position1 != '' && search_position1 != '자문위원' && search_position1 != '총동문회 고문' && search_position1 != '장학회' && search_position1 == "지역"){
+			where_sql += "and orgmem_position1 = '3'\n";
+		}
+	}else if(search_all != ''){
+		if(search_all == '1'){
+			where_sql += "and orgmem_position1 = '" + search_all + "'\n";
+		}else if(search_all == '고문'){
+			where_sql += " and etc_position = '총동문회 고문' \n";
+		}else if(search_all == '자문'){
+			where_sql += " and etc_position = '자문위원' \n";
+		}else if(search_all == '장학회'){
+			where_sql += " and chapter_position1 = '(재)대구공고 동문 장학회' \n";
+		}else if(search_all == "지역"){
+			where_sql += "and orgmem_position1 = '3'\n";
+		}else if(search_all == "기수"){
+			where_sql += "and orgmem_position1 != '3'\n";
+		}else if(search_all == "내정보"){
+			//where_sql +=" and orgmem_no =53557\n";
+			where_sql +=" and a.orgmem_no = '"+connectorNo+"'\n";
+		}
+	}
+	if(follow == 'follow'){
+		where_sql +=" and (SELECT COUNT(n.orgmem_no) FROM  orgmember_follow n WHERE n.orgmem_fno = a.orgmem_no AND n.orgmem_no = '"+connectorNo+"') > 0 \n";
+	}else if(follow == 'money'){
+		where_sql +=" and CASE WHEN (SELECT COUNT(*) FROM dues WHERE orgmem_no = a.orgmem_no) > 0 THEN 'yes' ELSE 'no' END = 'yes'\n";
+	}else if(follow == 'top'){
+		where_sql +=" and topcompany = 'Y'\n";
+	}else if(follow == 'my'){
+		//where_sql +=" and orgmem_no =53557\n";
+		where_sql +=" and orgmem_no = '"+connectorNo+"'\n";
+	}
+		
+	//sql += where_sql + " limit " + strlimit + ", " + endlimit;
+	
+	if(connectorDivision == 'admin'){
+		var all_count_sql = "select count(*) as cnt\n"
+			all_count_sql+=	"from  orgmember a\n"
+			all_count_sql+= "where 1=1\n"
+			all_count_sql += " and orgmem_seqNo != '-1' \n"
+			all_count_sql += " and orgmem_disp_yn = 'Y' \n";
+	}else{
+		var all_count_sql = "select count(*) as cnt\n"
+			all_count_sql+=	"from  dual \n";
+	}
+
+	sql += where_sql;
+	// 2018-05-11 조창현 수정(DB서버 이전에 따른 코드 변경)
+	//sql += "order by orgMba_sort asc,  org_seqYear asc, orgmem_name asc \n";
+	if(search_all == ''){
+	if(search_position1 == '' && search_seqNo == '' && search_major == ''){
+		sql += "order by (SELECT code_order FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_position') IS NULL asc ,(SELECT code_order FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_position') ASC, orgmem_seqNo asc\n";
+	}else if(search_position1 == '지역'){
+		sql += "order by (SELECT code_order FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_area_position') asc\n";
+	}else if(search_position1 == '장학회'){
+		sql += "order by orgmem_name != '이종성' ASC, orgmem_name = '성경환' ASC , orgmem_seqNo ASC\n";
+	}
+	else{
+		sql += "order by orgmem_seqNo asc\n";
+	}
+	
+	}else if(search_all != ''){
+		
+		if(search_all == '지역'){
+			sql += "order by (SELECT code_order FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_area_position') asc\n";
+		}else if(search_all == '장학회'){
+			sql += "order by orgmem_name != '이종성' ASC, orgmem_name = '성경환' ASC , orgmem_seqNo ASC\n";
+		}else if(search_all == '1'){
+			sql +="order by (SELECT code_order FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_position') IS NULL asc ,(SELECT code_order FROM code c WHERE c.code = orgmem_position2 AND code_group = 'org_position') ASC, orgmem_seqNo asc\n";
+		}else{
+			sql += "order by orgmem_seqNo asc\n";
+		}
+	}	
+
+	
+	sql += " limit " + strlimit + ", " + endlimit;
+	
+	/* 데이터 E */
+	console.log("sql_test : " + sql);
+	
+	var sel_sql = "select * from orgmember where orgmem_no=" + connectorNo; //기수관리자 확인(해당기수에게만 문자, 채팅 사용)
+	
+	//앱설치된사람 카운트
+	app_install_sql = "select count(*) as cnt from orgmember a, push b where a.orgmem_no = b.orgmem_no \n" + count_where_sql;
+
+	console.log("======================================================= \n");
+	//console.log(count_sql);
+	console.log("======================================================= \n");
+	//console.log(sql);
+	console.log("======================================================= \n");
+	//console.log(sel_sql);
+	console.log("\n \n " + app_install_sql);
+
+	db.query(all_count_sql, function(error, all_count_sql_result){
+		console.log("appapp_install_sql"+app_install_sql);
+	db.query(app_install_sql, function(error, app_install_count_result){
+		db.query(count_sql, function(error, count_result){
+			
+			console.log("count_sql :::"+count_sql);
+			console.log("app_install_count_result :::: " + app_install_count_result);
+			db.query(sql, function(error, results){
+				db.query(sel_sql, function(error, result) {
+					response.send({
+						connectorNo : connectorNo,
+						db_data : results,
+						db_data_length : count_result[0].cnt,
+						search_seqNo : search_seqNo,
+						search_text : search_text,
+						result : result,
+						app_install_count : app_install_count_result[0].cnt,
+						all_count : all_count_sql_result[0].cnt
+					}); 
+				});
+			});
+		});
+	});
+});
+};

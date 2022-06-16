@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+    <head>
+        <title>상원고등학교 동문검색</title>
+        <meta charset="utf-8" />  
+		<link rel="stylesheet" type="text/css" href="/css/admin/default.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/admin/layout.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/admin/basic.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/font.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="/js/jquery/css/jquery-ui.min.css" />
+
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+		<script type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery.validate.js"></script>
+		<script type="text/javascript" src="/js/jquery/jquery.form.js"></script>
+		<script src="https://kit.fontawesome.com/7460d40ad7.js" crossorigin="anonymous"></script>
+		
+		<!-- nice select -->
+		<link rel="stylesheet" href="/js/jquery/nice-select/nice-select.css">
+		<script type="text/javascript" src="/js/jquery/nice-select/jquery.nice-select.min.js"></script>
+
+		<script src="/js/common.js"></script>
+		<script src="/js/style.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			
+			});
+			
+			function MM_openBrWindow(theURL,winName,features) {
+				window.open(theURL,winName,features);
+			}
+			function winOpen(){
+				var win = window.open('/member_list', 'member_list','width=540,height=900,scrollbars=yes');
+				win.focus();
+			}	
+			function fnLogOut() {
+				window.location.href='/admin/web/logout';
+			}
+			function go_indexUW(){
+				window.location.href='/';
+			}
+
+		</script>
+		
+	<style>
+		.tmenu li{display:none;}
+
+		.swiper-pagination-bullet { width: 12px; height: 12px; background: transparent; border: 1px solid #127aff; opacity: 1; }
+		.swiper-pagination-bullet-active { width: 40px; transition: width .5s; border-radius: 5px; background: #127aff; border: 1px solid transparent; }
+
+	</style>
+	</head>
+	
+	<body>
+		<!--상단-->
+		<div id="head">
+			<div class="head-logo">
+				<img src="/images/sangwon-LOGO.svg" alt="main-LOGO"/>
+			</div>
+			<div class="head-title">
+				<p class="head_title">상원고등학교 동문검색 서비스</p>
+			</div>
+			<div class="head-reset-btn">
+				<button class="ui-button" onclick="go_indexUW();" type="button">
+					<img src="/images/house-solid.svg" alt="처음으로">
+					<span>처음으로</span>
+				</button>
+			</div>
+		</div>
+	

@@ -1,0 +1,24 @@
+{
+  "name": "KMU_POLICE",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.2.6",
+    "jade": "*",
+  	"socket.io": "*", 
+  	"connect": "2.25.5", 
+  	"ejs": "*",
+  	"gcm": "*",
+  	"JSONStream": "*",
+  	"redis" : "*",
+  	"async" : "*",
+  	"mongoose" : "*",
+  	"ejs-locals" : "*",
+  	"date-utils" : "*",
+  	"mysql" : "~2.0",
+  	"excel-export" : "*"
+  }
+}

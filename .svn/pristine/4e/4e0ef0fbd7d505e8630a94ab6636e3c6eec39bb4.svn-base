@@ -1,0 +1,430 @@
+<style>
+.overflow {
+      height: 400px;
+    }
+</style>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var adnm = "<%=adnm%>";
+		sessionStorage.removeItem('userName');
+		sessionStorage.setItem('userName', adnm);
+		
+		// 전공 selectbox
+		var s_orgmem_major = tag_place("<%=s_orgmem_major%>");
+		$('#search_major').html(s_orgmem_major);
+		$("#search_major option").each(function(){
+    		if($(this).val() == "<%=search_major%>"){
+    			$(this).attr('selected', true);
+    		}
+    	});
+		
+		// 지역 selectbox
+		var s_orgmem_area = tag_place("<%=s_orgmem_area%>");
+		$('#search_area').html(s_orgmem_area);
+		$("#search_area option").each(function(){
+    		if($(this).val() == "<%=search_area%>"){
+    			$(this).attr('selected', true);
+    		}
+    	});
+		
+		$.ajax({
+			type : "post",  
+		    url : "/admin/web/getChecked_power",    
+		    dataType : "text",      
+		    success : function(data){
+		    	var chkAry = new Array();
+		    	chkAry = data.split('@');
+		    	if(chkAry.indexOf("7") == -1){
+		    		$("#btnExport").hide();
+		    	}else{
+		    		$("#btnExport").show();
+		    	}
+		    }, error : function(xhr, status, error) { // error 발생했을때
+		    	alert('에러');
+	      	}
+		});
+		
+		var page_navi = tag_place("<%=page_navi%>");
+		$('#page_navi').html(page_navi);
+
+		$("#btn").click(function(){
+			location.href="/admin/web/orgm_write";
+		});
+		
+		$('#searchAction').click(function(){
+			var frm = document.writehtm;
+			$('#nowPage').val(1);
+			frm.action = '/admin/web/orgm_list';
+			frm.submit();
+		});
+		
+		$("#search_text").keydown(function(e){
+			if(e.keyCode == 13) $('#searchAction').click();
+		});
+		
+		$('#openWriteForm').click(function(){
+			var url = '/admin/web/orgm_write?mode=insert&s_org_no='+$('#orgSeqList').val()+'&param_major='+$("#param_major").val()+'&param_area='+$("#param_area").val();
+			window.open(url ,'', 'width=850,height=820');
+		});
+		
+		$("#btnExport").on('click', function () {
+			var frm = document.writehtm;
+		    var url = "admin_exceldown";
+		    
+		    frm.action = url;
+		    frm.method = "post";
+		    frm.submit();
+		});
+		
+		// 체크박스 전체선택
+	    $(document).on("click", "#ROW_CHK_ALL", function(e) {
+	        if($(this).prop("checked")) {
+	        	$("#index_total").val("<%=db_data_totallist %>");
+	        	$("#index_cnt").val(<%=db_data.length %>);
+	        	
+	            $(".ROW_CHK").prop("checked", true);
+	        }else{
+	        	$("#index_total").val("");
+	        	$("#index_cnt").val(0);
+	        	
+	            $(".ROW_CHK").prop("checked", false);
+	        }
+	        
+	    });
+	    
+	    // ROW의 체크박스 선택 이벤트
+	    $(document).on("click", ".ROW_CHK", function(e) {
+	    	var checks = new Array();
+	    	var tdArr = new Array();
+	    	var count = 0;
+	    	
+	    	var checkbox = $("input[name=ROW_CHK]:checked");
+	    	
+	    	checkbox.each(function(i) {
+	    		var tr = checkbox.parent().parent().eq(i);
+	    		var td = tr.children();
+	    		
+	    		checks.push(tr.text());
+	    		var row_index = $.trim(td.eq(1).text());
+	    		
+	    		tdArr.push(row_index);
+	    		count++;
+	    	});
+	    	$("#index_total").val(tdArr);
+	    	$("#index_cnt").val(count);
+			
+	        var CHK_TOT_CNT = $(".ROW_CHK").length;
+	        var CHK_CNT = $('input:checkbox[name="ROW_CHK"]:checked').length;
+	        
+	        if(CHK_TOT_CNT == CHK_CNT) {
+	            $("#ROW_CHK_ALL").prop("checked", true);
+	        } else {
+	            $("#ROW_CHK_ALL").prop("checked", false);
+	        }
+	    });
+		
+		// 체크박스 전체선택
+		$(document).on("click", "#ROW_CHK_ALL", function(e) {
+			if($(this).prop("checked")) {
+				$(".ROW_CHK").prop("checked", true);
+			}else{
+				$(".ROW_CHK").prop("checked", false);
+			}
+		});
+		
+		/* // ROW의 체크박스 선택 이벤트
+		$(document).on("click", ".ROW_CHK", function(e) {
+			var CHK_TOT_CNT = $(".ROW_CHK").length;
+			var CHK_CNT = $('input:checkbox[name="ROW_CHK"]:checked').length;
+			
+			if(CHK_TOT_CNT == CHK_CNT) {
+				$("#ROW_CHK_ALL").prop("checked", true);
+			} else {
+				$("#ROW_CHK_ALL").prop("checked", false);
+			}
+		}); */
+		
+		// 회원 노출
+		$(document).on("click", "#btnUserUnLocked", function(e) {
+			fnUserLockUnLock('Y');
+		});
+		
+		// 회원 비노출
+		$(document).on("click", "#btnUserLocked", function(e) {
+			fnUserLockUnLock('N');
+		});
+	});
+	
+	function fnUserLockUnLock(LOCK_VALUE) {
+		var CHK_CNT = $('input:checkbox[name="ROW_CHK"]:checked').length;
+				
+		if(CHK_CNT == 0){
+			alert('비노출할 회원을 한개 이상 선택 해주세요.');
+			return;
+		}
+		
+		var CHKED_ARRY = "";
+		$('input:checkbox[name="ROW_CHK"]:checked').each(function(index, item) {
+			var IDX = $(this).attr("IDX")
+			if(index > 0) {
+				CHKED_ARRY += ', ' + IDX;
+			} else {
+				CHKED_ARRY += IDX;
+			}
+		});
+		
+		var ALERT_MSG = "";
+		if(LOCK_VALUE == "N") {
+			ALERT_MSG = CHK_CNT + "명에 대해서 비노출 처리를 하시겠습니까?";
+		} else if(LOCK_VALUE == "Y") {
+			ALERT_MSG = CHK_CNT + "명에 대해서 노출 처리를 하시겠습니까?";
+		}
+		
+		if(confirm(ALERT_MSG)) {
+			$.ajax({
+				type : "post",  
+			    url : "/admin/web/orgm_udpateDisp",    
+			    dataType : "json",
+			    data : { "CHKED_ARRY" : CHKED_ARRY, "LOCK_VALUE" : LOCK_VALUE },
+			    success : function(data){
+			    	alert(data.result_msg);
+			    	if(!data.result) console.log(data.result_log);
+			    	
+			    	$("#searchAction").click();
+			    }, error : function(xhr, status, error) { // error 발생했을때
+			    	alert('오류가 발생되었습니다. 시스템관리자에게 문의하시기 바랍니다.');
+		      	}
+			});
+		}
+	}
+	
+	function del(no){
+		if(confirm("삭제하시겠습니까?")){
+			var frm = document.writehtm;
+			$("#brd_no").val(no);
+			frm.action = '/admin/web/orgm_del';
+			frm.submit();
+		}
+	}
+	
+	function restore(no, name, code, num){
+		var confirmHTML = "";
+		confirmHTML = "======= 사용자 정보 ======= \n";
+		confirmHTML += "이름 : "+name+" \n";
+		confirmHTML += "기수코드 : "+code+" \n";
+		confirmHTML += "휴대폰 : "+num+" \n";
+		confirmHTML += "======================= \n\n";
+		confirmHTML += "위 사용자를 복원 하시겠습니까?";
+		
+		if(confirm(confirmHTML)){
+			var frm = document.writehtm;
+			$("#brd_no").val(no);
+			frm.action = '/admin/web/orgm_restore';
+			frm.submit();
+		}
+	}
+	
+	function goPage(p_num){
+		var frm = document.writehtm;
+		frm.action = '/admin/web/orgm_list';
+		frm.nowPage.value = p_num;
+		frm.submit();
+		
+	}
+	
+	function seqListPopup(){
+		window.open('/admin/web/orgSeq_mngt', 'orgSeq_mngt','width=450,height=160');
+	}
+	
+	function print_preview(){
+		var CHK_CNT = $('input:checkbox[name="ROW_CHK"]:checked').length;
+		
+		if(CHK_CNT == 0){
+			alert("선택된 기업이 없습니다.");
+			return false;
+		} else {
+			var popup_form = document.writehtm;
+			var url = '/admin/web/print_admin_list';
+			window.open('', 'print_admin_list','width=780,height=900,scrollbars=yes');
+			
+			popup_form.action = url;
+			popup_form.target = 'print_admin_list';
+			popup_form.submit();
+			location.reload();
+		}
+	}
+	
+</script>
+
+	<form action="/admin/web/orgm_list" id="writehtm" name="writehtm" method="post" onsubmit="return false;" autocomplete="off">
+		<input type="hidden" name="nowPage" value="<%=nowPage%>" id="nowPage"/>
+		<input type="hidden" name="index_total" id="index_total" />
+    	<input type="hidden" name="index_cnt" id="index_cnt" />
+    	<input type="hidden" name="brd_no" id="brd_no" value=""/>
+		<input type="hidden" name="status" id="status" />
+		
+		<div class="board_search">
+			<h3 class="float_l">기업관리</h3>
+			<p class="float_r">
+			Total : <%=total_cnt%>
+			<%
+				if(order_type == 'no'){
+			%>
+				<label for="search_radio-1">최근게시물순</label>
+				<input id="search_radio-1" type="radio" name="order_type" value="no" checked="checked">
+				<label for="search_radio-2">가나다순</label>
+				<input id="search_radio-2" type="radio" name="order_type" value="name">
+			<%}else{%>
+				<label for="search_radio-1">최근게시물순</label>
+				<input id="search_radio-1" type="radio" name="order_type" value="no">
+				<label for="search_radio-2">가나다순</label>
+				<input id="search_radio-2" type="radio" name="order_type" value="name" checked="checked">
+			<%}%>
+			 &nbsp;  
+				<select name="search_type">
+					<option value="all"<%if(search_type=="all"){%> selected="selected" <%}%>> - 전체 - </option>
+					<option value="company_name"<%if(search_type=="company_name"){%> selected="selected" <%}%>>회사명</option>
+					<option value="orgmem_name"<%if(search_type=="orgmem_name"){%> selected="selected" <%}%>>대표자명</option>
+					<option value="orgmem_office_addr1"<%if(search_type=="orgmem_office_addr1"){%> selected="selected" <%}%>>주소</option>
+					<option value="company_tel"<%if(search_type=="company_tel"){%> selected="selected" <%}%>>대표전화</option>
+					<option value="orgmem_fax"<%if(search_type=="orgmem_fax"){%> selected="selected" <%}%>>대표팩스</option>
+				</select>
+				
+				<input type="text" name="search_text" id="search_text" value="<%=search_text%>" style="ime-mode:active; height: 24px;">
+				
+				<button class="ui-button" id="searchAction" type="button">
+					<span class="ui-icon ui-icon-search"></span>검색
+				</button>
+			
+			</p>
+		</div>
+	
+		<div class="board_list" style="overflow-y:scroll;width: 1070px; height:563px; border-top: 2px solid #3b64af;">
+			<table id="tblExport" border="0">
+				<colgroup>
+					<col width="3%" />
+					<col width="6%" />
+					<col width="18%" />
+					<col width="6%" />
+					<col width="15%" />
+					<!-- <col width="10%" /> -->
+					<col width="8%" />
+					<col width="8%" />
+					<col width="8%" />
+					<!-- <col width="22%" />
+					<col width="12%" />
+					<col width="12%" /> -->
+					<!-- <col width="10%" /> -->
+				</colgroup>
+				
+				<thead>
+					<tr>
+						<th><input type="checkbox" name="ROW_CHK_ALL" id="ROW_CHK_ALL" /></th>
+						<th>번호</th>
+						<th>회사명</th>
+						<th>대표자</th>
+						<th>주소</th>
+						<!-- <th>홈페이지</th> -->
+						<th>대표전화</th>
+						<th>대표팩스</th>
+						<th>비고</th>
+						<!-- <th>매출액(백만원)</th>
+						<th>종업원수</th>
+						<th>설립연도</th> -->
+						<!-- <th>취급품목</th> -->
+					</tr>
+				</thead>
+				
+				<tbody>
+				<% if(db_data.length > 0) {
+					for(var i = 0; i < db_data.length; i++){ %>
+						<tr>
+							<td><input type="checkbox" name="ROW_CHK" class="ROW_CHK" IDX="<%=db_data[i].orgmem_no %>" /></td>
+							<td style="display:none;">
+								<%=db_data[i].orgmem_no%>
+							</td>
+							<td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:center;" class="hand" onclick="MM_openBrWindow_view_company('/admin/web/company_view','class_write','width=550,height=780','<%=db_data[i].orgmem_no%>','','<%=db_data[i].industry1%>','<%=db_data[i].industry2%>','<%=db_data[i].industry3%>')">
+								<%=page_start++%>
+							</td>
+							<!-- <td class="hand" onclick="MM_openBrWindow('orgm_view','','width=850,height=820,scrollbars=1','<%=db_data[i].orgmem_no%>','')"> 
+								<%=db_data[i].orgmem_name %>
+							</td> -->
+							<td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left;" class="hand" onclick="MM_openBrWindow_view_company('/admin/web/company_view','class_write','width=550,height=780','<%=db_data[i].orgmem_no%>','','<%=db_data[i].industry1%>','<%=db_data[i].industry2%>','<%=db_data[i].industry3%>')">
+								<%=db_data[i].company_name %>
+							</td>
+							<td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:center;" class="hand" onclick="MM_openBrWindow_view_company('/admin/web/company_view','class_write','width=550,height=780','<%=db_data[i].orgmem_no%>','','<%=db_data[i].industry1%>','<%=db_data[i].industry2%>','<%=db_data[i].industry3%>')"> 
+								<%=db_data[i].orgmem_name %>
+							</td>
+							<td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left;" class="hand" onclick="MM_openBrWindow_view_company('/admin/web/company_view','class_write','width=550,height=780','<%=db_data[i].orgmem_no%>','','<%=db_data[i].industry1%>','<%=db_data[i].industry2%>','<%=db_data[i].industry3%>')">
+						    	<%=db_data[i].orgmem_office_addr1==null ? '' : db_data[i].orgmem_office_addr1 %>
+						    </td>
+							<!-- <td> 
+								<%=db_data[i].orgmem_homepage %>
+							</td> -->
+							<td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align: center;" class="hand" onclick="MM_openBrWindow_view_company('/admin/web/company_view','class_write','width=550,height=780','<%=db_data[i].orgmem_no%>','','<%=db_data[i].industry1%>','<%=db_data[i].industry2%>','<%=db_data[i].industry3%>')">
+								<%=db_data[i].company_tel1 %>-<%=db_data[i].company_tel2 %>-<%=db_data[i].company_tel3 %>
+							</td>
+							<td style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align: center;" class="hand" onclick="MM_openBrWindow_view_company('/admin/web/company_view','class_write','width=550,height=780','<%=db_data[i].orgmem_no%>','','<%=db_data[i].industry1%>','<%=db_data[i].industry2%>','<%=db_data[i].industry3%>')">
+								<%=db_data[i].orgmem_fax1 %>-<%=db_data[i].orgmem_fax2 %>-<%=db_data[i].orgmem_fax3 %>
+							</td>
+							<td>
+								<a href="#" onclick="MM_openBrWindow_view_company('/admin/web/company_modify', '', 'scrollbars=yes, width=550,height=860', '<%=db_data[i].orgmem_no%>', 'modify','<%=db_data[i].industry1%>','<%=db_data[i].industry2%>','<%=db_data[i].industry3%>')">
+									<img src="/images/admin/icon_edit.gif" alt="수정" />
+								</a>
+								<a href="#" onclick="del(<%=db_data[i].orgmem_no %>)" id="del" name="del">
+									<img src="/images/admin/icon_delete.gif" alt="삭제" />
+								</a>
+							</td>
+							
+						</tr>
+					<% } } else {%>
+					<tr>
+						<td colspan="8">등록된 회원이 없습니다.</td>
+					</tr>
+				<% } %>
+				</tbody>
+			</table>
+		</div>
+		<div style="padding-left: 570px; padding-top: 14px;">
+		<span>라벨선택</span>
+  			<select name="label_select" id="label_select" style="width: 140px;">
+				<option value="two_six">라벨(2X6) 연속용지</option>
+				<option value="two_seven">라벨(2X7) A4용지</option>
+				<option value="two_eight" selected>라벨(2X8) A4용지</option>
+			</select>
+  		<span>수신지정</span>
+  			<select name="destination" id="destination" style="width: 140px;">
+				<option value="ceo">대표이사</option>
+				<option value="company">회사</option>
+			</select>
+		<button class="ui-button" type="button" onclick="print_preview()" style="padding:8px;">
+			<span class="ui-icon ui-icon-unlocked"></span>우편라벨인쇄
+		</button>
+		</div>
+	</form>
+	<!-- 페이징 -->
+	<div class="mt_20">
+		<div class="paging" id="page_navi">
+		</div>
+		<p class="float_r">
+			
+			<!-- <button class="ui-button" id="openWriteForm" type="button">
+				<span class="ui-icon ui-icon-document"></span>견본보기
+			</button> -->
+			<!-- <button class="ui-button" id="admin_user_method" type="button">
+				<span class="ui-icon ui-icon-locked"></span>사용방법
+			</button> -->
+			<!-- <button class="ui-button" id="openWriteForm" type="button">
+				<span class="ui-icon ui-icon-document"></span>용지설정
+			</button> -->
+			<button class="ui-button" id="btnExport" type="button">
+				<span class="ui-icon ui-icon-print"></span>엑셀다운
+			</button>
+			<button class="ui-button" type="button" onclick="MM_openBrWindow_company('/admin/web/company_write','class_write','width=550,height=860','','insert')" >
+				<span class="ui-icon ui-icon-document"></span>등록
+			</button>
+		</p>
+	</div>
+	<!-- //페이징 -->

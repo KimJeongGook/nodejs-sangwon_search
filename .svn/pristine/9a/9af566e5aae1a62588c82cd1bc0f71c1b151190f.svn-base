@@ -1,0 +1,27 @@
+<script type="text/javascript">
+</script>
+	
+    <div style="padding:20px;width: 750px; height: 800px; left: 50%; top: 50%; margin-right: 30%; position: sticky; margin-bottom: 25px;">
+    	<h3><우편라벨용지 출력방법></h3>
+    		<div style="padding: 1px;">
+		    	<h4>1) 각 행의 왼쪽 네모 표시를 클릭하여 출력할 기업들을 체크합니다.</h4>
+		    		<div style="padding: 4px; margin-left: 20px;">-> 왼쪽 상단 체크 박스를 선택하면 해당 페이지의 전체 기업 리스트를 출력합니다.</div>
+		    	<h4>2) 왼쪽 하단의 '라벨선택' 버튼에서 원하는 옵션을 선택합니다.</h4>
+			    	<div style="padding: 4px; margin-left: 20px;">-> '라벨(2X8) A4용지'를 선택하면 A4용지크기에서 16개의 기업을 출력합니다.</div>
+			    	<div style="padding: 4px; margin-left: 20px;">-> '라벨(2X7) A4용지'를 선택하면 A4용지크기에서 14개의 기업을 출력합니다.</div>
+			    	<div style="padding: 4px; margin-left: 20px;">-> '라벨(2X6) A4용지'를 선택하면 A4용지크기에서 12개의 기업을 출력합니다.</div>
+		    	<h4>3) '수신지정' 버튼에서 원하는 옵션을 선택합니다.</h4>
+			    	<div style="padding: 4px; margin-left: 20px;">-> '대표이사'를 선택하면 회사 대표님에게 전달할 라벨지를 출력합니다.</div>
+			    	<div style="padding: 4px; margin-left: 20px;">-> '회사'를 선택하면 회사로 전달할 라벨지를 출력합니다.</div>
+		    	<h4>4) 오른쪽 하단의 '우편라벨인쇄' 버튼을 클릭합니다.</h4>
+		    	<h4>5) 인쇄페이지 팝업창을 확인한 후 이상이 없으면 '출력' 버튼을 클릭하여 프린터 하시면 됩니다.</h4>
+		    	<h3 style="color:red;">※ '출력' 버튼 클릭 후 인쇄 페이지에서 '설정 더보기' 설정 방법.</h3>
+		    		<div style="padding: 4px; margin-left: 20px;">-> 용지 크기<span style="margin:20px;"></span>'A4' 선택</div>
+		    		<div style="padding: 4px; margin-left: 20px;">-> 여백<span style="margin:38px;"></span>'기본' 선택</div>
+		    		<div style="padding: 4px; margin-left: 20px;">-> 품질<span style="margin:38px;"></span>'600dpi' 선택</div>
+		    		<div style="padding: 4px; margin-left: 20px;">-> 배율<span style="margin:38px;"></span>'기본값' 선택</div>
+		    		<div style="padding: 4px; margin-left: 20px;">-> 옵션<span style="margin:38px;"></span>'머리글과 바닥글', 배경 그래픽 선택 해제</div>
+    		</div>
+    </div>
+    
+    

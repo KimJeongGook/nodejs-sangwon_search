@@ -1,0 +1,75 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	var frm = document.orgSeqForm;
+	$('#delBtn').click(function(){
+		var orgSeqNum = $('#orgSeqList').val();
+		if(orgSeqNum==''){
+			alert('기수를 선택해주세요.');
+			$('#orgSeqList').focus();
+			return false;
+		}
+		
+		if(confirm('기수를 삭제시 해당 기수의 모든인원이 삭제됩니다.\n삭제하시겠습니까?')){
+			frm.action = 'orgSeq_del';
+			frm.submit();
+		};
+	});
+	$('#saveBtn').click(function(){
+		var org_seqYear = $('input[name="org_seqYear"]').val();
+		var org_seqNo = $('input[name="org_seqNo"]').val();
+		
+		if(org_seqYear==''){
+			alert('연도를 입력해주세요.');
+			$('input[name="org_seqYear"]').focus();
+			return false;
+		}else if(org_seqNo==''){
+			alert('기수를 입력해주세요.');
+			$('input[name="org_seqNo"]').focus();
+			return false;
+		}
+		frm.action = 'orgSeq_save';
+		frm.submit();
+	});
+});          
+</script>
+
+<!-- 컨텐츠 -->
+<div class="content">
+	<h2><span class="float_l">기수관리</span><img onclick="self.close();" src="/images/admin/btn_close.gif" alt="" class="float_r hand" /></h2>
+	
+	<form action="" id="orgSeqForm" name="orgSeqForm" method="post" onsubmit="return false;" autocomplete="off">
+		<table>
+			<tr>
+				<th>기수</th>
+				<td>
+					연도 : <input type="text" name="org_seqYear" style="width: 80px;" /> 기수 : <input type="text" name="org_seqNo" style="width:50px;" />
+					<button id="saveBtn" class="btn_small_blue hand" name="btn">등록</button>
+					 
+				</td>
+			</tr>
+			<tr>
+				<th>기수목록</th>
+				<td>
+					<select name="org_no" id="orgSeqList">
+						<option value="">선택하세요.</option>
+						<% data.forEach(function(item, index){ %>
+							<option value="<%=item.org_no%>">
+							<%=item.org_seqYear%>학번
+							<%if(item.org_seqNo != 0) { %>
+								<%if(item.org_seqYear == '0000'){%>
+									(<%=item.org_seqNo%>)
+								<%}else{%>
+									(<%=item.org_seqNo%>기)
+								<%}%>
+							<%} else {%>
+								이전
+							<% } %>
+							</option>
+						<%});%>
+					</select>
+					<button id="delBtn" class="btn_small_red hand" name="btn">삭제</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>

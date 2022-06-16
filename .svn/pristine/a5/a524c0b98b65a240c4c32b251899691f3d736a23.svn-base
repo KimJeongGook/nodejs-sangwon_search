@@ -1,0 +1,31 @@
+		<%if(menuNum!=null){%>
+		<!-- 하단메뉴 -->
+		<div id="footer">
+			<ul>
+				<li><a href="/"><i class="fa fa-home fa-2x"></i><br />홈</a></li>
+				<li><a href="chart_mba_list"><i class="fa fa-sitemap fa-2x"></i><br />소개</a></li>
+				<li><a href="member_list"><i class="fa fa-search fa-2x"></i><br />동문검색</a></li>
+				<li><a href="board_list"><i class="far fa-list-alt fa-2x"></i><br />공지사항</a></li>		
+				<li><a href="hongbo_board_list"><i class="fa fa-bullhorn fa-2x"></i><br />동문홍보</a></li>
+				<li><a href="member_list?search_all=내정보"><i class="far fa-user fa-2x"></i><br />내정보</a></li>
+				<!-- <li><a href="#" class="mem_setup"><i class="far fa-user fa-2x"></i><br />내정보</a></li> -->
+				<!-- <li><a href="userCalendar"><i class="far fa-user-cog fa-2x"></i><br />일정</a></li> -->
+			</ul>	
+		</div>
+		<!-- //하단메뉴 -->
+		<%}%>
+		<!--<div id="scroll_end"></div>
+		<script>
+			var prevScrollpos = window.pageYOffset;
+			window.onscroll = function() {
+				var currentScrollPos = window.pageYOffset;
+		  		if (prevScrollpos < currentScrollPos) {
+					document.getElementById("footer").style.bottom = "-50px";
+	  			} else {
+					document.getElementById("footer").style.bottom = "0px";
+	  			}
+	  			prevScrollpos = currentScrollPos;
+			}
+		</script>-->
+	</body>
+</html>

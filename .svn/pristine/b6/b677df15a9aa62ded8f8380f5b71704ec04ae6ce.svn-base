@@ -1,0 +1,188 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes,target-densitydpi=medium-dpi">
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#btnExport_1").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_1";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_2").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_2";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_3").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_3";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_4").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_4";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_5").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_5";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_6").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_6";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_7").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_7";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_8").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_8";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_9").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_9";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_10").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_10";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_11").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_11";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+	
+	$("#btnExport_12").on('click', function () {
+		var frm = document.excelForm;
+	    var url = "excel_download_12";
+	    
+	    frm.action = url;
+	    frm.method = "post";
+	    frm.submit();
+	});
+});
+
+</script>
+
+<style>
+	.table_content .thead_th {padding: 25px; font-size: 20px; background-color: #4f6fc1; color: white; width:600px;}
+	td {padding: 8px; font-size: 12px; font-weight: bold;}
+</style>
+
+<form id="excelForm" name="excelForm" method="post" onsubmit="return false;" autocomplete="off">
+<!-- 컨텐츠 -->
+
+	<table class="table_content">
+		<colgroup>
+		    <col width="45%" />
+		    <col width="50%" />
+		</colgroup>
+		
+	    <tr>
+	        <th colspan="2" class="thead_th">대구기업체총람 부록자료</th>
+	    </tr>
+		    
+		<tbody>
+			<tr>
+                <td id="btnExport_1" class="hand">
+					<span class="ui-icon ui-icon-print"></span>1. 대구상공회의소 제23대 상공의원
+                </td>
+                <td id="btnExport_7" class="hand">
+					<span class="ui-icon ui-icon-print"></span>7. 대구혁신도시 이전 공공기관 현황
+                </td>
+            </tr>
+            <tr>
+                <td id="btnExport_2" class="hand">
+					<span class="ui-icon ui-icon-print"></span>2. 전국 상공회의소
+                </td>
+                <td id="btnExport_8" class="hand">
+					<span class="ui-icon ui-icon-print"></span>8. 대구지역 상장법인
+                </td>
+            </tr>
+            <tr>
+                <td id="btnExport_3" class="hand">
+					<span class="ui-icon ui-icon-print"></span>3. 유관기관
+                </td>
+                <td id="btnExport_9" class="hand">
+					<span class="ui-icon ui-icon-print"></span>9. 월드클래스300 대구기업
+                </td>
+            </tr>
+            <tr>
+                <td id="btnExport_4" class="hand">
+					<span class="ui-icon ui-icon-print"></span>4. 경제관련단체
+                </td>
+                <td id="btnExport_10" class="hand">
+					<span class="ui-icon ui-icon-print"></span>10. 대구 3030기업(2007~2020)
+                </td>
+            </tr>
+            
+            <tr>
+                <td id="btnExport_5" class="hand">
+					<span class="ui-icon ui-icon-print"></span>5. 대구지역 협동조합
+                </td>
+                <td id="btnExport_11" class="hand">
+					<span class="ui-icon ui-icon-print"></span>11. 스타기업100, Pre-스타기업, 고용친화기업
+                </td>
+            </tr>
+            
+            <tr>
+                <td id="btnExport_6" class="hand">
+					<span class="ui-icon ui-icon-print"></span>6. 대구 산업단지 현황
+                </td>
+                <td id="btnExport_12" class="hand">
+					<span class="ui-icon ui-icon-print"></span>12. 물산업 클러스터 입주기업 리스트
+                </td>
+            </tr>
+		</tbody>
+    </table>
+</form>

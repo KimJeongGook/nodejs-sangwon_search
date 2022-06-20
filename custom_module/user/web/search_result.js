@@ -14,11 +14,13 @@ exports.listener=function(request, response){
     var sql = "select a.*, \n"
         sql += " ifnull(a.orgmem_nowimg, 'no-img.jpg') as now_img, ifnull(a.orgmem_grdimg, 'no-img.jpg') as grd_img \n"
         sql += " from orgmember a where 1=1 \n"
-        if(seqNo != ""){
+        if (seqNo == 'all') {
+            sql += "";
+        } else if(seqNo != ""){
             sql += " and a.orgmem_seqNo = " + seqNo + "\n"
         }
         if(name!=""){
-            sql += " and ("+ koreaChk.koreanChk('orgmem_name', name) + ")";
+            sql += " and ("+koreaChk.koreanChk('orgmem_name', name)+")";
         }
     console.log(sql);
 

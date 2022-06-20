@@ -5,9 +5,6 @@
 
 	
     $(document).ready(function() {
-		var typeSelect = document.querySelector("select[name=type_select]");
-
-		console.log(typeSelect.value);
 		var keyboardzone = document.getElementById("keyboardzone");
 		var input = document.getElementById("search_name");
 
@@ -43,20 +40,6 @@
 
     })
 	$("#search_name").focus();
-	
-	$('#type_select').change(function(){
-		$("#type_result").val($("#type_select").val());
-	});
-	
-	/*$("#search_company").keydown(function(e){
-		console.log("???????????");
-		if(e.keyCode == 13) search();
-	});
-	
-	$("#search_name").keydown(function(e){
-		console.log("???????????")
-		if(e.keyCode == 13) search();
-	});*/
 
 	// Element 에 style 한번에 오브젝트로 설정하는 함수 추가
 	Element.prototype.setStyle = function(styles) {
@@ -72,23 +55,18 @@
 		var seqNo = $("#type_select option:selected").val();
 		var input = document.getElementById("search_name");
 
-		console.log("seqNO :::", seqNo);
+		console.log("seqNo :::", seqNo);
 		console.log("name :::", name);
 
-		//if(name == ''){
-		//	alert("이름 또는 졸업기수를 선택해주세요");
-		//	return false;
-		//}
+		if(name == '' && seqNo == ''){
+			alert("이름 또는 졸업기수를 선택해주세요");
+			return false;
+		}
 		var frm = document.searchForm;
 		frm.target = '_self';
 		frm.action = 'search_data';
 		frm.submit();
-
-		input.value = '';
-		//typeSelect.value = '';
-		keyboardhidden[0].style.visibility = `hidden`
-		$("#type_select").val('');
-
+		
 	}
 
 	// function reset_chk(){
@@ -109,7 +87,7 @@
 						<div class="search-select">
 							<select id="type_select" name="type_select">
 								<option data-display="졸업기수" value="">졸업기수</option>
-								<option value="">전체</option>
+								<option value="all">전체</option>
 									<% for(var k=1; k<=datadb[0].orgmem_seqNo; k++){ %>
 										<option value="<%=k%>"> <%=k%>회
 										</option>

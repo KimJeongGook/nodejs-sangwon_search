@@ -208,7 +208,8 @@
       });
    }
    function back(){
-      history.back();
+      location.href = "/search"
+      // history.back();
    }
    </script>
    <style>
@@ -269,7 +270,11 @@
             <p class="data_title">검색 결과</p>
          </div>
          <div class="search-result-name">
-            <p class="sr-data_name"><%=search_name%><span>으로</span></p>
+            <%if(type_select == "all") { %>
+               <p class="sr-data_name">전체<span>로</span></p>
+            <% } else if (type_select != "" && search_name != ""){ %>
+               <p class="sr-data_name"><%=type_select%><%=search_name%></p>
+            <% } %>
             <p class="sr-data_comment">동문검색한 결과입니다.</p>
             <label class="search-back-btn">
                <input type="button" onclick="back()" value="검색화면으로 돌아가기" style="border: none;">

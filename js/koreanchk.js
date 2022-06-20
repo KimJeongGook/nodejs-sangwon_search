@@ -98,9 +98,10 @@ exports.koreanChk = function (type, word) {
          checkString(word.length, i, jungseong, sumHangul(choseong, jungseong, 'ㅎ'))
       }
    }
-   sql += first_word + "\n" + second_word + "\n" + third_word + "\n" + four_word + "\n" + five_word + "\n" + six_word + "\n" + seven_word + "\n" + eight_word
-
-   return sql
+   // 쿼리에 빈칸 이유 = 글자 수가 충족되지 못해 \n만 들어감
+   sql += first_word + "\n" + second_word + "\n" + third_word + "\n" + four_word + "\n" + five_word + "\n" + six_word + "\n" + seven_word + "\n" + eight_word;
+   
+   return sql;
 
 }
 

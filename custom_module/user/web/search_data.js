@@ -20,15 +20,17 @@ exports.listener=function(request, response){
 	
 	var sql = "select * \n"
 		sql += " from orgmember where 1=1 \n"
-		if(seqNo != ""){
+		if(seqNo == "all"){
+			sql += "";
+		} else if(seqNo != ""){
 			sql += " and orgmem_seqNo = " + seqNo;
 		}
 		if(search_name != ""){
 			sql += " and ("+ koreaChk.koreanChk('orgmem_name', search_name) + ")";
 		}
-	console.log("seqNo:::",seqNo);
-	console.log("search_name:::",search_name);
-	console.log("sql:::",sql);
+	// console.log("seqNo:::",seqNo);
+	// console.log("search_name:::",search_name);
+	// console.log("sql:::",sql);
 
 	/* 데이터 S */
 	fs.readFile("./views/user/web/search_data.html", "utf-8", function(error,data){

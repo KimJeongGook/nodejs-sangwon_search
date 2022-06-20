@@ -36,7 +36,7 @@ app.configure(function(){
 
 
 /////////////////////////////////////////////인터셉터용/////////////////////////////////////////////
-/**/
+/*
 app.use(function(req, res, next) {
 	var usbData = req.query;
 
@@ -112,7 +112,7 @@ app.get("/admin/web", function(request, response){
 		});
 	}
 });
-
+*/
 
 // ---------------------------------------- admin Web --------------------------------//
 var webUrl = "/admin/web";

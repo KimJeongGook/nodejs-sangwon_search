@@ -95,7 +95,7 @@ function customKeyboard(zone, input, onClick, onEnter, form) {
             keydiv[Object.keys(form)[index]].appendChild(keyline);
         }
         zone.appendChild(keydiv[Object.keys(form)[index]]);
-        // keydiv[nowlang].style.visibility = "visible";
+        keydiv[nowlang].style.visibility = "visible";
     }
     function keyfun() {
         if(this.innerText == 'enter') {
